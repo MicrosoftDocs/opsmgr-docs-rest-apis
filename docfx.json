@@ -2,19 +2,34 @@
   "build": {
     "content": [
       {
+        "src":"docs-ref-autogen",
         "files": [
-          "**/*.md",
-          "**/*.yml"
+          "**.yml"
         ],
         "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "_themes/**",
-          "_themes.pdf/**",
-          "README.md",
-          "LICENSE",
-          "LICENSE-CODE",
-          "ThirdPartyNotices"
+          "toc.md"
+        ],
+        "dest":"api"
+      },
+      {
+        "src":"docs-ref-autogen",
+        "files": [
+          "toc.md"
+        ],
+        "exclude": [
+        ],
+        "dest":"api/opsmgr"
+      },
+      {
+        "src":".",
+        "files": [
+          "index.md"
+        ],
+        "dest":"opsmgr"
+      },
+      {
+        "files": [
+          "breadcrumb/toc.yml"
         ]
       }
     ],

@@ -1,0 +1,9 @@
+{
+	"repo": [
+    {
+        "url": "https://github.com/Azure/azure-docs-rest-apis",
+		"branch": "jehuan-opsmgr-api",
+		"name": "opsmgr"
+    }
+  ]
+}

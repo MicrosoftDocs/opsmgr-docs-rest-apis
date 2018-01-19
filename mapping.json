@@ -1,0 +1,19 @@
+{
+  "target_api_root_dir": "docs-ref-autogen",
+  "is_grouped_by_tag": true,
+  "organizations": [{
+    "name": "",
+    "index": "index.md",
+    "default_toc_title": "Getting Started with REST",
+    "services": [{
+      "toc_title":"graph",
+      "url_group":"graph",
+      "swagger_files":[
+        {
+          "source":"graph/graph1.0.json"
+        }
+      ]
+    }]
+  }
+  ]
+}

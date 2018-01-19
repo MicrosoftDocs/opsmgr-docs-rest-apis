@@ -1,1 +1,1 @@
-# Welcome to OpsMgrRestApi!
+# Welcome
