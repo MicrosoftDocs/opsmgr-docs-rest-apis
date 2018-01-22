@@ -1,0 +1,37 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.opsmgr.component.componentdeletewidget
+name: Component DeleteWidget
+service: opsmgr
+groupName: Component
+apiVersion: v1
+summary: Deletes a widget from a specific dashbaord.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: DELETE http://<Servername>/OperationsManager/component/dashboard/{dashboardId}/widget/{widgetId}
+uriParameters:
+- name: dashboardId
+  in: path
+  isRequired: true
+  description: Specify the dashboard ID.
+  types:
+  - uid: string
+- name: widgetId
+  in: path
+  isRequired: true
+  description: Specify the widget ID which needs to be deleted.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK. Successfully deleted a widget from a specific dashbaord.
+  types:
+  - uid: boolean
+requestHeader: []
+definitions: []
+examples: []
+security: []

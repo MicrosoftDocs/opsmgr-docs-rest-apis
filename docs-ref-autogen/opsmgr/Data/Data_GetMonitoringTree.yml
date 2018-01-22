@@ -1,0 +1,89 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.opsmgr.data.datagetmonitoringtree
+name: Data GetMonitoringTree
+service: opsmgr
+groupName: Data
+apiVersion: v1
+summary: Retrieves the list of views/dashboards/folders available in the Monitoring tree view.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/monitoringTree
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved the list of views/dashboards/folders available in the Monitoring tree view.
+  types:
+  - uid: TreeViewResponse
+requestHeader: []
+definitions:
+- name: TreeViewResponse
+  kind: object
+  properties:
+  - name: data
+    description: "  "
+    types:
+    - uid: TreeNode
+      isArray: true
+- name: TreeNode
+  kind: object
+  properties:
+  - name: children
+    description: "  "
+    types:
+    - uid: TreeNode
+      isArray: true
+  - name: id
+    description: "  \nID."
+    types:
+    - uid: string
+  - name: label
+    description: "  \nLabel."
+    types:
+    - uid: string
+  - name: description
+    description: "  \nDescription."
+    types:
+    - uid: string
+  - name: viewType
+    description: "  \nView type."
+    types:
+    - uid: string
+  - name: expandedIcon
+    description: "  \nExpanded icon."
+    types:
+    - uid: string
+  - name: collapsedIcon
+    description: "  \nCollapsed icon."
+    types:
+    - uid: string
+  - name: icon
+    description: "  \nIcon."
+    types:
+    - uid: string
+  - name: expanded
+    description: "  \nExpanded."
+    types:
+    - uid: boolean
+  - name: isSealed
+    description: "  \nIs sealed."
+    types:
+    - uid: boolean
+  - name: parent
+    description: "  \nParent."
+    types:
+    - uid: string
+  - name: url
+    description: "  \nURL."
+    types:
+    - uid: string
+  - name: isShortcut
+    description: "  \nIs shortcut."
+    types:
+    - uid: boolean
+examples: []
+security: []

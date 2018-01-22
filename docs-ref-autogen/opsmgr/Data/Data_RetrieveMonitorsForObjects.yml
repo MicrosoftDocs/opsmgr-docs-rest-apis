@@ -1,0 +1,120 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.opsmgr.data.dataretrievemonitorsforobjects
+name: Data RetrieveMonitorsForObjects
+service: opsmgr
+groupName: Data
+apiVersion: v1
+summary: Retrieve the list of monitors and thier respective properties associated with a specific object.
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/object/monitors
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved the list of monitors and thier respective properties associated with a specific object.
+  types:
+  - uid: MonitorDataResponse
+    isArray: true
+requestBody:
+- parameters:
+  - name: id
+    in: body
+    description: "  \nMonitor ID."
+    types:
+    - uid: string
+  - name: showUnhealthyMonitorsOnly
+    in: body
+    description: "  \nYou can choosse to visulaize only unhealthy monitors."
+    types:
+    - uid: boolean
+requestHeader: []
+definitions:
+- name: MonitorDataResponse
+  kind: object
+  properties:
+  - name: id
+    description: "  \nMonitor ID."
+    types:
+    - uid: string
+  - name: description
+    description: "  \nMonitor description."
+    types:
+    - uid: string
+  - name: name
+    description: "  \nMonitor name."
+    types:
+    - uid: string
+  - name: displayName
+    description: "  \nMonitor display name."
+    types:
+    - uid: string
+  - name: comment
+    description: "  \nComment."
+    types:
+    - uid: string
+  - name: target
+    description: "  "
+    types:
+    - uid: MonitorTarget
+  - name: monitorType
+    description: "  \nMonitor type."
+    types:
+    - uid: string
+  - name: category
+    description: "  \nMonitor category."
+    types:
+    - uid: string
+  - name: priority
+    description: "  \nMonitor priority."
+    types:
+    - uid: string
+  - name: status
+    description: "  \nMonitor status."
+    types:
+    - uid: string
+  - name: enabled
+    description: "  \nIs monitor enabled."
+    types:
+    - uid: string
+  - name: state
+    description: "  \nMonitor state."
+    types:
+    - uid: string
+  - name: lastModified
+    description: "  \nLast modified."
+    types:
+    - uid: string
+- name: MonitorObjectDataRequest
+  kind: object
+  properties:
+  - name: id
+    description: "  \nMonitor ID."
+    types:
+    - uid: string
+  - name: showUnhealthyMonitorsOnly
+    description: "  \nYou can choosse to visulaize only unhealthy monitors."
+    types:
+    - uid: boolean
+- name: MonitorTarget
+  kind: object
+  properties:
+  - name: id
+    description: "  \nMonitor ID."
+    types:
+    - uid: string
+  - name: displayName
+    description: "  \nMonitor display name."
+    types:
+    - uid: string
+examples: []
+security: []

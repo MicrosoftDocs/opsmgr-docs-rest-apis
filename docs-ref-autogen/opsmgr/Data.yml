@@ -1,0 +1,72 @@
+### YamlMime:RESTOperationGroup
+uid: <servername>.operationsmanager.opsmgr.data
+name: Data
+apiVersion: v1
+service: opsmgr
+operations:
+- uid: <servername>.operationsmanager.opsmgr.data.datagetfavoritefolderstree
+  summary: Retrieves the list of views/dashboards available in the favorite folders.
+- uid: <servername>.operationsmanager.opsmgr.data.datagetmonitoringtree
+  summary: Retrieves the list of views/dashboards/folders available in the Monitoring tree view.
+- uid: <servername>.operationsmanager.opsmgr.data.datagetmyworkspacetree
+  summary: Retrieves the list of views/dashboards/folder available in the My Workspace tree view.
+- uid: <servername>.operationsmanager.opsmgr.data.datagetrbacdata
+  summary: Retrieves the actions associated with dashboard.
+- uid: <servername>.operationsmanager.opsmgr.data.datagettaskpanedata
+  summary: Retrieves the list of tasks and thier respective properties.
+- uid: <servername>.operationsmanager.opsmgr.data.datagettaskresult
+  summary: Retrieves the result of an executing task.
+- uid: <servername>.operationsmanager.opsmgr.data.datagetunsealedmanagementpacks
+  summary: Retrieve the list of unsealead management packs.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievealertcountbyid
+  summary: Retrieves the number of alerts associated with the specified entity ID.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievealertdata
+  summary: Retrieves the alert data for the specified scope/parameters.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievealertinformation
+  summary: Retrieves the alert properties for the specified alert.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrieveclasses
+  summary: Retrieves the list of classes and thier respective properties.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrieveclassinformation
+  summary: Retrieves the class properties for the specified class ID.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrieveentityname
+  summary: Retrieves the entity name for the specified entity ID.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievegroupdata
+  summary: Retrieves the groups based on the specified criteria.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievemonitorinformation
+  summary: Retrieves the monitor properties for the specified monitor ID.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievemonitoringdata
+  summary: Retrieves the monitoring data of the specified entity ID.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievemonitoringknowledgearticle
+  summary: Retrieves the knowledge article for the specified element type and element ID.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievemonitoringobjectinformation
+  summary: Retrieves the Objects details (like object properties, related objects and classs information) for the specificed object.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievemonitoringobjectproperties
+  summary: Retrieves the monitoring Object properties.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievemonitorsforclasses
+  summary: Retrieve the list of monitors and thier respective properties associated with a specific class.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievemonitorsforobjects
+  summary: Retrieve the list of monitors and thier respective properties associated with a specific object.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrieveobjectdata
+  summary: Retrieves the objects based on the specified criteria.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrieveperformancecounters
+  summary: Retrieves the list of performance counters associated with the specified enitity ID.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrieveperformancedata
+  summary: Retrieves the performance data for the specified scope/parameters.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievepowershelloutput
+  summary: Retrieves the data after executing the specified PowerShell script.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrieveruleinformation
+  summary: Retrieves the rule properties for the specified rule ID.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrieverules
+  summary: Retrieve the list of rules and thier respective properties based on the specified criteria.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievestatedata
+  summary: Retrieves the health (state) data for the specified scope/parameters.
+- uid: <servername>.operationsmanager.opsmgr.data.dataretrievestatewidgetcolumns
+  summary: Retrieves the state columns applicable for the specified entity ID.
+- uid: <servername>.operationsmanager.opsmgr.data.datasavecompanyknowledgearticle
+  summary: Retrieves the company knowledge of the specified entity.
+- uid: <servername>.operationsmanager.opsmgr.data.datasetalertresolutionstates
+  summary: Retrieves the alert resolution state for the specified alert(s).
+- uid: <servername>.operationsmanager.opsmgr.data.datastatebyentityid
+  summary: Retrieves the health state of the specified entity ID.
+- uid: <servername>.operationsmanager.opsmgr.data.datasubmittaskforexecution
+  summary: Submits a task for its execution.

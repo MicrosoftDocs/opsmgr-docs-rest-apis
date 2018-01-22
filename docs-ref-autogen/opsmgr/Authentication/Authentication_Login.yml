@@ -1,0 +1,36 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.opsmgr.authentication.authenticationlogin
+name: Authentication Login
+service: opsmgr
+groupName: Authentication
+apiVersion: v1
+summary: Authenticates the user.
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/authenticate
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Login successfull.
+  types:
+  - uid: object
+requestBody:
+- parameters:
+  - name: credentials
+    in: body
+    types:
+    - uid: string
+requestHeader: []
+definitions: []
+examples: []
+security: []

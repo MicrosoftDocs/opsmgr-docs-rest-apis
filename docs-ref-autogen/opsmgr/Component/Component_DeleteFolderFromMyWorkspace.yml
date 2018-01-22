@@ -1,0 +1,45 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.opsmgr.component.componentdeletefolderfrommyworkspace
+name: Component DeleteFolderFromMyWorkspace
+service: opsmgr
+groupName: Component
+apiVersion: v1
+summary: Deletes a folder from My Workspace.
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: DELETE http://<Servername>/OperationsManager/component/folder
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully deleted a folder from My Workspace.
+  types:
+  - uid: object
+requestBody:
+- parameters:
+  - name: path
+    in: body
+    isRequired: true
+    description: "  \nSpecify the folder path."
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: FolderRequest
+  kind: object
+  properties:
+  - name: path
+    description: "  \nSpecify the folder path."
+    types:
+    - uid: string
+examples: []
+security: []

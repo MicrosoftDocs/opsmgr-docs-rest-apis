@@ -1,0 +1,53 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.opsmgr.component.componentdeleteusersearch
+name: Component DeleteUserSearch
+service: opsmgr
+groupName: Component
+apiVersion: v1
+summary: Deletes a user search from My Workspace.
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: DELETE http://<Servername>/OperationsManager/component/usersearch
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully deleted a user search from My Workspace.
+  types:
+  - uid: object
+requestBody:
+- parameters:
+  - name: componentID
+    in: body
+    description: "  \nSpecify the component ID."
+    types:
+    - uid: string
+  - name: parent
+    in: body
+    description: "  \nSpecify the parent."
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: UserSearchRequest
+  kind: object
+  properties:
+  - name: componentID
+    description: "  \nSpecify the component ID."
+    types:
+    - uid: string
+  - name: parent
+    description: "  \nSpecify the parent."
+    types:
+    - uid: string
+examples: []
+security: []
