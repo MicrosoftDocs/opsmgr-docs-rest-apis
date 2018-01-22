@@ -1,0 +1,113 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.dataretrieveclassinformation
+name: Data RetrieveClassInformation
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the class properties for the specified class ID.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/classInformation/{classId}
+uriParameters:
+- name: classId
+  in: path
+  isRequired: true
+  description: Specify the class ID.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved Class Information.
+  types:
+  - uid: ClassDataResponse
+requestHeader: []
+definitions:
+- name: ClassDataResponse
+  kind: object
+  properties:
+  - name: id
+    description: "  \nClass ID."
+    types:
+    - uid: string
+  - name: displayName
+    description: "  \nDisplay name of the class."
+    types:
+    - uid: string
+  - name: childObjects
+    description: "  "
+    types:
+    - uid: ChildObject
+      isArray: true
+  - name: description
+    description: "  \nDescription of the class."
+    types:
+    - uid: string
+  - name: comment
+    description: "  "
+    types:
+    - uid: string
+  - name: hosted
+    description: "  \nHost of the class."
+    types:
+    - uid: string
+  - name: status
+    description: "  \nStatus of the class."
+    types:
+    - uid: string
+  - name: timeAdded
+    description: "  \nTime the class has been added."
+    types:
+    - uid: string
+  - name: baseMonitoringClass
+    description: "  "
+    types:
+    - uid: BaseMonitoringClass
+  - name: propertyCollection
+    description: "  "
+    types:
+    - uid: ClassProperty
+      isArray: true
+- name: ChildObject
+  kind: object
+  properties:
+  - name: displayName
+    description: "  \nDisplay name of the child object."
+    types:
+    - uid: string
+  - name: id
+    description: "  \nID of the child object."
+    types:
+    - uid: string
+  - name: healthState
+    description: "  \nHealth state of the child object."
+    types:
+    - uid: string
+- name: BaseMonitoringClass
+  kind: object
+  properties:
+  - name: id
+    description: "  \nID of the base monitoring class."
+    types:
+    - uid: string
+  - name: displayName
+    description: "  \nDisplay name of the base monitoring class."
+    types:
+    - uid: string
+- name: ClassProperty
+  kind: object
+  properties:
+  - name: name
+    description: "  \nName of the class."
+    types:
+    - uid: string
+  - name: description
+    description: "  \nDescription of the class."
+    types:
+    - uid: string
+examples: []
+security: []

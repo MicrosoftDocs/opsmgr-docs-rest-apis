@@ -1,0 +1,38 @@
+### YamlMime:RESTOperationGroup
+uid: <servername>.operationsmanager.operationsmanager.component
+name: Component
+apiVersion: v1
+service: Operations Manager
+operations:
+- uid: <servername>.operationsmanager.operationsmanager.component.componentadddashboard
+  summary: Creates a new dashboards with the specified properties.
+- uid: <servername>.operationsmanager.operationsmanager.component.componentaddfoldertomyworkspace
+  summary: Adds a folder to My Workspace.
+- uid: <servername>.operationsmanager.operationsmanager.component.componentaddviewshortcuttomyworkspace
+  summary: Adds a shortcut to Monitoring view in My Workspace
+- uid: <servername>.operationsmanager.operationsmanager.component.componentaddwidget
+  summary: Adds a widget in a exisitng dashbaord.
+- uid: <servername>.operationsmanager.operationsmanager.component.componentdeletedashboard
+  summary: Deletes a specific dashboard and the widgets contained inside it.
+- uid: <servername>.operationsmanager.operationsmanager.component.componentdeletefolderfrommyworkspace
+  summary: Deletes a folder from My Workspace.
+- uid: <servername>.operationsmanager.operationsmanager.component.componentdeleteusersearch
+  summary: Deletes a user search from My Workspace.
+- uid: <servername>.operationsmanager.operationsmanager.component.componentdeleteviewshortcutfrommyworkspace
+  summary: Deletes a view shortcut from My Workspace
+- uid: <servername>.operationsmanager.operationsmanager.component.componentdeletewidget
+  summary: Deletes a widget from a specific dashbaord.
+- uid: <servername>.operationsmanager.operationsmanager.component.componentretrievedashboard
+  summary: Retrieves the dashboard properties and configuration.
+- uid: <servername>.operationsmanager.operationsmanager.component.componentretrievedashboardsforobject
+  summary: Retrieves the dashbaords for an object based on the type.
+- uid: <servername>.operationsmanager.operationsmanager.component.componentretrievewidget
+  summary: Retrieves the widget properties and configuration.
+- uid: <servername>.operationsmanager.operationsmanager.component.componentretrievewidgets
+  summary: Retrieves the properties and configuration of all the widgets present in a particular dashbaord.
+- uid: <servername>.operationsmanager.operationsmanager.component.componentretrievewidgetsforentity
+  summary: 'Retrieves the widgets for the dashboard and entity. NOTE: This only supports fetching widgets for Performance Dashboard.'
+- uid: <servername>.operationsmanager.operationsmanager.component.componentupdatedashboarddetails
+  summary: Updates the properties or configurations of a dashboard and the widgets available in a specific dashboard.
+- uid: <servername>.operationsmanager.operationsmanager.component.componentupdatewidget
+  summary: Updates the widget properties or configuration.

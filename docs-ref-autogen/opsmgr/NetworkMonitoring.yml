@@ -1,8 +1,0 @@
-### YamlMime:RESTOperationGroup
-uid: <servername>.operationsmanager.opsmgr.networkmonitoring
-name: Network Monitoring
-apiVersion: v1
-service: opsmgr
-operations:
-- uid: <servername>.operationsmanager.opsmgr.networkmonitoring.networkmonitoringgetnetworkmonitoringresponsedata
-  summary: Retrieves data for Network devices and Interfaces.

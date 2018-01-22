@@ -1,0 +1,74 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.dataretrievemonitoringdata
+name: Data RetrieveMonitoringData
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the monitoring data of the specified entity ID.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/monitoring/{entityId}
+uriParameters:
+- name: entityId
+  in: path
+  isRequired: true
+  description: Specify the entity ID.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved Monitoring data.
+  types:
+  - uid: MonitoringDataResponse
+requestHeader: []
+definitions:
+- name: MonitoringDataResponse
+  kind: object
+  properties:
+  - name: childNodeDatas
+    description: "  "
+    types:
+    - uid: ChildNodeData
+      isArray: true
+  - name: alertCount
+    description: "  \nAlert count."
+    types:
+    - uid: integer
+  - name: healthState
+    description: "  \nHealth state."
+    types:
+    - uid: string
+- name: ChildNodeData
+  kind: object
+  properties:
+  - name: healthState
+    description: "  \nHealth state of the child node."
+    types:
+    - uid: string
+  - name: id
+    description: "  \nChild node ID."
+    types:
+    - uid: string
+  - name: monitorId
+    description: "  \nMonitor ID."
+    types:
+    - uid: string
+  - name: monitorDisplayName
+    description: "  \nMonitor display name."
+    types:
+    - uid: string
+  - name: monitorName
+    description: "  \nMonitor name."
+    types:
+    - uid: string
+  - name: lastTimeModified
+    description: "  \nLast modified time."
+    types:
+    - uid: string
+examples: []
+security: []

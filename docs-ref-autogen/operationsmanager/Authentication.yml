@@ -1,0 +1,12 @@
+### YamlMime:RESTOperationGroup
+uid: <servername>.operationsmanager.operationsmanager.authentication
+name: Authentication
+apiVersion: v1
+service: Operations Manager
+operations:
+- uid: <servername>.operationsmanager.operationsmanager.authentication.authenticationlogin
+  summary: Authenticates the user.
+- uid: <servername>.operationsmanager.operationsmanager.authentication.authenticationlogout
+  summary: Logs out the user.
+- uid: <servername>.operationsmanager.operationsmanager.authentication.authenticationretrieveauthenticationmode
+  summary: Retrieves the authentication mode of the web server.

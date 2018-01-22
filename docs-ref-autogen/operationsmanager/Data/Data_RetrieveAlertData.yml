@@ -1,0 +1,113 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.dataretrievealertdata
+name: Data RetrieveAlertData
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the alert data for the specified scope/parameters.
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/alert
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved Alert data.
+  types:
+  - uid: TableDataResponse
+requestBody:
+- parameters:
+  - name: classId
+    in: body
+    description: "  \nSpecify the class ID."
+    types:
+    - uid: string
+  - name: objectIds
+    in: body
+    description: "  \nSpecify an array of object IDs."
+    types:
+    - uid: object
+      isDictionary: true
+      additionalTypes:
+      - uid: string
+      - uid: integer
+  - name: criteria
+    in: body
+    description: "  \nSpecify the criteria (like severity, priority, resolution state and so on)."
+    types:
+    - uid: string
+  - name: displayColumns
+    in: body
+    description: "  \nSpecify the columns which needs to be displayed."
+    types:
+    - uid: string
+      isArray: true
+requestHeader: []
+definitions:
+- name: TableDataResponse
+  kind: object
+  properties:
+  - name: tableColumns
+    description: "  "
+    types:
+    - uid: TableColumn
+      isArray: true
+  - name: rows
+    description: "  "
+    types:
+    - uid: object
+      isArray: true
+- name: DataRequest
+  kind: object
+  properties:
+  - name: classId
+    description: "  \nSpecify the class ID."
+    types:
+    - uid: string
+  - name: objectIds
+    description: "  \nSpecify an array of object IDs."
+    types:
+    - uid: object
+      isDictionary: true
+      additionalTypes:
+      - uid: string
+      - uid: integer
+  - name: criteria
+    description: "  \nSpecify the criteria (like severity, priority, resolution state and so on)."
+    types:
+    - uid: string
+  - name: displayColumns
+    description: "  \nSpecify the columns which needs to be displayed."
+    types:
+    - uid: string
+      isArray: true
+- name: TableColumn
+  kind: object
+  properties:
+  - name: field
+    description: "  \nName of the column."
+    types:
+    - uid: string
+  - name: header
+    description: "  \nHeader of the column."
+    types:
+    - uid: string
+  - name: type
+    description: "  \nType of the column."
+    types:
+    - uid: string
+  - name: hidden
+    description: "  \nIs the column hidden."
+    types:
+    - uid: boolean
+examples: []
+security: []

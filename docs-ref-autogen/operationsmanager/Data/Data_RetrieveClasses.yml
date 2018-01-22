@@ -1,0 +1,67 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.dataretrieveclasses
+name: Data RetrieveClasses
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the list of classes and thier respective properties.
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/scomClasses
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved the list of classes and thier respective properties.
+  types:
+  - uid: ScopeDataResponse
+requestBody:
+- parameters:
+  - name: criteria
+    in: body
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: ScopeDataResponse
+  kind: object
+  properties:
+  - name: scopeDatas
+    description: "  "
+    types:
+    - uid: ScopeData
+      isArray: true
+- name: ScopeData
+  kind: object
+  properties:
+  - name: id
+    description: "  \nID."
+    types:
+    - uid: string
+  - name: displayName
+    description: "  \nDisplay name."
+    types:
+    - uid: string
+  - name: className
+    description: "  \nClass name."
+    types:
+    - uid: string
+  - name: path
+    description: "  \nPath."
+    types:
+    - uid: string
+  - name: fullName
+    description: "  \nFull name."
+    types:
+    - uid: string
+examples: []
+security: []
