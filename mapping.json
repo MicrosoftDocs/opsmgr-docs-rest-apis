@@ -4,10 +4,10 @@
   "organizations": [{
     "name": "",
     "index": "index.md",
-    "default_toc_title": "Getting Started with REST",
+    "default_toc_title": "Getting Started",
     "services": [{
-      "toc_title":"opsmgr",
-      "url_group":"opsmgr",
+      "toc_title":"Operations Manager",
+      "url_group":"operationsmanager",
       "swagger_files":[
         {
           "source":"opsmgr/opsmgr.yaml"
