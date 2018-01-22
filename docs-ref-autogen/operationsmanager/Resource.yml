@@ -4,11 +4,11 @@ name: Resource
 apiVersion: v1
 service: Operations Manager
 operations:
+- uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertcolumns
+  summary: Retrieves the list of columns associated with the alerts.
 - uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertpriority
   summary: Retrieves alert priority.
 - uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertresolutionstates
   summary: Retrieves alert resolution states.
 - uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertseverity
   summary: Retrieves alert severity.
-- uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertwidgetcolumns
-  summary: Retrieves the list of columns associated with the alerts.

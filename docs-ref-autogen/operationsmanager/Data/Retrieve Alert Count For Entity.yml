@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
-uid: <servername>.operationsmanager.operationsmanager.data.statebyentityid
-name: state By Entity Id
+uid: <servername>.operationsmanager.operationsmanager.data.retrievealertcountforentity
+name: Retrieve Alert Count For Entity
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the health state of the specified entity ID.
+summary: Retrieves the number of alerts associated with the specified entity ID.
 consumes: []
 produces:
 - application/json
@@ -12,7 +12,7 @@ produces:
 - application/xml
 - text/xml
 paths:
-- content: GET http://<Servername>/OperationsManager/data/healthstate/{entityId}
+- content: GET http://<Servername>/OperationsManager/data/alertCount/{entityId}
 uriParameters:
 - name: entityId
   in: path
@@ -22,9 +22,9 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Health State.
+  description: OK. Successfully retrieved Alert Count.
   types:
-  - uid: string
+  - uid: integer
 requestHeader: []
 definitions: []
 examples: []

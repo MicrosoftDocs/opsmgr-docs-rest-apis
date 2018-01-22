@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
-uid: <servername>.operationsmanager.operationsmanager.data.savecompanyknowledgearticle
-name: Save Company Knowledge Article
+uid: <servername>.operationsmanager.operationsmanager.data.savecompanyknowledge
+name: Save Company Knowledge
 service: Operations Manager
 groupName: Data
 apiVersion: v1

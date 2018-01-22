@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrievepowershelloutput
-name: Retrieve Power Shell Output
+name: Retrieve PowerShell Output
 service: Operations Manager
 groupName: Data
 apiVersion: v1

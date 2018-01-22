@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
-uid: <servername>.operationsmanager.operationsmanager.data.getunsealedmanagementpacks
-name: Get Unsealed Management Packs
+uid: <servername>.operationsmanager.operationsmanager.data.retrieveunsealedmanagementpacks
+name: Retrieve Unsealed Management Packs
 service: Operations Manager
 groupName: Data
 apiVersion: v1

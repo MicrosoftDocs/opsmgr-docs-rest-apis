@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
-uid: <servername>.operationsmanager.operationsmanager.data.getfavoritefolderstree
-name: Get Favorite Folders Tree
+uid: <servername>.operationsmanager.operationsmanager.data.retrieveitemsinmonitoringtreeview
+name: Retrieve Items In Monitoring Tree View
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the list of views/dashboards available in the favorite folders.
+summary: Retrieves the list of views/dashboards/folders available in the Monitoring tree view.
 consumes: []
 produces:
 - application/json
@@ -12,11 +12,11 @@ produces:
 - application/xml
 - text/xml
 paths:
-- content: GET http://<Servername>/OperationsManager/data/favoriteFoldersTree
+- content: GET http://<Servername>/OperationsManager/data/monitoringTree
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of views/dashboards available in the favorite folders.
+  description: OK. Successfully retrieved the list of views/dashboards/folders available in the Monitoring tree view.
   types:
   - uid: TreeViewResponse
 requestHeader: []

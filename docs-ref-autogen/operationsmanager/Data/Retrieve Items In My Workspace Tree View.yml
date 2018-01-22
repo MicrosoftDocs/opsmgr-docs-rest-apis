@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
-uid: <servername>.operationsmanager.operationsmanager.data.getmyworkspacetree
-name: Get My Workspace Tree
+uid: <servername>.operationsmanager.operationsmanager.data.retrieveitemsinmyworkspacetreeview
+name: Retrieve Items In My Workspace Tree View
 service: Operations Manager
 groupName: Data
 apiVersion: v1

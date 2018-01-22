@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
-uid: <servername>.operationsmanager.operationsmanager.component.updatedashboarddetails
-name: Update Dashboard Details
+uid: <servername>.operationsmanager.operationsmanager.component.updatedashboardproperties
+name: Update Dashboard Properties
 service: Operations Manager
 groupName: Component
 apiVersion: v1

@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
-uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertwidgetcolumns
-name: Retrieve Alert Widget Columns
+uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertcolumns
+name: Retrieve Alert Columns
 service: Operations Manager
 groupName: Resource
 apiVersion: v1
