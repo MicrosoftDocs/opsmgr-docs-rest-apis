@@ -1,0 +1,64 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.setalertresolutionstates
+name: Set Alert Resolution States
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the alert resolution state for the specified alert(s).
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/alertResolutionStates
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved Alert Resolution State.
+  types:
+  - uid: boolean
+requestBody:
+- parameters:
+  - name: alertIds
+    in: body
+    description: "  "
+    types:
+    - uid: string
+      isArray: true
+  - name: resolutionState
+    in: body
+    description: "  \nResolution state."
+    types:
+    - uid: integer
+  - name: comment
+    in: body
+    description: "  \nComment."
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: ResolutionStateRequest
+  kind: object
+  properties:
+  - name: alertIds
+    description: "  "
+    types:
+    - uid: string
+      isArray: true
+  - name: resolutionState
+    description: "  \nResolution state."
+    types:
+    - uid: integer
+  - name: comment
+    description: "  \nComment."
+    types:
+    - uid: string
+examples: []
+security: []

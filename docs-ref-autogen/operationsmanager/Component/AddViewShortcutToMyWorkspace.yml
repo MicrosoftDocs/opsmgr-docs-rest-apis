@@ -1,0 +1,53 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.component.addviewshortcuttomyworkspace
+name: Add View Shortcut To My Workspace
+service: Operations Manager
+groupName: Component
+apiVersion: v1
+summary: Adds a shortcut to Monitoring view in My Workspace
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/component/viewshortcut
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully added a shortcut to Monitoring view in My Workspace.
+  types:
+  - uid: object
+requestBody:
+- parameters:
+  - name: path
+    in: body
+    description: "  \nSpecify the path."
+    types:
+    - uid: string
+  - name: componentID
+    in: body
+    description: "  \nSpecify the component ID."
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: ViewShortcutRequest
+  kind: object
+  properties:
+  - name: path
+    description: "  \nSpecify the path."
+    types:
+    - uid: string
+  - name: componentID
+    description: "  \nSpecify the component ID."
+    types:
+    - uid: string
+examples: []
+security: []

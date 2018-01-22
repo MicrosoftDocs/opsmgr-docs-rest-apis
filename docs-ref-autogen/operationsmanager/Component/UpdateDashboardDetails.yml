@@ -1,0 +1,139 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.component.updatedashboarddetails
+name: Update Dashboard Details
+service: Operations Manager
+groupName: Component
+apiVersion: v1
+summary: Updates the properties or configurations of a dashboard and the widgets available in a specific dashboard.
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: PUT http://<Servername>/OperationsManager/component/dashboard/{dashboardId}/widgets
+uriParameters:
+- name: dashboardId
+  in: path
+  isRequired: true
+  description: Sepcify the dashboard ID.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK. Successfully Updated the properties or configurations of a dashboard and the widgets available in a specific dashboard.
+  types:
+  - uid: boolean
+requestBody:
+- parameters:
+  - name: dashboard
+    in: body
+    description: "  "
+    types:
+    - uid: ComponentRequest
+  - name: widgets
+    in: body
+    description: "  "
+    types:
+    - uid: WidgetRequest
+      isArray: true
+requestHeader: []
+definitions:
+- name: ComponentRequest
+  kind: object
+  properties:
+  - name: name
+    description: "  \nSpecify the Dashboard/Widget name."
+    types:
+    - uid: string
+  - name: description
+    description: "  \nSpecifiy the Dashboard/Widget description."
+    types:
+    - uid: string
+  - name: mpId
+    description: "  \nSpecify the management pack ID incase you would like to utilize an existing unsealed management pack for the operation."
+    types:
+    - uid: string
+  - name: mpName
+    description: "  \nSpecify the management pack name. If you would like to perform the operation in a new management pack then specify the management pack name."
+    types:
+    - uid: string
+  - name: mpVersion
+    description: "  \nSpecify the management pack version."
+    types:
+    - uid: string
+  - name: mpDescription
+    description: "  \nSpecify the management pack description."
+    types:
+    - uid: string
+  - name: config
+    description: "  \nSpecify the configuration."
+    types:
+    - uid: string
+  - name: componentType
+    description: "  \nSpecify the Type of widget"
+    types:
+    - uid: string
+  - name: id
+    description: "  \nSpecify the ID of Dashboard/Widget in case of Updating Dashboard/Widget"
+    types:
+    - uid: string
+- name: WidgetRequest
+  kind: object
+  properties:
+  - name: id
+    description: "  \nSpecify ID of the widget."
+    types:
+    - uid: string
+  - name: name
+    description: "  \nSpecify the name of the widget."
+    types:
+    - uid: string
+  - name: description
+    description: "  \nSpecify the description of the widget."
+    types:
+    - uid: string
+  - name: mpId
+    description: "  \nSpecify the management pack ID."
+    types:
+    - uid: string
+  - name: mpName
+    description: "  \nSpecify the management pack name."
+    types:
+    - uid: string
+  - name: mpVersion
+    description: "  \nSpecify the version of the management pack."
+    types:
+    - uid: string
+  - name: mpDescription
+    description: "  \nSpecify the description of the management pack."
+    types:
+    - uid: string
+  - name: config
+    description: "  \nSpecify the configuration of the widget."
+    types:
+    - uid: string
+  - name: componentType
+    description: "  \nSpecify the type of widget."
+    types:
+    - uid: string
+- name: UpdateDashboard
+  kind: object
+  properties:
+  - name: dashboard
+    description: "  "
+    types:
+    - uid: ComponentRequest
+  - name: widgets
+    description: "  "
+    types:
+    - uid: WidgetRequest
+      isArray: true
+examples: []
+security: []

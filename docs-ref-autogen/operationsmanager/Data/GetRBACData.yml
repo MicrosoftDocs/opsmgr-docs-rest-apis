@@ -1,0 +1,59 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.getrbacdata
+name: Get RBAC Data
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the actions associated with dashboard.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/DashboardActions/{dashboardId}
+uriParameters:
+- name: dashboardId
+  in: path
+  isRequired: true
+  description: Specify the dashboard ID.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: DashboardActionsResponse
+requestHeader: []
+definitions:
+- name: DashboardActionsResponse
+  kind: object
+  properties:
+  - name: dashboardActions
+    description: "  "
+    types:
+    - uid: RBACActions
+      isArray: true
+  - name: widgetActions
+    description: "  "
+    types:
+    - uid: RBACActions
+      isArray: true
+- name: RBACActions
+  kind: object
+  properties:
+  - name: id
+    description: "  \nID."
+    types:
+    - uid: string
+  - name: displayName
+    description: "  \nDisplay name."
+    types:
+    - uid: string
+  - name: enabled
+    description: "  \nIs enabled."
+    types:
+    - uid: boolean
+examples: []
+security: []

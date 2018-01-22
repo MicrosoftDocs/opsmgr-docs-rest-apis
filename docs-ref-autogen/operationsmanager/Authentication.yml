@@ -4,9 +4,9 @@ name: Authentication
 apiVersion: v1
 service: Operations Manager
 operations:
-- uid: <servername>.operationsmanager.operationsmanager.authentication.authenticationlogin
+- uid: <servername>.operationsmanager.operationsmanager.authentication.login
   summary: Authenticates the user.
-- uid: <servername>.operationsmanager.operationsmanager.authentication.authenticationlogout
+- uid: <servername>.operationsmanager.operationsmanager.authentication.logout
   summary: Logs out the user.
-- uid: <servername>.operationsmanager.operationsmanager.authentication.authenticationretrieveauthenticationmode
+- uid: <servername>.operationsmanager.operationsmanager.authentication.retrieveauthenticationmode
   summary: Retrieves the authentication mode of the web server.

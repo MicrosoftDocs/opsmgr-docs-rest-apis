@@ -4,69 +4,69 @@ name: Data
 apiVersion: v1
 service: Operations Manager
 operations:
-- uid: <servername>.operationsmanager.operationsmanager.data.datagetfavoritefolderstree
+- uid: <servername>.operationsmanager.operationsmanager.data.getfavoritefolderstree
   summary: Retrieves the list of views/dashboards available in the favorite folders.
-- uid: <servername>.operationsmanager.operationsmanager.data.datagetmonitoringtree
+- uid: <servername>.operationsmanager.operationsmanager.data.getmonitoringtree
   summary: Retrieves the list of views/dashboards/folders available in the Monitoring tree view.
-- uid: <servername>.operationsmanager.operationsmanager.data.datagetmyworkspacetree
+- uid: <servername>.operationsmanager.operationsmanager.data.getmyworkspacetree
   summary: Retrieves the list of views/dashboards/folder available in the My Workspace tree view.
-- uid: <servername>.operationsmanager.operationsmanager.data.datagetrbacdata
+- uid: <servername>.operationsmanager.operationsmanager.data.getrbacdata
   summary: Retrieves the actions associated with dashboard.
-- uid: <servername>.operationsmanager.operationsmanager.data.datagettaskpanedata
+- uid: <servername>.operationsmanager.operationsmanager.data.gettaskpanedata
   summary: Retrieves the list of tasks and thier respective properties.
-- uid: <servername>.operationsmanager.operationsmanager.data.datagettaskresult
+- uid: <servername>.operationsmanager.operationsmanager.data.gettaskresult
   summary: Retrieves the result of an executing task.
-- uid: <servername>.operationsmanager.operationsmanager.data.datagetunsealedmanagementpacks
+- uid: <servername>.operationsmanager.operationsmanager.data.getunsealedmanagementpacks
   summary: Retrieve the list of unsealead management packs.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievealertcountbyid
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievealertcountbyid
   summary: Retrieves the number of alerts associated with the specified entity ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievealertdata
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievealertdata
   summary: Retrieves the alert data for the specified scope/parameters.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievealertinformation
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievealertinformation
   summary: Retrieves the alert properties for the specified alert.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrieveclasses
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveclasses
   summary: Retrieves the list of classes and thier respective properties.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrieveclassinformation
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveclassinformation
   summary: Retrieves the class properties for the specified class ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrieveentityname
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveentityname
   summary: Retrieves the entity name for the specified entity ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievegroupdata
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievegroupdata
   summary: Retrieves the groups based on the specified criteria.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievemonitorinformation
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitorinformation
   summary: Retrieves the monitor properties for the specified monitor ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievemonitoringdata
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringdata
   summary: Retrieves the monitoring data of the specified entity ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievemonitoringknowledgearticle
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringknowledgearticle
   summary: Retrieves the knowledge article for the specified element type and element ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievemonitoringobjectinformation
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringobjectinformation
   summary: Retrieves the Objects details (like object properties, related objects and classs information) for the specificed object.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievemonitoringobjectproperties
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringobjectproperties
   summary: Retrieves the monitoring Object properties.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievemonitorsforclasses
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitorsforclasses
   summary: Retrieve the list of monitors and thier respective properties associated with a specific class.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievemonitorsforobjects
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitorsforobjects
   summary: Retrieve the list of monitors and thier respective properties associated with a specific object.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrieveobjectdata
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveobjectdata
   summary: Retrieves the objects based on the specified criteria.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrieveperformancecounters
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveperformancecounters
   summary: Retrieves the list of performance counters associated with the specified enitity ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrieveperformancedata
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveperformancedata
   summary: Retrieves the performance data for the specified scope/parameters.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievepowershelloutput
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievepowershelloutput
   summary: Retrieves the data after executing the specified PowerShell script.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrieveruleinformation
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveruleinformation
   summary: Retrieves the rule properties for the specified rule ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrieverules
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieverules
   summary: Retrieve the list of rules and thier respective properties based on the specified criteria.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievestatedata
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievestatedata
   summary: Retrieves the health (state) data for the specified scope/parameters.
-- uid: <servername>.operationsmanager.operationsmanager.data.dataretrievestatewidgetcolumns
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievestatewidgetcolumns
   summary: Retrieves the state columns applicable for the specified entity ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.datasavecompanyknowledgearticle
+- uid: <servername>.operationsmanager.operationsmanager.data.savecompanyknowledgearticle
   summary: Retrieves the company knowledge of the specified entity.
-- uid: <servername>.operationsmanager.operationsmanager.data.datasetalertresolutionstates
+- uid: <servername>.operationsmanager.operationsmanager.data.setalertresolutionstates
   summary: Retrieves the alert resolution state for the specified alert(s).
-- uid: <servername>.operationsmanager.operationsmanager.data.datastatebyentityid
+- uid: <servername>.operationsmanager.operationsmanager.data.statebyentityid
   summary: Retrieves the health state of the specified entity ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.datasubmittaskforexecution
+- uid: <servername>.operationsmanager.operationsmanager.data.submittaskforexecution
   summary: Submits a task for its execution.

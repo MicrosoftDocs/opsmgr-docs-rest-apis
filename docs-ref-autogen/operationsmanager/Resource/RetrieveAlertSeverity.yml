@@ -1,0 +1,41 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertseverity
+name: Retrieve Alert Severity
+service: Operations Manager
+groupName: Resource
+apiVersion: v1
+summary: Retrieves alert severity.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/resources/alertSeverity
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved alert severity.
+  types:
+  - uid: Resource
+    isArray: true
+requestHeader: []
+definitions:
+- name: Resource
+  kind: object
+  properties:
+  - name: name
+    description: "  \nName."
+    types:
+    - uid: string
+  - name: value
+    description: "  \nValue."
+    types:
+    - uid: string
+  - name: selected
+    description: "  \nIs selected."
+    types:
+    - uid: boolean
+examples: []
+security: []

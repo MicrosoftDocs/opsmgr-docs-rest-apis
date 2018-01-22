@@ -1,0 +1,25 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.authentication.logout
+name: Logout
+service: Operations Manager
+groupName: Authentication
+apiVersion: v1
+summary: Logs out the user.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/signout
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Sign out successfull.
+  types:
+  - uid: object
+requestHeader: []
+definitions: []
+examples: []
+security: []

@@ -4,5 +4,5 @@ name: Network Monitoring
 apiVersion: v1
 service: Operations Manager
 operations:
-- uid: <servername>.operationsmanager.operationsmanager.networkmonitoring.networkmonitoringgetnetworkmonitoringresponsedata
+- uid: <servername>.operationsmanager.operationsmanager.networkmonitoring.getnetworkmonitoringresponsedata
   summary: Retrieves data for Network devices and Interfaces.
