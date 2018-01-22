@@ -18,14 +18,14 @@
         ],
         "exclude": [
         ],
-        "dest":"api/opsmgr"
+        "dest":"api/OperationsManager"
       },
       {
         "src":".",
         "files": [
           "index.md"
         ],
-        "dest":"opsmgr"
+        "dest":"OperationsManager"
       },
       {
         "files": [
