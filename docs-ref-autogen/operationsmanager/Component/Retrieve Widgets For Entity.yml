@@ -4,7 +4,7 @@ name: Retrieve Widgets For Entity
 service: Operations Manager
 groupName: Component
 apiVersion: v1
-summary: 'Retrieves the widgets for the dashboard and entity. NOTE: This only supports fetching widgets for Performance Dashboard.'
+summary: 'Retrieves the widgets for the dashboard and entity. NOTE: This only supports retrieving widgets for a Performance dashboard.'
 consumes: []
 produces:
 - application/json
@@ -28,7 +28,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully Retrieved the widgets for the dashboard and entity.
+  description: OK. Successfully retrieved the widgets for the dashboard and entity.
   types:
   - uid: ComponentResponse
     isArray: true
@@ -38,19 +38,19 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: "  \nDashboard/Widget ID."
+    description: "  \nDashboard or widget ID."
     types:
     - uid: string
   - name: name
-    description: "  \nName of the dashbaord/widget."
+    description: "  \nName of the dashbaord or widget."
     types:
     - uid: string
   - name: description
-    description: "  \nDescription of the dashboard/widget."
+    description: "  \nDescription of the dashboard or widget."
     types:
     - uid: string
   - name: mpId
-    description: "  \nID of the management pack in which the dashbaord/widget is saved."
+    description: "  \nID of the management pack where dashbaord or widget is saved."
     types:
     - uid: string
   - name: componentType

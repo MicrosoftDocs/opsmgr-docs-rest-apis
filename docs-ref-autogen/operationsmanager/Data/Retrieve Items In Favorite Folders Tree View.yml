@@ -4,7 +4,7 @@ name: Retrieve Items In Favorite Folders Tree View
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the list of views/dashboards available in the favorite folders.
+summary: Retrieves the list of views/dashboards available in the Favorite views folder.
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of views/dashboards available in the favorite folders.
+  description: OK. Successfully retrieved the list of views/dashboards available in the Favorites view folder.
   types:
   - uid: TreeViewResponse
 requestHeader: []

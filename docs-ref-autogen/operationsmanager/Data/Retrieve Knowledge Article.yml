@@ -28,7 +28,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Knowledge Article.
+  description: OK. Successfully retrieved knowledge article.
   types:
   - uid: KnowledgeArticleResponse
     isArray: true

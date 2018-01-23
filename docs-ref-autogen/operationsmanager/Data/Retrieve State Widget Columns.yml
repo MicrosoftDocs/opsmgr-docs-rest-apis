@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved State columns.
+  description: OK. Successfully retrieved state columns.
   types:
   - uid: HeaderColumns
     isArray: true

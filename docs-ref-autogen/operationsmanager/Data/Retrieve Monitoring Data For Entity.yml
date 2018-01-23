@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Monitoring data.
+  description: OK. Successfully retrieved monitoring data.
   types:
   - uid: MonitoringDataResponse
 requestHeader: []

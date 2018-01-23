@@ -11,7 +11,7 @@ operations:
 - uid: <servername>.operationsmanager.operationsmanager.component.addviewshortcuttomyworkspace
   summary: Adds a shortcut to Monitoring view in My Workspace
 - uid: <servername>.operationsmanager.operationsmanager.component.addwidget
-  summary: Adds a widget in a exisitng dashbaord.
+  summary: Adds a widget to an exisitng dashbaord.
 - uid: <servername>.operationsmanager.operationsmanager.component.deletedashboard
   summary: Deletes a specific dashboard and the widgets contained inside it.
 - uid: <servername>.operationsmanager.operationsmanager.component.deletefolderfrommyworkspace
@@ -21,7 +21,7 @@ operations:
 - uid: <servername>.operationsmanager.operationsmanager.component.deleteviewshortcutfrommyworkspace
   summary: Deletes a view shortcut from My Workspace
 - uid: <servername>.operationsmanager.operationsmanager.component.deletewidget
-  summary: Deletes a widget from a specific dashbaord.
+  summary: Deletes a widget from a specific dashboard.
 - uid: <servername>.operationsmanager.operationsmanager.component.retrievedashboard
   summary: Retrieves the dashboard properties and configuration.
 - uid: <servername>.operationsmanager.operationsmanager.component.retrievedashboardsforobject
@@ -29,9 +29,9 @@ operations:
 - uid: <servername>.operationsmanager.operationsmanager.component.retrievewidget
   summary: Retrieves the widget properties and configuration.
 - uid: <servername>.operationsmanager.operationsmanager.component.retrievewidgetsforentity
-  summary: 'Retrieves the widgets for the dashboard and entity. NOTE: This only supports fetching widgets for Performance Dashboard.'
+  summary: 'Retrieves the widgets for the dashboard and entity. NOTE: This only supports retrieving widgets for a Performance dashboard.'
 - uid: <servername>.operationsmanager.operationsmanager.component.retrievewidgets
-  summary: Retrieves the properties and configuration of all the widgets present in a particular dashbaord.
+  summary: Retrieves the properties and configuration of all the widgets defined in a specific dashbaord.
 - uid: <servername>.operationsmanager.operationsmanager.component.updatedashboardproperties
   summary: Updates the properties or configurations of a dashboard and the widgets available in a specific dashboard.
 - uid: <servername>.operationsmanager.operationsmanager.component.updatewidget

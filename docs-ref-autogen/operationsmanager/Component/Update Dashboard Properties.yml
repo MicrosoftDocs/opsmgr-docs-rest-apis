@@ -27,7 +27,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully Updated the properties or configurations of a dashboard and the widgets available in a specific dashboard.
+  description: OK. Successfully updated the properties or configurations of a dashboard and the widgets available in a specific dashboard.
   types:
   - uid: boolean
 requestBody:
@@ -49,15 +49,15 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: "  \nSpecify the Dashboard/Widget name."
+    description: "  \nSpecify the dashboard or widget name."
     types:
     - uid: string
   - name: description
-    description: "  \nSpecifiy the Dashboard/Widget description."
+    description: "  \nSpecifiy the dashboard or widget description."
     types:
     - uid: string
   - name: mpId
-    description: "  \nSpecify the management pack ID incase you would like to utilize an existing unsealed management pack for the operation."
+    description: "  \nSpecify the management pack ID if you would like to utilize an existing unsealed management pack for the operation."
     types:
     - uid: string
   - name: mpName
@@ -77,11 +77,11 @@ definitions:
     types:
     - uid: string
   - name: componentType
-    description: "  \nSpecify the Type of widget"
+    description: "  \nSpecify the type of widget"
     types:
     - uid: string
   - name: id
-    description: "  \nSpecify the ID of Dashboard/Widget in case of Updating Dashboard/Widget"
+    description: "  \nSpecify the ID of Dashboard/Widget when updating dashboard or widget"
     types:
     - uid: string
 - name: WidgetRequest

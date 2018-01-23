@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Class Information.
+  description: OK. Successfully retrieved class properties.
   types:
   - uid: ClassDataResponse
 requestHeader: []
@@ -60,7 +60,7 @@ definitions:
     types:
     - uid: string
   - name: timeAdded
-    description: "  \nTime the class has been added."
+    description: "  \nTime the class was added."
     types:
     - uid: string
   - name: baseMonitoringClass

@@ -32,19 +32,19 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: "  \nDashboard/Widget ID."
+    description: "  \nDashboard or widget ID."
     types:
     - uid: string
   - name: name
-    description: "  \nName of the dashbaord/widget."
+    description: "  \nName of the dashbaord or widget."
     types:
     - uid: string
   - name: description
-    description: "  \nDescription of the dashboard/widget."
+    description: "  \nDescription of the dashboard or widget."
     types:
     - uid: string
   - name: mpId
-    description: "  \nID of the management pack in which the dashbaord/widget is saved."
+    description: "  \nID of the management pack where dashbaord or widget is saved."
     types:
     - uid: string
   - name: componentType

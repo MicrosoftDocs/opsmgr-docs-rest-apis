@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully Deleted a specific dashboard and the widgets contained inside it.
+  description: OK. Successfully deleted a specific dashboard and the widgets contained inside it.
   types:
   - uid: boolean
 requestHeader: []

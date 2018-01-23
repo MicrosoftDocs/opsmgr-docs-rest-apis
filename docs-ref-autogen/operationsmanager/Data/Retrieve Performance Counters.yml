@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Performance Counters.
+  description: OK. Successfully retrieved performance counters.
   types:
   - uid: PerformanceCounterDataResponse
 requestHeader: []

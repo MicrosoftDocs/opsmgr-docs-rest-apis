@@ -4,7 +4,7 @@ name: Retrieve Rules
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieve the list of rules and thier respective properties based on the specified criteria.
+summary: Retrieve the list of rules and thier properties based on the specified criteria.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of rules and thier respective properties based on the specified criteria.
+  description: OK. Successfully retrieved the list of rules and thier properties based on the specified criteria.
   types:
   - uid: RuleDataResponse
     isArray: true

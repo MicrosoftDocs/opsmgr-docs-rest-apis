@@ -4,7 +4,7 @@ name: Retrieve Monitors For Objects
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieve the list of monitors and thier respective properties associated with a specific object.
+summary: Retrieve the list of monitors and thier properties associated with a specific object.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of monitors and thier respective properties associated with a specific object.
+  description: OK. Successfully retrieved the list of monitors and thier properties associated with a specific object.
   types:
   - uid: MonitorDataResponse
     isArray: true
@@ -34,7 +34,7 @@ requestBody:
     - uid: string
   - name: showUnhealthyMonitorsOnly
     in: body
-    description: "  \nYou can choosse to visulaize only unhealthy monitors."
+    description: "  \nYou can choose to visulaize only unhealthy monitors."
     types:
     - uid: boolean
 requestHeader: []
@@ -102,7 +102,7 @@ definitions:
     types:
     - uid: string
   - name: showUnhealthyMonitorsOnly
-    description: "  \nYou can choosse to visulaize only unhealthy monitors."
+    description: "  \nYou can choose to visulaize only unhealthy monitors."
     types:
     - uid: boolean
 - name: MonitorTarget

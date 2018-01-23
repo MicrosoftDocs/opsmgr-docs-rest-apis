@@ -5,4 +5,4 @@ apiVersion: v1
 service: Operations Manager
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.networkmonitoring.retrievenetworkmonitoringdata
-  summary: Retrieves data for Network devices and Interfaces.
+  summary: Retrieves data for network devices and interfaces.

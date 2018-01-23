@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Rule Infromation.
+  description: OK. Successfully retrieved rule properties.
   types:
   - uid: RuleDataResponse
 requestHeader: []

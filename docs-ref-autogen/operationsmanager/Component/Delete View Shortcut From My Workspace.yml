@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.component.deleteviewshortcutfrommyworkspace
-name: Delete View Shortcut From My Workspace
+name: Delete view shortcut from My Workspace
 service: Operations Manager
 groupName: Component
 apiVersion: v1

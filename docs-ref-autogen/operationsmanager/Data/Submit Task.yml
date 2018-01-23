@@ -4,7 +4,7 @@ name: Submit Task
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Submits a task for its execution.
+summary: Submits a task for execution.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully submitted a task for its execution.
+  description: OK. Successfully submitted a task to be executed.
   types:
   - uid: string
 requestBody:

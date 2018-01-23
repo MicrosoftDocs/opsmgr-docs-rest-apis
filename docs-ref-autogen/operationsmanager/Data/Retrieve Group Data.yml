@@ -4,7 +4,7 @@ name: Retrieve Group Data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the groups based on the specified criteria.
+summary: Retrieves groups based on the specified criteria.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the groups based on the specified criteria.
+  description: OK. Successfully retrieved groups based on the specified criteria.
   types:
   - uid: ScopeDataResponse
 requestBody:

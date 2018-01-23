@@ -4,7 +4,7 @@ name: Retrieve Entity Name
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the entity name for the specified entity ID.
+summary: Retrieves entity name for the specified entity ID.
 consumes: []
 produces:
 - application/json
@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the entity name for the specified entity ID.
+  description: OK. Successfully retrieved entity name for the specified entity ID.
   types:
   - uid: string
 requestHeader: []

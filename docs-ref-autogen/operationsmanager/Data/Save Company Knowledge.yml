@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Knowledge Article.
+  description: OK. Successfully retrieved Company knowledge.
   types:
   - uid: boolean
 requestBody:

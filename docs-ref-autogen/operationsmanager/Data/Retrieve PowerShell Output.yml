@@ -4,7 +4,7 @@ name: Retrieve PowerShell Output
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the data after executing the specified PowerShell script.
+summary: Retrieves data after executing the specified PowerShell script.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the data after executing the specified PowerShell script.
+  description: OK. Successfully retrieved data after executing the specified PowerShell script.
   types:
   - uid: TableDataResponse
 requestBody:

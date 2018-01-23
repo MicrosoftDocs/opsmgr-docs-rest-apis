@@ -4,7 +4,7 @@ name: Logout
 service: Operations Manager
 groupName: Authentication
 apiVersion: v1
-summary: Logs out the user.
+summary: Sign off the current user.
 consumes: []
 produces:
 - application/json

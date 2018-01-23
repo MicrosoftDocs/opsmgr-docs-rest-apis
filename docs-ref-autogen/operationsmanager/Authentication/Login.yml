@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Login successfull.
+  description: OK. Sign on successfull.
   types:
   - uid: object
 requestBody:

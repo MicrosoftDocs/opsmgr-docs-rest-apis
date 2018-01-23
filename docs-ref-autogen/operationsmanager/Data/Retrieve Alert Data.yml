@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrievealertdata
-name: Retrieve Alert Data
+name: Retrieve Alert data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Alert data.
+  description: OK. Successfully retrieved alert data.
   types:
   - uid: TableDataResponse
 requestBody:
@@ -42,7 +42,7 @@ requestBody:
       - uid: integer
   - name: criteria
     in: body
-    description: "  \nSpecify the criteria (like severity, priority, resolution state and so on)."
+    description: "  \nSpecify the criteria (such as severity, priority, resolution state, etc.)."
     types:
     - uid: string
   - name: displayColumns
@@ -82,7 +82,7 @@ definitions:
       - uid: string
       - uid: integer
   - name: criteria
-    description: "  \nSpecify the criteria (like severity, priority, resolution state and so on)."
+    description: "  \nSpecify the criteria (such as severity, priority, resolution state, etc.)."
     types:
     - uid: string
   - name: displayColumns

@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Alert Count.
+  description: OK. Successfully retrieved alert count.
   types:
   - uid: integer
 requestHeader: []

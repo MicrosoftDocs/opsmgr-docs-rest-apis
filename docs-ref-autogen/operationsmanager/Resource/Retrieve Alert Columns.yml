@@ -4,7 +4,7 @@ name: Retrieve Alert Columns
 service: Operations Manager
 groupName: Resource
 apiVersion: v1
-summary: Retrieves the list of columns associated with the alerts.
+summary: Retrieves the list of columns associated with alerts.
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of columns associated with the alerts.
+  description: OK. Successfully retrieved the list of columns associated with alerts.
   types:
   - uid: HeaderColumns
     isArray: true

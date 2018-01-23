@@ -4,7 +4,7 @@ name: Retrieve Task Result
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the result of an executing task.
+summary: Retrieves the result of an executed task.
 consumes: []
 produces:
 - application/json
@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the result of an executing task.
+  description: OK. Successfully retrieved the result of an executed task.
   types:
   - uid: TaskResultResponse
 requestHeader: []

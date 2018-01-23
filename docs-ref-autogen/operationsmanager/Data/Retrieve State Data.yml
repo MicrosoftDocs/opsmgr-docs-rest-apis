@@ -4,7 +4,7 @@ name: Retrieve State Data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the health (state) data for the specified scope/parameters.
+summary: Retrieves the health state data for the specified scope/parameters.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Health data.
+  description: OK. Successfully retrieved health state data.
   types:
   - uid: TableDataResponse
 requestBody:
@@ -42,7 +42,7 @@ requestBody:
       - uid: integer
   - name: criteria
     in: body
-    description: "  \nSpecify the criteria (like severity, priority, resolution state and so on)."
+    description: "  \nSpecify the criteria (such as severity, priority, resolution state, etc.)."
     types:
     - uid: string
   - name: displayColumns
@@ -82,7 +82,7 @@ definitions:
       - uid: string
       - uid: integer
   - name: criteria
-    description: "  \nSpecify the criteria (like severity, priority, resolution state and so on)."
+    description: "  \nSpecify the criteria (such as severity, priority, resolution state, etc.)."
     types:
     - uid: string
   - name: displayColumns

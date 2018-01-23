@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Performance data.
+  description: OK. Successfully retrieved performance data.
   types:
   - uid: PerformanceResponse
 requestBody:

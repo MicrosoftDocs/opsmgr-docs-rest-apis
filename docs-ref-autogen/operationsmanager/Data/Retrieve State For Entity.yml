@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Health State.
+  description: OK. Successfully retrieved health state.
   types:
   - uid: string
 requestHeader: []

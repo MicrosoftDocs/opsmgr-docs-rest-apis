@@ -4,7 +4,7 @@ name: Delete Widget
 service: Operations Manager
 groupName: Component
 apiVersion: v1
-summary: Deletes a widget from a specific dashbaord.
+summary: Deletes a widget from a specific dashboard.
 consumes: []
 produces:
 - application/json
@@ -23,7 +23,7 @@ uriParameters:
 - name: widgetId
   in: path
   isRequired: true
-  description: Specify the widget ID which needs to be deleted.
+  description: Specify the widget ID that needs to be deleted.
   types:
   - uid: string
 responses:

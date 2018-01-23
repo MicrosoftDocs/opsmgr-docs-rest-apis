@@ -4,7 +4,7 @@ name: Retrieve Monitors For Class
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieve the list of monitors and thier respective properties associated with a specific class.
+summary: Retrieve the list of monitors and thier properties associated with a specific class.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of monitors and thier respective properties associated with a specific class.
+  description: OK. Successfully retrieved the list of monitors and thier properties associated with a specific class.
   types:
   - uid: MonitorDataResponse
     isArray: true

@@ -4,7 +4,7 @@ name: Retrieve Network Monitoring Data
 service: Operations Manager
 groupName: Network Monitoring
 apiVersion: v1
-summary: Retrieves data for Network devices and Interfaces.
+summary: Retrieves data for network devices and interfaces.
 consumes: []
 produces:
 - application/json
@@ -17,7 +17,7 @@ uriParameters:
 - name: requestType
   in: path
   isRequired: true
-  description: 'Specify one of the following property (NodesWithHigestCpuUsage, NodesWithSlowestResponse, NodesWithSlowestResponse, InterfacesWithMostSentErrors, InterfacesWithMostReceivedErrors, NodesWithMostAlerts, InterfacesWithMostAlerts) '
+  description: Specify one of the following properties (NodesWithHigestCpuUsage, NodesWithSlowestResponse, NodesWithSlowestResponse, InterfacesWithMostSentErrors, InterfacesWithMostReceivedErrors, NodesWithMostAlerts, InterfacesWithMostAlerts)
   types:
   - uid: string
 responses:

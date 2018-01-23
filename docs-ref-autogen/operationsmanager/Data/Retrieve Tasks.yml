@@ -4,7 +4,7 @@ name: Retrieve Tasks
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the list of tasks and thier respective properties.
+summary: Retrieves the list of tasks and thier properties.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of tasks and thier respective properties.
+  description: OK. Successfully retrieved the list of tasks and thier properties.
   types:
   - uid: TaskListResponse
     isArray: true

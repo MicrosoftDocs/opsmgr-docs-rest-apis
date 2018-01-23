@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully created a Dashboard
+  description: OK. Successfully created a dashboard
   types:
   - uid: ComponentResponse
 requestBody:
@@ -29,17 +29,17 @@ requestBody:
   - name: name
     in: body
     isRequired: true
-    description: "  \nSpecify the Dashboard/Widget name."
+    description: "  \nSpecify the dashboard or widget name."
     types:
     - uid: string
   - name: description
     in: body
-    description: "  \nSpecifiy the Dashboard/Widget description."
+    description: "  \nSpecifiy the dashboard or widget description."
     types:
     - uid: string
   - name: mpId
     in: body
-    description: "  \nSpecify the management pack ID incase you would like to utilize an existing unsealed management pack for the operation."
+    description: "  \nSpecify the management pack ID if you would like to utilize an existing unsealed management pack for the operation."
     types:
     - uid: string
   - name: mpName
@@ -64,12 +64,12 @@ requestBody:
     - uid: string
   - name: componentType
     in: body
-    description: "  \nSpecify the Type of widget"
+    description: "  \nSpecify the type of widget"
     types:
     - uid: string
   - name: id
     in: body
-    description: "  \nSpecify the ID of Dashboard/Widget in case of Updating Dashboard/Widget"
+    description: "  \nSpecify the ID of Dashboard/Widget when updating dashboard or widget"
     types:
     - uid: string
 requestHeader: []
@@ -78,19 +78,19 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: "  \nDashboard/Widget ID."
+    description: "  \nDashboard or widget ID."
     types:
     - uid: string
   - name: name
-    description: "  \nName of the dashbaord/widget."
+    description: "  \nName of the dashbaord or widget."
     types:
     - uid: string
   - name: description
-    description: "  \nDescription of the dashboard/widget."
+    description: "  \nDescription of the dashboard or widget."
     types:
     - uid: string
   - name: mpId
-    description: "  \nID of the management pack in which the dashbaord/widget is saved."
+    description: "  \nID of the management pack where dashbaord or widget is saved."
     types:
     - uid: string
   - name: componentType
@@ -105,15 +105,15 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: "  \nSpecify the Dashboard/Widget name."
+    description: "  \nSpecify the dashboard or widget name."
     types:
     - uid: string
   - name: description
-    description: "  \nSpecifiy the Dashboard/Widget description."
+    description: "  \nSpecifiy the dashboard or widget description."
     types:
     - uid: string
   - name: mpId
-    description: "  \nSpecify the management pack ID incase you would like to utilize an existing unsealed management pack for the operation."
+    description: "  \nSpecify the management pack ID if you would like to utilize an existing unsealed management pack for the operation."
     types:
     - uid: string
   - name: mpName
@@ -133,11 +133,11 @@ definitions:
     types:
     - uid: string
   - name: componentType
-    description: "  \nSpecify the Type of widget"
+    description: "  \nSpecify the type of widget"
     types:
     - uid: string
   - name: id
-    description: "  \nSpecify the ID of Dashboard/Widget in case of Updating Dashboard/Widget"
+    description: "  \nSpecify the ID of Dashboard/Widget when updating dashboard or widget"
     types:
     - uid: string
 examples: []

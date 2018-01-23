@@ -13,13 +13,13 @@ operations:
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveclassinformation
   summary: Retrieves the class properties for the specified class ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveclasses
-  summary: Retrieves the list of classes and thier respective properties.
+  summary: Retrieves the list of classes and thier properties.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveentityname
-  summary: Retrieves the entity name for the specified entity ID.
+  summary: Retrieves entity name for the specified entity ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievegroupdata
-  summary: Retrieves the groups based on the specified criteria.
+  summary: Retrieves groups based on the specified criteria.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveitemsinfavoritefolderstreeview
-  summary: Retrieves the list of views/dashboards available in the favorite folders.
+  summary: Retrieves the list of views/dashboards available in the Favorite views folder.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveitemsinmonitoringtreeview
   summary: Retrieves the list of views/dashboards/folders available in the Monitoring tree view.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveitemsinmyworkspacetreeview
@@ -31,35 +31,35 @@ operations:
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringdataforentity
   summary: Retrieves the monitoring data of the specified entity ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringobjectinformation
-  summary: Retrieves the Objects details (like object properties, related objects and classs information) for the specificed object.
+  summary: Retrieves the objects details (like object properties, related objects and classs information) for the specificed object.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringobjectproperties
-  summary: Retrieves the monitoring Object properties.
+  summary: Retrieves the monitoring object properties.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitorsforclass
-  summary: Retrieve the list of monitors and thier respective properties associated with a specific class.
+  summary: Retrieve the list of monitors and thier properties associated with a specific class.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitorsforobjects
-  summary: Retrieve the list of monitors and thier respective properties associated with a specific object.
+  summary: Retrieve the list of monitors and thier properties associated with a specific object.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveobjectdata
-  summary: Retrieves the objects based on the specified criteria.
+  summary: Retrieves objects based on the specified criteria.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveperformancecounters
   summary: Retrieves the list of performance counters associated with the specified enitity ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveperformancedata
   summary: Retrieves the performance data for the specified scope/parameters.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievepowershelloutput
-  summary: Retrieves the data after executing the specified PowerShell script.
+  summary: Retrieves data after executing the specified PowerShell script.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveruleinformation
   summary: Retrieves the rule properties for the specified rule ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieverules
-  summary: Retrieve the list of rules and thier respective properties based on the specified criteria.
+  summary: Retrieve the list of rules and thier properties based on the specified criteria.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievestatedata
-  summary: Retrieves the health (state) data for the specified scope/parameters.
+  summary: Retrieves the health state data for the specified scope/parameters.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievestateforentity
   summary: Retrieves the health state of the specified entity ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievestatewidgetcolumns
   summary: Retrieves the state columns applicable for the specified entity ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievetaskresult
-  summary: Retrieves the result of an executing task.
+  summary: Retrieves the result of an executed task.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievetasks
-  summary: Retrieves the list of tasks and thier respective properties.
+  summary: Retrieves the list of tasks and thier properties.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveunsealedmanagementpacks
   summary: Retrieve the list of unsealead management packs.
 - uid: <servername>.operationsmanager.operationsmanager.data.savecompanyknowledge
@@ -67,4 +67,4 @@ operations:
 - uid: <servername>.operationsmanager.operationsmanager.data.setalertresolutionstates
   summary: Retrieves the alert resolution state for the specified alert(s).
 - uid: <servername>.operationsmanager.operationsmanager.data.submittask
-  summary: Submits a task for its execution.
+  summary: Submits a task for execution.

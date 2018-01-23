@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.component.deletefolderfrommyworkspace
-name: Delete Folder From My Workspace
+name: Delete folder from My Workspace
 service: Operations Manager
 groupName: Component
 apiVersion: v1
