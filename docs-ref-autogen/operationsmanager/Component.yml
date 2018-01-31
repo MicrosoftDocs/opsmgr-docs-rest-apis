@@ -6,20 +6,10 @@ service: Operations Manager
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.component.adddashboard
   summary: Creates a new dashboards with the specified properties.
-- uid: <servername>.operationsmanager.operationsmanager.component.addfoldertomyworkspace
-  summary: Adds a folder to My Workspace.
-- uid: <servername>.operationsmanager.operationsmanager.component.addviewshortcuttomyworkspace
-  summary: Adds a shortcut to Monitoring view in My Workspace
 - uid: <servername>.operationsmanager.operationsmanager.component.addwidget
   summary: Adds a widget to an exisitng dashbaord.
 - uid: <servername>.operationsmanager.operationsmanager.component.deletedashboard
   summary: Deletes a specific dashboard and the widgets contained inside it.
-- uid: <servername>.operationsmanager.operationsmanager.component.deletefolderfrommyworkspace
-  summary: Deletes a folder from My Workspace.
-- uid: <servername>.operationsmanager.operationsmanager.component.deleteusersearch
-  summary: Deletes a user search from My Workspace.
-- uid: <servername>.operationsmanager.operationsmanager.component.deleteviewshortcutfrommyworkspace
-  summary: Deletes a view shortcut from My Workspace
 - uid: <servername>.operationsmanager.operationsmanager.component.deletewidget
   summary: Deletes a widget from a specific dashboard.
 - uid: <servername>.operationsmanager.operationsmanager.component.retrievedashboard
