@@ -10,7 +10,7 @@
       "url_group":"operationsmanager",
       "swagger_files":[
         {
-          "source":"opsmgr/opsmgr.yaml"
+          "source":"opsmgr/swagger.yaml"
         }
       ]
     }]
