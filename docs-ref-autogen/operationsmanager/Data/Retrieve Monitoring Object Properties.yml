@@ -32,11 +32,10 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: "  \nName of the monitoring property."
+    description: Name of the monitoring property.
     types:
     - uid: string
   - name: value
-    description: "  "
     types:
     - uid: string
 examples: []

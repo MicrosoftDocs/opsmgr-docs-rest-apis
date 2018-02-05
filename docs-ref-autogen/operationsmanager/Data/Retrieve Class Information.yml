@@ -31,44 +31,40 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: "  \nClass ID."
+    description: Class ID.
     types:
     - uid: string
   - name: displayName
-    description: "  \nDisplay name of the class."
+    description: Display name of the class.
     types:
     - uid: string
   - name: childObjects
-    description: "  "
     types:
     - uid: ChildObject
       isArray: true
   - name: description
-    description: "  \nDescription of the class."
+    description: Description of the class.
     types:
     - uid: string
   - name: comment
-    description: "  "
     types:
     - uid: string
   - name: hosted
-    description: "  \nHost of the class."
+    description: Host of the class.
     types:
     - uid: string
   - name: status
-    description: "  \nStatus of the class."
+    description: Status of the class.
     types:
     - uid: string
   - name: timeAdded
-    description: "  \nTime the class was added."
+    description: Time the class was added.
     types:
     - uid: string
   - name: baseMonitoringClass
-    description: "  "
     types:
     - uid: BaseMonitoringClass
   - name: propertyCollection
-    description: "  "
     types:
     - uid: ClassProperty
       isArray: true
@@ -76,37 +72,37 @@ definitions:
   kind: object
   properties:
   - name: displayName
-    description: "  \nDisplay name of the child object."
+    description: Display name of the child object.
     types:
     - uid: string
   - name: id
-    description: "  \nID of the child object."
+    description: ID of the child object.
     types:
     - uid: string
   - name: healthState
-    description: "  \nHealth state of the child object."
+    description: Health state of the child object.
     types:
     - uid: string
 - name: BaseMonitoringClass
   kind: object
   properties:
   - name: id
-    description: "  \nID of the base monitoring class."
+    description: ID of the base monitoring class.
     types:
     - uid: string
   - name: displayName
-    description: "  \nDisplay name of the base monitoring class."
+    description: Display name of the base monitoring class.
     types:
     - uid: string
 - name: ClassProperty
   kind: object
   properties:
   - name: name
-    description: "  \nName of the class."
+    description: Name of the class.
     types:
     - uid: string
   - name: description
-    description: "  \nDescription of the class."
+    description: Description of the class.
     types:
     - uid: string
 examples: []

@@ -37,66 +37,65 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: "  \nMonitor ID."
+    description: Monitor ID.
     types:
     - uid: string
   - name: description
-    description: "  \nMonitor description."
+    description: Monitor description.
     types:
     - uid: string
   - name: name
-    description: "  \nMonitor name."
+    description: Monitor name.
     types:
     - uid: string
   - name: displayName
-    description: "  \nMonitor display name."
+    description: Monitor display name.
     types:
     - uid: string
   - name: comment
-    description: "  \nComment."
+    description: Comment.
     types:
     - uid: string
   - name: target
-    description: "  "
     types:
     - uid: MonitorTarget
   - name: monitorType
-    description: "  \nMonitor type."
+    description: Monitor type.
     types:
     - uid: string
   - name: category
-    description: "  \nMonitor category."
+    description: Monitor category.
     types:
     - uid: string
   - name: priority
-    description: "  \nMonitor priority."
+    description: Monitor priority.
     types:
     - uid: string
   - name: status
-    description: "  \nMonitor status."
+    description: Monitor status.
     types:
     - uid: string
   - name: enabled
-    description: "  \nIs monitor enabled."
+    description: Is monitor enabled.
     types:
     - uid: string
   - name: state
-    description: "  \nMonitor state."
+    description: Monitor state.
     types:
     - uid: string
   - name: lastModified
-    description: "  \nLast modified."
+    description: Last modified.
     types:
     - uid: string
 - name: MonitorTarget
   kind: object
   properties:
   - name: id
-    description: "  \nMonitor ID."
+    description: Monitor ID.
     types:
     - uid: string
   - name: displayName
-    description: "  \nMonitor display name."
+    description: Monitor display name.
     types:
     - uid: string
 examples: []

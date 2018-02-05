@@ -31,31 +31,31 @@ definitions:
   kind: object
   properties:
   - name: batchId
-    description: "  \nBatch ID."
+    description: Batch ID.
     types:
     - uid: string
   - name: taskName
-    description: "  \nTask name."
+    description: Task name.
     types:
     - uid: string
   - name: taskStatus
-    description: "  \nTask status."
+    description: Task status.
     types:
     - uid: string
   - name: taskTarget
-    description: "  \nTask target."
+    description: Task target.
     types:
     - uid: string
   - name: taskOutput
-    description: "  \nTask output."
+    description: Task output.
     types:
     - uid: string
   - name: errorCode
-    description: "  \nError code."
+    description: Error code.
     types:
     - uid: integer
   - name: errorMessage
-    description: "  \nError message."
+    description: Error message.
     types:
     - uid: string
 examples: []

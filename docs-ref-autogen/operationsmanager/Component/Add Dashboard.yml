@@ -29,47 +29,47 @@ requestBody:
   - name: name
     in: body
     isRequired: true
-    description: "  \nSpecify the dashboard or widget name."
+    description: Specify the dashboard or widget name.
     types:
     - uid: string
   - name: description
     in: body
-    description: "  \nSpecifiy the dashboard or widget description."
+    description: Specifiy the dashboard or widget description.
     types:
     - uid: string
   - name: mpId
     in: body
-    description: "  \nSpecify the management pack ID if you would like to utilize an existing unsealed management pack for the operation."
+    description: Specify the management pack ID if you would like to utilize an existing unsealed management pack for the operation.
     types:
     - uid: string
   - name: mpName
     in: body
-    description: "  \nSpecify the management pack name. If you would like to perform the operation in a new management pack then specify the management pack name."
+    description: Specify the management pack name. If you would like to perform the operation in a new management pack then specify the management pack name.
     types:
     - uid: string
   - name: mpVersion
     in: body
-    description: "  \nSpecify the management pack version."
+    description: Specify the management pack version.
     types:
     - uid: string
   - name: mpDescription
     in: body
-    description: "  \nSpecify the management pack description."
+    description: Specify the management pack description.
     types:
     - uid: string
   - name: config
     in: body
-    description: "  \nSpecify the configuration."
+    description: Specify the configuration.
     types:
     - uid: string
   - name: componentType
     in: body
-    description: "  \nSpecify the type of widget"
+    description: Specify the type of widget
     types:
     - uid: string
   - name: id
     in: body
-    description: "  \nSpecify the ID of Dashboard/Widget when updating dashboard or widget"
+    description: Specify the ID of Dashboard/Widget when updating dashboard or widget
     types:
     - uid: string
 requestHeader: []
@@ -78,66 +78,66 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: "  \nDashboard or widget ID."
+    description: Dashboard or widget ID.
     types:
     - uid: string
   - name: name
-    description: "  \nName of the dashbaord or widget."
+    description: Name of the dashbaord or widget.
     types:
     - uid: string
   - name: description
-    description: "  \nDescription of the dashboard or widget."
+    description: Description of the dashboard or widget.
     types:
     - uid: string
   - name: mpId
-    description: "  \nID of the management pack where dashbaord or widget is saved."
+    description: ID of the management pack where dashbaord or widget is saved.
     types:
     - uid: string
   - name: componentType
-    description: "  \nType of the component."
+    description: Type of the component.
     types:
     - uid: string
   - name: config
-    description: "  \nConfiguration of the dashbaord."
+    description: Configuration of the dashbaord.
     types:
     - uid: string
 - name: ComponentRequest
   kind: object
   properties:
   - name: name
-    description: "  \nSpecify the dashboard or widget name."
+    description: Specify the dashboard or widget name.
     types:
     - uid: string
   - name: description
-    description: "  \nSpecifiy the dashboard or widget description."
+    description: Specifiy the dashboard or widget description.
     types:
     - uid: string
   - name: mpId
-    description: "  \nSpecify the management pack ID if you would like to utilize an existing unsealed management pack for the operation."
+    description: Specify the management pack ID if you would like to utilize an existing unsealed management pack for the operation.
     types:
     - uid: string
   - name: mpName
-    description: "  \nSpecify the management pack name. If you would like to perform the operation in a new management pack then specify the management pack name."
+    description: Specify the management pack name. If you would like to perform the operation in a new management pack then specify the management pack name.
     types:
     - uid: string
   - name: mpVersion
-    description: "  \nSpecify the management pack version."
+    description: Specify the management pack version.
     types:
     - uid: string
   - name: mpDescription
-    description: "  \nSpecify the management pack description."
+    description: Specify the management pack description.
     types:
     - uid: string
   - name: config
-    description: "  \nSpecify the configuration."
+    description: Specify the configuration.
     types:
     - uid: string
   - name: componentType
-    description: "  \nSpecify the type of widget"
+    description: Specify the type of widget
     types:
     - uid: string
   - name: id
-    description: "  \nSpecify the ID of Dashboard/Widget when updating dashboard or widget"
+    description: Specify the ID of Dashboard/Widget when updating dashboard or widget
     types:
     - uid: string
 examples: []

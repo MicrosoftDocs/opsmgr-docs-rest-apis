@@ -31,7 +31,6 @@ definitions:
   kind: object
   properties:
   - name: performanceCounterDatas
-    description: "  "
     types:
     - uid: PerformanceCounterData
       isArray: true
@@ -39,27 +38,27 @@ definitions:
   kind: object
   properties:
   - name: counterName
-    description: "  \nCounter name."
+    description: Counter name.
     types:
     - uid: string
   - name: instanceName
-    description: "  \nInstance name."
+    description: Instance name.
     types:
     - uid: string
   - name: objectName
-    description: "  \nObject name."
+    description: Object name.
     types:
     - uid: string
   - name: objectFullName
-    description: "  \nObject full name."
+    description: Object full name.
     types:
     - uid: string
   - name: objectId
-    description: "  \nObject ID."
+    description: Object ID.
     types:
     - uid: string
   - name: parentObjectId
-    description: "  \nParent object ID."
+    description: Parent object ID.
     types:
     - uid: string
 examples: []

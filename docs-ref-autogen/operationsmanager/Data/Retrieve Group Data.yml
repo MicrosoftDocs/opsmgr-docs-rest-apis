@@ -36,7 +36,6 @@ definitions:
   kind: object
   properties:
   - name: scopeDatas
-    description: "  "
     types:
     - uid: ScopeData
       isArray: true
@@ -44,23 +43,23 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: "  \nID."
+    description: ID.
     types:
     - uid: string
   - name: displayName
-    description: "  \nDisplay name."
+    description: Display name.
     types:
     - uid: string
   - name: className
-    description: "  \nClass name."
+    description: Class name.
     types:
     - uid: string
   - name: path
-    description: "  \nPath."
+    description: Path.
     types:
     - uid: string
   - name: fullName
-    description: "  \nFull name."
+    description: Full name.
     types:
     - uid: string
 examples: []

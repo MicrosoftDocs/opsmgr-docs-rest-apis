@@ -34,12 +34,10 @@ requestBody:
 - parameters:
   - name: dashboard
     in: body
-    description: "  "
     types:
     - uid: ComponentRequest
   - name: widgets
     in: body
-    description: "  "
     types:
     - uid: WidgetRequest
       isArray: true
@@ -49,89 +47,87 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: "  \nSpecify the dashboard or widget name."
+    description: Specify the dashboard or widget name.
     types:
     - uid: string
   - name: description
-    description: "  \nSpecifiy the dashboard or widget description."
+    description: Specifiy the dashboard or widget description.
     types:
     - uid: string
   - name: mpId
-    description: "  \nSpecify the management pack ID if you would like to utilize an existing unsealed management pack for the operation."
+    description: Specify the management pack ID if you would like to utilize an existing unsealed management pack for the operation.
     types:
     - uid: string
   - name: mpName
-    description: "  \nSpecify the management pack name. If you would like to perform the operation in a new management pack then specify the management pack name."
+    description: Specify the management pack name. If you would like to perform the operation in a new management pack then specify the management pack name.
     types:
     - uid: string
   - name: mpVersion
-    description: "  \nSpecify the management pack version."
+    description: Specify the management pack version.
     types:
     - uid: string
   - name: mpDescription
-    description: "  \nSpecify the management pack description."
+    description: Specify the management pack description.
     types:
     - uid: string
   - name: config
-    description: "  \nSpecify the configuration."
+    description: Specify the configuration.
     types:
     - uid: string
   - name: componentType
-    description: "  \nSpecify the type of widget"
+    description: Specify the type of widget
     types:
     - uid: string
   - name: id
-    description: "  \nSpecify the ID of Dashboard/Widget when updating dashboard or widget"
+    description: Specify the ID of Dashboard/Widget when updating dashboard or widget
     types:
     - uid: string
 - name: WidgetRequest
   kind: object
   properties:
   - name: id
-    description: "  \nSpecify ID of the widget."
+    description: Specify ID of the widget.
     types:
     - uid: string
   - name: name
-    description: "  \nSpecify the name of the widget."
+    description: Specify the name of the widget.
     types:
     - uid: string
   - name: description
-    description: "  \nSpecify the description of the widget."
+    description: Specify the description of the widget.
     types:
     - uid: string
   - name: mpId
-    description: "  \nSpecify the management pack ID."
+    description: Specify the management pack ID.
     types:
     - uid: string
   - name: mpName
-    description: "  \nSpecify the management pack name."
+    description: Specify the management pack name.
     types:
     - uid: string
   - name: mpVersion
-    description: "  \nSpecify the version of the management pack."
+    description: Specify the version of the management pack.
     types:
     - uid: string
   - name: mpDescription
-    description: "  \nSpecify the description of the management pack."
+    description: Specify the description of the management pack.
     types:
     - uid: string
   - name: config
-    description: "  \nSpecify the configuration of the widget."
+    description: Specify the configuration of the widget.
     types:
     - uid: string
   - name: componentType
-    description: "  \nSpecify the type of widget."
+    description: Specify the type of widget.
     types:
     - uid: string
 - name: UpdateDashboard
   kind: object
   properties:
   - name: dashboard
-    description: "  "
     types:
     - uid: ComponentRequest
   - name: widgets
-    description: "  "
     types:
     - uid: WidgetRequest
       isArray: true

@@ -28,18 +28,16 @@ requestBody:
 - parameters:
   - name: taskId
     in: body
-    description: "  \nTask ID."
+    description: Task ID.
     types:
     - uid: string
   - name: monitoringObjectIds
     in: body
-    description: "  "
     types:
     - uid: string
       isArray: true
   - name: parametersWithValues
     in: body
-    description: "  "
     types:
     - uid: object
       isDictionary: true
@@ -48,7 +46,6 @@ requestBody:
       - uid: string
   - name: credentials
     in: body
-    description: "  "
     types:
     - uid: TaskExecutionCredentials
 requestHeader: []
@@ -57,31 +54,29 @@ definitions:
   kind: object
   properties:
   - name: domain
-    description: "  \nDomain."
+    description: Domain.
     types:
     - uid: string
   - name: username
-    description: "  \nUsername."
+    description: Username.
     types:
     - uid: string
   - name: password
-    description: "  \nPassword."
+    description: Password.
     types:
     - uid: string
 - name: TaskExecutionRequest
   kind: object
   properties:
   - name: taskId
-    description: "  \nTask ID."
+    description: Task ID.
     types:
     - uid: string
   - name: monitoringObjectIds
-    description: "  "
     types:
     - uid: string
       isArray: true
   - name: parametersWithValues
-    description: "  "
     types:
     - uid: object
       isDictionary: true
@@ -89,7 +84,6 @@ definitions:
       - uid: string
       - uid: string
   - name: credentials
-    description: "  "
     types:
     - uid: TaskExecutionCredentials
 examples: []

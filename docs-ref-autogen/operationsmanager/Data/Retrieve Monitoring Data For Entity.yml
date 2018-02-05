@@ -31,43 +31,42 @@ definitions:
   kind: object
   properties:
   - name: childNodeDatas
-    description: "  "
     types:
     - uid: ChildNodeData
       isArray: true
   - name: alertCount
-    description: "  \nAlert count."
+    description: Alert count.
     types:
     - uid: integer
   - name: healthState
-    description: "  \nHealth state."
+    description: Health state.
     types:
     - uid: string
 - name: ChildNodeData
   kind: object
   properties:
   - name: healthState
-    description: "  \nHealth state of the child node."
+    description: Health state of the child node.
     types:
     - uid: string
   - name: id
-    description: "  \nChild node ID."
+    description: Child node ID.
     types:
     - uid: string
   - name: monitorId
-    description: "  \nMonitor ID."
+    description: Monitor ID.
     types:
     - uid: string
   - name: monitorDisplayName
-    description: "  \nMonitor display name."
+    description: Monitor display name.
     types:
     - uid: string
   - name: monitorName
-    description: "  \nMonitor name."
+    description: Monitor name.
     types:
     - uid: string
   - name: lastTimeModified
-    description: "  \nLast modified time."
+    description: Last modified time.
     types:
     - uid: string
 examples: []

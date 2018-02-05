@@ -38,43 +38,42 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: "  \nKnowledge article ID."
+    description: Knowledge article ID.
     types:
     - uid: string
   - name: knowledgeSections
-    description: "  "
     types:
     - uid: KnowledgeSectionHtml
       isArray: true
   - name: htmlContent
-    description: "  \nContent of the knowledge article."
+    description: Content of the knowledge article.
     types:
     - uid: string
   - name: lastModified
-    description: "  \nKnowledge article was last modified by."
+    description: Knowledge article was last modified by.
     types:
     - uid: string
   - name: mpId
-    description: "  \nManagement pack ID."
+    description: Management pack ID.
     types:
     - uid: string
   - name: mpName
-    description: "  \nManagement pack name."
+    description: Management pack name.
     types:
     - uid: string
   - name: isProductKnowledge
-    description: "  \nIs product knowledge."
+    description: Is product knowledge.
     types:
     - uid: boolean
 - name: KnowledgeSectionHtml
   kind: object
   properties:
   - name: title
-    description: "  \nTile."
+    description: Tile.
     types:
     - uid: string
   - name: html
-    description: "  \nContent of the knowledge article."
+    description: Content of the knowledge article.
     types:
     - uid: string
 examples: []

@@ -28,18 +28,17 @@ requestBody:
 - parameters:
   - name: id
     in: body
-    description: "  \nID."
+    description: ID.
     types:
     - uid: string
   - name: performanceCounters
     in: body
-    description: "  "
     types:
     - uid: object
       isArray: true
   - name: duration
     in: body
-    description: "  \nDuration for which data needs to be retrieved."
+    description: Duration for which data needs to be retrieved.
     types:
     - uid: integer
 requestHeader: []
@@ -48,35 +47,31 @@ definitions:
   kind: object
   properties:
   - name: datasets
-    description: "  "
     types:
     - uid: GraphData
       isArray: true
   - name: legends
-    description: "  "
     types:
     - uid: TableDataResponse
 - name: PerformanceRequest
   kind: object
   properties:
   - name: id
-    description: "  \nID."
+    description: ID.
     types:
     - uid: string
   - name: performanceCounters
-    description: "  "
     types:
     - uid: object
       isArray: true
   - name: duration
-    description: "  \nDuration for which data needs to be retrieved."
+    description: Duration for which data needs to be retrieved.
     types:
     - uid: integer
 - name: GraphData
   kind: object
   properties:
   - name: data
-    description: "  "
     types:
     - uid: object
       isDictionary: true
@@ -84,19 +79,17 @@ definitions:
       - uid: string
       - uid: number
   - name: id
-    description: "  \nID."
+    description: ID.
     types:
     - uid: string
 - name: TableDataResponse
   kind: object
   properties:
   - name: tableColumns
-    description: "  "
     types:
     - uid: TableColumn
       isArray: true
   - name: rows
-    description: "  "
     types:
     - uid: object
       isArray: true
@@ -104,19 +97,19 @@ definitions:
   kind: object
   properties:
   - name: field
-    description: "  \nName of the column."
+    description: Name of the column.
     types:
     - uid: string
   - name: header
-    description: "  \nHeader of the column."
+    description: Header of the column.
     types:
     - uid: string
   - name: type
-    description: "  \nType of the column."
+    description: Type of the column.
     types:
     - uid: string
   - name: hidden
-    description: "  \nIs the column hidden."
+    description: Is the column hidden.
     types:
     - uid: boolean
 examples: []

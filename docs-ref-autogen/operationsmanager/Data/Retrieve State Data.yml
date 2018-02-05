@@ -28,12 +28,12 @@ requestBody:
 - parameters:
   - name: classId
     in: body
-    description: "  \nSpecify the class ID."
+    description: Specify the class ID.
     types:
     - uid: string
   - name: objectIds
     in: body
-    description: "  \nSpecify an array of object IDs."
+    description: Specify an array of object IDs.
     types:
     - uid: object
       isDictionary: true
@@ -42,12 +42,12 @@ requestBody:
       - uid: integer
   - name: criteria
     in: body
-    description: "  \nSpecify the criteria (such as severity, priority, resolution state, etc.)."
+    description: Specify the criteria (such as severity, priority, resolution state, etc.).
     types:
     - uid: string
   - name: displayColumns
     in: body
-    description: "  \nSpecify the columns which needs to be displayed."
+    description: Specify the columns which needs to be displayed.
     types:
     - uid: string
       isArray: true
@@ -57,12 +57,10 @@ definitions:
   kind: object
   properties:
   - name: tableColumns
-    description: "  "
     types:
     - uid: TableColumn
       isArray: true
   - name: rows
-    description: "  "
     types:
     - uid: object
       isArray: true
@@ -70,11 +68,11 @@ definitions:
   kind: object
   properties:
   - name: classId
-    description: "  \nSpecify the class ID."
+    description: Specify the class ID.
     types:
     - uid: string
   - name: objectIds
-    description: "  \nSpecify an array of object IDs."
+    description: Specify an array of object IDs.
     types:
     - uid: object
       isDictionary: true
@@ -82,11 +80,11 @@ definitions:
       - uid: string
       - uid: integer
   - name: criteria
-    description: "  \nSpecify the criteria (such as severity, priority, resolution state, etc.)."
+    description: Specify the criteria (such as severity, priority, resolution state, etc.).
     types:
     - uid: string
   - name: displayColumns
-    description: "  \nSpecify the columns which needs to be displayed."
+    description: Specify the columns which needs to be displayed.
     types:
     - uid: string
       isArray: true
@@ -94,19 +92,19 @@ definitions:
   kind: object
   properties:
   - name: field
-    description: "  \nName of the column."
+    description: Name of the column.
     types:
     - uid: string
   - name: header
-    description: "  \nHeader of the column."
+    description: Header of the column.
     types:
     - uid: string
   - name: type
-    description: "  \nType of the column."
+    description: Type of the column.
     types:
     - uid: string
   - name: hidden
-    description: "  \nIs the column hidden."
+    description: Is the column hidden.
     types:
     - uid: boolean
 examples: []

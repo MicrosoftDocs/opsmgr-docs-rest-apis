@@ -31,62 +31,61 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: "  \nRule ID."
+    description: Rule ID.
     types:
     - uid: string
   - name: description
-    description: "  \nRule description."
+    description: Rule description.
     types:
     - uid: string
   - name: name
-    description: "  \nRule name."
+    description: Rule name.
     types:
     - uid: string
   - name: displayName
-    description: "  \nRule display name."
+    description: Rule display name.
     types:
     - uid: string
   - name: comment
-    description: "  \nRule comments."
+    description: Rule comments.
     types:
     - uid: string
   - name: target
-    description: "  "
     types:
     - uid: RuleTarget
   - name: xmlTag
-    description: "  \nRule XML tag."
+    description: Rule XML tag.
     types:
     - uid: string
   - name: conditionDetectionConfiguration
-    description: "  \nRule condition configuration."
+    description: Rule condition configuration.
     types:
     - uid: string
   - name: dataSourceConfiguration
-    description: "  \nRule data source configuration."
+    description: Rule data source configuration.
     types:
     - uid: string
   - name: category
-    description: "  \nRule category."
+    description: Rule category.
     types:
     - uid: string
   - name: identifier
-    description: "  \nRule identifier."
+    description: Rule identifier.
     types:
     - uid: string
   - name: enabled
-    description: "  \nIs rule enabled."
+    description: Is rule enabled.
     types:
     - uid: string
 - name: RuleTarget
   kind: object
   properties:
   - name: id
-    description: "  \nRule ID."
+    description: Rule ID.
     types:
     - uid: string
   - name: displayName
-    description: "  \nRule display name."
+    description: Rule display name.
     types:
     - uid: string
 examples: []

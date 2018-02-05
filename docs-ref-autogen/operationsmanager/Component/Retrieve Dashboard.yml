@@ -31,27 +31,27 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: "  \nDashboard or widget ID."
+    description: Dashboard or widget ID.
     types:
     - uid: string
   - name: name
-    description: "  \nName of the dashbaord or widget."
+    description: Name of the dashbaord or widget.
     types:
     - uid: string
   - name: description
-    description: "  \nDescription of the dashboard or widget."
+    description: Description of the dashboard or widget.
     types:
     - uid: string
   - name: mpId
-    description: "  \nID of the management pack where dashbaord or widget is saved."
+    description: ID of the management pack where dashbaord or widget is saved.
     types:
     - uid: string
   - name: componentType
-    description: "  \nType of the component."
+    description: Type of the component.
     types:
     - uid: string
   - name: config
-    description: "  \nConfiguration of the dashbaord."
+    description: Configuration of the dashbaord.
     types:
     - uid: string
 examples: []

@@ -25,7 +25,6 @@ definitions:
   kind: object
   properties:
   - name: data
-    description: "  "
     types:
     - uid: TreeNode
       isArray: true
@@ -33,56 +32,55 @@ definitions:
   kind: object
   properties:
   - name: children
-    description: "  "
     types:
     - uid: TreeNode
       isArray: true
   - name: id
-    description: "  \nID."
+    description: ID.
     types:
     - uid: string
   - name: label
-    description: "  \nLabel."
+    description: Label.
     types:
     - uid: string
   - name: description
-    description: "  \nDescription."
+    description: Description.
     types:
     - uid: string
   - name: viewType
-    description: "  \nView type."
+    description: View type.
     types:
     - uid: string
   - name: expandedIcon
-    description: "  \nExpanded icon."
+    description: Expanded icon.
     types:
     - uid: string
   - name: collapsedIcon
-    description: "  \nCollapsed icon."
+    description: Collapsed icon.
     types:
     - uid: string
   - name: icon
-    description: "  \nIcon."
+    description: Icon.
     types:
     - uid: string
   - name: expanded
-    description: "  \nExpanded."
+    description: Expanded.
     types:
     - uid: boolean
   - name: isSealed
-    description: "  \nIs sealed."
+    description: Is sealed.
     types:
     - uid: boolean
   - name: parent
-    description: "  \nParent."
+    description: Parent.
     types:
     - uid: string
   - name: url
-    description: "  \nURL."
+    description: URL.
     types:
     - uid: string
   - name: isShortcut
-    description: "  \nIs shortcut."
+    description: Is shortcut.
     types:
     - uid: boolean
 examples: []

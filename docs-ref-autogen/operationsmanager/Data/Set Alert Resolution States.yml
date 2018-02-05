@@ -28,18 +28,17 @@ requestBody:
 - parameters:
   - name: alertIds
     in: body
-    description: "  "
     types:
     - uid: string
       isArray: true
   - name: resolutionState
     in: body
-    description: "  \nResolution state."
+    description: Resolution state.
     types:
     - uid: integer
   - name: comment
     in: body
-    description: "  \nComment."
+    description: Comment.
     types:
     - uid: string
 requestHeader: []
@@ -48,16 +47,15 @@ definitions:
   kind: object
   properties:
   - name: alertIds
-    description: "  "
     types:
     - uid: string
       isArray: true
   - name: resolutionState
-    description: "  \nResolution state."
+    description: Resolution state.
     types:
     - uid: integer
   - name: comment
-    description: "  \nComment."
+    description: Comment.
     types:
     - uid: string
 examples: []

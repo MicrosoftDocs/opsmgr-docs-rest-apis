@@ -30,13 +30,13 @@ requestBody:
   - name: id
     in: body
     isRequired: true
-    description: "  \nTask ID."
+    description: Task ID.
     types:
     - uid: string
   - name: viewType
     in: body
     isRequired: true
-    description: "  \nView type."
+    description: View type.
     types:
     - uid: string
 requestHeader: []
@@ -45,15 +45,14 @@ definitions:
   kind: object
   properties:
   - name: displayName
-    description: "  \nTask display name."
+    description: Task display name.
     types:
     - uid: string
   - name: taskListType
-    description: "  \nTask list type."
+    description: Task list type.
     types:
     - uid: string
   - name: taskList
-    description: "  "
     types:
     - uid: TaskResponse
       isArray: true
@@ -61,39 +60,37 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: "  \nTask ID."
+    description: Task ID.
     types:
     - uid: string
   - name: viewType
-    description: "  \nView type."
+    description: View type.
     types:
     - uid: string
 - name: TaskResponse
   kind: object
   properties:
   - name: id
-    description: "  \nTask ID."
+    description: Task ID.
     types:
     - uid: string
   - name: displayName
-    description: "  \nTask display name."
+    description: Task display name.
     types:
     - uid: string
   - name: description
-    description: "  \nTask description."
+    description: Task description.
     types:
     - uid: string
   - name: iconUrl
-    description: "  \nIcon URL."
+    description: Icon URL.
     types:
     - uid: string
   - name: targets
-    description: "  "
     types:
     - uid: TaskTarget
       isArray: true
   - name: parameters
-    description: "  "
     types:
     - uid: TaskParameter
       isArray: true
@@ -101,38 +98,38 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: "  \nID."
+    description: ID.
     types:
     - uid: string
   - name: name
-    description: "  \nName."
+    description: Name.
     types:
     - uid: string
   - name: runLocation
-    description: "  \nRun location."
+    description: Run location.
     types:
     - uid: string
 - name: TaskParameter
   kind: object
   properties:
   - name: id
-    description: "  \nID."
+    description: ID.
     types:
     - uid: string
   - name: parameterType
-    description: "  \nParameter type."
+    description: Parameter type.
     types:
     - uid: string
   - name: name
-    description: "  \nName."
+    description: Name.
     types:
     - uid: string
   - name: displayName
-    description: "  \nDisplay name."
+    description: Display name.
     types:
     - uid: string
   - name: defaultValue
-    description: "  \nDefault value."
+    description: Default value.
     types:
     - uid: string
 examples: []

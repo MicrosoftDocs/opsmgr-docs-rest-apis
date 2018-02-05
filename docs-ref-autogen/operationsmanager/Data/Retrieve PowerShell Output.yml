@@ -36,12 +36,10 @@ definitions:
   kind: object
   properties:
   - name: tableColumns
-    description: "  "
     types:
     - uid: TableColumn
       isArray: true
   - name: rows
-    description: "  "
     types:
     - uid: object
       isArray: true
@@ -49,19 +47,19 @@ definitions:
   kind: object
   properties:
   - name: field
-    description: "  \nName of the column."
+    description: Name of the column.
     types:
     - uid: string
   - name: header
-    description: "  \nHeader of the column."
+    description: Header of the column.
     types:
     - uid: string
   - name: type
-    description: "  \nType of the column."
+    description: Type of the column.
     types:
     - uid: string
   - name: hidden
-    description: "  \nIs the column hidden."
+    description: Is the column hidden.
     types:
     - uid: boolean
 examples: []

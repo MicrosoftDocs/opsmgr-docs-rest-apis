@@ -28,37 +28,37 @@ requestBody:
 - parameters:
   - name: elementId
     in: body
-    description: "  \nSpecify the element ID."
+    description: Specify the element ID.
     types:
     - uid: string
   - name: elementType
     in: body
-    description: "  \nSpecify the element type."
+    description: Specify the element type.
     types:
     - uid: string
   - name: mpId
     in: body
-    description: "  \nSpecify the management pack ID."
+    description: Specify the management pack ID.
     types:
     - uid: string
   - name: mpName
     in: body
-    description: "  \nSpecify the management pack name."
+    description: Specify the management pack name.
     types:
     - uid: string
   - name: mpVersion
     in: body
-    description: "  \nSpecify the version of the management pack."
+    description: Specify the version of the management pack.
     types:
     - uid: string
   - name: mpDescription
     in: body
-    description: "  \nSpecify the description of the management pack."
+    description: Specify the description of the management pack.
     types:
     - uid: string
   - name: knowledgeArticleHTML
     in: body
-    description: "  \nSpecify the content of the knowledge article."
+    description: Specify the content of the knowledge article.
     types:
     - uid: string
 requestHeader: []
@@ -67,31 +67,31 @@ definitions:
   kind: object
   properties:
   - name: elementId
-    description: "  \nSpecify the element ID."
+    description: Specify the element ID.
     types:
     - uid: string
   - name: elementType
-    description: "  \nSpecify the element type."
+    description: Specify the element type.
     types:
     - uid: string
   - name: mpId
-    description: "  \nSpecify the management pack ID."
+    description: Specify the management pack ID.
     types:
     - uid: string
   - name: mpName
-    description: "  \nSpecify the management pack name."
+    description: Specify the management pack name.
     types:
     - uid: string
   - name: mpVersion
-    description: "  \nSpecify the version of the management pack."
+    description: Specify the version of the management pack.
     types:
     - uid: string
   - name: mpDescription
-    description: "  \nSpecify the description of the management pack."
+    description: Specify the description of the management pack.
     types:
     - uid: string
   - name: knowledgeArticleHTML
-    description: "  \nSpecify the content of the knowledge article."
+    description: Specify the content of the knowledge article.
     types:
     - uid: string
 examples: []

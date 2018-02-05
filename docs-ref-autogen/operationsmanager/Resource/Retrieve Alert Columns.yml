@@ -26,23 +26,23 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: "  \nName."
+    description: Name.
     types:
     - uid: string
   - name: id
-    description: "  \nID."
+    description: ID.
     types:
     - uid: string
   - name: typename
-    description: "  \nType name."
+    description: Type name.
     types:
     - uid: string
   - name: isSortable
-    description: "  \nIs sortable."
+    description: Is sortable.
     types:
     - uid: boolean
   - name: isGroupable
-    description: "  \nIs groupable."
+    description: Is groupable.
     types:
     - uid: boolean
 examples: []

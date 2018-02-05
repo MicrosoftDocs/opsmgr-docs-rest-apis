@@ -26,15 +26,15 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: "  \nName."
+    description: Name.
     types:
     - uid: string
   - name: value
-    description: "  \nValue."
+    description: Value.
     types:
     - uid: string
   - name: selected
-    description: "  \nIs selected."
+    description: Is selected.
     types:
     - uid: boolean
 examples: []

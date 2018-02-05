@@ -26,11 +26,11 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: "  \nManagement pack name."
+    description: Management pack name.
     types:
     - uid: string
   - name: id
-    description: "  \nManagement pack ID."
+    description: Management pack ID.
     types:
     - uid: string
 examples: []
