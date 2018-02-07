@@ -1,8 +1,22 @@
+---
+ms.assetid: 
+title: System Center Operations Manager REST API Reference
+description: The system requirements article provides general performance and scalability guidance for consideration as part of your design planning of Operations Manager.  
+author: mgoedtel
+ms.author: magoedte
+manager: carmonm
+ms.date: 02/07/2018
+ms.custom: na
+ms.prod: system-center-2016
+ms.technology: operations-manager
+ms.topic: reference
+---
+
 # System Center Operations Manager REST API Reference
 
 Welcome to the System Center Operations Manager REST API Reference.
 
-This reference of the Representational State Transfer (REST) API is applicable to System Center Operations Manager 1801, which supports a set of HTTP operations (methods) to create, retrieve, update, or delete access to the operational data using the custom dashboard widget in the new System Center Operations Manager 1801 web console.
+This reference of the Representational State Transfer (REST) API is applicable to System Center Operations Manager 1801, which supports a set of HTTP operations (methods) to create, retrieve, update, or delete access to the operational data using the custom dashboard widget in the new System Center Operations Manager 1801 Web console.
 
 The new HTML5 based dashboards includes support for a Custom widget that executes the HTML code which utilizes methods available in this REST API to visualize the desired output in a variety of visualizations.  For more information about the Operations Manager HTLM5 dashboards, see [Overview of HTML5 Web console and dashboards](https://docs.microsoft.com/system-center/scom/manage-overview-html5-webconsole) and for additional information on how to work with the Custom widget, see [How create a dashboard with the Custom widget in the Web console](https://docs.microsoft.com/system-center/scom/manage-create-web-dashboard-custom).
 
