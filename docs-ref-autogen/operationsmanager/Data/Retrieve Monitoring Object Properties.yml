@@ -1,0 +1,42 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringobjectproperties
+name: Retrieve Monitoring Object Properties
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the monitoring object properties.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/monitoringObjectProperties/{objectId}
+uriParameters:
+- name: objectId
+  in: path
+  isRequired: true
+  description: Specify the object ID for which object properties needs to be retrieved.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved monitoring object properties.
+  types:
+  - uid: MonitoringObjectProperty
+    isArray: true
+requestHeader: []
+definitions:
+- name: MonitoringObjectProperty
+  kind: object
+  properties:
+  - name: name
+    description: Name of the monitoring property.
+    types:
+    - uid: string
+  - name: value
+    types:
+    - uid: string
+examples: []
+security: []

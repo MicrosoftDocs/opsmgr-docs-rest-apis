@@ -1,0 +1,102 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitorsforclass
+name: Retrieve Monitors For Class
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieve the list of monitors and thier properties associated with a specific class.
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/class/monitors
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved the list of monitors and thier properties associated with a specific class.
+  types:
+  - uid: MonitorDataResponse
+    isArray: true
+requestBody:
+- parameters:
+  - name: criteria
+    in: body
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: MonitorDataResponse
+  kind: object
+  properties:
+  - name: id
+    description: Monitor ID.
+    types:
+    - uid: string
+  - name: description
+    description: Monitor description.
+    types:
+    - uid: string
+  - name: name
+    description: Monitor name.
+    types:
+    - uid: string
+  - name: displayName
+    description: Monitor display name.
+    types:
+    - uid: string
+  - name: comment
+    description: Comment.
+    types:
+    - uid: string
+  - name: target
+    types:
+    - uid: MonitorTarget
+  - name: monitorType
+    description: Monitor type.
+    types:
+    - uid: string
+  - name: category
+    description: Monitor category.
+    types:
+    - uid: string
+  - name: priority
+    description: Monitor priority.
+    types:
+    - uid: string
+  - name: status
+    description: Monitor status.
+    types:
+    - uid: string
+  - name: enabled
+    description: Is monitor enabled.
+    types:
+    - uid: string
+  - name: state
+    description: Monitor state.
+    types:
+    - uid: string
+  - name: lastModified
+    description: Last modified.
+    types:
+    - uid: string
+- name: MonitorTarget
+  kind: object
+  properties:
+  - name: id
+    description: Monitor ID.
+    types:
+    - uid: string
+  - name: displayName
+    description: Monitor display name.
+    types:
+    - uid: string
+examples: []
+security: []

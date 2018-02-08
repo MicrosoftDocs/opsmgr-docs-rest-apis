@@ -1,0 +1,98 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.savecompanyknowledge
+name: Save Company Knowledge
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the company knowledge of the specified entity.
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/knowledgeArticle
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved Company knowledge.
+  types:
+  - uid: boolean
+requestBody:
+- parameters:
+  - name: elementId
+    in: body
+    description: Specify the element ID.
+    types:
+    - uid: string
+  - name: elementType
+    in: body
+    description: Specify the element type.
+    types:
+    - uid: string
+  - name: mpId
+    in: body
+    description: Specify the management pack ID.
+    types:
+    - uid: string
+  - name: mpName
+    in: body
+    description: Specify the management pack name.
+    types:
+    - uid: string
+  - name: mpVersion
+    in: body
+    description: Specify the version of the management pack.
+    types:
+    - uid: string
+  - name: mpDescription
+    in: body
+    description: Specify the description of the management pack.
+    types:
+    - uid: string
+  - name: knowledgeArticleHTML
+    in: body
+    description: Specify the content of the knowledge article.
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: CompanyKnowledgeRequest
+  kind: object
+  properties:
+  - name: elementId
+    description: Specify the element ID.
+    types:
+    - uid: string
+  - name: elementType
+    description: Specify the element type.
+    types:
+    - uid: string
+  - name: mpId
+    description: Specify the management pack ID.
+    types:
+    - uid: string
+  - name: mpName
+    description: Specify the management pack name.
+    types:
+    - uid: string
+  - name: mpVersion
+    description: Specify the version of the management pack.
+    types:
+    - uid: string
+  - name: mpDescription
+    description: Specify the description of the management pack.
+    types:
+    - uid: string
+  - name: knowledgeArticleHTML
+    description: Specify the content of the knowledge article.
+    types:
+    - uid: string
+examples: []
+security: []
