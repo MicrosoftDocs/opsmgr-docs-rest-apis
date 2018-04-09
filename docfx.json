@@ -50,6 +50,8 @@
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "rest_product": "Operations Manager",
+      "titleSuffix": "Operations Manager REST API",
       "breadcrumb_path": "/rest/breadcrumb/toc.json",
       "extendBreadcrumb": true
     },
