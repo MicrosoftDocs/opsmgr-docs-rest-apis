@@ -53,6 +53,7 @@ definitions:
     types:
     - uid: string
   - name: taskList
+    description: ''
     types:
     - uid: TaskResponse
       isArray: true
@@ -87,10 +88,12 @@ definitions:
     types:
     - uid: string
   - name: targets
+    description: ''
     types:
     - uid: TaskTarget
       isArray: true
   - name: parameters
+    description: ''
     types:
     - uid: TaskParameter
       isArray: true

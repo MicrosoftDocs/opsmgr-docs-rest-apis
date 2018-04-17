@@ -25,6 +25,7 @@ definitions:
   kind: object
   properties:
   - name: data
+    description: ''
     types:
     - uid: TreeNode
       isArray: true
@@ -32,6 +33,7 @@ definitions:
   kind: object
   properties:
   - name: children
+    description: ''
     types:
     - uid: TreeNode
       isArray: true

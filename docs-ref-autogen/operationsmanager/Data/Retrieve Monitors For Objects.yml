@@ -63,6 +63,7 @@ definitions:
     types:
     - uid: string
   - name: target
+    description: ''
     types:
     - uid: MonitorTarget
   - name: monitorType

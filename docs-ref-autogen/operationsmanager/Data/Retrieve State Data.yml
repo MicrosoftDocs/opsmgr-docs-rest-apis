@@ -57,10 +57,12 @@ definitions:
   kind: object
   properties:
   - name: tableColumns
+    description: ''
     types:
     - uid: TableColumn
       isArray: true
   - name: rows
+    description: ''
     types:
     - uid: object
       isArray: true

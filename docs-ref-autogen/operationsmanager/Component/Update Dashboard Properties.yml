@@ -34,10 +34,12 @@ requestBody:
 - parameters:
   - name: dashboard
     in: body
+    description: ''
     types:
     - uid: ComponentRequest
   - name: widgets
     in: body
+    description: ''
     types:
     - uid: WidgetRequest
       isArray: true
@@ -125,9 +127,11 @@ definitions:
   kind: object
   properties:
   - name: dashboard
+    description: ''
     types:
     - uid: ComponentRequest
   - name: widgets
+    description: ''
     types:
     - uid: WidgetRequest
       isArray: true

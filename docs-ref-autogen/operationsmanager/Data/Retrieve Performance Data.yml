@@ -33,6 +33,7 @@ requestBody:
     - uid: string
   - name: performanceCounters
     in: body
+    description: ''
     types:
     - uid: object
       isArray: true
@@ -47,10 +48,12 @@ definitions:
   kind: object
   properties:
   - name: datasets
+    description: ''
     types:
     - uid: GraphData
       isArray: true
   - name: legends
+    description: ''
     types:
     - uid: TableDataResponse
 - name: PerformanceRequest
@@ -61,6 +64,7 @@ definitions:
     types:
     - uid: string
   - name: performanceCounters
+    description: ''
     types:
     - uid: object
       isArray: true
@@ -72,6 +76,7 @@ definitions:
   kind: object
   properties:
   - name: data
+    description: ''
     types:
     - uid: object
       isDictionary: true
@@ -86,10 +91,12 @@ definitions:
   kind: object
   properties:
   - name: tableColumns
+    description: ''
     types:
     - uid: TableColumn
       isArray: true
   - name: rows
+    description: ''
     types:
     - uid: object
       isArray: true

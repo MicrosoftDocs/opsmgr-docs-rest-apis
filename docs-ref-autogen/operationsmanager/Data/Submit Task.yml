@@ -33,11 +33,13 @@ requestBody:
     - uid: string
   - name: monitoringObjectIds
     in: body
+    description: ''
     types:
     - uid: string
       isArray: true
   - name: parametersWithValues
     in: body
+    description: ''
     types:
     - uid: object
       isDictionary: true
@@ -46,6 +48,7 @@ requestBody:
       - uid: string
   - name: credentials
     in: body
+    description: ''
     types:
     - uid: TaskExecutionCredentials
 requestHeader: []
@@ -73,10 +76,12 @@ definitions:
     types:
     - uid: string
   - name: monitoringObjectIds
+    description: ''
     types:
     - uid: string
       isArray: true
   - name: parametersWithValues
+    description: ''
     types:
     - uid: object
       isDictionary: true
@@ -84,6 +89,7 @@ definitions:
       - uid: string
       - uid: string
   - name: credentials
+    description: ''
     types:
     - uid: TaskExecutionCredentials
 examples: []

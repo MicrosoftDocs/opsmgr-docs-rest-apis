@@ -31,14 +31,17 @@ definitions:
   kind: object
   properties:
   - name: monitoringObjectProperties
+    description: ''
     types:
     - uid: MonitoringObjectProperty
       isArray: true
   - name: relatedObjects
+    description: ''
     types:
     - uid: RelatedObject
       isArray: true
   - name: classes
+    description: ''
     types:
     - uid: ClassDataResponse
       isArray: true
@@ -62,6 +65,7 @@ definitions:
     types:
     - uid: string
   - name: value
+    description: ''
     types:
     - uid: string
 - name: RelatedObject
@@ -95,6 +99,7 @@ definitions:
     types:
     - uid: string
   - name: childObjects
+    description: ''
     types:
     - uid: ChildObject
       isArray: true
@@ -103,6 +108,7 @@ definitions:
     types:
     - uid: string
   - name: comment
+    description: ''
     types:
     - uid: string
   - name: hosted
@@ -118,9 +124,11 @@ definitions:
     types:
     - uid: string
   - name: baseMonitoringClass
+    description: ''
     types:
     - uid: BaseMonitoringClass
   - name: propertyCollection
+    description: ''
     types:
     - uid: ClassProperty
       isArray: true

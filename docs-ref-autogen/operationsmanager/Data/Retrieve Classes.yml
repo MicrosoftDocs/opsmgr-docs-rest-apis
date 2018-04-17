@@ -36,6 +36,7 @@ definitions:
   kind: object
   properties:
   - name: scopeDatas
+    description: ''
     types:
     - uid: ScopeData
       isArray: true

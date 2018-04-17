@@ -1,31 +1,29 @@
 {
   "build": {
-    "content": [
-      {
-        "src":"docs-ref-autogen",
+    "content": [{
+        "src": "docs-ref-autogen",
         "files": [
           "**.yml"
         ],
         "exclude": [
           "toc.md"
         ],
-        "dest":"api"
+        "dest": "api"
       },
       {
-        "src":"docs-ref-autogen",
+        "src": "docs-ref-autogen",
         "files": [
           "toc.md"
         ],
-        "exclude": [
-        ],
-        "dest":"api/operationsmanager"
+        "exclude": [],
+        "dest": "api/operationsmanager"
       },
       {
-        "src":".",
+        "src": ".",
         "files": [
           "index.md"
         ],
-        "dest":"operationsmanager"
+        "dest": "operationsmanager"
       },
       {
         "files": [
@@ -33,31 +31,33 @@
         ]
       }
     ],
-    "resource": [
-      {
-        "files": [
-          "**/*.png",
-          "**/*.jpg"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "_themes/**",
-          "_themes.pdf/**"
-        ]
-      }
-    ],
+    "resource": [{
+      "files": [
+        "**/*.png",
+        "**/*.jpg"
+      ],
+      "exclude": [
+        "**/obj/**",
+        "**/includes/**",
+        "_themes/**",
+        "_themes.pdf/**"
+      ]
+    }],
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
+      "hideScope": true,
       "rest_product": "Operations Manager",
       "titleSuffix": "Operations Manager REST API",
       "breadcrumb_path": "/rest/breadcrumb/toc.json",
       "extendBreadcrumb": true
     },
-    "fileMetadata": {},
+    "fileMetadata": {
+      "searchScope": {
+        "docs-ref-autogen/**.yml": ["Operations Manager", "REST"]
+      }
+    },
     "template": [],
     "dest": "OpsMgrRestApi"
   }
 }
-
