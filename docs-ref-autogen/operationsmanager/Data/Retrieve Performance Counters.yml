@@ -31,6 +31,7 @@ definitions:
   kind: object
   properties:
   - name: performanceCounterDatas
+    description: ''
     types:
     - uid: PerformanceCounterData
       isArray: true

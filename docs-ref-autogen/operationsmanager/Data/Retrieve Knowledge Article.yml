@@ -42,6 +42,7 @@ definitions:
     types:
     - uid: string
   - name: knowledgeSections
+    description: ''
     types:
     - uid: KnowledgeSectionHtml
       isArray: true

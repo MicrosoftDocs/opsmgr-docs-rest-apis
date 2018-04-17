@@ -28,6 +28,7 @@ requestBody:
 - parameters:
   - name: alertIds
     in: body
+    description: ''
     types:
     - uid: string
       isArray: true
@@ -47,6 +48,7 @@ definitions:
   kind: object
   properties:
   - name: alertIds
+    description: ''
     types:
     - uid: string
       isArray: true

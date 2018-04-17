@@ -39,6 +39,7 @@ definitions:
     types:
     - uid: string
   - name: childObjects
+    description: ''
     types:
     - uid: ChildObject
       isArray: true
@@ -47,6 +48,7 @@ definitions:
     types:
     - uid: string
   - name: comment
+    description: ''
     types:
     - uid: string
   - name: hosted
@@ -62,9 +64,11 @@ definitions:
     types:
     - uid: string
   - name: baseMonitoringClass
+    description: ''
     types:
     - uid: BaseMonitoringClass
   - name: propertyCollection
+    description: ''
     types:
     - uid: ClassProperty
       isArray: true
