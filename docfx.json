@@ -19,10 +19,18 @@
         "dest": "api/operationsmanager"
       },
       {
+        "src": "docs-ref-autogen",
+        "files": [
+          "**.md"
+        ],
+        "dest": "api"
+      },
+      {
         "src": ".",
         "files": [
           "index.md"
         ],
+        "exclude": ["README.md"],
         "dest": "operationsmanager"
       },
       {
