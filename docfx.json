@@ -19,7 +19,7 @@
         "dest": "api/operationsmanager"
       },
       {
-        "src": "docs-ref-autogen",
+        "src": "docs-ref-conceptual",
         "files": [
           "**.md"
         ],
