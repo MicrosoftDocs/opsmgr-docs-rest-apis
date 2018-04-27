@@ -8,6 +8,7 @@
     "services": [{
       "toc_title":"Operations Manager",
       "url_group":"operationsmanager",
+      "service_index": "docs-ref-conceptual/operationsmanager/index.md",
       "swagger_files":[
         {
           "source":"opsmgr/swagger.yaml"
