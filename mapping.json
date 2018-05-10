@@ -7,15 +7,12 @@
     "index": "index.md",
     "default_toc_title": "Getting Started",
     "services": [{
-      "toc_title":"Operations Manager",
-      "url_group":"operationsmanager",
+      "toc_title": "Operations Manager",
+      "url_group": "operationsmanager",
       "service_index": "docs-ref-conceptual/operationsmanager/index.md",
-      "swagger_files":[
-        {
-          "source":"opsmgr/swagger.yaml"
-        }
-      ]
+      "swagger_files": [{
+        "source": "opsmgr/swagger.yaml"
+      }]
     }]
-  }
-  ]
+  }]
 }
