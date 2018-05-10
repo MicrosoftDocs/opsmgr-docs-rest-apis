@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.component.deletedashboard
 name: Delete Dashboard
-service: Operations Manager
+service: operationsmanager
 groupName: Component
 apiVersion: v1
 summary: Deletes a specific dashboard and the widgets contained inside it.

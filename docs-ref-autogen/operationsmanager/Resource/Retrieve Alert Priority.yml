@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertpriority
 name: Retrieve Alert Priority
-service: Operations Manager
+service: operationsmanager
 groupName: Resource
 apiVersion: v1
 summary: Retrieves alert priority.

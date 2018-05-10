@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.authentication.login
 name: Login
-service: Operations Manager
+service: operationsmanager
 groupName: Authentication
 apiVersion: v1
 summary: Authenticates the user.

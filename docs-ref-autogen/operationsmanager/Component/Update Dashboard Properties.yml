@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.component.updatedashboardproperties
 name: Update Dashboard Properties
-service: Operations Manager
+service: operationsmanager
 groupName: Component
 apiVersion: v1
 summary: Updates the properties or configurations of a dashboard and the widgets available in a specific dashboard.

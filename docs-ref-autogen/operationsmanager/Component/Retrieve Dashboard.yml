@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.component.retrievedashboard
 name: Retrieve Dashboard
-service: Operations Manager
+service: operationsmanager
 groupName: Component
 apiVersion: v1
 summary: Retrieves the dashboard properties and configuration.

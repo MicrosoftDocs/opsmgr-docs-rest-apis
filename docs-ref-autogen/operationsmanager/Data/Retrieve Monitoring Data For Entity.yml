@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringdataforentity
 name: Retrieve Monitoring Data For Entity
-service: Operations Manager
+service: operationsmanager
 groupName: Data
 apiVersion: v1
 summary: Retrieves the monitoring data of the specified entity ID.

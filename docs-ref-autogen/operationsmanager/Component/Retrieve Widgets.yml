@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.component.retrievewidgets
 name: Retrieve Widgets
-service: Operations Manager
+service: operationsmanager
 groupName: Component
 apiVersion: v1
 summary: Retrieves the properties and configuration of all the widgets defined in a specific dashbaord.

@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.component.retrievewidgetsforentity
 name: Retrieve Widgets For Entity
-service: Operations Manager
+service: operationsmanager
 groupName: Component
 apiVersion: v1
 summary: 'Retrieves the widgets for the dashboard and entity. NOTE: This only supports retrieving widgets for a Performance dashboard.'

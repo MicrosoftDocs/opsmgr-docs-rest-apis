@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrieveperformancecounters
 name: Retrieve Performance Counters
-service: Operations Manager
+service: operationsmanager
 groupName: Data
 apiVersion: v1
 summary: Retrieves the list of performance counters associated with the specified enitity ID.

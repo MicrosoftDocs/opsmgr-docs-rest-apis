@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertcolumns
 name: Retrieve Alert Columns
-service: Operations Manager
+service: operationsmanager
 groupName: Resource
 apiVersion: v1
 summary: Retrieves the list of columns associated with alerts.

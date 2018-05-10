@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertseverity
 name: Retrieve Alert Severity
-service: Operations Manager
+service: operationsmanager
 groupName: Resource
 apiVersion: v1
 summary: Retrieves alert severity.

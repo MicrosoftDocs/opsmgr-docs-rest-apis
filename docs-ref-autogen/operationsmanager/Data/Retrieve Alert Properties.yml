@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrievealertproperties
 name: Retrieve Alert Properties
-service: Operations Manager
+service: operationsmanager
 groupName: Data
 apiVersion: v1
 summary: Retrieves the alert properties for the specified alert.

@@ -2,7 +2,7 @@
 uid: <servername>.operationsmanager.operationsmanager.data
 name: Data
 apiVersion: v1
-service: Operations Manager
+service: operationsmanager
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievealertcountforentity
   summary: Retrieves the number of alerts associated with the specified entity ID.

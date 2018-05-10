@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.networkmonitoring.retrievenetworkmonitoringdata
 name: Retrieve Network Monitoring Data
-service: Operations Manager
+service: operationsmanager
 groupName: Network Monitoring
 apiVersion: v1
 summary: Retrieves data for network devices and interfaces.

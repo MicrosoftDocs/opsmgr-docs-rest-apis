@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.component.adddashboard
 name: Add Dashboard
-service: Operations Manager
+service: operationsmanager
 groupName: Component
 apiVersion: v1
 summary: Creates a new dashboards with the specified properties.

@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitorsforobjects
 name: Retrieve Monitors For Objects
-service: Operations Manager
+service: operationsmanager
 groupName: Data
 apiVersion: v1
 summary: Retrieve the list of monitors and thier properties associated with a specific object.

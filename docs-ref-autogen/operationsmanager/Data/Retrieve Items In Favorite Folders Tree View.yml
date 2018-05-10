@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrieveitemsinfavoritefolderstreeview
 name: Retrieve Items In Favorite Folders Tree View
-service: Operations Manager
+service: operationsmanager
 groupName: Data
 apiVersion: v1
 summary: Retrieves the list of views/dashboards available in the Favorite views folder.

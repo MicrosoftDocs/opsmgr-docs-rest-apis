@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertresolutionstate
 name: Retrieve Alert Resolution State
-service: Operations Manager
+service: operationsmanager
 groupName: Resource
 apiVersion: v1
 summary: Retrieves alert resolution state.

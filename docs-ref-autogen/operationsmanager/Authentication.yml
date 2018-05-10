@@ -2,7 +2,7 @@
 uid: <servername>.operationsmanager.operationsmanager.authentication
 name: Authentication
 apiVersion: v1
-service: Operations Manager
+service: operationsmanager
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.authentication.login
   summary: Authenticates the user.
