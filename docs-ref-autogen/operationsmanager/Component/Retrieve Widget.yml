@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.component.retrievewidget
 name: Retrieve Widget
-service: operationsmanager
+service: Operations Manager
 groupName: Component
 apiVersion: v1
 summary: Retrieves the widget properties and configuration.

@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrieveknowledgearticle
 name: Retrieve Knowledge Article
-service: operationsmanager
+service: Operations Manager
 groupName: Data
 apiVersion: v1
 summary: Retrieves the knowledge article for the specified element type and element ID.

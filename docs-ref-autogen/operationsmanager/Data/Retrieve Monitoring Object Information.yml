@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringobjectinformation
 name: Retrieve Monitoring Object Information
-service: operationsmanager
+service: Operations Manager
 groupName: Data
 apiVersion: v1
 summary: Retrieves the objects details (like object properties, related objects and classs information) for the specificed object.

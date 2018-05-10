@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.submittask
 name: Submit Task
-service: operationsmanager
+service: Operations Manager
 groupName: Data
 apiVersion: v1
 summary: Submits a task for execution.

@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrieveperformancedata
 name: Retrieve Performance Data
-service: operationsmanager
+service: Operations Manager
 groupName: Data
 apiVersion: v1
 summary: Retrieves the performance data for the specified scope/parameters.

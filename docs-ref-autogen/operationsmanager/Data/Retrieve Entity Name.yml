@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrieveentityname
 name: Retrieve Entity Name
-service: operationsmanager
+service: Operations Manager
 groupName: Data
 apiVersion: v1
 summary: Retrieves entity name for the specified entity ID.

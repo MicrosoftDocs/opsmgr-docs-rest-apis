@@ -1,7 +1,7 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrievestateforentity
 name: Retrieve State For Entity
-service: operationsmanager
+service: Operations Manager
 groupName: Data
 apiVersion: v1
 summary: Retrieves the health state of the specified entity ID.

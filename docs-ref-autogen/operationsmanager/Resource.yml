@@ -2,7 +2,7 @@
 uid: <servername>.operationsmanager.operationsmanager.resource
 name: Resource
 apiVersion: v1
-service: operationsmanager
+service: Operations Manager
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertcolumns
   summary: Retrieves the list of columns associated with alerts.
