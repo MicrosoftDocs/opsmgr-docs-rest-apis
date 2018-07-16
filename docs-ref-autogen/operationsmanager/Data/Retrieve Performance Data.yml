@@ -25,7 +25,8 @@ responses:
   types:
   - uid: PerformanceResponse
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: id
     in: body
     description: ID.

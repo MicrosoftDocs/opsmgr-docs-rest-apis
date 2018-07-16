@@ -31,7 +31,8 @@ responses:
   types:
   - uid: boolean
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: dashboard
     in: body
     description: ''

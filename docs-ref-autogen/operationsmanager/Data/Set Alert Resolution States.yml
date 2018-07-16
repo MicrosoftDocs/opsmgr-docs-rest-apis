@@ -25,7 +25,8 @@ responses:
   types:
   - uid: boolean
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: alertIds
     in: body
     description: ''

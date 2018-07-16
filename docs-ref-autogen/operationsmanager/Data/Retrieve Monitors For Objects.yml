@@ -26,7 +26,8 @@ responses:
   - uid: MonitorDataResponse
     isArray: true
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: id
     in: body
     description: Monitor ID.

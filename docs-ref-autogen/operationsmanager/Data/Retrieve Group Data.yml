@@ -25,7 +25,8 @@ responses:
   types:
   - uid: ScopeDataResponse
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: criteria
     in: body
     types:

@@ -26,7 +26,8 @@ responses:
   - uid: TaskListResponse
     isArray: true
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: id
     in: body
     isRequired: true
