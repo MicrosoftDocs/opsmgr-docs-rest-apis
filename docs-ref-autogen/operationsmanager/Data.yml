@@ -10,10 +10,10 @@ operations:
   summary: Retrieves the alert data for the specified scope/parameters.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievealertproperties
   summary: Retrieves the alert properties for the specified alert.
-- uid: <servername>.operationsmanager.operationsmanager.data.retrieveclassinformation
-  summary: Retrieves the class properties for the specified class ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveclasses
   summary: Retrieves the list of classes and thier properties.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveclassinformation
+  summary: Retrieves the class properties for the specified class ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveentityname
   summary: Retrieves entity name for the specified entity ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievegroupdata
