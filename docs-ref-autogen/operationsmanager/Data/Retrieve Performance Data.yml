@@ -122,3 +122,4 @@ definitions:
     - uid: boolean
 examples: []
 security: []
+errorCodes: []
