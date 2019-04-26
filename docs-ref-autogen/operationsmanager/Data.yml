@@ -62,9 +62,9 @@ operations:
   summary: Retrieves the list of tasks and thier properties.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveunsealedmanagementpacks
   summary: Retrieve the list of unsealead management packs.
-- uid: <servername>.operationsmanager.operationsmanager.data.savecompanyknowledge
-  summary: Retrieves the company knowledge of the specified entity.
+- uid: <servername>.operationsmanager.operationsmanager.data.saveknowledgearticle
+  summary: Saves the knowledge article of the specified entity.
 - uid: <servername>.operationsmanager.operationsmanager.data.setalertresolutionstates
-  summary: Retrieves the alert resolution state for the specified alert(s).
+  summary: Sets the alert resolution state for the specified alert(s).
 - uid: <servername>.operationsmanager.operationsmanager.data.submittask
   summary: Submits a task for execution.

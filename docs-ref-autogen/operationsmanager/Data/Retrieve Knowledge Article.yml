@@ -31,13 +31,28 @@ responses:
   description: OK. Successfully retrieved knowledge article.
   types:
   - uid: KnowledgeArticleResponse
-    isArray: true
 requestHeader: []
 definitions:
 - name: KnowledgeArticleResponse
   kind: object
   properties:
-  - name: id
+  - name: WorkflowMpId
+    description: ID of the Workflow's MP
+    types:
+    - uid: string
+  - name: IsWorkflowMpSealed
+    description: Is Workflow MP sealed
+    types:
+    - uid: boolean
+  - name: KnowledgeArticleElements
+    description: ''
+    types:
+    - uid: KnowledgeArticleElement
+      isArray: true
+- name: KnowledgeArticleElement
+  kind: object
+  properties:
+  - name: Id
     description: Knowledge article ID.
     types:
     - uid: string
