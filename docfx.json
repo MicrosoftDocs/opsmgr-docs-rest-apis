@@ -1,6 +1,7 @@
 {
   "build": {
-    "content": [{
+    "content": [
+      {
         "src": "docs-ref-autogen",
         "files": [
           "**.yml"
@@ -30,7 +31,9 @@
         "files": [
           "index.md"
         ],
-        "exclude": ["README.md"],
+        "exclude": [
+          "README.md"
+        ],
         "dest": "operationsmanager"
       },
       {
@@ -39,18 +42,20 @@
         ]
       }
     ],
-    "resource": [{
-      "files": [
-        "**/*.png",
-        "**/*.jpg"
-      ],
-      "exclude": [
-        "**/obj/**",
-        "**/includes/**",
-        "_themes/**",
-        "_themes.pdf/**"
-      ]
-    }],
+    "resource": [
+      {
+        "files": [
+          "**/*.png",
+          "**/*.jpg"
+        ],
+        "exclude": [
+          "**/obj/**",
+          "**/includes/**",
+          "_themes/**",
+          "_themes.pdf/**"
+        ]
+      }
+    ],
     "overwrite": [],
     "externalReference": [],
     "globalMetadata": {
@@ -61,10 +66,14 @@
     },
     "fileMetadata": {
       "searchScope": {
-        "docs-ref-autogen/**.yml": ["Operations Manager", "REST"]
+        "docs-ref-autogen/**.yml": [
+          "Operations Manager",
+          "REST"
+        ]
       }
     },
     "template": [],
-    "dest": "OpsMgrRestApi"
+    "dest": "OpsMgrRestApi",
+    "markdownEngineName": "markdig"
   }
 }

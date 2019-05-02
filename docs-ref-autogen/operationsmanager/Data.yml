@@ -10,10 +10,10 @@ operations:
   summary: Retrieves the alert data for the specified scope/parameters.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievealertproperties
   summary: Retrieves the alert properties for the specified alert.
-- uid: <servername>.operationsmanager.operationsmanager.data.retrieveclassinformation
-  summary: Retrieves the class properties for the specified class ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveclasses
   summary: Retrieves the list of classes and thier properties.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveclassinformation
+  summary: Retrieves the class properties for the specified class ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveentityname
   summary: Retrieves entity name for the specified entity ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievegroupdata
@@ -62,9 +62,9 @@ operations:
   summary: Retrieves the list of tasks and thier properties.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveunsealedmanagementpacks
   summary: Retrieve the list of unsealead management packs.
-- uid: <servername>.operationsmanager.operationsmanager.data.savecompanyknowledge
-  summary: Retrieves the company knowledge of the specified entity.
+- uid: <servername>.operationsmanager.operationsmanager.data.saveknowledgearticle
+  summary: Saves the knowledge article of the specified entity.
 - uid: <servername>.operationsmanager.operationsmanager.data.setalertresolutionstates
-  summary: Retrieves the alert resolution state for the specified alert(s).
+  summary: Sets the alert resolution state for the specified alert(s).
 - uid: <servername>.operationsmanager.operationsmanager.data.submittask
   summary: Submits a task for execution.

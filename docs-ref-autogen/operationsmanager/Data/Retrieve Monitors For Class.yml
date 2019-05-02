@@ -26,7 +26,8 @@ responses:
   - uid: MonitorDataResponse
     isArray: true
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: criteria
     in: body
     types:
@@ -101,3 +102,4 @@ definitions:
     - uid: string
 examples: []
 security: []
+errorCodes: []

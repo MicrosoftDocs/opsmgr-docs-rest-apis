@@ -25,7 +25,8 @@ responses:
   types:
   - uid: object
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: credentials
     in: body
     types:
@@ -34,3 +35,4 @@ requestHeader: []
 definitions: []
 examples: []
 security: []
+errorCodes: []

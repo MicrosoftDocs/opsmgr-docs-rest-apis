@@ -31,7 +31,8 @@ responses:
   types:
   - uid: boolean
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: name
     in: body
     isRequired: true
@@ -121,3 +122,4 @@ definitions:
     - uid: string
 examples: []
 security: []
+errorCodes: []

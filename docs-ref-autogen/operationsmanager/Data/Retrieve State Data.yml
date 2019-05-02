@@ -25,7 +25,8 @@ responses:
   types:
   - uid: TableDataResponse
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: classId
     in: body
     description: Specify the class ID.
@@ -111,3 +112,4 @@ definitions:
     - uid: boolean
 examples: []
 security: []
+errorCodes: []

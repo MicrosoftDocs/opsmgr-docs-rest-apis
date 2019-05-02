@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
-uid: <servername>.operationsmanager.operationsmanager.data.savecompanyknowledge
-name: Save Company Knowledge
+uid: <servername>.operationsmanager.operationsmanager.data.saveknowledgearticle
+name: Save Knowledge Article
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the company knowledge of the specified entity.
+summary: Saves the knowledge article of the specified entity.
 consumes:
 - application/json
 - text/json
@@ -21,11 +21,12 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved Company knowledge.
+  description: OK. Successfully saved knowledge article.
   types:
   - uid: boolean
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: elementId
     in: body
     description: Specify the element ID.
@@ -63,7 +64,7 @@ requestBody:
     - uid: string
 requestHeader: []
 definitions:
-- name: CompanyKnowledgeRequest
+- name: UpdateKnowledgeArticleRequest
   kind: object
   properties:
   - name: elementId
@@ -96,3 +97,4 @@ definitions:
     - uid: string
 examples: []
 security: []
+errorCodes: []

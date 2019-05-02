@@ -25,7 +25,8 @@ responses:
   types:
   - uid: string
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: taskId
     in: body
     description: Task ID.
@@ -94,3 +95,4 @@ definitions:
     - uid: TaskExecutionCredentials
 examples: []
 security: []
+errorCodes: []

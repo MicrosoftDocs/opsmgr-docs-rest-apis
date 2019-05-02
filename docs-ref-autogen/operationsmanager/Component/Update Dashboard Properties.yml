@@ -31,7 +31,8 @@ responses:
   types:
   - uid: boolean
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: dashboard
     in: body
     description: ''
@@ -137,3 +138,4 @@ definitions:
       isArray: true
 examples: []
 security: []
+errorCodes: []

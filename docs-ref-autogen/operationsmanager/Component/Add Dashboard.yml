@@ -25,7 +25,8 @@ responses:
   types:
   - uid: ComponentResponse
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: name
     in: body
     isRequired: true
@@ -142,3 +143,4 @@ definitions:
     - uid: string
 examples: []
 security: []
+errorCodes: []

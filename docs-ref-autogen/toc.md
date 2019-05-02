@@ -46,7 +46,7 @@
 ### [Retrieve Task Result](operationsmanager/Data/Retrieve Task Result.yml)
 ### [Retrieve Tasks](operationsmanager/Data/Retrieve Tasks.yml)
 ### [Retrieve Unsealed Management Packs](operationsmanager/Data/Retrieve Unsealed Management Packs.yml)
-### [Save Company Knowledge](operationsmanager/Data/Save Company Knowledge.yml)
+### [Save Knowledge Article](operationsmanager/Data/Save Knowledge Article.yml)
 ### [Set Alert Resolution States](operationsmanager/Data/Set Alert Resolution States.yml)
 ### [Submit Task](operationsmanager/Data/Submit Task.yml)
 ## [Network Monitoring](operationsmanager/NetworkMonitoring.yml)

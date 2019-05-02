@@ -25,7 +25,8 @@ responses:
   types:
   - uid: TableDataResponse
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: script
     in: body
     types:
@@ -66,3 +67,4 @@ definitions:
     - uid: boolean
 examples: []
 security: []
+errorCodes: []

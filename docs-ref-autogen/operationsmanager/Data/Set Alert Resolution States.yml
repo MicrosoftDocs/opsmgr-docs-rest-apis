@@ -4,7 +4,7 @@ name: Set Alert Resolution States
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the alert resolution state for the specified alert(s).
+summary: Sets the alert resolution state for the specified alert(s).
 consumes:
 - application/json
 - text/json
@@ -21,11 +21,12 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved alert resolution state.
+  description: OK. Successfully sets alert resolution state.
   types:
-  - uid: boolean
+  - uid: '#/definitions/ResolutionStateUpdateResponse'
 requestBody:
-- parameters:
+- name: default
+  parameters:
   - name: alertIds
     in: body
     description: ''
@@ -62,3 +63,4 @@ definitions:
     - uid: string
 examples: []
 security: []
+errorCodes: []
