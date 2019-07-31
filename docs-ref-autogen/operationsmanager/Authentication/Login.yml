@@ -29,6 +29,7 @@ requestBody:
   parameters:
   - name: credentials
     in: body
+    description: Credentials in the form (AuthenticationMode:domain\username:password) encoded in base64.
     types:
     - uid: string
 requestHeader: []

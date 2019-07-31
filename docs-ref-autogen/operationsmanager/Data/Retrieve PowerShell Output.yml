@@ -29,6 +29,7 @@ requestBody:
   parameters:
   - name: script
     in: body
+    description: Provide the PowerShell script.
     types:
     - uid: string
 requestHeader: []
