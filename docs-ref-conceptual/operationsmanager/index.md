@@ -4,11 +4,12 @@ description: This article describes the System Center Operations Manager REST AP
 author: mgoedtel
 ms.author: magoedte
 manager: carmonm
-ms.date: 04/26/2018
+ms.date: 04/22/2020
 ms.custom: na
 ms.prod: system-center-2016
 ms.technology: operations-manager
 ms.topic: reference
+ms.assetid: bb4bd81c-439c-479d-a045-dd5653812dff
 ---
 
 # Operations Manager REST API Reference
@@ -19,6 +20,7 @@ System Center Operations Manager provides flexible and cost-effective infrastruc
 > Operations Manager 2019 UR1 supports Cross-Site Request Forgery (CSRF) tokens to prevent CSRF attacks. If you are using Operations manager 2019 UR1, you must initialize the CSRF token. HTML scripts do not work if the CSRF tokens are not initialized.
 
 ## Initialize the CSRF token
+
 Required action, applicable for Operations Manager 2019 UR1.
 
 1. In the HTML header of the dashboard, add the following code:
@@ -40,8 +42,9 @@ Required action, applicable for Operations Manager 2019 UR1.
             }
         }
 ```
-2. In the **onload** function, change the header value to **requestHeaders**.
 
-### Example:
+1. In the **onload** function, change the header value to **requestHeaders**.
+
+**Example:**
 
 ![Initialize the CSRF token example](./Media/index/116854.png)

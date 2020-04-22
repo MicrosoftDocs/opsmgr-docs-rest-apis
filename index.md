@@ -1,15 +1,15 @@
 ---
-ms.assetid: 
 title: System Center Operations Manager REST API Reference
 description: The system requirements article provides general performance and scalability guidance for consideration as part of your design planning of Operations Manager.  
 author: mgoedtel
 ms.author: magoedte
 manager: carmonm
-ms.date: 02/07/2018
+ms.date: 04/22/2020
 ms.custom: na
 ms.prod: system-center-2016
 ms.technology: operations-manager
 ms.topic: reference
+ms.assetid: b76911fa-1f5f-4a6f-864c-d0ba4adf2061
 ---
 
 # System Center Operations Manager REST API Reference
@@ -24,6 +24,7 @@ The new HTML5-based dashboards includes support for a Custom widget that execute
 > Operations Manager 2019 UR1 supports Cross-Site Request Forgery (CSRF) tokens to prevent CSRF attacks. If you are using Operations Manager 2019 UR1, you must initialize the CSRF token. HTML scripts do not work if the CSRF tokens are not initialized.
 
 ## Initialize the CSRF token
+
 Required action, applicable for Operations Manager 2019 UR1.
 
 1. In the HTML header of the dashboard, add the following code:
@@ -45,20 +46,22 @@ Required action, applicable for Operations Manager 2019 UR1.
             }
         }
 ```
-2. In the **onload** function, change the header value to **requestHeaders**.
 
-### Example:
+1. In the **onload** function, change the header value to **requestHeaders**.
+
+**Example:**
 
 ![Initialize the CSRF token example](./Media/index/116854.png)
 
 ## Examples
+
 The following examples demonstrate how to make calls to the Operations Manager REST API with the Custom widget.  
 
 ### Bar chart
+
 The following HTML code demonstrates rendering a bar chart with alert data.
 
-```
-<!DOCTYPE HTML>
+```<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -130,10 +133,10 @@ The following HTML code demonstrates rendering a bar chart with alert data.
 ```
 
 ### Pie chart
+
 The following HTML code demonstrates rendering a pie chart with alert data.
 
-```
-<!DOCTYPE HTML>
+```<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -212,10 +215,10 @@ The following HTML code demonstrates rendering a pie chart with alert data.
 ```
 
 ### 3D Pie chart
+
 The following HTML code demonstrates rendering a 3D pie chart with alert data.
 
-```
-<!DOCTYPE HTML>
+```<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -319,10 +322,10 @@ The following HTML code demonstrates rendering a 3D pie chart with alert data.
 ```
 
 ### Donut chart
+
 The following HTML code demonstrates rendering a donut chart with alert data.
 
-```
-<!DOCTYPE HTML>
+```<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -376,12 +379,12 @@ animationEnabled: true,
                     data: [
                         {
                             type: "doughnut",
-                indexLabelFontFamily: "Garamond",       
+                indexLabelFontFamily: "Garamond",
                 indexLabelFontSize: 20,
                 startAngle:0,
-                indexLabelFontColor: "dimgrey",       
-                indexLabelLineColor: "darkgrey", 
-                toolTipContent: "{y} %",         
+                indexLabelFontColor: "dimgrey",
+                indexLabelLineColor: "darkgrey",
+                toolTipContent: "{y} %",
                             dataPoints: [
                                 { y: criticalCounter, indexLabel: "Critical" },
                                 { y: warningCounter, indexLabel: "Warning" },
@@ -405,10 +408,10 @@ animationEnabled: true,
 ```
 
 ### 3D Donut chart
+
 The following HTML code demonstrates rendering a 3D donut chart with alert data.
 
-```
-<!DOCTYPE HTML>
+```<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -500,11 +503,11 @@ The following HTML code demonstrates rendering a 3D donut chart with alert data.
 </html>
 ```
 
-### Combination chart 
+### Combination chart
+
 The following HTML code demonstrates creating a Combination chart to display alerts in a pie and spline chart.
 
-```
-<!DOCTYPE HTML>
+```<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -629,4 +632,3 @@ var totalCounter =0;
 
 </html>
 ```
-
