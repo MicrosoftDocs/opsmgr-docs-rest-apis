@@ -20,6 +20,37 @@ This reference of the Representational State Transfer (REST) API is applicable t
 
 The new HTML5 based dashboards includes support for a Custom widget that executes the HTML code which utilizes methods available in this REST API to visualize the desired output in a variety of visualizations.  For more information about the Operations Manager HTLM5 dashboards, see [Overview of HTML5 Web console and dashboards](https://docs.microsoft.com/system-center/scom/manage-overview-html5-webconsole) and for additional information on how to work with the Custom widget, see [How create a dashboard with the Custom widget in the Web console](https://docs.microsoft.com/system-center/scom/manage-create-web-dashboard-custom).
 
+> ![NOTE]
+> Operations Manager 2019 UR1 supports Cross-Site Request Forgery (CSRF) tokens to prevent CSRF attacks. If you are using Operations manager 2019 UR1, you must initialize the CSRF token. HTML scripts do not work if the CSRF tokens are not initialized.
+
+## Initialize the CSRF token
+Required action, applicable for Operations Manager 2019 UR1.
+
+1. In the HTML header of the dashboard, add the following code:
+
+```var requestHeaders = {
+            Accept: 'q=0.8;application/json;q=0.9',
+            "Content-Type": "application/json"
+        };
+        InitializeCSRFToken();
+        function InitializeCSRFToken() {
+            var documentcookies = document.cookie.split('; ');
+            var result = {};
+            for (var i = 0; i < documentcookies.length; i++) {
+                var cur = documentcookies[i].split('=');
+                result[cur[0]] = cur[1];
+            }
+            if (result["SCOM-CSRF-TOKEN"] && result["SCOM-CSRF-TOKEN"] != null) {
+                requestHeaders["SCOM-CSRF-TOKEN"] = decodeURIComponent(result["SCOM-CSRF-TOKEN"]);
+            }
+        }
+```
+2. In the **onload** function, change the header value to **requestHeaders**.
+
+### Example:
+
+![Initialize the CSRF token example](./Media/index/116854.png)
+
 ## Examples
 The following examples demonstrate how to make calls to the Operations Manager REST API with the Custom widget.  
 
@@ -52,18 +83,18 @@ The following HTML code demonstrates rendering a bar chart with alert data.
                 },
                 success: function (result) {
                     for (var i = 0; i < result.rows.length; i++) {
-			switch(result.rows[i].severity)
-			{
-				case "Error":
-					criticalCounter++;
-					break;
-				case "Information":
-					informationCounter++;
-					break;
-				case "Warning":
-	                                warningCounter++
-					break;
-			}
+            switch(result.rows[i].severity)
+            {
+                case "Error":
+                    criticalCounter++;
+                    break;
+                case "Information":
+                    informationCounter++;
+                    break;
+                case "Warning":
+                                    warningCounter++
+                    break;
+            }
                     }
                     renderChart();
                 }
@@ -127,18 +158,18 @@ The following HTML code demonstrates rendering a pie chart with alert data.
                 },
                 success: function (result) {
                     for (var i = 0; i < result.rows.length; i++) {
-			switch(result.rows[i].severity)
-			{
-				case "Error":
-					criticalCounter++;
-					break;
-				case "Information":
-					informationCounter++;
-					break;
-				case "Warning":
-	                                warningCounter++
-					break;
-			}
+            switch(result.rows[i].severity)
+            {
+                case "Error":
+                    criticalCounter++;
+                    break;
+                case "Information":
+                    informationCounter++;
+                    break;
+                case "Warning":
+                                    warningCounter++
+                    break;
+            }
                     }
                     renderChart();
                 }
@@ -209,18 +240,18 @@ The following HTML code demonstrates rendering a 3D pie chart with alert data.
                 },
                 success: function (result) {
                     for (var i = 0; i < result.rows.length; i++) {
-			switch(result.rows[i].severity)
-			{
-				case "Error":
-					criticalCounter++;
-					break;
-				case "Information":
-					informationCounter++;
-					break;
-				case "Warning":
-	                                warningCounter++
-					break;
-			}
+            switch(result.rows[i].severity)
+            {
+                case "Error":
+                    criticalCounter++;
+                    break;
+                case "Information":
+                    informationCounter++;
+                    break;
+                case "Warning":
+                                    warningCounter++
+                    break;
+            }
                     }
                     renderChart();
                 }
@@ -316,18 +347,18 @@ The following HTML code demonstrates rendering a donut chart with alert data.
                 },
                 success: function (result) {
                     for (var i = 0; i < result.rows.length; i++) {
-			switch(result.rows[i].severity)
-			{
-				case "Error":
-					criticalCounter++;
-					break;
-				case "Information":
-					informationCounter++;
-					break;
-				case "Warning":
-	                                warningCounter++
-					break;
-			}
+            switch(result.rows[i].severity)
+            {
+                case "Error":
+                    criticalCounter++;
+                    break;
+                case "Information":
+                    informationCounter++;
+                    break;
+                case "Warning":
+                                    warningCounter++
+                    break;
+            }
                     }
                     renderChart();
                 }
@@ -345,12 +376,12 @@ animationEnabled: true,
                     data: [
                         {
                             type: "doughnut",
-				indexLabelFontFamily: "Garamond",       
-				indexLabelFontSize: 20,
-				startAngle:0,
-				indexLabelFontColor: "dimgrey",       
-				indexLabelLineColor: "darkgrey", 
-				toolTipContent: "{y} %", 		
+                indexLabelFontFamily: "Garamond",       
+                indexLabelFontSize: 20,
+                startAngle:0,
+                indexLabelFontColor: "dimgrey",       
+                indexLabelLineColor: "darkgrey", 
+                toolTipContent: "{y} %",         
                             dataPoints: [
                                 { y: criticalCounter, indexLabel: "Critical" },
                                 { y: warningCounter, indexLabel: "Warning" },
@@ -402,18 +433,18 @@ The following HTML code demonstrates rendering a 3D donut chart with alert data.
                 },
                 success: function (result) {
                     for (var i = 0; i < result.rows.length; i++) {
-			switch(result.rows[i].severity)
-			{
-				case "Error":
-					criticalCounter++;
-					break;
-				case "Information":
-					informationCounter++;
-					break;
-				case "Warning":
-	                                warningCounter++
-					break;
-			}
+            switch(result.rows[i].severity)
+            {
+                case "Error":
+                    criticalCounter++;
+                    break;
+                case "Information":
+                    informationCounter++;
+                    break;
+                case "Warning":
+                                    warningCounter++
+                    break;
+            }
                     }
                     renderChart();
                 }
@@ -499,18 +530,18 @@ var totalCounter =0;
                 },
                 success: function (result) {
                     for (var i = 0; i < result.rows.length; i++) {
-			switch(result.rows[i].severity)
-			{
-				case "Error":
-					criticalCounter++;
-					break;
-				case "Information":
-					informationCounter++;
-					break;
-				case "Warning":
-	                                warningCounter++
-					break;
-			}
+            switch(result.rows[i].severity)
+            {
+                case "Error":
+                    criticalCounter++;
+                    break;
+                case "Information":
+                    informationCounter++;
+                    break;
+                case "Warning":
+                                    warningCounter++
+                    break;
+            }
                     }
                     renderChart();
                 }
