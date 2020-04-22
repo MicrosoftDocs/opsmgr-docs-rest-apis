@@ -16,12 +16,12 @@ ms.topic: reference
 
 Welcome to the System Center Operations Manager REST API Reference.
 
-This reference of the Representational State Transfer (REST) API is applicable to System Center Operations Manager 1801, which supports a set of HTTP operations (methods) to create, retrieve, update, or delete access to the operational data using the custom dashboard widget in the new System Center Operations Manager 1801 Web console.
+This reference of the Representational State Transfer (REST) API is applicable to System Center Operations Manager 1801 and later versions. The program supports a set of HTTP operations (methods) to create, retrieve, update, or delete access to the operational data by using the Custom dashboard widget in the new System Center Operations Manager 1801 Web console.
 
-The new HTML5 based dashboards includes support for a Custom widget that executes the HTML code which utilizes methods available in this REST API to visualize the desired output in a variety of visualizations.  For more information about the Operations Manager HTLM5 dashboards, see [Overview of HTML5 Web console and dashboards](https://docs.microsoft.com/system-center/scom/manage-overview-html5-webconsole) and for additional information on how to work with the Custom widget, see [How create a dashboard with the Custom widget in the Web console](https://docs.microsoft.com/system-center/scom/manage-create-web-dashboard-custom).
+The new HTML5-based dashboards includes support for a Custom widget that executes the HTML code that uses methods that are available in this REST API to visualize the desired output in a variety of visualizations. For more information about the Operations Manager HTLM5 dashboards, see [Overview of HTML5 Web console and dashboards](https://docs.microsoft.com/system-center/scom/manage-overview-html5-webconsole). For more information about how to work with the Custom widget, see [How create a dashboard with the Custom widget in the Web console](https://docs.microsoft.com/system-center/scom/manage-create-web-dashboard-custom).
 
 > ![NOTE]
-> Operations Manager 2019 UR1 supports Cross-Site Request Forgery (CSRF) tokens to prevent CSRF attacks. If you are using Operations manager 2019 UR1, you must initialize the CSRF token. HTML scripts do not work if the CSRF tokens are not initialized.
+> Operations Manager 2019 UR1 supports Cross-Site Request Forgery (CSRF) tokens to prevent CSRF attacks. If you are using Operations Manager 2019 UR1, you must initialize the CSRF token. HTML scripts do not work if the CSRF tokens are not initialized.
 
 ## Initialize the CSRF token
 Required action, applicable for Operations Manager 2019 UR1.
