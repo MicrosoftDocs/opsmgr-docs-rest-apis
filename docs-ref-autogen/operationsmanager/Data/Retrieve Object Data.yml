@@ -29,6 +29,7 @@ requestBody:
   parameters:
   - name: criteria
     in: body
+    description: Specify the criteria.
     types:
     - uid: string
 requestHeader: []
