@@ -4,7 +4,7 @@ description: The system requirements article provides general performance and sc
 author: mgoedtel
 ms.author: magoedte
 manager: carmonm
-ms.date: 04/22/2020
+ms.date: 07/22/2020
 ms.custom: na
 ms.prod: system-center-2016
 ms.technology: operations-manager
@@ -75,7 +75,7 @@ The following HTML code demonstrates rendering a bar chart with alert data.
             $.ajax({
                 url: "/OperationsManager/data/alert",
                 type: "POST",
-                data: {
+                data: JSON.stringify ({
                     "classId": null,
                     "objectIds": { "3c8ac4f3-475e-44dd-4163-8a97af363705": -1 },
                     "criteria": "((Severity = '0') OR (Severity = '1') OR (Severity = '2') OR (Severity = '3')) AND ((Priority = '2') OR (Priority = '1') OR (Priority = '0')) AND ((ResolutionState = '0') OR (ResolutionState = '247') OR (ResolutionState = '248') OR (ResolutionState = '249') OR (ResolutionState = '250') OR (ResolutionState = '254') OR (ResolutionState = '255'))",
@@ -83,7 +83,7 @@ The following HTML code demonstrates rendering a bar chart with alert data.
                     [
                         "severity","monitoringobjectdisplayname","name","age","repeatcount","lastModified"
                     ]
-                },
+                }),
                 success: function (result) {
                     for (var i = 0; i < result.rows.length; i++) {
             switch(result.rows[i].severity)
@@ -150,7 +150,7 @@ The following HTML code demonstrates rendering a pie chart with alert data.
             $.ajax({
                 url: "/OperationsManager/data/alert",
                 type: "POST",
-                data: {
+                data: JSON.stringify ({
                     "classId": null,
                     "objectIds": { "3c8ac4f3-475e-44dd-4163-8a97af363705": -1 },
                     "criteria": "((Severity = '0') OR (Severity = '1') OR (Severity = '2') OR (Severity = '3')) AND ((Priority = '2') OR (Priority = '1') OR (Priority = '0')) AND ((ResolutionState = '0') OR (ResolutionState = '247') OR (ResolutionState = '248') OR (ResolutionState = '249') OR (ResolutionState = '250') OR (ResolutionState = '254') OR (ResolutionState = '255'))",
@@ -158,7 +158,7 @@ The following HTML code demonstrates rendering a pie chart with alert data.
                     [
                         "severity","monitoringobjectdisplayname","name","age","repeatcount","lastModified"
                     ]
-                },
+                }),
                 success: function (result) {
                     for (var i = 0; i < result.rows.length; i++) {
             switch(result.rows[i].severity)
@@ -232,7 +232,7 @@ The following HTML code demonstrates rendering a 3D pie chart with alert data.
             $.ajax({
                 url: "/OperationsManager/data/alert",
                 type: "POST",
-                data: {
+                data: JSON.stringify ({
                     "classId": null,
                     "objectIds": { "3c8ac4f3-475e-44dd-4163-8a97af363705": -1 },
                     "criteria": "((Severity = '0') OR (Severity = '1') OR (Severity = '2') OR (Severity = '3')) AND ((Priority = '2') OR (Priority = '1') OR (Priority = '0')) AND ((ResolutionState = '0') OR (ResolutionState = '247') OR (ResolutionState = '248') OR (ResolutionState = '249') OR (ResolutionState = '250') OR (ResolutionState = '254') OR (ResolutionState = '255'))",
@@ -240,7 +240,7 @@ The following HTML code demonstrates rendering a 3D pie chart with alert data.
                     [
                         "severity","monitoringobjectdisplayname","name","age","repeatcount","lastModified"
                     ]
-                },
+                }),
                 success: function (result) {
                     for (var i = 0; i < result.rows.length; i++) {
             switch(result.rows[i].severity)
@@ -339,7 +339,7 @@ The following HTML code demonstrates rendering a donut chart with alert data.
             $.ajax({
                 url: "/OperationsManager/data/alert",
                 type: "POST",
-                data: {
+                data: JSON.stringify ({
                     "classId": null,
                     "objectIds": { "3c8ac4f3-475e-44dd-4163-8a97af363705": -1 },
                     "criteria": "((Severity = '0') OR (Severity = '1') OR (Severity = '2') OR (Severity = '3')) AND ((Priority = '2') OR (Priority = '1') OR (Priority = '0')) AND ((ResolutionState = '0') OR (ResolutionState = '247') OR (ResolutionState = '248') OR (ResolutionState = '249') OR (ResolutionState = '250') OR (ResolutionState = '254') OR (ResolutionState = '255'))",
@@ -347,7 +347,7 @@ The following HTML code demonstrates rendering a donut chart with alert data.
                     [
                         "severity","monitoringobjectdisplayname","name","age","repeatcount","lastModified"
                     ]
-                },
+                }),
                 success: function (result) {
                     for (var i = 0; i < result.rows.length; i++) {
             switch(result.rows[i].severity)
@@ -425,7 +425,7 @@ The following HTML code demonstrates rendering a 3D donut chart with alert data.
             $.ajax({
                 url: "/OperationsManager/data/alert",
                 type: "POST",
-                data: {
+                data: JSON.stringify ({
                     "classId": null,
                     "objectIds": { "3c8ac4f3-475e-44dd-4163-8a97af363705": -1 },
                     "criteria": "((Severity = '0') OR (Severity = '1') OR (Severity = '2') OR (Severity = '3')) AND ((Priority = '2') OR (Priority = '1') OR (Priority = '0')) AND ((ResolutionState = '0') OR (ResolutionState = '247') OR (ResolutionState = '248') OR (ResolutionState = '249') OR (ResolutionState = '250') OR (ResolutionState = '254') OR (ResolutionState = '255'))",
@@ -433,7 +433,7 @@ The following HTML code demonstrates rendering a 3D donut chart with alert data.
                     [
                         "severity","monitoringobjectdisplayname","name","age","repeatcount","lastModified"
                     ]
-                },
+                }),
                 success: function (result) {
                     for (var i = 0; i < result.rows.length; i++) {
             switch(result.rows[i].severity)
@@ -522,7 +522,7 @@ var totalCounter =0;
             $.ajax({
                 url: "/OperationsManager/data/alert",
                 type: "POST",
-                data: {
+                data: JSON.stringify ({
                     "classId": null,
                     "objectIds": { "3c8ac4f3-475e-44dd-4163-8a97af363705": -1 },
                     "criteria": "((Severity = '0') OR (Severity = '1') OR (Severity = '2') OR (Severity = '3')) AND ((Priority = '2') OR (Priority = '1') OR (Priority = '0')) AND ((ResolutionState = '0') OR (ResolutionState = '247') OR (ResolutionState = '248') OR (ResolutionState = '249') OR (ResolutionState = '250') OR (ResolutionState = '254') OR (ResolutionState = '255'))",
@@ -530,7 +530,7 @@ var totalCounter =0;
                     [
                         "severity","monitoringobjectdisplayname","name","age","repeatcount","lastModified"
                     ]
-                },
+                }),
                 success: function (result) {
                     for (var i = 0; i < result.rows.length; i++) {
             switch(result.rows[i].severity)
