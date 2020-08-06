@@ -47,7 +47,7 @@ Required action, applicable for Operations Manager 2019 UR1.
         }
 ```
 
-1. In the **onload** function, change the header value to **requestHeaders**.
+1. In the **onload** function, change the header value to **requestHeaders**. If the header value does not exist, add it as shown below:
 
 **Example:**
 
