@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Sign out successfull.
+  description: OK. Sign out successful.
   types:
   - uid: object
 requestHeader: []
