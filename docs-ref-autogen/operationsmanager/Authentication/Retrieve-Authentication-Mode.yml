@@ -1,0 +1,28 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.authentication.retrieveauthenticationmode
+name: Retrieve Authentication Mode
+service: Operations Manager
+groupName: Authentication
+apiVersion: v1
+summary: Retrieves the authentication mode of the web server.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/authenticationMode
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved authentication mode.
+  types:
+  - uid: object
+requestHeader: []
+definitions: []
+examples: []
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves the authentication mode of the web server.
+errorCodes: []

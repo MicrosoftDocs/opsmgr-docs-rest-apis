@@ -1,0 +1,176 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringobjectinformation
+name: Retrieve Monitoring Object Information
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the objects details (like object properties, related objects and classs information) for the specificed object.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/objectInformation/{objectId}
+uriParameters:
+- name: objectId
+  in: path
+  isRequired: true
+  description: Specify the object ID for object details that need to be retrieved.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved object details.
+  types:
+  - uid: MonitoringObjectResponse
+requestHeader: []
+definitions:
+- name: MonitoringObjectResponse
+  kind: object
+  properties:
+  - name: monitoringObjectProperties
+    description: ''
+    types:
+    - uid: MonitoringObjectProperty
+      isArray: true
+  - name: relatedObjects
+    description: ''
+    types:
+    - uid: RelatedObject
+      isArray: true
+  - name: classes
+    description: ''
+    types:
+    - uid: ClassDataResponse
+      isArray: true
+  - name: displayName
+    description: Display name of the moniotring object.
+    types:
+    - uid: string
+  - name: healthIconUrl
+    description: Monitoring object health icon URL.
+    types:
+    - uid: string
+  - name: icon
+    description: Icon of monitoring object.
+    types:
+    - uid: string
+- name: MonitoringObjectProperty
+  kind: object
+  properties:
+  - name: name
+    description: Name of the monitoring property.
+    types:
+    - uid: string
+  - name: value
+    description: ''
+    types:
+    - uid: string
+- name: RelatedObject
+  kind: object
+  properties:
+  - name: id
+    description: ID of the related object.
+    types:
+    - uid: string
+  - name: displayName
+    description: Display name of the related object.
+    types:
+    - uid: string
+  - name: healthIconUrl
+    description: Health Icon URL of the related object.
+    types:
+    - uid: string
+  - name: icon
+    description: Icon of the related object.
+    types:
+    - uid: string
+- name: ClassDataResponse
+  kind: object
+  properties:
+  - name: id
+    description: Class ID.
+    types:
+    - uid: string
+  - name: displayName
+    description: Display name of the class.
+    types:
+    - uid: string
+  - name: childObjects
+    description: ''
+    types:
+    - uid: ChildObject
+      isArray: true
+  - name: description
+    description: Description of the class.
+    types:
+    - uid: string
+  - name: comment
+    description: ''
+    types:
+    - uid: string
+  - name: hosted
+    description: Host of the class.
+    types:
+    - uid: string
+  - name: status
+    description: Status of the class.
+    types:
+    - uid: string
+  - name: timeAdded
+    description: Time the class was added.
+    types:
+    - uid: string
+  - name: baseMonitoringClass
+    description: ''
+    types:
+    - uid: BaseMonitoringClass
+  - name: propertyCollection
+    description: ''
+    types:
+    - uid: ClassProperty
+      isArray: true
+- name: ChildObject
+  kind: object
+  properties:
+  - name: displayName
+    description: Display name of the child object.
+    types:
+    - uid: string
+  - name: id
+    description: ID of the child object.
+    types:
+    - uid: string
+  - name: healthState
+    description: Health state of the child object.
+    types:
+    - uid: string
+- name: BaseMonitoringClass
+  kind: object
+  properties:
+  - name: id
+    description: ID of the base monitoring class.
+    types:
+    - uid: string
+  - name: displayName
+    description: Display name of the base monitoring class.
+    types:
+    - uid: string
+- name: ClassProperty
+  kind: object
+  properties:
+  - name: name
+    description: Name of the class.
+    types:
+    - uid: string
+  - name: description
+    description: Description of the class.
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: Retrieves the objects details (like object properties, related objects and classs information) for the specificed object.
+errorCodes: []

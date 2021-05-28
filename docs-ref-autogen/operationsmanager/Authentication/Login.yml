@@ -36,4 +36,6 @@ requestHeader: []
 definitions: []
 examples: []
 security: []
+metadata:
+  description: Learn more about Operations Manager service - Authenticates the user.
 errorCodes: []

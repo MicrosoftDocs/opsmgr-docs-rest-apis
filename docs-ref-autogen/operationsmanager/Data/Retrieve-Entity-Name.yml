@@ -1,0 +1,34 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrieveentityname
+name: Retrieve Entity Name
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves entity name for the specified entity ID.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/entity/{entityId}
+uriParameters:
+- name: entityId
+  in: path
+  isRequired: true
+  description: Specify the entity ID.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved entity name for the specified entity ID.
+  types:
+  - uid: string
+requestHeader: []
+definitions: []
+examples: []
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves entity name for the specified entity ID.
+errorCodes: []

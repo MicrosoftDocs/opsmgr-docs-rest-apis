@@ -3,6 +3,8 @@ uid: <servername>.operationsmanager.operationsmanager.component
 name: Component
 apiVersion: v1
 service: Operations Manager
+metadata:
+  description: Learn more about [Operations Manager Component Operations]. How to [Add Dashboard,Add Widget,Delete Dashboard,Delete Widget,Retrieve Dashboard,Retrieve Dashboards For Object,Retrieve Widget,Retrieve Widgets,Retrieve Widgets For Entity,Update Dashboard Properties,Update Widget].
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.component.adddashboard
   summary: Creates a new dashboards with the specified properties.

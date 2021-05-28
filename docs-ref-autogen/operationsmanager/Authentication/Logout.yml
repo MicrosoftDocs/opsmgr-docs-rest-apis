@@ -23,4 +23,6 @@ requestHeader: []
 definitions: []
 examples: []
 security: []
+metadata:
+  description: Learn more about Operations Manager service - Sign off the current user.
 errorCodes: []
