@@ -4,7 +4,8 @@
       {
         "src": "docs-ref-autogen",
         "files": [
-          "**.yml"
+          "**.yml",
+          "**.md"
         ],
         "exclude": [
           "toc.md"
