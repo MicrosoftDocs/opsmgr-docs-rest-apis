@@ -73,13 +73,13 @@
         ]
       },
       "author": {
-        "articles/operationsmanager/**/*.yml": "jyothirmaisuri"
+        "docs-ref-autogen/**.yml": "jyothirmaisuri"
       },
       "ms.author": {
-        "articles/operationsmanager/**/*.yml": "v-jysur"
+        "docs-ref-autogen/**.yml": "v-jysur"
       },
       "ms.prod": {
-        "articles/operationsmanager/**/*.yml": "system-center"
+        "docs-ref-autogen/**.yml": "system-center"
       }
     },
     "template": [],
