@@ -71,6 +71,15 @@
           "Operations Manager",
           "REST"
         ]
+      },
+      "author": {
+        "articles/operationsmanager/**/*.yml": "jyothirmaisuri"
+      },
+      "ms.author": {
+        "articles/operationsmanager/**/*.yml": "v-jysur"
+      },
+      "ms.prod": {
+        "articles/operationsmanager/**/*.yml": "system-center"
       }
     },
     "template": [],
