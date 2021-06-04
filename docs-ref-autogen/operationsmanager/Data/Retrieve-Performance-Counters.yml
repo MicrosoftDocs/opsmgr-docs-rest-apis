@@ -1,0 +1,69 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrieveperformancecounters
+name: Retrieve Performance Counters
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the list of performance counters associated with the specified enitity ID.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/performanceCounters/{entityId}
+uriParameters:
+- name: entityId
+  in: path
+  isRequired: true
+  description: Specify the entity ID.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved performance counters.
+  types:
+  - uid: PerformanceCounterDataResponse
+requestHeader: []
+definitions:
+- name: PerformanceCounterDataResponse
+  kind: object
+  properties:
+  - name: performanceCounterDatas
+    description: ''
+    types:
+    - uid: PerformanceCounterData
+      isArray: true
+- name: PerformanceCounterData
+  kind: object
+  properties:
+  - name: counterName
+    description: Counter name.
+    types:
+    - uid: string
+  - name: instanceName
+    description: Instance name.
+    types:
+    - uid: string
+  - name: objectName
+    description: Object name.
+    types:
+    - uid: string
+  - name: objectFullName
+    description: Object full name.
+    types:
+    - uid: string
+  - name: objectId
+    description: Object ID.
+    types:
+    - uid: string
+  - name: parentObjectId
+    description: Parent object ID.
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves the list of performance counters associated with the specified enitity ID.
+errorCodes: []

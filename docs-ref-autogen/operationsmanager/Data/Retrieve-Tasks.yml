@@ -1,0 +1,143 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievetasks
+name: Retrieve Tasks
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the list of tasks and thier properties.
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/getTaskPane
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved the list of tasks and thier properties.
+  types:
+  - uid: TaskListResponse
+    isArray: true
+requestBody:
+- name: default
+  parameters:
+  - name: id
+    in: body
+    isRequired: true
+    description: Task ID.
+    types:
+    - uid: string
+  - name: viewType
+    in: body
+    isRequired: true
+    description: View type.
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: TaskListResponse
+  kind: object
+  properties:
+  - name: displayName
+    description: Task display name.
+    types:
+    - uid: string
+  - name: taskListType
+    description: Task list type.
+    types:
+    - uid: string
+  - name: taskList
+    description: ''
+    types:
+    - uid: TaskResponse
+      isArray: true
+- name: TaskRequest
+  kind: object
+  properties:
+  - name: id
+    description: Task ID.
+    types:
+    - uid: string
+  - name: viewType
+    description: View type.
+    types:
+    - uid: string
+- name: TaskResponse
+  kind: object
+  properties:
+  - name: id
+    description: Task ID.
+    types:
+    - uid: string
+  - name: displayName
+    description: Task display name.
+    types:
+    - uid: string
+  - name: description
+    description: Task description.
+    types:
+    - uid: string
+  - name: iconUrl
+    description: Icon URL.
+    types:
+    - uid: string
+  - name: targets
+    description: ''
+    types:
+    - uid: TaskTarget
+      isArray: true
+  - name: parameters
+    description: ''
+    types:
+    - uid: TaskParameter
+      isArray: true
+- name: TaskTarget
+  kind: object
+  properties:
+  - name: id
+    description: ID.
+    types:
+    - uid: string
+  - name: name
+    description: Name.
+    types:
+    - uid: string
+  - name: runLocation
+    description: Run location.
+    types:
+    - uid: string
+- name: TaskParameter
+  kind: object
+  properties:
+  - name: id
+    description: ID.
+    types:
+    - uid: string
+  - name: parameterType
+    description: Parameter type.
+    types:
+    - uid: string
+  - name: name
+    description: Name.
+    types:
+    - uid: string
+  - name: displayName
+    description: Display name.
+    types:
+    - uid: string
+  - name: defaultValue
+    description: Default value.
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves the list of tasks and thier properties.
+errorCodes: []

@@ -1,0 +1,127 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.component.updatewidget
+name: Update Widget
+service: Operations Manager
+groupName: Component
+apiVersion: v1
+summary: Updates the widget properties or configuration.
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: PUT http://<Servername>/OperationsManager/component/widget/{widgetId}
+uriParameters:
+- name: widgetId
+  in: path
+  isRequired: true
+  description: Specify the widget ID.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK. Successfully updated the widget configuration.
+  types:
+  - uid: boolean
+requestBody:
+- name: default
+  parameters:
+  - name: name
+    in: body
+    isRequired: true
+    description: Specify the dashboard or widget name.
+    types:
+    - uid: string
+  - name: description
+    in: body
+    description: Specifiy the dashboard or widget description.
+    types:
+    - uid: string
+  - name: mpId
+    in: body
+    description: Specify the management pack ID if you would like to utilize an existing unsealed management pack for the operation.
+    types:
+    - uid: string
+  - name: mpName
+    in: body
+    description: Specify the management pack name. If you would like to perform the operation in a new management pack then specify the management pack name.
+    types:
+    - uid: string
+  - name: mpVersion
+    in: body
+    description: Specify the management pack version.
+    types:
+    - uid: string
+  - name: mpDescription
+    in: body
+    description: Specify the management pack description.
+    types:
+    - uid: string
+  - name: config
+    in: body
+    description: Specify the configuration.
+    types:
+    - uid: string
+  - name: componentType
+    in: body
+    description: Specify the type of widget
+    types:
+    - uid: string
+  - name: id
+    in: body
+    description: Specify the ID of Dashboard/Widget when updating dashboard or widget
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: ComponentRequest
+  kind: object
+  properties:
+  - name: name
+    description: Specify the dashboard or widget name.
+    types:
+    - uid: string
+  - name: description
+    description: Specifiy the dashboard or widget description.
+    types:
+    - uid: string
+  - name: mpId
+    description: Specify the management pack ID if you would like to utilize an existing unsealed management pack for the operation.
+    types:
+    - uid: string
+  - name: mpName
+    description: Specify the management pack name. If you would like to perform the operation in a new management pack then specify the management pack name.
+    types:
+    - uid: string
+  - name: mpVersion
+    description: Specify the management pack version.
+    types:
+    - uid: string
+  - name: mpDescription
+    description: Specify the management pack description.
+    types:
+    - uid: string
+  - name: config
+    description: Specify the configuration.
+    types:
+    - uid: string
+  - name: componentType
+    description: Specify the type of widget
+    types:
+    - uid: string
+  - name: id
+    description: Specify the ID of Dashboard/Widget when updating dashboard or widget
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Updates the widget properties or configuration.
+errorCodes: []

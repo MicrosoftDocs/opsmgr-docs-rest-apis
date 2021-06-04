@@ -1,0 +1,92 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrieveitemsinmyworkspacetreeview
+name: Retrieve Items In My Workspace Tree View
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the list of views/dashboards/folder available in the My Workspace tree view.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/myWorkspaceTree
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved the list of views/dashboards/folder available in the My Workspace tree view.
+  types:
+  - uid: TreeViewResponse
+requestHeader: []
+definitions:
+- name: TreeViewResponse
+  kind: object
+  properties:
+  - name: data
+    description: ''
+    types:
+    - uid: TreeNode
+      isArray: true
+- name: TreeNode
+  kind: object
+  properties:
+  - name: children
+    description: ''
+    types:
+    - uid: TreeNode
+      isArray: true
+  - name: id
+    description: ID.
+    types:
+    - uid: string
+  - name: label
+    description: Label.
+    types:
+    - uid: string
+  - name: description
+    description: Description.
+    types:
+    - uid: string
+  - name: viewType
+    description: View type.
+    types:
+    - uid: string
+  - name: expandedIcon
+    description: Expanded icon.
+    types:
+    - uid: string
+  - name: collapsedIcon
+    description: Collapsed icon.
+    types:
+    - uid: string
+  - name: icon
+    description: Icon.
+    types:
+    - uid: string
+  - name: expanded
+    description: Expanded.
+    types:
+    - uid: boolean
+  - name: isSealed
+    description: Is sealed.
+    types:
+    - uid: boolean
+  - name: parent
+    description: Parent.
+    types:
+    - uid: string
+  - name: url
+    description: URL.
+    types:
+    - uid: string
+  - name: isShortcut
+    description: Is shortcut.
+    types:
+    - uid: boolean
+examples: []
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves the list of views/dashboards/folder available in the My Workspace tree view.
+errorCodes: []

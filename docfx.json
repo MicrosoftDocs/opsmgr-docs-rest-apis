@@ -4,7 +4,8 @@
       {
         "src": "docs-ref-autogen",
         "files": [
-          "**.yml"
+          "**.yml",
+          "**.md"
         ],
         "exclude": [
           "toc.md"
@@ -70,6 +71,15 @@
           "Operations Manager",
           "REST"
         ]
+      },
+      "author": {
+        "docs-ref-autogen/**.yml": "jyothirmaisuri"
+      },
+      "ms.author": {
+        "docs-ref-autogen/**.yml": "v-jysur"
+      },
+      "ms.prod": {
+        "docs-ref-autogen/**.yml": "system-center"
       }
     },
     "template": [],

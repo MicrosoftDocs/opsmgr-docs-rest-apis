@@ -1,0 +1,52 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertcolumns
+name: Retrieve Alert Columns
+service: Operations Manager
+groupName: Resource
+apiVersion: v1
+summary: Retrieves the list of columns associated with alerts.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/resources/alertColumns
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved the list of columns associated with alerts.
+  types:
+  - uid: HeaderColumns
+    isArray: true
+requestHeader: []
+definitions:
+- name: HeaderColumns
+  kind: object
+  properties:
+  - name: name
+    description: Name.
+    types:
+    - uid: string
+  - name: id
+    description: ID.
+    types:
+    - uid: string
+  - name: typename
+    description: Type name.
+    types:
+    - uid: string
+  - name: isSortable
+    description: Is sortable.
+    types:
+    - uid: boolean
+  - name: isGroupable
+    description: Is groupable.
+    types:
+    - uid: boolean
+examples: []
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves the list of columns associated with alerts.
+errorCodes: []

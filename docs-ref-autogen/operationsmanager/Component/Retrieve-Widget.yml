@@ -1,0 +1,61 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.component.retrievewidget
+name: Retrieve Widget
+service: Operations Manager
+groupName: Component
+apiVersion: v1
+summary: Retrieves the widget properties and configuration.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/component/widget/{widgetId}
+uriParameters:
+- name: widgetId
+  in: path
+  isRequired: true
+  description: Specify the widget ID.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved the widget properties and configuration.
+  types:
+  - uid: ComponentResponse
+requestHeader: []
+definitions:
+- name: ComponentResponse
+  kind: object
+  properties:
+  - name: id
+    description: Dashboard or widget ID.
+    types:
+    - uid: string
+  - name: name
+    description: Name of the dashbaord or widget.
+    types:
+    - uid: string
+  - name: description
+    description: Description of the dashboard or widget.
+    types:
+    - uid: string
+  - name: mpId
+    description: ID of the management pack where dashbaord or widget is saved.
+    types:
+    - uid: string
+  - name: componentType
+    description: Type of the component.
+    types:
+    - uid: string
+  - name: config
+    description: Configuration of the dashbaord.
+    types:
+    - uid: string
+examples: []
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves the widget properties and configuration.
+errorCodes: []

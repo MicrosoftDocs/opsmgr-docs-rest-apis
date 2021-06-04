@@ -1,0 +1,249 @@
+{
+  "redirections": [
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Authentication/Retrieve Authentication Mode.md",
+      "redirect_url": "/rest/api/operationsmanager/authentication/retrieve-authentication-mode",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Component/Add Dashboard.md",
+      "redirect_url": "/rest/api/operationsmanager/component/add-dashboard",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Component/Add Widget.md",
+      "redirect_url": "/rest/api/operationsmanager/component/add-widget",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Component/Delete Dashboard.md",
+      "redirect_url": "/rest/api/operationsmanager/component/delete-dashboard",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Component/Delete Widget.md",
+      "redirect_url": "/rest/api/operationsmanager/component/delete-widget",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Component/Retrieve Dashboard.md",
+      "redirect_url": "/rest/api/operationsmanager/component/retrieve-dashboard",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Component/Retrieve Dashboards For Object.md",
+      "redirect_url": "/rest/api/operationsmanager/component/retrieve-dashboards-for-object",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Component/Retrieve Widget.md",
+      "redirect_url": "/rest/api/operationsmanager/component/retrieve-widget",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Component/Retrieve Widgets.md",
+      "redirect_url": "/rest/api/operationsmanager/component/retrieve-widgets",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Component/Retrieve Widgets For Entity.md",
+      "redirect_url": "/rest/api/operationsmanager/component/retrieve-widgets-for-entity",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Component/Update Dashboard Properties.md",
+      "redirect_url": "/rest/api/operationsmanager/component/update-dashboard-properties",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Component/Update Widget.md",
+      "redirect_url": "/rest/api/operationsmanager/component/update-widget",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Alert Count For Entity.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-alert-count-for-entity",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Alert Properties.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-alert-properties",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Classes.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-classes",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Class Information.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-class-information",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Entity Name.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-entity-name",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Group Data.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-group-data",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Items In Favorite Folders Tree View.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-items-in-favorite-folders-tree-view",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Items In Monitoring Tree View.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-items-in-monitoring-tree-view",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Items In My Workspace Tree View.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-items-in-my-workspace-tree-view",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Knowledge Article.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-knowledge-article",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Monitor Information.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-monitor-information",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Monitoring Data For Entity.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-monitoring-data-for-entity",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Monitoring Object Information.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-monitoring-object-information",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Monitoring Object Properties.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-monitoring-object-properties",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Monitors For Class.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-monitors-for-class",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Monitors For Objects.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-monitors-for-objects",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Object Data.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-object-data",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Performance Counters.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-performance-counters",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Performance Data.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-performance-data",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve PowerShell Output.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-power-shell-output",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Rule Information.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-rule-information",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Rules.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-rules",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve State Data.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-state-data",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve State For Entity.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-state-for-entity",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve State Widget Columns.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-state-widget-columns",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Task Result.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-task-result",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Tasks.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-tasks",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Unsealed Management Packs.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-unsealed-management-packs",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Save Knowledge Article.md",
+      "redirect_url": "/rest/api/operationsmanager/data/save-knowledge-article",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Set Alert Resolution States.md",
+      "redirect_url": "/rest/api/operationsmanager/data/set-alert-resolution-states",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Submit Task.md",
+      "redirect_url": "/rest/api/operationsmanager/data/submit-task",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/NetworkMonitoring.md",
+      "redirect_url": "/rest/api/operationsmanager/network-monitoring",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/NetworkMonitoring/Retrieve Network Monitoring Data.md",
+      "redirect_url": "/rest/api/operationsmanager/network-monitoring/retrieve-network-monitoring-data",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Resource/Retrieve Alert Columns.md",
+      "redirect_url": "/rest/api/operationsmanager/resource/retrieve-alert-columns",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Resource/Retrieve Alert Priority.md",
+      "redirect_url": "/rest/api/operationsmanager/resource/retrieve-alert-priority",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Resource/Retrieve Alert Resolution State.md",
+      "redirect_url": "/rest/api/operationsmanager/resource/retrieve-alert-resolution-state",
+      "redirect_document_id": true
+    },
+    {
+      "source_path": "docs-ref-autogen/operationsmanager/Resource/Retrieve Alert Severity.md",
+      "redirect_url": "/rest/api/operationsmanager/resource/retrieve-alert-severity",
+      "redirect_document_id": true
+    }
+  ]
+}
