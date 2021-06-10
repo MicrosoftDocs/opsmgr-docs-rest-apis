@@ -66,6 +66,11 @@
       "redirect_document_id": true
     },
     {
+      "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Alert Data.md",
+      "redirect_url": "/rest/api/operationsmanager/data/retrieve-alert-data",
+      "redirect_document_id": true
+    },
+    {
       "source_path": "docs-ref-autogen/operationsmanager/Data/Retrieve Alert Properties.md",
       "redirect_url": "/rest/api/operationsmanager/data/retrieve-alert-properties",
       "redirect_document_id": true
