@@ -4,7 +4,7 @@ name: Authentication
 apiVersion: v1
 service: Operations Manager
 metadata:
-  description: Learn more about [Operations Manager Authentication Operations]. How to [Login,Logout,Retrieve Authentication Mode].
+  description: Learn more about [Operations Manager Authentication Operations]. How to [Logout,Retrieve Authentication Mode,Login].
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.authentication.login
   summary: Authenticates the user.
