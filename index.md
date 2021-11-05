@@ -21,6 +21,10 @@ This reference of the Representational State Transfer (REST) API is applicable t
 The new HTML5-based dashboards includes support for a Custom widget that executes the HTML code that uses methods that are available in this REST API to visualize the desired output in a variety of visualizations. For more information about the Operations Manager HTLM5 dashboards, see [Overview of HTML5 Web console and dashboards](https://docs.microsoft.com/system-center/scom/manage-overview-html5-webconsole). For more information about how to work with the Custom widget, see [How create a dashboard with the Custom widget in the Web console](https://docs.microsoft.com/system-center/scom/manage-create-web-dashboard-custom).
 
 > [!NOTE]
+> Quick Start Guide:
+> [SCOM: Quick Start - REST API - TechNet Articles - TechNet Wiki (microsoft.com)](https://social.technet.microsoft.com/wiki/contents/articles/53978.scom-quick-start-rest-api.aspx)
+
+> [!NOTE]
 > Operations Manager 2019 UR1 supports Cross-Site Request Forgery (CSRF) tokens to prevent CSRF attacks. If you are using Operations Manager 2019 UR1, you must initialize the CSRF token. HTML scripts do not work if the CSRF tokens are not initialized.
 
 ## Initialize the CSRF token
