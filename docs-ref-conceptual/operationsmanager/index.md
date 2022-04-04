@@ -3,10 +3,10 @@ title: Operations Manager REST API Reference
 description: This article describes the System Center Operations Manager REST API reference content.  
 author: mgoedtel
 ms.author: magoedte
-manager: carmonm
+manager: rayoflores
 ms.date: 04/22/2020
 ms.custom: na
-ms.prod: system-center-2016
+ms.prod: system-center
 ms.technology: operations-manager
 ms.topic: reference
 ms.assetid: bb4bd81c-439c-479d-a045-dd5653812dff
@@ -14,7 +14,7 @@ ms.assetid: bb4bd81c-439c-479d-a045-dd5653812dff
 
 # Operations Manager REST API Reference
 
-System Center Operations Manager provides flexible and cost-effective infrastructure monitoring that helps ensure predictable performance and availability of critical applications and infrastructure services. Operations Manager offers comprehensive monitoring for your datacenter by checking the health, performance, and availability of all monitored objects in your environment, and helping to identify problems for rapid resolution. For a more detailed overview, see the System Center Operations Manager [product page](https://docs.microsoft.com/system-center/scom/).
+System Center Operations Manager provides flexible and cost-effective infrastructure monitoring that helps ensure predictable performance and availability of critical applications and infrastructure services. Operations Manager offers comprehensive monitoring for your datacenter by checking the health, performance, and availability of all monitored objects in your environment, and helping to identify problems for rapid resolution. For a more detailed overview, see the System Center Operations Manager [product page](/system-center/scom/).
 
 > [!NOTE]
 > Operations Manager 2019 UR1 supports Cross-Site Request Forgery (CSRF) tokens to prevent CSRF attacks. If you are using Operations Manager 2019 UR1, you must initialize the CSRF token. HTML scripts do not work if the CSRF tokens are not initialized.
