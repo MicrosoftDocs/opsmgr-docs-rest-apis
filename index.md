@@ -3,10 +3,10 @@ title: System Center Operations Manager REST API Reference
 description: The system requirements article provides general performance and scalability guidance for consideration as part of your design planning of Operations Manager.  
 author: mgoedtel
 ms.author: magoedte
-manager: carmonm
+manager: rayoflores
 ms.date: 07/22/2020
 ms.custom: na
-ms.prod: system-center-2016
+ms.prod: system-center
 ms.technology: operations-manager
 ms.topic: reference
 ms.assetid: b76911fa-1f5f-4a6f-864c-d0ba4adf2061
