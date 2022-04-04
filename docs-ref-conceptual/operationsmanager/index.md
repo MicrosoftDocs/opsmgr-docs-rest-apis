@@ -3,10 +3,10 @@ title: Operations Manager REST API Reference
 description: This article describes the System Center Operations Manager REST API reference content.  
 author: mgoedtel
 ms.author: magoedte
-manager: carmonm
+manager: rayoflores
 ms.date: 04/22/2020
 ms.custom: na
-ms.prod: system-center-2016
+ms.prod: system-center
 ms.technology: operations-manager
 ms.topic: reference
 ms.assetid: bb4bd81c-439c-479d-a045-dd5653812dff
