@@ -16,7 +16,6 @@ paths:
 uriParameters:
 - name: alertId
   in: path
-  isRequired: true
   description: Specify the alert ID for which alert details needs to be retrieved.
   types:
   - uid: string

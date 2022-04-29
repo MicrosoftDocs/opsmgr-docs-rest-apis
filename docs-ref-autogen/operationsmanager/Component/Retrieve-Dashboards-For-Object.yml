@@ -16,7 +16,6 @@ paths:
 uriParameters:
 - name: hostName
   in: path
-  isRequired: true
   description: Specify the host name.
   types:
   - uid: string

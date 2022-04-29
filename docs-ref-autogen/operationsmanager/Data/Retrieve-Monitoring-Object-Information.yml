@@ -16,7 +16,6 @@ paths:
 uriParameters:
 - name: objectId
   in: path
-  isRequired: true
   description: Specify the object ID for object details that need to be retrieved.
   types:
   - uid: string
