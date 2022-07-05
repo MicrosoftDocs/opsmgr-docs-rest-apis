@@ -32,12 +32,6 @@ requestBody:
     description: Specify the class ID.
     types:
     - uid: string
-    parameters:
-  - name: groupId
-    in: body
-    description: Specify the group ID or internal name (not display name) of a group to scope to.
-    types:
-    - uid: string
   - name: objectIds
     in: body
     description: Specify an array of object IDs.

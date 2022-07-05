@@ -16,7 +16,6 @@ paths:
 uriParameters:
 - name: ruleId
   in: path
-  isRequired: true
   description: Specify the rule ID.
   types:
   - uid: string

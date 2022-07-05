@@ -16,7 +16,6 @@ paths:
 uriParameters:
 - name: widgetId
   in: path
-  isRequired: true
   description: Specify the widget ID.
   types:
   - uid: string

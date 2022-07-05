@@ -21,7 +21,6 @@ paths:
 uriParameters:
 - name: dashboardId
   in: path
-  isRequired: true
   description: Sepcify the dashboard ID.
   types:
   - uid: string
