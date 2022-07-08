@@ -16,7 +16,6 @@ paths:
 uriParameters:
 - name: monitorId
   in: path
-  isRequired: true
   description: Specify the monitor ID.
   types:
   - uid: string

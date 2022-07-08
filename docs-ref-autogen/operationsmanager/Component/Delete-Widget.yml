@@ -16,13 +16,11 @@ paths:
 uriParameters:
 - name: dashboardId
   in: path
-  isRequired: true
   description: Specify the dashboard ID.
   types:
   - uid: string
 - name: widgetId
   in: path
-  isRequired: true
   description: Specify the widget ID that needs to be deleted.
   types:
   - uid: string
