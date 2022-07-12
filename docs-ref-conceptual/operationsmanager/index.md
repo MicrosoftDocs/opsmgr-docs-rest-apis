@@ -48,3 +48,54 @@ Required action, applicable for Operations Manager 2019 UR1.
 **Example:**
 
 ![Initialize the CSRF token example](./Media/index/116854.png)
+
+## Call SCOM REST API from Powershell Script
+
+```powershell
+#Set Headers for the request
+$userName ="domain\username";
+$password ="Password";
+$AuthenticationMode= "Network"
+$scomHeaders = New-Object “System.Collections.Generic.Dictionary[[String],[String]]”
+$scomHeaders.Add('Content-Type','application/json; charset=utf-8')
+$bodyraw = "($AuthenticationMode):$($userName):$($password)”
+$Bytes = [System.Text.Encoding]::UTF8.GetBytes($bodyraw)
+$EncodedText =[Convert]::ToBase64String($Bytes)
+$jsonbody = $EncodedText | ConvertTo-Json
+
+$uriBase = 'http://<scomserver>/OperationsManager'
+
+#Authenticate
+$auth = Invoke-WebRequest -Method POST -Uri $uriBase/authenticate -Headers $scomheaders -body $jsonbody -UseDefaultCredentials -SessionVariable $websession 
+#Include CSRF Token
+$csrfTocken = $websession.Cookies.GetCookies($uriBase) | ? { $_.Name -eq 'SCOM-CSRF-TOKEN' }
+$scomHeaders.Add('SCOM-CSRF-TOKEN', [System.Web.HttpUtility]::UrlDecode($csrfTocken.Value))
+
+#Examples to Invoke the required SCOM API
+
+#Data/alertDescription/{alertid}
+$alertid="6A88FBC1-0EDC-4173-9BB1-30FFEC296672"
+$uri = "$uriBase/data/alertDetails"
+$Response = Invoke-WebRequest -Uri "$uriBase/data/alertDetails/$alertid" -Headers $scomheaders -Method Get -WebSession $websession
+$Response.Content | Convertto-json
+
+
+
+#Criteria: Enter the displayname of the SCOM object
+$Criteria = "DisplayName LIKE '%SQL%'"
+#Convert our criteria to JSON format
+$JSONBody = $Criteria | ConvertTo-Json
+$Response = Invoke-WebRequest -Uri "$uriBase/data/class/monitors" -Method Post -Body $JSONBody -WebSession $WebSession
+$Response.Content | Convertto-json
+
+
+#Data Request in JSON Format
+$dashboardbody='
+{
+  "refreshing": false,
+  "Name": "TestAPIDashboard",
+  "path": "35b6eba3-6202-8738-a47f-16acf476230f"
+}'
+$response = Invoke-WebRequest -Uri "$uriBase/monitoring/dashboard" -Headers $scomheaders -Method POST -Body $dashboardbody -ContentType "application/json" -UseDefaultCredentials -WebSession $websession
+
+```
