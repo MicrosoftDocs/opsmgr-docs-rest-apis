@@ -4,7 +4,7 @@ name: Set Alert Resolution States
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Sets the alert resolution state for the specified alert(s).
+summary: "Sets resolution states for the specified Alert(s).  \nRequest to set resolution states for Alert Ids."
 consumes:
 - application/json
 - text/json
@@ -21,48 +21,114 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully sets alert resolution state.
+  description: OK.Successfully Resolution state is updated
   types:
-  - uid: '#/definitions/ResolutionStateUpdateResponse'
+  - uid: ResolutionStateUpdateResponse
 requestBody:
 - name: default
   parameters:
   - name: alertIds
     in: body
-    description: ''
+    description: List of Alert IDs
     types:
     - uid: string
       isArray: true
   - name: resolutionState
     in: body
-    description: Resolution state.
+    description: Resolution State of Alert
     types:
     - uid: integer
   - name: comment
     in: body
-    description: Comment.
+    description: Comment
     types:
     - uid: string
 requestHeader: []
 definitions:
+- name: ResolutionStateUpdateResponse
+  kind: object
+  properties:
+  - name: failures
+    description: ''
+    types:
+    - uid: ResolutionStateUpdateFailure
+      isArray: true
+  - name: isFailure
+    description: is Failure
+    types:
+    - uid: boolean
 - name: ResolutionStateRequest
   kind: object
   properties:
   - name: alertIds
-    description: ''
+    description: List of Alert IDs
     types:
     - uid: string
       isArray: true
   - name: resolutionState
-    description: Resolution state.
+    description: Resolution State of Alert
     types:
     - uid: integer
   - name: comment
-    description: Comment.
+    description: Comment
     types:
     - uid: string
-examples: []
+- name: ResolutionStateUpdateFailure
+  kind: object
+  properties:
+  - name: alertId
+    description: Alert ID
+    types:
+    - uid: string
+  - name: failureMessage
+    description: Failure Message
+    types:
+    - uid: string
+  - name: exceptionType
+    description: Exception Type
+    types:
+    - uid: string
+examples:
+- name: SetAlertResolutionStates
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/alertResolutionStates
+    body: >-
+      {
+        "alertIds": [
+          "667736a8-d59a-407b-b142-80fd74ba4041"
+        ],
+        "resolutionState": 249,
+        "comment": "Acko"
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/alertResolutionStates
+
+      {
+        "alertIds": [
+          "667736a8-d59a-407b-b142-80fd74ba4041"
+        ],
+        "resolutionState": 249,
+        "comment": "Acko"
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "failures": [
+          {
+            "alertId": null,
+            "failureMessage": null,
+            "exceptionType": null
+          }
+        ],
+        "isFailure": false
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Sets the alert resolution state for the specified alert(s).
+  description: "Learn more about Operations Manager service - Sets resolution states for the specified Alert(s).  \nRequest to set resolution states for Alert Ids."
 errorCodes: []

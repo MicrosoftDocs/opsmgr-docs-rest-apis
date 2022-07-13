@@ -1,0 +1,247 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievedatawarehousedetails
+name: Retrieve Datawarehouse Details
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: "Retrieve Datawarehouse Details  \nRetrieves data warehouse details based on stored procedure name"
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/DataWarehouse
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK.Successfully Retrieved DatawareHouse Details
+  types:
+  - uid: object
+requestBody:
+- name: default
+  parameters:
+  - name: storedProcedureName
+    in: body
+    description: StoredProcedureName
+    types:
+    - uid: string
+  - name: parameters
+    in: body
+    description: SQL Parameters with values
+    types:
+    - uid: object
+      isDictionary: true
+      additionalTypes:
+      - uid: string
+      - uid: string
+requestHeader: []
+definitions:
+- name: DatawarehouseRequest
+  kind: object
+  properties:
+  - name: storedProcedureName
+    description: StoredProcedureName
+    types:
+    - uid: string
+  - name: parameters
+    description: SQL Parameters with values
+    types:
+    - uid: object
+      isDictionary: true
+      additionalTypes:
+      - uid: string
+      - uid: string
+examples:
+- name: GetDataFromDW
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/DataWarehouse
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/DataWarehouse
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "resultList": [],
+        "columnDefinitions": [
+          {
+            "columnName": "ServiceLevelAgreementRowId",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelAgreementGuid",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelAgreementDisplayName",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ManagementGroupGuid",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelAgreementManagedEntityRowId",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelAgreementManagedEntityTypeGuid",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelAgreementManagedEntityTypeDisplayName",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelAgreementManagedEntityGuid",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelAgreementManagedEntityDisplayName",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelAgreementManagedEntityPath",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelObjectiveRowId",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelObjectiveGuid",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelObjectiveDisplayName",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelObjectiveTargetManagedEntityTypeGuid",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          },
+          {
+            "columnName": "ServiceLevelObjectiveTargetManagedEntityTypeDisplayName",
+            "sourceColumnName": null,
+            "aliased": false,
+            "isExpression": false,
+            "columnSource": null,
+            "columnType": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+            "columnDatabaseTypeAsInt": 0,
+            "columnMaxLength": 0,
+            "isNullable": false
+          }
+        ]
+      }
+security: []
+metadata:
+  description: "Learn more about Operations Manager service - Retrieve Datawarehouse Details  \nRetrieves data warehouse details based on stored procedure name"
+errorCodes: []

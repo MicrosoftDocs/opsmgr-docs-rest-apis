@@ -4,46 +4,45 @@ name: Retrieve PowerShell Output
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves data after executing the specified PowerShell script.
-consumes:
-- application/json
-- text/json
-- application/xml
-- text/xml
-- application/x-www-form-urlencoded
+summary: "Retrieves data after executing the specified PowerShell script  \nRequest to retrieve Powershell script output for widgetID and Dashboard Type"
+consumes: []
 produces:
 - application/json
 - text/json
 - application/xml
 - text/xml
 paths:
-- content: POST http://<Servername>/OperationsManager/data/powershell
-uriParameters: []
+- content: GET http://<Servername>/OperationsManager/data/powershell?widgetId={widgetId}&dashboardType={dashboardType}
+uriParameters:
+- name: widgetId
+  in: query
+  isRequired: true
+  description: Widget Id
+  types:
+  - uid: string
+- name: dashboardType
+  in: query
+  isRequired: true
+  description: Dashboard Type
+  types:
+  - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved data after executing the specified PowerShell script.
+  description: OK.Successfully retrieved data after executing the specified PowerShell script
   types:
   - uid: TableDataResponse
-requestBody:
-- name: default
-  parameters:
-  - name: script
-    in: body
-    description: Provide the PowerShell script.
-    types:
-    - uid: string
 requestHeader: []
 definitions:
 - name: TableDataResponse
   kind: object
   properties:
   - name: tableColumns
-    description: ''
+    description: Table columns of data
     types:
     - uid: TableColumn
       isArray: true
   - name: rows
-    description: ''
+    description: Table Rows of data
     types:
     - uid: object
       isArray: true
@@ -51,23 +50,85 @@ definitions:
   kind: object
   properties:
   - name: field
-    description: Name of the column.
+    description: Name of the Column
     types:
     - uid: string
   - name: header
-    description: Header of the column.
+    description: Header of the column
     types:
     - uid: string
   - name: type
-    description: Type of the column.
+    description: Type of the Column
     types:
     - uid: string
   - name: hidden
-    description: Is the column hidden.
+    description: Is column hidden
     types:
     - uid: boolean
-examples: []
+examples:
+- name: RetrievePowerShellOutput
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/powershell?widgetId=8c9a13a6-0547-facb-bf43-e4af529a3468&dashboardType=MONITORING
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/powershell?widgetId=8c9a13a6-0547-facb-bf43-e4af529a3468&dashboardType=MONITORING
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "healthstate",
+            "header": "HealthState",
+            "type": "HealthStateType",
+            "hidden": false
+          },
+          {
+            "field": "displayname",
+            "header": "DisplayName",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "customcolumn",
+            "header": "CustomColumn",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "id",
+            "header": "Id",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "path",
+            "header": "Path",
+            "type": null,
+            "hidden": false
+          }
+        ],
+        "rows": [
+          {
+            "healthstate": "unknown",
+            "displayname": "LlhmpKkOvfnZ2tR7VF1yIcgo02c1S7q9FPLsa9h7hl5kEHVHViIKu9vtE3wxst5xyoTmhigWi3Qgg5ktgUftzgOGecn.NuPypIvaxtkxBvm0sONJTCQYNM7SZNIF48Jxoc1YKJ5wtssD3XYPOeO",
+            "customcolumn": "1",
+            "id": "aeee35a8-c9bc-916d-a86a-ab4fd0e4f8e8",
+            "path": ""
+          },
+          {
+            "healthstate": "unknown",
+            "displayname": "scomdevserver.contoso.net",
+            "customcolumn": "2",
+            "id": "9f2ef630-9784-9e27-bbd0-af9900d8264f",
+            "path": ""
+          }
+        ]
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves data after executing the specified PowerShell script.
+  description: "Retrieves data after executing the specified PowerShell script  \nRequest to retrieve Powershell script output for widgetID and Dashboard Type"
 errorCodes: []

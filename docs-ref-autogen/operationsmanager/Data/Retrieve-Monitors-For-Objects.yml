@@ -4,7 +4,7 @@ name: Retrieve Monitors For Objects
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieve the list of monitors and thier properties associated with a specific object.
+summary: "Request to retrieve monitors for an object.  \nRetrieve the list of monitors and their properties associated with a specific object"
 consumes:
 - application/json
 - text/json
@@ -21,104 +21,176 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of monitors and thier properties associated with a specific object.
+  description: OK.Successfully retrieved the list of monitors and their properties associated with a specific object
   types:
-  - uid: MonitorDataResponse
-    isArray: true
+  - uid: TableDataResponse
 requestBody:
 - name: default
   parameters:
   - name: id
     in: body
-    description: Monitor ID.
+    description: Monitor Object ID
     types:
     - uid: string
   - name: showUnhealthyMonitorsOnly
     in: body
-    description: You can choose to visulaize only unhealthy monitors.
+    description: to display Unhealthy Monitors Only
     types:
     - uid: boolean
 requestHeader: []
 definitions:
-- name: MonitorDataResponse
+- name: TableDataResponse
   kind: object
   properties:
-  - name: id
-    description: Monitor ID.
+  - name: tableColumns
+    description: Table columns of data
     types:
-    - uid: string
-  - name: description
-    description: Monitor description.
+    - uid: TableColumn
+      isArray: true
+  - name: rows
+    description: Table Rows of data
     types:
-    - uid: string
-  - name: name
-    description: Monitor name.
-    types:
-    - uid: string
-  - name: displayName
-    description: Monitor display name.
-    types:
-    - uid: string
-  - name: comment
-    description: Comment.
-    types:
-    - uid: string
-  - name: target
-    description: ''
-    types:
-    - uid: MonitorTarget
-  - name: monitorType
-    description: Monitor type.
-    types:
-    - uid: string
-  - name: category
-    description: Monitor category.
-    types:
-    - uid: string
-  - name: priority
-    description: Monitor priority.
-    types:
-    - uid: string
-  - name: status
-    description: Monitor status.
-    types:
-    - uid: string
-  - name: enabled
-    description: Is monitor enabled.
-    types:
-    - uid: string
-  - name: state
-    description: Monitor state.
-    types:
-    - uid: string
-  - name: lastModified
-    description: Last modified.
-    types:
-    - uid: string
+    - uid: object
+      isArray: true
 - name: MonitorObjectDataRequest
   kind: object
   properties:
   - name: id
-    description: Monitor ID.
+    description: Monitor Object ID
     types:
     - uid: string
   - name: showUnhealthyMonitorsOnly
-    description: You can choose to visulaize only unhealthy monitors.
+    description: to display Unhealthy Monitors Only
     types:
     - uid: boolean
-- name: MonitorTarget
+- name: TableColumn
   kind: object
   properties:
-  - name: id
-    description: Monitor ID.
+  - name: field
+    description: Name of the Column
     types:
     - uid: string
-  - name: displayName
-    description: Monitor display name.
+  - name: header
+    description: Header of the column
     types:
     - uid: string
-examples: []
+  - name: type
+    description: Type of the Column
+    types:
+    - uid: string
+  - name: hidden
+    description: Is column hidden
+    types:
+    - uid: boolean
+examples:
+- name: RetrieveMonitorsForObjects
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/object/monitors
+    body: >-
+      {
+        "id": "3c8ac4f3-475e-44dd-4163-8a97af363705",
+        "showUnhealthyMonitorsOnly": true
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/object/monitors
+
+      {
+        "id": "3c8ac4f3-475e-44dd-4163-8a97af363705",
+        "showUnhealthyMonitorsOnly": true
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "state",
+            "header": "State",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "id",
+            "header": "Id",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "targetid",
+            "header": "Target Id",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "displayname",
+            "header": "Display Name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "targetname",
+            "header": "Target",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "category",
+            "header": "Category",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "type",
+            "header": "Type",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "laststatechange",
+            "header": "Last State Change",
+            "type": null,
+            "hidden": false
+          }
+        ],
+        "rows": [
+          {
+            "id": "ffee43e2-9221-1df8-3259-8835a93b42e8",
+            "targetid": "ac5cddfc-a96a-ee99-745d-ec74845f53f6",
+            "displayname": "Entity Health",
+            "state": "/OperationsManager/images/instance/state/ErrorDisabled.png",
+            "category": "AvailabilityHealth",
+            "targetname": "Object",
+            "type": "Aggregate",
+            "laststatechange": "2022-05-16T20:40:27.933"
+          },
+          {
+            "id": "040e606c-6330-7245-f49d-a2e70a78177e",
+            "targetid": "ac5cddfc-a96a-ee99-745d-ec74845f53f6",
+            "displayname": "Availability",
+            "state": "/OperationsManager/images/instance/state/ErrorDisabled.png",
+            "category": "AvailabilityHealth",
+            "targetname": "Object",
+            "type": "Aggregate",
+            "laststatechange": "2022-05-16T20:40:27.933"
+          },
+          {
+            "id": "d08269f6-cb82-f2de-cf53-161993a3f841",
+            "targetid": "ee7ec974-c9f0-1818-e5be-1fb41eb4f2ae",
+            "displayname": "Computer Availability Health Rollup",
+            "state": "/OperationsManager/images/instance/state/ErrorDisabled.png",
+            "category": "AvailabilityHealth",
+            "targetname": "Computer Group",
+            "type": "Dependency",
+            "laststatechange": "2022-05-16T20:40:27.933"
+          }
+        ]
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieve the list of monitors and thier properties associated with a specific object.
+  description: "Request to retrieve monitors for an object.  \nRetrieve the list of monitors and their properties associated with a specific object"
 errorCodes: []

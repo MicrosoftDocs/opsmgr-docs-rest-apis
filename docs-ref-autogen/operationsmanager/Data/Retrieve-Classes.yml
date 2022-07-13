@@ -4,7 +4,7 @@ name: Retrieve Classes
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the list of classes and thier properties.
+summary: "Request to retrieve SCOM Classes  \nRetrieves the list of classes and their properties"
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of classes and thier properties.
+  description: OK.Successfully retrieved the list of classes and their properties
   types:
   - uid: ScopeDataResponse
 requestBody:
@@ -29,7 +29,7 @@ requestBody:
   parameters:
   - name: criteria
     in: body
-    description: Specify the criteria.
+    description: Criteria to search
     types:
     - uid: string
 requestHeader: []
@@ -38,7 +38,7 @@ definitions:
   kind: object
   properties:
   - name: scopeDatas
-    description: ''
+    description: Scope Data
     types:
     - uid: ScopeData
       isArray: true
@@ -46,27 +46,59 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: ID.
+    description: Id
     types:
     - uid: string
   - name: displayName
-    description: Display name.
+    description: Display Name
     types:
     - uid: string
   - name: className
-    description: Class name.
+    description: Class Name
     types:
     - uid: string
   - name: path
-    description: Path.
+    description: Path
     types:
     - uid: string
   - name: fullName
-    description: Full name.
+    description: Full Name
     types:
     - uid: string
-examples: []
+examples:
+- name: RetrieveClasses
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/scomClasses
+    body: >-
+      [
+        "DisplayName LIKE '%.net windows%'"
+      ]
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/scomClasses
+
+      [
+        "DisplayName LIKE '%.net windows%'"
+      ]
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "scopeDatas": [
+          {
+            "id": "c9dff298-d539-ee41-fc32-f7ba1b42f95e",
+            "displayName": ".NET Windows Service",
+            "className": "Microsoft.SystemCenter.ApplicationMonitoring.Library!Microsoft.SystemCenter.ApplicationMonitoring.Net.NTServiceComponent",
+            "path": null,
+            "fullName": null
+          }
+        ]
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the list of classes and thier properties.
+  description: "Learn more about Operations Manager service - Request to retrieve SCOM Classes  \nRetrieves the list of classes and their properties"
 errorCodes: []

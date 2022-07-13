@@ -4,7 +4,7 @@ name: Save Knowledge Article
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Saves the knowledge article of the specified entity.
+summary: Request to save the knowledge article of the specified entity
 consumes:
 - application/json
 - text/json
@@ -29,32 +29,32 @@ requestBody:
   parameters:
   - name: elementId
     in: body
-    description: Specify the element ID.
+    description: Specify the Element ID
     types:
     - uid: string
   - name: elementType
     in: body
-    description: Specify the element type.
+    description: Specify the Element Type
     types:
     - uid: string
   - name: mpId
     in: body
-    description: Specify the management pack ID.
+    description: Specify the management Pack ID
     types:
     - uid: string
   - name: mpName
     in: body
-    description: Specify the management pack name.
+    description: Specify the management Pack Name
     types:
     - uid: string
   - name: mpVersion
     in: body
-    description: Specify the version of the management pack.
+    description: Specify the management Pack Version
     types:
     - uid: string
   - name: mpDescription
     in: body
-    description: Specify the description of the management pack.
+    description: Specify the management Pack Description
     types:
     - uid: string
   - name: knowledgeArticleHTML
@@ -68,35 +68,71 @@ definitions:
   kind: object
   properties:
   - name: elementId
-    description: Specify the element ID.
+    description: Specify the Element ID
     types:
     - uid: string
   - name: elementType
-    description: Specify the element type.
+    description: Specify the Element Type
     types:
     - uid: string
   - name: mpId
-    description: Specify the management pack ID.
+    description: Specify the management Pack ID
     types:
     - uid: string
   - name: mpName
-    description: Specify the management pack name.
+    description: Specify the management Pack Name
     types:
     - uid: string
   - name: mpVersion
-    description: Specify the version of the management pack.
+    description: Specify the management Pack Version
     types:
     - uid: string
   - name: mpDescription
-    description: Specify the description of the management pack.
+    description: Specify the management Pack Description
     types:
     - uid: string
   - name: knowledgeArticleHTML
     description: Specify the content of the knowledge article.
     types:
     - uid: string
-examples: []
+examples:
+- name: SaveCompanyKnowledgeArticle
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/knowledgeArticle
+    body: >-
+      {
+        "elementId": "1AB35A7E-D5EE-969E-16BB-55D4A625BCAB",
+        "elementType": "Event",
+        "mpId": "F2426EF8-8B9C-433B-47D0-BE9A8B4F13A5",
+        "mpName": "MomSdkTest_v3.MP",
+        "mpVersion": "6.0.0.0",
+        "mpDescription": "test",
+        "knowledgeArticleHTML": "<HtmlContent>MomSdkTest_v3 : Knowledge Article for MomSdkTest_v3.StandardDataSet.Event</HtmlContent>"
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/knowledgeArticle
+
+      {
+        "elementId": "1AB35A7E-D5EE-969E-16BB-55D4A625BCAB",
+        "elementType": "Event",
+        "mpId": "F2426EF8-8B9C-433B-47D0-BE9A8B4F13A5",
+        "mpName": "MomSdkTest_v3.MP",
+        "mpVersion": "6.0.0.0",
+        "mpDescription": "test",
+        "knowledgeArticleHTML": "<HtmlContent>MomSdkTest_v3 : Knowledge Article for MomSdkTest_v3.StandardDataSet.Event</HtmlContent>"
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "true"
+      ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Saves the knowledge article of the specified entity.
+  description: Learn more about Operations Manager service - Request to save the knowledge article of the specified entity
 errorCodes: []

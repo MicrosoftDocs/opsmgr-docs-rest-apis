@@ -4,7 +4,7 @@ name: Retrieve Class Information
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the class properties for the specified class ID.
+summary: "Retrieve class information by class ID.  \nRequest to retrieve class information for Class ID provided."
 consumes: []
 produces:
 - application/json
@@ -16,100 +16,109 @@ paths:
 uriParameters:
 - name: classId
   in: path
-  description: Specify the class ID.
+  isRequired: true
+  description: The id of the class to be fetched.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved class properties.
+  description: OK.Successfully Retrieved Class Information
   types:
-  - uid: ClassDataResponse
+  - uid: TableDataResponse
 requestHeader: []
 definitions:
-- name: ClassDataResponse
+- name: TableDataResponse
   kind: object
   properties:
-  - name: id
-    description: Class ID.
+  - name: tableColumns
+    description: Table columns of data
     types:
-    - uid: string
-  - name: displayName
-    description: Display name of the class.
-    types:
-    - uid: string
-  - name: childObjects
-    description: ''
-    types:
-    - uid: ChildObject
+    - uid: TableColumn
       isArray: true
-  - name: description
-    description: Description of the class.
+  - name: rows
+    description: Table Rows of data
     types:
-    - uid: string
-  - name: comment
-    description: ''
-    types:
-    - uid: string
-  - name: hosted
-    description: Host of the class.
-    types:
-    - uid: string
-  - name: status
-    description: Status of the class.
-    types:
-    - uid: string
-  - name: timeAdded
-    description: Time the class was added.
-    types:
-    - uid: string
-  - name: baseMonitoringClass
-    description: ''
-    types:
-    - uid: BaseMonitoringClass
-  - name: propertyCollection
-    description: ''
-    types:
-    - uid: ClassProperty
+    - uid: object
       isArray: true
-- name: ChildObject
+- name: TableColumn
   kind: object
   properties:
-  - name: displayName
-    description: Display name of the child object.
+  - name: field
+    description: Name of the Column
     types:
     - uid: string
-  - name: id
-    description: ID of the child object.
+  - name: header
+    description: Header of the column
     types:
     - uid: string
-  - name: healthState
-    description: Health state of the child object.
+  - name: type
+    description: Type of the Column
     types:
     - uid: string
-- name: BaseMonitoringClass
-  kind: object
-  properties:
-  - name: id
-    description: ID of the base monitoring class.
+  - name: hidden
+    description: Is column hidden
     types:
-    - uid: string
-  - name: displayName
-    description: Display name of the base monitoring class.
-    types:
-    - uid: string
-- name: ClassProperty
-  kind: object
-  properties:
-  - name: name
-    description: Name of the class.
-    types:
-    - uid: string
-  - name: description
-    description: Description of the class.
-    types:
-    - uid: string
-examples: []
+    - uid: boolean
+examples:
+- name: RetrieveClassInformation
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/classInformation/D0567149-A88D-D0F0-1704-44D80AFF5AC7
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/classInformation/D0567149-A88D-D0F0-1704-44D80AFF5AC7
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "name",
+            "header": "Name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "value",
+            "header": "Value",
+            "type": null,
+            "hidden": false
+          }
+        ],
+        "rows": [
+          {
+            "name": "Display Name",
+            "value": "{\"text\":\"All MomSdkTest Entities Group\",\"drilldowntype\":\"class\",\"id\":\"d0567149-a88d-d0f0-1704-44d80aff5ac7\"}"
+          },
+          {
+            "name": "Description",
+            "value": null
+          },
+          {
+            "name": "Comment",
+            "value": null
+          },
+          {
+            "name": "Hosted",
+            "value": "False"
+          },
+          {
+            "name": "Status",
+            "value": "Unchanged"
+          },
+          {
+            "name": "Time added",
+            "value": "5/16/2022 8:38:00 PM"
+          },
+          {
+            "name": "Base",
+            "value": "{\"text\":\"Group\",\"drilldowntype\":\"class\",\"id\":\"769aa88d-b37f-0903-2ffc-3ca99b3ef975\"}"
+          }
+        ]
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the class properties for the specified class ID.
+  description: "Retrieve class information by class ID.  \nRequest to retrieve class information for Class ID provided."
 errorCodes: []

@@ -1,0 +1,10 @@
+### YamlMime:RESTOperationGroup
+uid: <servername>.operationsmanager.operationsmanager.effectivemonitoringconfiguration
+name: Effective Monitoring Configuration
+apiVersion: v1
+service: Operations Manager
+metadata:
+  description: Learn more about [Operations Manager Effective Monitoring Configuration Operations]. How to [Effective Monitoring Configuration Data].
+operations:
+- uid: <servername>.operationsmanager.operationsmanager.effectivemonitoringconfiguration.effectivemonitoringconfigurationdata
+  summary: Request to retrieve EffectiveMonitoringConfiguration data.

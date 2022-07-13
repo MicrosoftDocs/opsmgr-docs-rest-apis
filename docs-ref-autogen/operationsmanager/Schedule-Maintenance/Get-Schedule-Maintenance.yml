@@ -1,0 +1,163 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.getschedulemaintenance
+name: Get Schedule Maintenance
+service: Operations Manager
+groupName: Schedule Maintenance
+apiVersion: v1
+summary: Retrieves Schedule maintenance details by schedule Id
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/ScheduleMaintenance/{scheduleId}
+uriParameters:
+- name: scheduleId
+  in: path
+  isRequired: true
+  description: Specify the Schedule ID
+  types:
+  - uid: string
+  format: uuid
+responses:
+- name: 200 OK
+  description: OK.Successfully retrieved schedule Maintenance details by scheduleID
+  types:
+  - uid: ScheduleMaintenanceResponse
+requestHeader: []
+definitions:
+- name: ScheduleMaintenanceResponse
+  kind: object
+  properties:
+  - name: scheduledEndTime
+    description: Schedule End Time
+    types:
+    - uid: string
+  - name: status
+    description: Status of Maintenance Schedule
+    types:
+    - uid: "0"
+    - uid: "1"
+    - uid: "2"
+    typesTitle: enum
+  - name: scheduleName
+    description: Name of the schedule
+    types:
+    - uid: string
+  - name: monitoringObjectsId
+    description: Monitoring objects Id
+    types:
+    - uid: string
+      isArray: true
+  - name: startTime
+    description: Start time of schedule
+    types:
+    - uid: string
+  - name: duration
+    description: Duration of schedule
+    types:
+    - uid: integer
+  - name: freqType
+    description: Frequency of the schedule ['1', '4', '8', '16', '32']
+    types:
+    - uid: "1"
+    - uid: "4"
+    - uid: "8"
+    - uid: "16"
+    - uid: "32"
+    typesTitle: enum
+  - name: category
+    description: Maintenance Mode Reason code
+    types:
+    - uid: "0"
+    - uid: "1"
+    - uid: "2"
+    - uid: "3"
+    - uid: "4"
+    - uid: "5"
+    - uid: "6"
+    - uid: "7"
+    - uid: "8"
+    - uid: "9"
+    - uid: "10"
+    - uid: "11"
+    - uid: "12"
+    - uid: "13"
+    - uid: "14"
+    typesTitle: enum
+  - name: scheduleEffectiveFrom
+    description: schedule effective time
+    types:
+    - uid: string
+  - name: recursive
+    description: is recursive
+    types:
+    - uid: boolean
+  - name: endDate
+    description: End date
+    types:
+    - uid: string
+  - name: enabled
+    description: is enabled
+    types:
+    - uid: boolean
+  - name: comment
+    description: comment for schedule
+    types:
+    - uid: string
+  - name: freqInterval
+    description: frequency interval
+    types:
+    - uid: integer
+  - name: freqRecurrenceFactor
+    description: frequency recurrence factor
+    types:
+    - uid: integer
+  - name: freqRelativeInterval
+    description: Frequency Relative interval
+    types:
+    - uid: integer
+  - name: isEndTimeSpecified
+    description: is End time specified
+    types:
+    - uid: boolean
+examples:
+- name: GetScheduleMaintenance
+  request:
+    uri: GET http://<Servername>/OperationsManager/ScheduleMaintenance/aaa0361a-985d-4e74-840c-975dae3f5bba
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/ScheduleMaintenance/aaa0361a-985d-4e74-840c-975dae3f5bba
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "scheduledEndTime": "2022-06-16T20:44:53.362Z",
+        "status": 13,
+        "scheduleName": "aa",
+        "monitoringObjectsId": [
+          "aa"
+        ],
+        "startTime": "2022-06-16T20:44:53.362Z",
+        "duration": 10,
+        "freqType": 11,
+        "category": 26,
+        "scheduleEffectiveFrom": "2022-06-16T20:44:53.362Z",
+        "recursive": true,
+        "endDate": "2022-06-16T20:44:53.362Z",
+        "enabled": true,
+        "comment": "a",
+        "freqInterval": 29,
+        "freqRecurrenceFactor": 11,
+        "freqRelativeInterval": 16,
+        "isEndTimeSpecified": true
+      }
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves Schedule maintenance details by schedule Id
+errorCodes: []

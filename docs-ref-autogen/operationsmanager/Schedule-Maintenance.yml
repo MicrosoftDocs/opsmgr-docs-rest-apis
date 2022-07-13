@@ -1,0 +1,26 @@
+### YamlMime:RESTOperationGroup
+uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance
+name: Schedule Maintenance
+apiVersion: v1
+service: Operations Manager
+metadata:
+  description: Learn more about [Operations Manager Schedule Maintenance Operations]. How to [Create Schedule Maintenance,Delete Schedule Maintenance,Disable Maintenance Sched
+operations:
+- uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.createschedulemaintenance
+  summary: Request to save the schedule maintenance
+- uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.deleteschedulemaintenance
+  summary: Deletes Schedule maintenance details by schedule Id
+- uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.disablemaintenanceschedule
+  summary: Disables Schedule maintenance details by schedule Id
+- uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.editschedulemaintenance
+  summary: Request to update the scheduled Maintenance
+- uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.enablemaintenanceschedule
+  summary: Enable the schedule maintenance by schedule ID
+- uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.extendschedulemaintenance
+  summary: Request to extend scheduled Maintenance
+- uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.getschedulemaintenance
+  summary: Retrieves Schedule maintenance details by schedule Id
+- uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.getschedulemaintenancelist
+  summary: Retrieves the schedule maintenance List
+- uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.stopmaintenanceschedule
+  summary: Stops Schedule maintenance details by schedule Id

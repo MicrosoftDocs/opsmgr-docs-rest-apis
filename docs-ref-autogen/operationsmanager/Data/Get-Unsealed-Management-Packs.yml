@@ -1,0 +1,74 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.getunsealedmanagementpacks
+name: Get Unsealed Management Packs
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: "Retrieve the list of unsealead management packs  \nRequest to fetch the list of Unsealed ManagementPacks"
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/UnsealedManagementPacks
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: ManagementPackResponse
+    isArray: true
+requestHeader: []
+definitions:
+- name: ManagementPackResponse
+  kind: object
+  properties:
+  - name: name
+    description: Management pack name
+    types:
+    - uid: string
+  - name: id
+    description: Management pack ID
+    types:
+    - uid: string
+examples:
+- name: GetUnsealedManagementPacks
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/UnsealedManagementPacks
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/UnsealedManagementPacks
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "name": "MomSdkTest_TypeCacheRefresh",
+          "id": "4ee09ffd-3ae3-c573-14c5-04bdac257a6b"
+        },
+        {
+          "name": "RoleBasedSecurity Dummy data Management Pack",
+          "id": "6b06d31c-681a-2896-124e-168fa8a83fae"
+        },
+        {
+          "name": "JEE APM Discoveries Overrides",
+          "id": "749eff8c-98b6-55c1-11cb-17713af4e949"
+        },
+        {
+          "name": "SDK.FavoriteViewsAndTasks.Test",
+          "id": "e5de06a3-9c8a-76d6-5f38-20ef36a680c1"
+        },
+        {
+          "name": "Default Management Pack",
+          "id": "da187e72-b9d7-9e16-d098-3b0a624dc38c"
+        }
+      ]
+security: []
+metadata:
+  description: "Retrieve the list of unsealead management packs  \nRequest to fetch the list of Unsealed ManagementPacks"
+errorCodes: []

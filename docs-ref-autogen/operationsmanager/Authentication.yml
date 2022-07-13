@@ -7,8 +7,8 @@ metadata:
   description: Learn more about [Operations Manager Authentication Operations]. How to [Login,Logout,Retrieve Authentication Mode].
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.authentication.login
-  summary: Authenticates the user.
+  summary: Request to authenticate the user
 - uid: <servername>.operationsmanager.operationsmanager.authentication.logout
-  summary: Sign off the current user.
+  summary: Request to logout the User
 - uid: <servername>.operationsmanager.operationsmanager.authentication.retrieveauthenticationmode
-  summary: Retrieves the authentication mode of the web server.
+  summary: Retrieves Authentication Mode

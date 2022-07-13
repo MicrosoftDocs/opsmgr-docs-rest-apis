@@ -1,0 +1,164 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringdata
+name: Retrieve Monitoring Data
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Request to retrieve health state of entity's monitors and alert count
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/monitoring/{entityId}
+uriParameters:
+- name: entityId
+  in: path
+  isRequired: true
+  description: Entity ID
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK.Successfully Retrieved Monitoring Data
+  types:
+  - uid: MonitoringDataResponse
+requestHeader: []
+definitions:
+- name: MonitoringDataResponse
+  kind: object
+  properties:
+  - name: childNodeDatas
+    description: ''
+    types:
+    - uid: ChildNodeData
+      isArray: true
+  - name: alertCount
+    description: Alert Count
+    types:
+    - uid: integer
+  - name: healthState
+    description: Health State
+    types:
+    - uid: string
+  - name: objectId
+    description: Object ID
+    types:
+    - uid: string
+- name: ChildNodeData
+  kind: object
+  properties:
+  - name: healthState
+    description: Health State
+    types:
+    - uid: string
+  - name: id
+    description: Child Node ID
+    types:
+    - uid: string
+  - name: monitorId
+    description: Monitor ID
+    types:
+    - uid: string
+  - name: monitorDisplayName
+    description: Monitor Display name
+    types:
+    - uid: string
+  - name: monitorName
+    description: Monitor Name
+    types:
+    - uid: string
+  - name: lastTimeModified
+    description: Last Time modified
+    types:
+    - uid: string
+examples:
+- name: RetrieveMonitoringData
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/monitoring/93CB6AF4-3E3D-53F6-06A7-04A469197A9C
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/monitoring/93CB6AF4-3E3D-53F6-06A7-04A469197A9C
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "childNodeDatas": [
+          {
+            "healthState": "Uninitialized",
+            "id": "",
+            "monitorId": "93328865-eafd-abee-2002-9ac35dfe0bf6",
+            "monitorDisplayName": "Security",
+            "monitorName": "System.Health.SecurityState",
+            "lastTimeModified": ""
+          },
+          {
+            "healthState": "Uninitialized",
+            "id": "",
+            "monitorId": "05a3b555-c6b4-660c-0f49-1b1d4ed2cb5c",
+            "monitorDisplayName": null,
+            "monitorName": "MomSdkTest_v3.System.Health.ConfigurationState",
+            "lastTimeModified": ""
+          },
+          {
+            "healthState": "Success",
+            "id": "04e063e0-1d08-489c-b832-eeeeab778cae",
+            "monitorId": "571ca4cf-a882-a028-986c-08814e5ba46a",
+            "monitorDisplayName": "Configuration",
+            "monitorName": "System.Health.ConfigurationState",
+            "lastTimeModified": "5/16/2022 7:12:31 PM"
+          },
+          {
+            "healthState": "Uninitialized",
+            "id": "",
+            "monitorId": "48b3349f-80c2-5558-37d9-e15b42e9e557",
+            "monitorDisplayName": null,
+            "monitorName": "MomSdkTest_v3.System.Health.SecurityState",
+            "lastTimeModified": ""
+          },
+          {
+            "healthState": "Success",
+            "id": "4a892e18-8ffd-46d9-a3b4-60817c77c9a7",
+            "monitorId": "040e606c-6330-7245-f49d-a2e70a78177e",
+            "monitorDisplayName": "Availability",
+            "monitorName": "System.Health.AvailabilityState",
+            "lastTimeModified": "5/16/2022 7:12:30 PM"
+          },
+          {
+            "healthState": "Uninitialized",
+            "id": "",
+            "monitorId": "1bff8a45-f0bf-8abc-8b9c-c228660141c7",
+            "monitorDisplayName": null,
+            "monitorName": "MomSdkTest_v3.System.Health.PerformanceState",
+            "lastTimeModified": ""
+          },
+          {
+            "healthState": "Uninitialized",
+            "id": "",
+            "monitorId": "e2eedaf3-bb97-195e-1b93-94aea6897053",
+            "monitorDisplayName": "Performance",
+            "monitorName": "System.Health.PerformanceState",
+            "lastTimeModified": ""
+          },
+          {
+            "healthState": "Uninitialized",
+            "id": "",
+            "monitorId": "6907fe76-a125-83dc-ecb1-3dfb7193f83d",
+            "monitorDisplayName": null,
+            "monitorName": "MomSdkTest_v3.System.Health.AvailabilityState",
+            "lastTimeModified": ""
+          }
+        ],
+        "alertCount": 0,
+        "healthState": "Success",
+        "objectId": "93CB6AF4-3E3D-53F6-06A7-04A469197A9C"
+      }
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to retrieve health state of entity's monitors and alert count
+errorCodes: []

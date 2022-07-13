@@ -1,0 +1,67 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievedrilldowntypedetails
+name: Retrieve DrilldownType Details
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Request to retrieve title data for drilldown page
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/drilldownTypeDetails/{id}/{type}
+uriParameters:
+- name: id
+  in: path
+  isRequired: true
+  description: Guid ID
+  types:
+  - uid: string
+- name: type
+  in: path
+  isRequired: true
+  description: Type
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK.Successfully Retrieved DrilldownType Details
+  types:
+  - uid: DrilldownTitleResponse
+requestHeader: []
+definitions:
+- name: DrilldownTitleResponse
+  kind: object
+  properties:
+  - name: title
+    description: Title of Drill Down
+    types:
+    - uid: string
+  - name: icon
+    description: Icon of Drill Down
+    types:
+    - uid: string
+examples:
+- name: DRetrieveDrilldownTypeDetails
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/drilldownTypeDetails/667736a8-d59a-407b-b142-80fd74ba4041/alert
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/drilldownTypeDetails/667736a8-d59a-407b-b142-80fd74ba4041/alert
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "title": "All Management Servers Pool Unavailable.",
+        "icon": "Error"
+      }
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to retrieve title data for drilldown page
+errorCodes: []

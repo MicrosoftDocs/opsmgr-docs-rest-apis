@@ -4,7 +4,7 @@ name: Retrieve Rules
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieve the list of rules and thier properties based on the specified criteria.
+summary: "Request to retrieve rules.  \nRetrieve the list of rules and thier properties based on the specified criteria."
 consumes:
 - application/json
 - text/json
@@ -21,84 +21,124 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of rules and thier properties based on the specified criteria.
+  description: OK.Successfully retrieved the list of rules and their properties based on the specified criteria
   types:
-  - uid: RuleDataResponse
-    isArray: true
+  - uid: TableDataResponse
 requestBody:
 - name: default
   parameters:
   - name: criteria
     in: body
-    description: Specify the criteria.
+    description: Criteria to search
     types:
     - uid: string
 requestHeader: []
 definitions:
-- name: RuleDataResponse
+- name: TableDataResponse
   kind: object
   properties:
-  - name: id
-    description: Rule ID.
+  - name: tableColumns
+    description: Table columns of data
     types:
-    - uid: string
-  - name: description
-    description: Rule description.
+    - uid: TableColumn
+      isArray: true
+  - name: rows
+    description: Table Rows of data
     types:
-    - uid: string
-  - name: name
-    description: Rule name.
-    types:
-    - uid: string
-  - name: displayName
-    description: Rule display name.
-    types:
-    - uid: string
-  - name: comment
-    description: Rule comments.
-    types:
-    - uid: string
-  - name: target
-    description: ''
-    types:
-    - uid: RuleTarget
-  - name: xmlTag
-    description: Rule XML tag.
-    types:
-    - uid: string
-  - name: conditionDetectionConfiguration
-    description: Rule condition configuration.
-    types:
-    - uid: string
-  - name: dataSourceConfiguration
-    description: Rule data source configuration.
-    types:
-    - uid: string
-  - name: category
-    description: Rule category.
-    types:
-    - uid: string
-  - name: identifier
-    description: Rule identifier.
-    types:
-    - uid: string
-  - name: enabled
-    description: Is rule enabled.
-    types:
-    - uid: string
-- name: RuleTarget
+    - uid: object
+      isArray: true
+- name: TableColumn
   kind: object
   properties:
-  - name: id
-    description: Rule ID.
+  - name: field
+    description: Name of the Column
     types:
     - uid: string
-  - name: displayName
-    description: Rule display name.
+  - name: header
+    description: Header of the column
     types:
     - uid: string
-examples: []
+  - name: type
+    description: Type of the Column
+    types:
+    - uid: string
+  - name: hidden
+    description: Is column hidden
+    types:
+    - uid: boolean
+examples:
+- name: RetrieveRules
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/rules
+    body: >-
+      [
+        "DisplayName like '%MomSdkTest_v3 : Discovery rule to find all instances of  NT Services on a computer%'"
+      ]
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/rules
+
+      [
+        "DisplayName like '%MomSdkTest_v3 : Discovery rule to find all instances of  NT Services on a computer%'"
+      ]
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "id",
+            "header": "Id",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "targetid",
+            "header": "Target Id",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "displayname",
+            "header": "Display Name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "description",
+            "header": "Description",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "enabled",
+            "header": "Enabled",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "targetname",
+            "header": "Target",
+            "type": null,
+            "hidden": false
+          }
+        ],
+        "rows": [
+          {
+            "id": "54592d73-7c17-1ab2-7b31-0ab9b237ea6e",
+            "targetid": "a4201cd2-feff-b19b-997c-38a8a0c0aa59",
+            "displayname": "MomSdkTest_v3 : Discovery rule to find all instances of  NT Services on a computer",
+            "description": "This rule discovers all instances of Windows NT Services installed on this computer by querying WMI",
+            "enabled": "true",
+            "targetname": "MomSdkTest_v3 : Windows Computer"
+          }
+        ]
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieve the list of rules and thier properties based on the specified criteria.
+  description: "Request to retrieve rules.  \nRetrieve the list of rules and thier properties based on the specified criteria."
 errorCodes: []

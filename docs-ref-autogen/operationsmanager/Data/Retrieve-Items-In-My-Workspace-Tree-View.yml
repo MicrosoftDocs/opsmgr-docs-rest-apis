@@ -4,7 +4,7 @@ name: Retrieve Items In My Workspace Tree View
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the list of views/dashboards/folder available in the My Workspace tree view.
+summary: "Retrieve Items In My Workspace Tree View  \nRetrieves the list of views/dashboards/folder available in the My Workspace tree view."
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of views/dashboards/folder available in the My Workspace tree view.
+  description: OK.Successfully retrieved the list of views/dashboards/folder available in the My Workspace tree view
   types:
   - uid: TreeViewResponse
 requestHeader: []
@@ -25,7 +25,7 @@ definitions:
   kind: object
   properties:
   - name: data
-    description: ''
+    description: Tree Node Data
     types:
     - uid: TreeNode
       isArray: true
@@ -38,55 +38,148 @@ definitions:
     - uid: TreeNode
       isArray: true
   - name: id
-    description: ID.
+    description: Id
+    types:
+    - uid: string
+  - name: mpId
+    description: management Pack ID
     types:
     - uid: string
   - name: label
-    description: Label.
+    description: Label
     types:
     - uid: string
   - name: description
-    description: Description.
+    description: Description
     types:
     - uid: string
   - name: viewType
-    description: View type.
+    description: View Type
     types:
     - uid: string
   - name: expandedIcon
-    description: Expanded icon.
+    description: Expanded Icon
     types:
     - uid: string
   - name: collapsedIcon
-    description: Collapsed icon.
+    description: Collapsed Icon
     types:
     - uid: string
   - name: icon
-    description: Icon.
+    description: Icon
     types:
     - uid: string
   - name: expanded
-    description: Expanded.
+    description: Expanded
     types:
     - uid: boolean
   - name: isSealed
-    description: Is sealed.
+    description: is Sealed
     types:
     - uid: boolean
   - name: parent
-    description: Parent.
+    description: Parent
     types:
     - uid: string
   - name: url
-    description: URL.
+    description: Url
+    types:
+    - uid: string
+  - name: type
+    description: IdType
     types:
     - uid: string
   - name: isShortcut
-    description: Is shortcut.
+    description: is Shortcut
     types:
     - uid: boolean
-examples: []
+examples:
+- name: GetMyWorkspaceTree
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/myWorkspaceTree
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/myWorkspaceTree
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "data": [
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "00000000-0000-0000-0000-000000000000",
+                "mpId": null,
+                "label": "Favorite Reports",
+                "description": "Favorite Reports",
+                "viewType": "ReportListView",
+                "expandedIcon": "/OperationsManager/images/NavigationPane/Report.png",
+                "collapsedIcon": "/OperationsManager/images/NavigationPane/Report.png",
+                "icon": "/OperationsManager/images/NavigationPane/Report.png",
+                "expanded": false,
+                "isSealed": false,
+                "parent": "MyWorkspaceRoot",
+                "url": "/MonitoringView/default.aspx?ViewType=ReportListView&ViewID=00000000-0000-0000-0000-000000000000",
+                "type": "child",
+                "isShortcut": true
+              },
+              {
+                "children": [],
+                "id": "Folder_429fe15d0a7a4244bc3a96da83a8e11b",
+                "mpId": null,
+                "label": "Favorite Views",
+                "description": "Favorite Views",
+                "viewType": "FavoritesRoot",
+                "expandedIcon": "/OperationsManager/images/NavigationPane/FavoriteView.png",
+                "collapsedIcon": "/OperationsManager/images/NavigationPane/FavoriteView.png",
+                "icon": "/OperationsManager/images/NavigationPane/FavoriteView.png",
+                "expanded": true,
+                "isSealed": false,
+                "parent": "MyWorkspaceRoot",
+                "url": "/MonitoringView/default.aspx?ViewType=Overview&ViewID=Favorites_Overview",
+                "type": "parent",
+                "isShortcut": false
+              },
+              {
+                "children": [],
+                "id": "SavedSearchesRoot",
+                "mpId": null,
+                "label": "Saved Searches",
+                "description": "Saved Searches",
+                "viewType": "SavedSearchesRoot",
+                "expandedIcon": "/OperationsManager/images/NavigationPane/Search.png",
+                "collapsedIcon": "/OperationsManager/images/NavigationPane/Search.png",
+                "icon": "/OperationsManager/images/NavigationPane/Search.png",
+                "expanded": false,
+                "isSealed": false,
+                "parent": "MyWorkspaceRoot",
+                "url": "/MonitoringView/default.aspx?ViewType=Overview&ViewID=Favorites_Overview",
+                "type": "child",
+                "isShortcut": false
+              }
+            ],
+            "id": "MyWorkspaceRoot",
+            "mpId": null,
+            "label": "My Workspace",
+            "description": "My Workspace",
+            "viewType": "MyWorkspaceRoot",
+            "expandedIcon": "/OperationsManager/images/NavigationPane/MyWorkspacePane.png",
+            "collapsedIcon": "/OperationsManager/images/NavigationPane/MyWorkspacePane.png",
+            "icon": "/OperationsManager/images/NavigationPane/MyWorkspacePane.png",
+            "expanded": true,
+            "isSealed": false,
+            "parent": "MyWorkspaceRoot",
+            "url": "/MonitoringView/default.aspx?ViewType=MonitoringNavigation&ViewID=Favorites_Overview",
+            "type": "parent",
+            "isShortcut": false
+          }
+        ]
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the list of views/dashboards/folder available in the My Workspace tree view.
+  description: "Retrieve Items In My Workspace Tree View  \nRetrieves the list of views/dashboards/folder available in the My Workspace tree view."
 errorCodes: []

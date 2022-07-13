@@ -1,0 +1,81 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievewidget
+name: Retrieve Widget
+service: Operations Manager
+groupName: Monitoring
+apiVersion: v1
+summary: "Retrieves the widget details.  \nRetrieves the widget properties and configuration."
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/monitoring/widget/{widgetId}
+uriParameters:
+- name: widgetId
+  in: path
+  isRequired: true
+  description: Widget Id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK.Successfully retrieved the widget properties and configuration.
+  types:
+  - uid: ComponentResponse
+requestHeader: []
+definitions:
+- name: ComponentResponse
+  kind: object
+  properties:
+  - name: id
+    description: ID
+    types:
+    - uid: string
+  - name: name
+    description: Component Name
+    types:
+    - uid: string
+  - name: description
+    description: Component Description
+    types:
+    - uid: string
+  - name: mpId
+    description: Component MP ID
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+  - name: config
+    description: configuration
+    types:
+    - uid: string
+examples:
+- name: Monitoring_RetrieveWidget
+  request:
+    uri: GET http://<Servername>/OperationsManager/monitoring/widget/8c9a13a6-0547-facb-bf43-e4af529a3468
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/monitoring/widget/8c9a13a6-0547-facb-bf43-e4af529a3468
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "id": "8c9a13a6-0547-facb-bf43-e4af529a3468",
+        "name": "Data from shell",
+        "description": null,
+        "mpId": "da187e72-b9d7-9e16-d098-3b0a624dc38c",
+        "componentType": "HtmlPowershellWidget",
+        "config": "{\"widgetDisplay\":{\"col\":1,\"row\":2,\"sizex\":6,\"sizey\":4},\"widgetParameters\":{\"script\":\"$class = Get-SCOMClass -Name Microsoft.Windows.Computer  \\n$computers = Get-SCOMClassInstance -Class $class  \\n$i=1  \\nforeach ($computer in $computers)  \\n{  \\n    $results=$ScriptContext.CreateFromObject($computer,\\\"Id=Id,HealthState=HealthState,DisplayName=DisplayName\\\",$null)   \\n    $results[\\\"CustomColumn\\\"]=$i   \\n    $ScriptContext.ReturnCollection.Add($results)   \\n    $i++   \\n}\"},\"widgetRefreshInterval\":5}"
+      }
+security: []
+metadata:
+  description: "Learn more about Operations Manager service - Retrieves the widget details.  \nRetrieves the widget properties and configuration."
+errorCodes: []

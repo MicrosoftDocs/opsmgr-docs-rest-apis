@@ -1,0 +1,90 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievedashboardsforobject
+name: Retrieve Dashboards For Object
+service: Operations Manager
+groupName: Monitoring
+apiVersion: v1
+summary: "Retrieves the dashboards for Object.  \nRetrieves dashboards for object based on host"
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/monitoring/dashboardsForObject/{hostName}?scomObjectId={scomObjectId}
+uriParameters:
+- name: hostName
+  in: path
+  isRequired: true
+  description: hostname like DrilldownSCOMAlert
+  types:
+  - uid: string
+- name: scomObjectId
+  in: query
+  isRequired: true
+  description: Scom Object ID
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK.Successfully retrieved the dashbaords for an object.
+  types:
+  - uid: ComponentResponse
+    isArray: true
+requestHeader: []
+definitions:
+- name: ComponentResponse
+  kind: object
+  properties:
+  - name: id
+    description: ID
+    types:
+    - uid: string
+  - name: name
+    description: Component Name
+    types:
+    - uid: string
+  - name: description
+    description: Component Description
+    types:
+    - uid: string
+  - name: mpId
+    description: Component MP ID
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+  - name: config
+    description: configuration
+    types:
+    - uid: string
+examples:
+- name: Monitoring_RetrieveDashboardsForObject
+  request:
+    uri: GET http://<Servername>/OperationsManager/monitoring/dashboardsForObject/DrilldownSCOMAlert?scomObjectId=3ef57959-542f-471e-8046-66423f70377e
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/monitoring/dashboardsForObject/DrilldownSCOMAlert?scomObjectId=3ef57959-542f-471e-8046-66423f70377e
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "id": "e714789c-787d-da0f-7282-6be465adbce7",
+          "name": "Alert details",
+          "description": null,
+          "mpId": "4c5b598e-3bd7-6420-7c31-0aac5cbea1a9",
+          "componentType": "DrilldownSCOMAlert",
+          "config": ""
+        }
+      ]
+security: []
+metadata:
+  description: "Learn more about Operations Manager service - Retrieves the dashboards for Object.  \nRetrieves dashboards for object based on host"
+errorCodes: []

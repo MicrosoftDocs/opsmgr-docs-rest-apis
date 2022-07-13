@@ -1,0 +1,55 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.monitoring.deletewidget
+name: Delete Widget
+service: Operations Manager
+groupName: Monitoring
+apiVersion: v1
+summary: "Deletes a widget from dashboard.  \nDeletes a widget from a specific dashboard"
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: DELETE http://<Servername>/OperationsManager/monitoring/dashboard/{dashboardId}/widget/{widgetId}
+uriParameters:
+- name: dashboardId
+  in: path
+  isRequired: true
+  description: Specify the Dashboard Id
+  types:
+  - uid: string
+- name: widgetId
+  in: path
+  isRequired: true
+  description: Specify theWidget ID
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK.Successfully deleted a widget from a specific dashboard
+  types:
+  - uid: boolean
+requestHeader: []
+definitions: []
+examples:
+- name: Monitoring_DeleteWidget
+  request:
+    uri: DELETE http://<Servername>/OperationsManager/monitoring/dashboard/925b3d43-d716-d56d-84ba-55a2467a6e7d/widget/edbacdbd-2a9c-06ef-db6a-6d711c2bf8f1
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      DELETE http://<Servername>/OperationsManager/monitoring/dashboard/925b3d43-d716-d56d-84ba-55a2467a6e7d/widget/edbacdbd-2a9c-06ef-db6a-6d711c2bf8f1
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "true"
+      ]
+security: []
+metadata:
+  description: "Learn more about Operations Manager service - Deletes a widget from dashboard.  \nDeletes a widget from a specific dashboard"
+errorCodes: []

@@ -1,0 +1,91 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.networknode.getinterfacesforgivennode
+name: Get Interfaces For GivenNode
+service: Operations Manager
+groupName: Network Node
+apiVersion: v1
+summary: Retrieves data for network node by node Id and request type.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/NetworkNode/{nodeId}/{requestType}
+uriParameters:
+- name: nodeId
+  in: path
+  isRequired: true
+  description: Node ID
+  types:
+  - uid: string
+- name: requestType
+  in: path
+  isRequired: true
+  description: Specify one of the following properties (healthofinterfaces, averageavailability)
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: object
+requestHeader: []
+definitions: []
+examples:
+- name: GetInterfacesForGivenNode For healthofinterfaces
+  request:
+    uri: GET http://<Servername>/OperationsManager/NetworkNode/66294d70-467c-d7f7-d30e-c01246367e81/healthofinterfaces
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/NetworkNode/66294d70-467c-d7f7-d30e-c01246367e81/healthofinterfaces
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "description": "GigabitEthernet0/28",
+          "sentBitsPerSecond": "NaN",
+          "receivedBitsPerSecond": "NaN",
+          "interfaceId": "e283c15f-7773-8146-b2f6-37bf97443404",
+          "interfaceName": "PORT-10128",
+          "interfaceState": "notmonitored"
+        },
+        {
+          "description": "GigabitEthernet0/40",
+          "sentBitsPerSecond": "NaN",
+          "receivedBitsPerSecond": "NaN",
+          "interfaceId": "26b2a0fb-f4e2-0f63-acbe-538b87759277",
+          "interfaceName": "PORT-10140",
+          "interfaceState": "notmonitored"
+        }
+      ]
+- name: GetInterfacesForGivenNode For averageavailability
+  request:
+    uri: GET http://<Servername>/OperationsManager/NetworkNode/66294d70-467c-d7f7-d30e-c01246367e81/averageavailability
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/NetworkNode/66294d70-467c-d7f7-d30e-c01246367e81/averageavailability
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "nodeId": null,
+          "today": 100,
+          "yesterday": 100,
+          "lastSevenDays": 100,
+          "lastThirtyDays": 100
+        }
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves data for network node by node Id and request type.
+errorCodes: []

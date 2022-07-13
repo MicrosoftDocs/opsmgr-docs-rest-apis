@@ -1,0 +1,90 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievewidgetsforentity
+name: Retrieve Widgets For Entity
+service: Operations Manager
+groupName: Monitoring
+apiVersion: v1
+summary: "Retrieves the widgets in the dashboard for entity.  \nRetrieves the widgets for the dashboard and entity. NOTE: This only supports retrieving widgets for a Performance dashboard."
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/monitoring/dashboard/{dashboardId}/entity/{entityId}
+uriParameters:
+- name: dashboardId
+  in: path
+  isRequired: true
+  description: Specify the Dashboard Id
+  types:
+  - uid: string
+- name: entityId
+  in: path
+  isRequired: true
+  description: Specify the Entity Id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK.Successfully retrieved the widgets for the dashboard and entity.
+  types:
+  - uid: ComponentResponse
+    isArray: true
+requestHeader: []
+definitions:
+- name: ComponentResponse
+  kind: object
+  properties:
+  - name: id
+    description: ID
+    types:
+    - uid: string
+  - name: name
+    description: Component Name
+    types:
+    - uid: string
+  - name: description
+    description: Component Description
+    types:
+    - uid: string
+  - name: mpId
+    description: Component MP ID
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+  - name: config
+    description: configuration
+    types:
+    - uid: string
+examples:
+- name: RetrieveWidgets
+  request:
+    uri: GET http://<Servername>/OperationsManager/monitoring/dashboard/925b3d43-d716-d56d-84ba-55a2467a6e7d/entity/b39822ed-0efd-b8e0-9ac4-968b5de725ab
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/monitoring/dashboard/925b3d43-d716-d56d-84ba-55a2467a6e7d/entity/b39822ed-0efd-b8e0-9ac4-968b5de725ab
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "id": "b39822ed-0efd-b8e0-9ac4-968b5de725ab",
+          "name": "performance windows",
+          "description": null,
+          "mpId": "dcfdedc4-68bd-42b4-1e9a-ba94b1577732",
+          "componentType": "HtmlPerformanceWidget",
+          "config": "{\"widgetDisplay\":{\"col\":1,\"row\":1,\"sizex\":6,\"sizey\":4,\"selectedLegends\":[\"Target\",\"Path\",\"LastValue\"],\"visualizeObjectsByPerformance\":false},\"widgetParameters\":{\"scope\":{\"scopeSelection\":[{\"id\":\"6f7e3306-beeb-2996-3795-7c1eafb925b8\",\"displayName\":\"All Windows Computers\",\"className\":\"All Windows Computers\",\"path\":null,\"fullName\":\"Microsoft.SystemCenter.AllComputersGroup\",\"objectType\":-1}]},\"criteria\":{\"timeRange\":{\"timeValue\":24,\"timeUnit\":\"Hours\"},\"performanceCounters\":[]}},\"widgetRefreshInterval\":5}"
+        }
+      ]
+security: []
+metadata:
+  description: "Retrieves the widgets in the dashboard for entity.  \nRetrieves the widgets for the dashboard and entity. NOTE: This only supports retrieving widgets for a Perfo"
+errorCodes: []

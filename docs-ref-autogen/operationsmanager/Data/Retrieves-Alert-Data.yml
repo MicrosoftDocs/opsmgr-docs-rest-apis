@@ -1,0 +1,263 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievesalertdata
+name: Retrieves Alert Data
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Retrieves the Alert Data for the specified scope/parameters
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/alert
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK.Successfully retrieved alert data.
+  types:
+  - uid: TableDataResponse
+requestBody:
+- name: default
+  parameters:
+  - name: classId
+    in: body
+    description: Specify the ClassID
+    types:
+    - uid: string
+  - name: groupId
+    in: body
+    description: Specify the Group ID
+    types:
+    - uid: string
+  - name: objectIds
+    in: body
+    description: Specify an array of Object IDs
+    types:
+    - uid: object
+      isDictionary: true
+      additionalTypes:
+      - uid: string
+      - uid: integer
+  - name: criteria
+    in: body
+    description: Specify the Criteria (such as severity, priority, resolution state, etc.)
+    types:
+    - uid: string
+  - name: displayColumns
+    in: body
+    description: Specify the Columns to be displayed
+    types:
+    - uid: string
+      isArray: true
+requestHeader: []
+definitions:
+- name: TableDataResponse
+  kind: object
+  properties:
+  - name: tableColumns
+    description: Table columns of data
+    types:
+    - uid: TableColumn
+      isArray: true
+  - name: rows
+    description: Table Rows of data
+    types:
+    - uid: object
+      isArray: true
+- name: DataRequest
+  kind: object
+  properties:
+  - name: classId
+    description: Specify the ClassID
+    types:
+    - uid: string
+  - name: groupId
+    description: Specify the Group ID
+    types:
+    - uid: string
+  - name: objectIds
+    description: Specify an array of Object IDs
+    types:
+    - uid: object
+      isDictionary: true
+      additionalTypes:
+      - uid: string
+      - uid: integer
+  - name: criteria
+    description: Specify the Criteria (such as severity, priority, resolution state, etc.)
+    types:
+    - uid: string
+  - name: displayColumns
+    description: Specify the Columns to be displayed
+    types:
+    - uid: string
+      isArray: true
+- name: TableColumn
+  kind: object
+  properties:
+  - name: field
+    description: Name of the Column
+    types:
+    - uid: string
+  - name: header
+    description: Header of the column
+    types:
+    - uid: string
+  - name: type
+    description: Type of the Column
+    types:
+    - uid: string
+  - name: hidden
+    description: Is column hidden
+    types:
+    - uid: boolean
+examples:
+- name: RetrieveAlertData
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/alert
+    body: >-
+      {
+        "classId": null,
+        "objectIds": {},
+        "criteria": "(ResolutionState = '0')",
+        "displayColumns": [
+          "id",
+          "severity",
+          "monitoringobjectdisplayname",
+          "monitoringobjectpath",
+          "name",
+          "age",
+          "description",
+          "owner",
+          "timeadded"
+        ]
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/alert
+
+      {
+        "classId": null,
+        "objectIds": {},
+        "criteria": "(ResolutionState = '0')",
+        "displayColumns": [
+          "id",
+          "severity",
+          "monitoringobjectdisplayname",
+          "monitoringobjectpath",
+          "name",
+          "age",
+          "description",
+          "owner",
+          "timeadded"
+        ]
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "ageinmilliseconds",
+            "header": "",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "severity",
+            "header": "Severity",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "monitoringobjectdisplayname",
+            "header": "Source",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "monitoringobjectpath",
+            "header": "Path",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "name",
+            "header": "Name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "age",
+            "header": "Age",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "description",
+            "header": "Description",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "owner",
+            "header": "Owner",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "timeadded",
+            "header": "Created",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "id",
+            "header": "Id",
+            "type": null,
+            "hidden": true
+          }
+        ],
+        "rows": [
+          {
+            "id": "d3144ac9-4316-45ce-94b9-f50936219e24",
+            "severity": "Error",
+            "monitoringobjectdisplayname": "Test Service Group",
+            "monitoringobjectpath": null,
+            "name": null,
+            "age": "6137 days, 6 hours",
+            "ageinmilliseconds": 530260033217.2775,
+            "description": "",
+            "owner": "DXPSQYVCYBXGIUDZJZVWNLFDYEKA",
+            "timeadded": "2022-05-17T03:29:36.7330000Z"
+          },
+          {
+            "id": "d3144ac9-4316-45ce-94b9-f50936219e24",
+            "severity": "Error",
+            "monitoringobjectdisplayname": "Test Service Group",
+            "monitoringobjectpath": null,
+            "name": null,
+            "age": "6137 days, 6 hours",
+            "ageinmilliseconds": 530260149093.94025,
+            "description": "",
+            "owner": "DXPSQYVCYBXGIUDZJZVWNLFDYEKA",
+            "timeadded": "2022-05-17T03:29:36.7330000Z"
+          }
+        ]
+      }
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves the Alert Data for the specified scope/parameters
+errorCodes: []

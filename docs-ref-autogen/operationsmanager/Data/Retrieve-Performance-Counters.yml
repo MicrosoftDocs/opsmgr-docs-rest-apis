@@ -4,7 +4,7 @@ name: Retrieve Performance Counters
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the list of performance counters associated with the specified enitity ID.
+summary: "Request to retrieve performance Counters.  \nRetrieves the list of performance counters associated with the specified entity ID."
 consumes: []
 produces:
 - application/json
@@ -16,12 +16,13 @@ paths:
 uriParameters:
 - name: entityId
   in: path
-  description: Specify the entity ID.
+  isRequired: true
+  description: Entity Id
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved performance counters.
+  description: OK.Successfully retrieved performance counters.
   types:
   - uid: PerformanceCounterDataResponse
 requestHeader: []
@@ -30,7 +31,7 @@ definitions:
   kind: object
   properties:
   - name: performanceCounterDatas
-    description: ''
+    description: List of performance Counters
     types:
     - uid: PerformanceCounterData
       isArray: true
@@ -38,31 +39,77 @@ definitions:
   kind: object
   properties:
   - name: counterName
-    description: Counter name.
+    description: Counter Name
     types:
     - uid: string
   - name: instanceName
-    description: Instance name.
+    description: instance Name
     types:
     - uid: string
   - name: objectName
-    description: Object name.
+    description: Object Name
     types:
     - uid: string
   - name: objectFullName
-    description: Object full name.
+    description: Object Full Name
     types:
     - uid: string
   - name: objectId
-    description: Object ID.
+    description: Object ID
     types:
     - uid: string
   - name: parentObjectId
-    description: Parent object ID.
+    description: parent Object Id
     types:
     - uid: string
-examples: []
+examples:
+- name: RetrievePerformanceCounters
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/performanceCounters/38D48350-6BBC-D158-E217-2237AF53D611
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/performanceCounters/38D48350-6BBC-D158-E217-2237AF53D611
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "objectname",
+            "header": "ObjectName",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "countername",
+            "header": "CounterName",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "instancename",
+            "header": "InstanceName",
+            "type": null,
+            "hidden": false
+          }
+        ],
+        "rows": [
+          {
+            "objectname": "Process",
+            "countername": "Percent Processor Time",
+            "instancename": "cshost"
+          },
+          {
+            "objectname": "Process",
+            "countername": "Private Bytes",
+            "instancename": "cshost"
+          }
+        ]
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the list of performance counters associated with the specified enitity ID.
+  description: "Request to retrieve performance Counters.  \nRetrieves the list of performance counters associated with the specified entity ID."
 errorCodes: []

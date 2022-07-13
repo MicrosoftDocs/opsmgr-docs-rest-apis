@@ -4,7 +4,7 @@ name: Retrieve Object Data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves objects based on the specified criteria.
+summary: Request to retrieve Scom Objects data.
 consumes:
 - application/json
 - text/json
@@ -17,56 +17,115 @@ produces:
 - application/xml
 - text/xml
 paths:
-- content: POST http://<Servername>/OperationsManager/data/scomObjects
+- content: POST http://<Servername>/OperationsManager/data/scomObjectsDetails
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved objects based on the specified criteria.
+  description: OK.Successfully Retrieved SCOM Object Details
   types:
-  - uid: ScopeDataResponse
+  - uid: TableDataResponse
 requestBody:
 - name: default
   parameters:
-  - name: criteria
+  - name: id
     in: body
-    description: Specify the criteria.
+    description: Object Id
     types:
     - uid: string
+      isArray: true
 requestHeader: []
 definitions:
-- name: ScopeDataResponse
+- name: TableDataResponse
   kind: object
   properties:
-  - name: scopeDatas
-    description: ''
+  - name: tableColumns
+    description: Table columns of data
     types:
-    - uid: ScopeData
+    - uid: TableColumn
       isArray: true
-- name: ScopeData
+  - name: rows
+    description: Table Rows of data
+    types:
+    - uid: object
+      isArray: true
+- name: TableColumn
   kind: object
   properties:
-  - name: id
-    description: ID.
+  - name: field
+    description: Name of the Column
     types:
     - uid: string
-  - name: displayName
-    description: Display name.
+  - name: header
+    description: Header of the column
     types:
     - uid: string
-  - name: className
-    description: Class name.
+  - name: type
+    description: Type of the Column
     types:
     - uid: string
-  - name: path
-    description: Path.
+  - name: hidden
+    description: Is column hidden
     types:
-    - uid: string
-  - name: fullName
-    description: Full name.
-    types:
-    - uid: string
-examples: []
+    - uid: boolean
+examples:
+- name: RetrieveObjectData
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/scomObjectsDetails
+    body: >-
+      [
+        "3c8ac4f3-475e-44dd-4163-8a97af363705"
+      ]
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/scomObjectsDetails
+
+      [
+        "3c8ac4f3-475e-44dd-4163-8a97af363705"
+      ]
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "displayname",
+            "header": "Display name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "path",
+            "header": "Path",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "id",
+            "header": "ID",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "fullname",
+            "header": "Full name",
+            "type": null,
+            "hidden": false
+          }
+        ],
+        "rows": [
+          {
+            "id": "3c8ac4f3-475e-44dd-4163-8a97af363705",
+            "displayname": "All Windows Computers",
+            "path": null,
+            "fullname": "Microsoft.SystemCenter.AllComputersGroup"
+          }
+        ]
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves objects based on the specified criteria.
+  description: Learn more about Operations Manager service - Request to retrieve Scom Objects data.
 errorCodes: []

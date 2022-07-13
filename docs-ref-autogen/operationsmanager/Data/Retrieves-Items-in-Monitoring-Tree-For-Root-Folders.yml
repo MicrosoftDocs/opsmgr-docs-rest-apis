@@ -1,0 +1,219 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievesitemsinmonitoringtreeforrootfolders
+name: Retrieves Items in Monitoring Tree For Root Folders
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: "Retrieves Items in Monitoring Tree For Root Folders  \nRetrieves list of items in monitoring tree for root folders"
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/monitoringTreeForRootFolders
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved the Items in the Monitoring tree view For Root Folders.
+  types:
+  - uid: TreeViewResponse
+requestHeader: []
+definitions:
+- name: TreeViewResponse
+  kind: object
+  properties:
+  - name: data
+    description: Tree Node Data
+    types:
+    - uid: TreeNode
+      isArray: true
+- name: TreeNode
+  kind: object
+  properties:
+  - name: children
+    description: ''
+    types:
+    - uid: TreeNode
+      isArray: true
+  - name: id
+    description: Id
+    types:
+    - uid: string
+  - name: mpId
+    description: management Pack ID
+    types:
+    - uid: string
+  - name: label
+    description: Label
+    types:
+    - uid: string
+  - name: description
+    description: Description
+    types:
+    - uid: string
+  - name: viewType
+    description: View Type
+    types:
+    - uid: string
+  - name: expandedIcon
+    description: Expanded Icon
+    types:
+    - uid: string
+  - name: collapsedIcon
+    description: Collapsed Icon
+    types:
+    - uid: string
+  - name: icon
+    description: Icon
+    types:
+    - uid: string
+  - name: expanded
+    description: Expanded
+    types:
+    - uid: boolean
+  - name: isSealed
+    description: is Sealed
+    types:
+    - uid: boolean
+  - name: parent
+    description: Parent
+    types:
+    - uid: string
+  - name: url
+    description: Url
+    types:
+    - uid: string
+  - name: type
+    description: IdType
+    types:
+    - uid: string
+  - name: isShortcut
+    description: is Shortcut
+    types:
+    - uid: boolean
+examples:
+- name: GetMonitoringTreeForRootFolders
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/monitoringTreeForRootFolders
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/monitoringTreeForRootFolders
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "data": [
+          {
+            "children": [
+              {
+                "children": [],
+                "id": "00029ee3-be76-cd64-7dc8-7007e1785694",
+                "mpId": "d36e72db-2871-317f-b8bf-e1ebd15e2839",
+                "label": "CollectPerfCounter.MP",
+                "description": null,
+                "viewType": "FolderView",
+                "expandedIcon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "collapsedIcon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "icon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "expanded": false,
+                "isSealed": false,
+                "parent": "c3cc504f-c2b7-446b-2b87-02696b38b163",
+                "url": null,
+                "type": "parent",
+                "isShortcut": false
+              },
+              {
+                "children": [],
+                "id": "5e47f843-a0aa-731f-02a8-d0796279b43b",
+                "mpId": "749eff8c-98b6-55c1-11cb-17713af4e949",
+                "label": "JEE APM Discoveries Overrides",
+                "description": null,
+                "viewType": "FolderView",
+                "expandedIcon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "collapsedIcon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "icon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "expanded": false,
+                "isSealed": false,
+                "parent": "c3cc504f-c2b7-446b-2b87-02696b38b163",
+                "url": null,
+                "type": "parent",
+                "isShortcut": false
+              },
+              {
+                "children": [],
+                "id": "3aeae651-5c07-455a-42c2-243243abbc2a",
+                "mpId": "92198088-fa29-ae64-fd65-464220a91425",
+                "label": "Jee Apm Monitors Overrides",
+                "description": null,
+                "viewType": "FolderView",
+                "expandedIcon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "collapsedIcon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "icon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "expanded": false,
+                "isSealed": false,
+                "parent": "c3cc504f-c2b7-446b-2b87-02696b38b163",
+                "url": null,
+                "type": "parent",
+                "isShortcut": false
+              },
+              {
+                "children": [],
+                "id": "5b29d301-7a93-7613-dcd9-9c1ddce5b56a",
+                "mpId": "6ac80956-4c05-34c6-c160-9d6f82e662c6",
+                "label": "Stress.CollectPerformancecounter.MP",
+                "description": null,
+                "viewType": "FolderView",
+                "expandedIcon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "collapsedIcon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "icon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "expanded": false,
+                "isSealed": false,
+                "parent": "c3cc504f-c2b7-446b-2b87-02696b38b163",
+                "url": null,
+                "type": "parent",
+                "isShortcut": false
+              },
+              {
+                "children": [],
+                "id": "7477d971-2d69-471e-9e1f-e851b0d41426",
+                "mpId": "e1cd5b0e-41cc-4708-39f4-a307c186a1a0",
+                "label": "TestImportMP",
+                "description": null,
+                "viewType": "FolderView",
+                "expandedIcon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "collapsedIcon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "icon": "/OperationsManager/images/NavigationPane/Folder.png",
+                "expanded": false,
+                "isSealed": false,
+                "parent": "c3cc504f-c2b7-446b-2b87-02696b38b163",
+                "url": null,
+                "type": "parent",
+                "isShortcut": false
+              }
+            ],
+            "id": "c3cc504f-c2b7-446b-2b87-02696b38b163",
+            "mpId": null,
+            "label": "Monitoring",
+            "description": "Monitoring",
+            "viewType": "Overview",
+            "expandedIcon": "/OperationsManager/images/NavigationPane/Operations_Overview.png",
+            "collapsedIcon": "/OperationsManager/images/NavigationPane/Operations_Overview.png",
+            "icon": "/OperationsManager/images/NavigationPane/Operations_Overview.png",
+            "expanded": true,
+            "isSealed": false,
+            "parent": null,
+            "url": "/MonitoringView/default.aspx?viewId=c3cc504f-c2b7-446b-2b87-02696b38b163&viewType=Overview",
+            "type": "parent",
+            "isShortcut": false
+          }
+        ]
+      }
+security: []
+metadata:
+  description: "Retrieves Items in Monitoring Tree For Root Folders  \nRetrieves list of items in monitoring tree for root folders"
+errorCodes: []

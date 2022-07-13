@@ -4,7 +4,7 @@ name: Retrieve Items In Favorite Folders Tree View
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the list of views/dashboards available in the Favorite views folder.
+summary: "Retrieve Items In Favorite Folders Tree View  \nRetrieves the list of views/dashboards available in the Favorite views folder."
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of views/dashboards available in the Favorites view folder.
+  description: OK.Successfully retrieved the list of views/dashboards available in the Favorites view folder.
   types:
   - uid: TreeViewResponse
 requestHeader: []
@@ -25,7 +25,7 @@ definitions:
   kind: object
   properties:
   - name: data
-    description: ''
+    description: Tree Node Data
     types:
     - uid: TreeNode
       isArray: true
@@ -38,55 +38,96 @@ definitions:
     - uid: TreeNode
       isArray: true
   - name: id
-    description: ID.
+    description: Id
+    types:
+    - uid: string
+  - name: mpId
+    description: management Pack ID
     types:
     - uid: string
   - name: label
-    description: Label.
+    description: Label
     types:
     - uid: string
   - name: description
-    description: Description.
+    description: Description
     types:
     - uid: string
   - name: viewType
-    description: View type.
+    description: View Type
     types:
     - uid: string
   - name: expandedIcon
-    description: Expanded icon.
+    description: Expanded Icon
     types:
     - uid: string
   - name: collapsedIcon
-    description: Collapsed icon.
+    description: Collapsed Icon
     types:
     - uid: string
   - name: icon
-    description: Icon.
+    description: Icon
     types:
     - uid: string
   - name: expanded
-    description: Expanded.
+    description: Expanded
     types:
     - uid: boolean
   - name: isSealed
-    description: Is sealed.
+    description: is Sealed
     types:
     - uid: boolean
   - name: parent
-    description: Parent.
+    description: Parent
     types:
     - uid: string
   - name: url
-    description: URL.
+    description: Url
+    types:
+    - uid: string
+  - name: type
+    description: IdType
     types:
     - uid: string
   - name: isShortcut
-    description: Is shortcut.
+    description: is Shortcut
     types:
     - uid: boolean
-examples: []
+examples:
+- name: Data_GetFavoriteFoldersTree_MaximumSet_Gen
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/favoriteFoldersTree
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/favoriteFoldersTree
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "data": [
+          {
+            "children": [],
+            "id": "Folder_429fe15d0a7a4244bc3a96da83a8e11b",
+            "mpId": null,
+            "label": "Favorite Views",
+            "description": "Favorite Views",
+            "viewType": "FavoritesRoot",
+            "expandedIcon": "/OperationsManager/images/NavigationPane/FavoriteView.png",
+            "collapsedIcon": "/OperationsManager/images/NavigationPane/FavoriteView.png",
+            "icon": "/OperationsManager/images/NavigationPane/FavoriteView.png",
+            "expanded": true,
+            "isSealed": false,
+            "parent": "MyWorkspaceRoot",
+            "url": "/MonitoringView/default.aspx?ViewType=Overview&ViewID=Favorites_Overview",
+            "type": "parent",
+            "isShortcut": false
+          }
+        ]
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the list of views/dashboards available in the Favorite views folder.
+  description: "Retrieve Items In Favorite Folders Tree View  \nRetrieves the list of views/dashboards available in the Favorite views folder."
 errorCodes: []

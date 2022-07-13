@@ -1,0 +1,136 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.getschedulemaintenancelist
+name: Get Schedule Maintenance List
+service: Operations Manager
+groupName: Schedule Maintenance
+apiVersion: v1
+summary: Retrieves the schedule maintenance List
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/ScheduleMaintenanceList
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK.Successfully Retrieved schedule Maintenance List
+  types:
+  - uid: TableDataResponse
+requestHeader: []
+definitions:
+- name: TableDataResponse
+  kind: object
+  properties:
+  - name: tableColumns
+    description: Table columns of data
+    types:
+    - uid: TableColumn
+      isArray: true
+  - name: rows
+    description: Table Rows of data
+    types:
+    - uid: object
+      isArray: true
+- name: TableColumn
+  kind: object
+  properties:
+  - name: field
+    description: Name of the Column
+    types:
+    - uid: string
+  - name: header
+    description: Header of the column
+    types:
+    - uid: string
+  - name: type
+    description: Type of the Column
+    types:
+    - uid: string
+  - name: hidden
+    description: Is column hidden
+    types:
+    - uid: boolean
+examples:
+- name: GetScheduleMaintenanceList
+  request:
+    uri: GET http://<Servername>/OperationsManager/ScheduleMaintenanceList
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/ScheduleMaintenanceList
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "scheduleId",
+            "header": "ID",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "scheduleName",
+            "header": "Name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "isEnabled",
+            "header": "Enabled",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "status",
+            "header": "Status",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "isRecurrence",
+            "header": "Recurring",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "user",
+            "header": "User",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "lastRunStartTime",
+            "header": "Last Run Start Time",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "nextScheduledRunTime",
+            "header": "Next Run",
+            "type": null,
+            "hidden": false
+          }
+        ],
+        "rows": [
+          {
+            "scheduleId": "5a9cd9fd-c8dc-ec11-b723-02155eb7914d",
+            "scheduleName": "schedule",
+            "isEnabled": true,
+            "status": 0,
+            "isRecurrence": true,
+            "user": "SMX\\asttest",
+            "lastRunStartTime": "0001-01-01T00:00:00-08:00",
+            "nextScheduledRunTime": "0001-01-01T00:00:00-08:00"
+          }
+        ]
+      }
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves the schedule maintenance List
+errorCodes: []

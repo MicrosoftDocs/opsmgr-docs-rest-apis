@@ -1,0 +1,409 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertwidgetcolumns
+name: Retrieve Alert Widget Columns
+service: Operations Manager
+groupName: Resource
+apiVersion: v1
+summary: Request to retrieve Alert Widget Columns.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/resources/alertColumns
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK.Successfully retrieved Alert Widget Columns
+  types:
+  - uid: HeaderColumns
+    isArray: true
+requestHeader: []
+definitions:
+- name: HeaderColumns
+  kind: object
+  properties:
+  - name: name
+    description: Column Name
+    types:
+    - uid: string
+  - name: id
+    description: Column ID
+    types:
+    - uid: string
+  - name: typename
+    description: Column Type Name
+    types:
+    - uid: string
+  - name: isSortable
+    description: is Column Sortable
+    types:
+    - uid: boolean
+  - name: isGroupable
+    description: is Column Groupable
+    types:
+    - uid: boolean
+examples:
+- name: RetrieveAlertWidgetColumns
+  request:
+    uri: GET http://<Servername>/OperationsManager/resources/alertColumns
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/resources/alertColumns
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "name": null,
+          "id": "context",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": null,
+          "id": "monitoringobjectid",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": null,
+          "id": "monitoringobjectname",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Age",
+          "id": "age",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Alert Source",
+          "id": "alertsource",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Category",
+          "id": "category",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Connector status",
+          "id": "connectorstatus",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Created",
+          "id": "timeadded",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Created UTC",
+          "id": "timeaddedutc",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Custom field 1",
+          "id": "customfield1",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Custom field 10",
+          "id": "customfield10",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Custom field 2",
+          "id": "customfield2",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Custom field 3",
+          "id": "customfield3",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Custom field 4",
+          "id": "customfield4",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Custom field 5",
+          "id": "customfield5",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Custom field 6",
+          "id": "customfield6",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Custom field 7",
+          "id": "customfield7",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Custom field 8",
+          "id": "customfield8",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Custom field 9",
+          "id": "customfield9",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Description",
+          "id": "description",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Is monitor alert",
+          "id": "ismonitoralert",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Last modified",
+          "id": "lastmodified",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Last modified by",
+          "id": "lastmodifiedby",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Last modified UTC",
+          "id": "lastmodifiedutc",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Latency",
+          "id": "latency",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Maintenance mode",
+          "id": "monitoringobjectinmaintenancemode",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Monitor Name",
+          "id": "monitorname",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Name",
+          "id": "name",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Netbios computer name",
+          "id": "netbioscomputername",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Netbios domain name",
+          "id": "netbiosdomainname",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Owner",
+          "id": "owner",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Path",
+          "id": "monitoringobjectpath",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Principal name",
+          "id": "principalname",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Priority",
+          "id": "priority",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Repeat count",
+          "id": "repeatcount",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Resolution state",
+          "id": "resolutionstate",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Resolved by",
+          "id": "resolvedby",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Severity",
+          "id": "severity",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Site name",
+          "id": "sitename",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Source",
+          "id": "monitoringobjectdisplayname",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "State last modified",
+          "id": "statelastmodified",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "State last modified UTC",
+          "id": "statelastmodifiedutc",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "TFS work item ID",
+          "id": "tfsworkitemid",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "TFS work item owner",
+          "id": "tfsworkitemowner",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Ticket ID",
+          "id": "ticketid",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Time in state",
+          "id": "timeresolutionstatelastmodified",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Time resolved",
+          "id": "timeresolved",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Time resolved UTC",
+          "id": "timeresolvedutc",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Type name",
+          "id": "classid",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        }
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to retrieve Alert Widget Columns.
+errorCodes: []

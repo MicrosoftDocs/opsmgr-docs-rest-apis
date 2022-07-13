@@ -1,0 +1,161 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.monitoring.updatewidget
+name: update Widget
+service: Operations Manager
+groupName: Monitoring
+apiVersion: v1
+summary: "Update widget configuration  \nUpdates the widget properties or configuration"
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: PUT http://<Servername>/OperationsManager/monitoring/widget/{widgetId}
+uriParameters:
+- name: widgetId
+  in: path
+  isRequired: true
+  description: Widget Id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK.Successfully updated the widget configuration.
+  types:
+  - uid: boolean
+requestBody:
+- name: default
+  parameters:
+  - name: mpId
+    in: body
+    description: Mp ID
+    types:
+    - uid: string
+  - name: mpName
+    in: body
+    description: MP name
+    types:
+    - uid: string
+  - name: mpVersion
+    in: body
+    description: MP Version
+    types:
+    - uid: string
+  - name: mpDescription
+    in: body
+    description: MP Description
+    types:
+    - uid: string
+  - name: path
+    in: body
+    description: Path
+    types:
+    - uid: string
+  - name: name
+    in: body
+    isRequired: true
+    description: Name of Component
+    types:
+    - uid: string
+  - name: description
+    in: body
+    description: Description of Component
+    types:
+    - uid: string
+  - name: config
+    in: body
+    description: Component Config
+    types:
+    - uid: string
+  - name: componentType
+    in: body
+    description: Component Type
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: MonitoringComponentRequest
+  kind: object
+  properties:
+  - name: mpId
+    description: Mp ID
+    types:
+    - uid: string
+  - name: mpName
+    description: MP name
+    types:
+    - uid: string
+  - name: mpVersion
+    description: MP Version
+    types:
+    - uid: string
+  - name: mpDescription
+    description: MP Description
+    types:
+    - uid: string
+  - name: path
+    description: Path
+    types:
+    - uid: string
+  - name: name
+    description: Name of Component
+    types:
+    - uid: string
+  - name: description
+    description: Description of Component
+    types:
+    - uid: string
+  - name: config
+    description: Component Config
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+examples:
+- name: Monitoring_updateWidget
+  request:
+    uri: PUT http://<Servername>/OperationsManager/monitoring/widget/36d07f06-f74b-f820-9697-fc6dda6bce4e
+    body: >-
+      {
+        "mpId": "dcfdedc4-68bd-42b4-1e9a-ba94b1577732",
+        "path": "Monitoring",
+        "name": "test alert widget",
+        "description": "test",
+        "config": "{\"widgetDisplay\":{\"col\":1,\"row\":1,\"sizex\":6,\"sizey\":4,\"columns\":[\"severity\",\"monitoringobjectdisplayname\",\"name\",\"repeatcount\",\"lastmodified\"],\"groupByColumn\":\"nogrouping\",\"expandGroupByColumn\":false,\"sortByColumn\":\"nosorting\",\"sortOrder\":1,\"payload\":\"36d07f06-f74b-f820-9697-fc6dda6bce4e\",\"dragHandle\":\".draggable\",\"resizeHandle\":\".resizable\"},\"widgetParameters\":{\"scope\":{\"scopeSelection\":[]},\"criteria\":{\"severities\":[\"0\",\"1\",\"2\"],\"priorities\":[\"0\",\"2\",\"1\"],\"resolutionStates\":[\"0\",\"247\",\"248\",\"249\",\"250\",\"254\",\"255\"],\"age\":7,\"ageTimeUnit\":\"days\"}},\"widgetRefreshInterval\":5}",
+        "componentType": "HtmlAlertWidget"
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      PUT http://<Servername>/OperationsManager/monitoring/widget/36d07f06-f74b-f820-9697-fc6dda6bce4e
+
+      {
+        "mpId": "dcfdedc4-68bd-42b4-1e9a-ba94b1577732",
+        "path": "Monitoring",
+        "name": "test alert widget",
+        "description": "test",
+        "config": "{\"widgetDisplay\":{\"col\":1,\"row\":1,\"sizex\":6,\"sizey\":4,\"columns\":[\"severity\",\"monitoringobjectdisplayname\",\"name\",\"repeatcount\",\"lastmodified\"],\"groupByColumn\":\"nogrouping\",\"expandGroupByColumn\":false,\"sortByColumn\":\"nosorting\",\"sortOrder\":1,\"payload\":\"36d07f06-f74b-f820-9697-fc6dda6bce4e\",\"dragHandle\":\".draggable\",\"resizeHandle\":\".resizable\"},\"widgetParameters\":{\"scope\":{\"scopeSelection\":[]},\"criteria\":{\"severities\":[\"0\",\"1\",\"2\"],\"priorities\":[\"0\",\"2\",\"1\"],\"resolutionStates\":[\"0\",\"247\",\"248\",\"249\",\"250\",\"254\",\"255\"],\"age\":7,\"ageTimeUnit\":\"days\"}},\"widgetRefreshInterval\":5}",
+        "componentType": "HtmlAlertWidget"
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "Ok"
+      ]
+security: []
+metadata:
+  description: "Learn more about Operations Manager service - Update widget configuration  \nUpdates the widget properties or configuration"
+errorCodes: []

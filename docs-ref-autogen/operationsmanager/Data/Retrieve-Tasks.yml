@@ -4,7 +4,7 @@ name: Retrieve Tasks
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the list of tasks and thier properties.
+summary: Request to retrieves the list of tasks and their properties.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the list of tasks and thier properties.
+  description: OK.Successfully retrieved the list of tasks and their properties.
   types:
   - uid: TaskListResponse
     isArray: true
@@ -31,13 +31,13 @@ requestBody:
   - name: id
     in: body
     isRequired: true
-    description: Task ID.
+    description: Task ID
     types:
     - uid: string
   - name: viewType
     in: body
     isRequired: true
-    description: View type.
+    description: View Type
     types:
     - uid: string
 requestHeader: []
@@ -46,15 +46,15 @@ definitions:
   kind: object
   properties:
   - name: displayName
-    description: Task display name.
+    description: Task Display Name
     types:
     - uid: string
   - name: taskListType
-    description: Task list type.
+    description: Task List Type
     types:
     - uid: string
   - name: taskList
-    description: ''
+    description: Task lists
     types:
     - uid: TaskResponse
       isArray: true
@@ -62,39 +62,39 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: Task ID.
+    description: Task ID
     types:
     - uid: string
   - name: viewType
-    description: View type.
+    description: View Type
     types:
     - uid: string
 - name: TaskResponse
   kind: object
   properties:
   - name: id
-    description: Task ID.
+    description: Task Id
     types:
     - uid: string
   - name: displayName
-    description: Task display name.
+    description: Task Display Name
     types:
     - uid: string
   - name: description
-    description: Task description.
+    description: Task Description
     types:
     - uid: string
   - name: iconUrl
-    description: Icon URL.
+    description: Icon URL
     types:
     - uid: string
   - name: targets
-    description: ''
+    description: List of task targets
     types:
     - uid: TaskTarget
       isArray: true
   - name: parameters
-    description: ''
+    description: Task parameters
     types:
     - uid: TaskParameter
       isArray: true
@@ -102,42 +102,129 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: ID.
+    description: Task target id
     types:
     - uid: string
   - name: name
-    description: Name.
+    description: Task target Name
     types:
     - uid: string
   - name: runLocation
-    description: Run location.
+    description: task run Location
     types:
     - uid: string
 - name: TaskParameter
   kind: object
   properties:
   - name: id
-    description: ID.
+    description: id
     types:
     - uid: string
   - name: parameterType
-    description: Parameter type.
+    description: task parameter type
     types:
     - uid: string
   - name: name
-    description: Name.
+    description: task parameter Name
     types:
     - uid: string
   - name: displayName
-    description: Display name.
+    description: task parameter Display Name
     types:
     - uid: string
   - name: defaultValue
-    description: Default value.
+    description: Default value of task parameter
     types:
     - uid: string
-examples: []
+examples:
+- name: GetTaskPaneData
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/getTaskPane
+    body: >-
+      {
+        "id": "dfba68de-a600-4244-9c5f-04c1e056a037",
+        "viewType": "HtmlAlertWidget"
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/getTaskPane
+
+      {
+        "id": "dfba68de-a600-4244-9c5f-04c1e056a037",
+        "viewType": "HtmlAlertWidget"
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "displayName": "Windows Computer Tasks",
+          "taskListType": "DynamicTasks",
+          "taskList": [
+            {
+              "id": "023ee23d-db8d-9de7-1923-c0c50d66850f",
+              "displayName": "Resubmit local cache state change events.",
+              "description": "Submits the snapshot of instance state change events from health service local cache for repeated collection.",
+              "iconUrl": "/OperationsManager/images/task/taskIcon.png",
+              "targets": [
+                {
+                  "id": "b4abc994-7f94-ef4b-9a4b-69611635f6a0",
+                  "name": "SCOMFBOMVM0065.smx.net",
+                  "runLocation": null
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "id": "f5ea8691-50c6-3555-4166-e71120134ef7",
+              "displayName": "Show Failed Rules and Monitors for this Object",
+              "description": null,
+              "iconUrl": "/OperationsManager/images/task/taskIcon.png",
+              "targets": [
+                {
+                  "id": "b4abc994-7f94-ef4b-9a4b-69611635f6a0",
+                  "name": "SCOMFBOMVM0065.smx.net",
+                  "runLocation": null
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "id": "bab05472-d548-f69c-ee7d-7c51e2cc890d",
+              "displayName": "Show local cache for state change events.",
+              "description": "Displays the snapshot of instance state change events from health service local cache.",
+              "iconUrl": "/OperationsManager/images/task/taskIcon.png",
+              "targets": [
+                {
+                  "id": "b4abc994-7f94-ef4b-9a4b-69611635f6a0",
+                  "name": "SCOMFBOMVM0065.smx.net",
+                  "runLocation": null
+                }
+              ],
+              "parameters": []
+            },
+            {
+              "id": "5d649d3c-7c4c-8dec-a1fd-2f5711ac7f3d",
+              "displayName": "Show Running Rules and Monitors for this Object",
+              "description": null,
+              "iconUrl": "/OperationsManager/images/task/taskIcon.png",
+              "targets": [
+                {
+                  "id": "b4abc994-7f94-ef4b-9a4b-69611635f6a0",
+                  "name": "SCOMFBOMVM0065.smx.net",
+                  "runLocation": null
+                }
+              ],
+              "parameters": []
+            }
+          ]
+        }
+      ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the list of tasks and thier properties.
+  description: Learn more about Operations Manager service - Request to retrieves the list of tasks and their properties.
 errorCodes: []

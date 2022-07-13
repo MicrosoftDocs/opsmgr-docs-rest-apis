@@ -1,0 +1,189 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.monitoring.adddashboard
+name: Add Dashboard
+service: Operations Manager
+groupName: Monitoring
+apiVersion: v1
+summary: Request to save the dashboard in Monitoring View
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/monitoring/dashboard
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK.Successfully saved dashboard
+  types:
+  - uid: ComponentResponse
+requestBody:
+- name: default
+  parameters:
+  - name: mpId
+    in: body
+    description: Mp ID
+    types:
+    - uid: string
+  - name: mpName
+    in: body
+    description: MP name
+    types:
+    - uid: string
+  - name: mpVersion
+    in: body
+    description: MP Version
+    types:
+    - uid: string
+  - name: mpDescription
+    in: body
+    description: MP Description
+    types:
+    - uid: string
+  - name: path
+    in: body
+    description: Path
+    types:
+    - uid: string
+  - name: name
+    in: body
+    isRequired: true
+    description: Name of Component
+    types:
+    - uid: string
+  - name: description
+    in: body
+    description: Description of Component
+    types:
+    - uid: string
+  - name: config
+    in: body
+    description: Component Config
+    types:
+    - uid: string
+  - name: componentType
+    in: body
+    description: Component Type
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: ComponentResponse
+  kind: object
+  properties:
+  - name: id
+    description: ID
+    types:
+    - uid: string
+  - name: name
+    description: Component Name
+    types:
+    - uid: string
+  - name: description
+    description: Component Description
+    types:
+    - uid: string
+  - name: mpId
+    description: Component MP ID
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+  - name: config
+    description: configuration
+    types:
+    - uid: string
+- name: MonitoringComponentRequest
+  kind: object
+  properties:
+  - name: mpId
+    description: Mp ID
+    types:
+    - uid: string
+  - name: mpName
+    description: MP name
+    types:
+    - uid: string
+  - name: mpVersion
+    description: MP Version
+    types:
+    - uid: string
+  - name: mpDescription
+    description: MP Description
+    types:
+    - uid: string
+  - name: path
+    description: Path
+    types:
+    - uid: string
+  - name: name
+    description: Name of Component
+    types:
+    - uid: string
+  - name: description
+    description: Description of Component
+    types:
+    - uid: string
+  - name: config
+    description: Component Config
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+examples:
+- name: Monitoring_AddDashboard
+  request:
+    uri: POST http://<Servername>/OperationsManager/monitoring/dashboard
+    body: >-
+      {
+        "mpId": "dcfdedc4-68bd-42b4-1e9a-ba94b1577732",
+        "mpName": "Notifications Internal Library",
+        "path": "Monitoring",
+        "name": "Notification Dashsboard",
+        "description": "test",
+        "config": null,
+        "componentType": null
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/monitoring/dashboard
+
+      {
+        "mpId": "dcfdedc4-68bd-42b4-1e9a-ba94b1577732",
+        "mpName": "Notifications Internal Library",
+        "path": "Monitoring",
+        "name": "Notification Dashsboard",
+        "description": "test",
+        "config": null,
+        "componentType": null
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "id": "7c7cd385-30f5-312f-9123-31c2f22f6edf",
+        "name": "Notification Dashsboard",
+        "description": "test",
+        "mpId": "dcfdedc4-68bd-42b4-1e9a-ba94b1577732",
+        "componentType": null,
+        "config": null
+      }
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to save the dashboard in Monitoring View
+errorCodes: []

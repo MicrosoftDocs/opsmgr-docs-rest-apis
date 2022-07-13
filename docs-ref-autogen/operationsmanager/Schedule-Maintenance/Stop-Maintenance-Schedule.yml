@@ -1,0 +1,50 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.stopmaintenanceschedule
+name: Stop Maintenance Schedule
+service: Operations Manager
+groupName: Schedule Maintenance
+apiVersion: v1
+summary: Stops Schedule maintenance details by schedule Id
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/StopScheduleMaintenance/{scheduleId}
+uriParameters:
+- name: scheduleId
+  in: path
+  isRequired: true
+  description: Schedule Id to Stop
+  types:
+  - uid: string
+  format: uuid
+responses:
+- name: 200 OK
+  description: Ok.Successfully Stopped Maintenance Schedule
+  types:
+  - uid: object
+requestHeader: []
+definitions: []
+examples:
+- name: StopMaintenanceSchedule
+  request:
+    uri: GET http://<Servername>/OperationsManager/StopScheduleMaintenance/c4f763ce-eff7-ec11-acf9-02155eb7914c
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/StopScheduleMaintenance/c4f763ce-eff7-ec11-acf9-02155eb7914c
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "OK"
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Stops Schedule maintenance details by schedule Id
+errorCodes: []

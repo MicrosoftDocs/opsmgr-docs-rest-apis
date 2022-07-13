@@ -1,0 +1,60 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.networkinterface.getinterfacesforgivennode
+name: GetInterfaces For GivenNode
+service: Operations Manager
+groupName: Network Interface
+apiVersion: v1
+summary: Retrieves data for network interfaces by interface Id and request type
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/NetworkInterface/{interfaceId}/{requestType}
+uriParameters:
+- name: interfaceId
+  in: path
+  isRequired: true
+  description: Request type to be networkinterfaceutilization
+  types:
+  - uid: string
+- name: requestType
+  in: path
+  isRequired: true
+  description: Interface ID
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: object
+requestHeader: []
+definitions: []
+examples:
+- name: GetInterfacesForGivenNode
+  request:
+    uri: GET http://<Servername>/OperationsManager/NetworkInterface/4baee73a-92b7-772d-2d68-44d574c08217/NetworkInterfaceUtilization
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/NetworkInterface/4baee73a-92b7-772d-2d68-44d574c08217/NetworkInterfaceUtilization
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "interfaceId": "4baee73a-92b7-772d-2d68-44d574c08217",
+          "averageUtilization": 0,
+          "minimumUtilization": 0,
+          "maximumUtilization": 0
+        }
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves data for network interfaces by interface Id and request type
+errorCodes: []

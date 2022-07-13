@@ -1,0 +1,38 @@
+### YamlMime:RESTOperationGroup
+uid: <servername>.operationsmanager.operationsmanager.monitoring
+name: Monitoring
+apiVersion: v1
+service: Operations Manager
+metadata:
+  description: Learn more about [Operations Manager Monitoring Operations]. How to [Add Dashboard,Add Folder,Add ViewShortcut To MyWorkspace,Add Widget to Dashboard,Delete Das
+operations:
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.adddashboard
+  summary: Request to save the dashboard.
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.addfolder
+  summary: Request to Save the folder.
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.addviewshortcuttomyworkspace
+  summary: Adds a shortcut to Monitoring view in My Workspace
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.addwidgettodashboard
+  summary: Request to Add Widget to dashboard
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.deletedashboard
+  summary: Deletes the Dashboard.
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.deleteviewshortcutfrommyworkspace
+  summary: Deletes a view shortcut from My Workspace
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.deletewidget
+  summary: Deletes a widget from dashboard.
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.getdashboardtype
+  summary: Retrieves dashboard type
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievedashboard
+  summary: Retrieves the dashboard Details
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievedashboardsforobject
+  summary: Retrieves the dashboards for Object.
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievewidget
+  summary: Retrieves the widget details.
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievewidgetsbydashboardid
+  summary: Retrieves the widgets in the dashboard.
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievewidgetsforentity
+  summary: Retrieves the widgets in the dashboard for entity.
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.updatedashboarddetails
+  summary: Update Dashboard Details
+- uid: <servername>.operationsmanager.operationsmanager.monitoring.updatewidget
+  summary: Update widget configuration

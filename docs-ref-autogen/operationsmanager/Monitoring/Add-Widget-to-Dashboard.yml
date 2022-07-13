@@ -1,0 +1,193 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.monitoring.addwidgettodashboard
+name: Add Widget to Dashboard
+service: Operations Manager
+groupName: Monitoring
+apiVersion: v1
+summary: "Request to Add Widget to dashboard  \nAdds a widget to an existing Dashboard"
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/monitoring/dashboard/{dashboardId}/widget
+uriParameters:
+- name: dashboardId
+  in: path
+  isRequired: true
+  description: Dashbord Id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK.Successfully added widget to dashboard
+  types:
+  - uid: ComponentResponse
+requestBody:
+- name: default
+  parameters:
+  - name: mpId
+    in: body
+    description: Mp ID
+    types:
+    - uid: string
+  - name: mpName
+    in: body
+    description: MP name
+    types:
+    - uid: string
+  - name: mpVersion
+    in: body
+    description: MP Version
+    types:
+    - uid: string
+  - name: mpDescription
+    in: body
+    description: MP Description
+    types:
+    - uid: string
+  - name: path
+    in: body
+    description: Path
+    types:
+    - uid: string
+  - name: name
+    in: body
+    isRequired: true
+    description: Name of Component
+    types:
+    - uid: string
+  - name: description
+    in: body
+    description: Description of Component
+    types:
+    - uid: string
+  - name: config
+    in: body
+    description: Component Config
+    types:
+    - uid: string
+  - name: componentType
+    in: body
+    description: Component Type
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: ComponentResponse
+  kind: object
+  properties:
+  - name: id
+    description: ID
+    types:
+    - uid: string
+  - name: name
+    description: Component Name
+    types:
+    - uid: string
+  - name: description
+    description: Component Description
+    types:
+    - uid: string
+  - name: mpId
+    description: Component MP ID
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+  - name: config
+    description: configuration
+    types:
+    - uid: string
+- name: MonitoringComponentRequest
+  kind: object
+  properties:
+  - name: mpId
+    description: Mp ID
+    types:
+    - uid: string
+  - name: mpName
+    description: MP name
+    types:
+    - uid: string
+  - name: mpVersion
+    description: MP Version
+    types:
+    - uid: string
+  - name: mpDescription
+    description: MP Description
+    types:
+    - uid: string
+  - name: path
+    description: Path
+    types:
+    - uid: string
+  - name: name
+    description: Name of Component
+    types:
+    - uid: string
+  - name: description
+    description: Description of Component
+    types:
+    - uid: string
+  - name: config
+    description: Component Config
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+examples:
+- name: Monitoring_AddWidget
+  request:
+    uri: POST http://<Servername>/OperationsManager/monitoring/dashboard/b0ba870b-6d74-2f8f-2e36-99674ae53265/widget
+    body: >-
+      {
+        "mpId": "3d9a3d4f-f4f6-6027-6067-844af086fe3d",
+        "path": "Monitoring",
+        "name": "windows state",
+        "description": "test",
+        "config": "{\"widgetDisplay\":{\"col\":1,\"row\":2,\"sizex\":6,\"sizey\":4,\"columns\":[\"healthstate\",\"displayname\",\"path\",\"maintenancemode\"]},\"widgetParameters\":{\"scope\":{\"scopeSelection\":[],\"classSelection\":[{\"id\":\"6f7e3306-beeb-2996-3795-7c1eafb925b8\",\"displayName\":\"All Windows Computers\",\"className\":\"Microsoft.SystemCenter.Library!Microsoft.SystemCenter.AllComputersGroup\",\"path\":null,\"fullName\":null,\"objectType\":-2}]},\"criteria\":{\"healthStates\":[\"2\",\"0\",\"1\",\"3\"],\"inMaintenanceMode\":\"All\"}},\"widgetRefreshInterval\":5}",
+        "componentType": "HtmlStateWidget"
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/monitoring/dashboard/b0ba870b-6d74-2f8f-2e36-99674ae53265/widget
+
+      {
+        "mpId": "3d9a3d4f-f4f6-6027-6067-844af086fe3d",
+        "path": "Monitoring",
+        "name": "windows state",
+        "description": "test",
+        "config": "{\"widgetDisplay\":{\"col\":1,\"row\":2,\"sizex\":6,\"sizey\":4,\"columns\":[\"healthstate\",\"displayname\",\"path\",\"maintenancemode\"]},\"widgetParameters\":{\"scope\":{\"scopeSelection\":[],\"classSelection\":[{\"id\":\"6f7e3306-beeb-2996-3795-7c1eafb925b8\",\"displayName\":\"All Windows Computers\",\"className\":\"Microsoft.SystemCenter.Library!Microsoft.SystemCenter.AllComputersGroup\",\"path\":null,\"fullName\":null,\"objectType\":-2}]},\"criteria\":{\"healthStates\":[\"2\",\"0\",\"1\",\"3\"],\"inMaintenanceMode\":\"All\"}},\"widgetRefreshInterval\":5}",
+        "componentType": "HtmlStateWidget"
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "id": "7f91358b-4155-a753-2a4b-7f97f287ab8f",
+        "name": "windows state",
+        "description": null,
+        "mpId": "3d9a3d4f-f4f6-6027-6067-844af086fe3d",
+        "componentType": "HtmlStateWidget",
+        "config": "{\"widgetDisplay\":{\"col\":1,\"row\":2,\"sizex\":6,\"sizey\":4,\"columns\":[\"healthstate\",\"displayname\",\"path\",\"maintenancemode\"]},\"widgetParameters\":{\"scope\":{\"scopeSelection\":[],\"classSelection\":[{\"id\":\"6f7e3306-beeb-2996-3795-7c1eafb925b8\",\"displayName\":\"All Windows Computers\",\"className\":\"Microsoft.SystemCenter.Library!Microsoft.SystemCenter.AllComputersGroup\",\"path\":null,\"fullName\":null,\"objectType\":-2}]},\"criteria\":{\"healthStates\":[\"2\",\"0\",\"1\",\"3\"],\"inMaintenanceMode\":\"All\"}},\"widgetRefreshInterval\":5}"
+      }
+security: []
+metadata:
+  description: "Learn more about Operations Manager service - Request to Add Widget to dashboard  \nAdds a widget to an existing Dashboard"
+errorCodes: []

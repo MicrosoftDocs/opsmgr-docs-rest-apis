@@ -1,0 +1,30 @@
+### YamlMime:RESTOperationGroup
+uid: <servername>.operationsmanager.operationsmanager.myworkspace
+name: My Workspace
+apiVersion: v1
+service: Operations Manager
+metadata:
+  description: Learn more about [Operations Manager My Workspace Operations]. How to [Add Dashboard in MyWorkspace,Add Widget in MyWorkspace,AddFolder To MyWorkspace,Delete Da
+operations:
+- uid: <servername>.operationsmanager.operationsmanager.myworkspace.adddashboardinmyworkspace
+  summary: Saves the dashboard in MyWorkspace.
+- uid: <servername>.operationsmanager.operationsmanager.myworkspace.addfoldertomyworkspace
+  summary: Adds a folder to My Workspace
+- uid: <servername>.operationsmanager.operationsmanager.myworkspace.addwidgetinmyworkspace
+  summary: Save widget in MyWorkspace Dashboard
+- uid: <servername>.operationsmanager.operationsmanager.myworkspace.deletedashboardinmyworkspace
+  summary: Deletes the Dashboard in MyWorkspace Pane.
+- uid: <servername>.operationsmanager.operationsmanager.myworkspace.deletefolderfrommyworkspace
+  summary: Request to delete folder in Myworkspace
+- uid: <servername>.operationsmanager.operationsmanager.myworkspace.deletewidgetinmyworkspace
+  summary: Deletes the Widget in MyWorkspace Dashboard.
+- uid: <servername>.operationsmanager.operationsmanager.myworkspace.retrievedashboardinmyworkspace
+  summary: Retrieves the MyWorkspace dashboard details.
+- uid: <servername>.operationsmanager.operationsmanager.myworkspace.retrievewidgetinmyworkspace
+  summary: Retrieves the widget details in MyWorkspaceDashboard.
+- uid: <servername>.operationsmanager.operationsmanager.myworkspace.retrievewidgetsinmyworkspace
+  summary: Retrieves the dashboard and widget in the dashboard.
+- uid: <servername>.operationsmanager.operationsmanager.myworkspace.updatedashboarddetailsinmyworkspace
+  summary: Update dashboard in MyWorkspace
+- uid: <servername>.operationsmanager.operationsmanager.myworkspace.updatewidgetinmyworkspace
+  summary: Update widget in MyWorkspace Dashboard

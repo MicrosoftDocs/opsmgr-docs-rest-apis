@@ -1,0 +1,49 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.myworkspace.deletedashboardinmyworkspace
+name: Delete Dashboard in MyWorkspace
+service: Operations Manager
+groupName: My Workspace
+apiVersion: v1
+summary: "Deletes the Dashboard in MyWorkspace Pane.  \nRequest to Delete the Dashboard in MyWorkspace Pane"
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: DELETE http://<Servername>/OperationsManager/myWorkspace/dashboard/{dashboardId}
+uriParameters:
+- name: dashboardId
+  in: path
+  isRequired: true
+  description: dashboard Id to delete
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: 'OK.Successfully Deleted the Dashboard '
+  types:
+  - uid: boolean
+requestHeader: []
+definitions: []
+examples:
+- name: MyWorkspace_DeleteDashboard
+  request:
+    uri: DELETE http://<Servername>/OperationsManager/myWorkspace/dashboard/afc4f7b3-3a1d-4e30-8254-10f588ec6a25
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      DELETE http://<Servername>/OperationsManager/myWorkspace/dashboard/afc4f7b3-3a1d-4e30-8254-10f588ec6a25
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "true"
+      ]
+security: []
+metadata:
+  description: "Learn more about Operations Manager service - Deletes the Dashboard in MyWorkspace Pane.  \nRequest to Delete the Dashboard in MyWorkspace Pane"
+errorCodes: []
