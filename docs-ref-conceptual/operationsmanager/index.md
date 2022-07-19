@@ -49,7 +49,7 @@ Required action, applicable for Operations Manager 2019 UR1.
 
 ![Initialize the CSRF token example](./Media/index/116854.png)
 
-## Call SCOM REST API from Powershell Script
+## Operations Manager REST API PowerShell example
 
 ```powershell
 #Set Headers for the request
