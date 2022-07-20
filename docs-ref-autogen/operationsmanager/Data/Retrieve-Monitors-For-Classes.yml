@@ -1,0 +1,160 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitorsforclasses
+name: Retrieve Monitors For Classes
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: "Request to retrieve monitors for a class.  \nRetrieve the list of monitors and their properties associated with a specific class."
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/class/monitors
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully retrieved the list of monitors and their properties associated with a specific class.
+  types:
+  - uid: TableDataResponse
+requestBody:
+- name: default
+  parameters:
+  - name: criteria
+    in: body
+    description: Criteria to search
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: TableDataResponse
+  kind: object
+  properties:
+  - name: tableColumns
+    description: Table columns of data
+    types:
+    - uid: TableColumn
+      isArray: true
+  - name: rows
+    description: Table Rows of data
+    types:
+    - uid: object
+      isArray: true
+- name: TableColumn
+  kind: object
+  properties:
+  - name: field
+    description: Name of the Column
+    types:
+    - uid: string
+  - name: header
+    description: Header of the column
+    types:
+    - uid: string
+  - name: type
+    description: Type of the Column
+    types:
+    - uid: string
+  - name: hidden
+    description: Is column hidden
+    types:
+    - uid: boolean
+examples:
+- name: RetrieveMonitorsForClasses
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/class/monitors
+    body: >-
+      [
+        "DisplayName LIKE %SQL%"
+      ]
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/class/monitors
+
+      [
+        "DisplayName LIKE %SQL%"
+      ]
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "id",
+            "header": "Id",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "targetid",
+            "header": "Target Id",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "displayname",
+            "header": "Display Name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "targetname",
+            "header": "Target",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "description",
+            "header": "Description",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "enabled",
+            "header": "Enabled",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "priority",
+            "header": "Priority",
+            "type": null,
+            "hidden": false
+          }
+        ],
+        "rows": [
+          {
+            "id": "b3a4993a-7380-3ae1-70f4-055e077f916c",
+            "targetid": "8a5823d6-19a8-fc4a-2aac-52b3b09ba86b",
+            "displayname": "Data Warehouse SQL RS Deployed Management Pack List Request First Chance State",
+            "description": "This monitor switches to warning state once Data Warehouse SQL RS deployed management pack list request process experiences a problem",
+            "enabled": "true",
+            "targetname": "Data Warehouse Synchronization Server",
+            "priority": "Normal"
+          },
+          {
+            "id": "947d5000-5ed0-0b51-ceed-3b3eff29a9e6",
+            "targetid": "8a5823d6-19a8-fc4a-2aac-52b3b09ba86b",
+            "displayname": "Data Warehouse Alert Data Collection SQL Server Authentication State",
+            "description": "Data Warehouse alert data collection SQL Server Authentication state for a Management Server",
+            "enabled": "true",
+            "targetname": "Data Warehouse Synchronization Server",
+            "priority": "Normal"
+          }
+        ]
+      }
+security: []
+metadata:
+  description: "Request to retrieve monitors for a class.  \nRetrieve the list of monitors and their properties associated with a specific class."
+errorCodes: []

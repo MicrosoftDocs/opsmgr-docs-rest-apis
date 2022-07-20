@@ -1,0 +1,136 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievescomobjectdatabyclass
+name: Retrieve SCOM ObjectData By Class
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Request to retrieve SCOM objects data by class Name
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/scomObjectsByClass
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK.Successfully Retrieved SCOM object Data by Class
+  types:
+  - uid: TableDataResponse
+requestBody:
+- name: default
+  parameters:
+  - name: fullClassName
+    in: body
+    description: Full Class Name
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: TableDataResponse
+  kind: object
+  properties:
+  - name: tableColumns
+    description: Table columns of data
+    types:
+    - uid: TableColumn
+      isArray: true
+  - name: rows
+    description: Table Rows of data
+    types:
+    - uid: object
+      isArray: true
+- name: TableColumn
+  kind: object
+  properties:
+  - name: field
+    description: Name of the Column
+    types:
+    - uid: string
+  - name: header
+    description: Header of the column
+    types:
+    - uid: string
+  - name: type
+    description: Type of the Column
+    types:
+    - uid: string
+  - name: hidden
+    description: Is column hidden
+    types:
+    - uid: boolean
+examples:
+- name: RetrieveObjectDataByClass
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/scomObjectsByClass
+    body: >-
+      [
+        "System.Library!System.Computer"
+      ]
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/scomObjectsByClass
+
+      [
+        "System.Library!System.Computer"
+      ]
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "displayname",
+            "header": "Display name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "path",
+            "header": "Path",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "id",
+            "header": "ID",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "fullname",
+            "header": "Full name",
+            "type": null,
+            "hidden": false
+          }
+        ],
+        "rows": [
+          {
+            "displayname": "LlhmpKkOvfnZ2tR7VF1yIcgo02c1S7q9FPLsa9h7hl5kEHVHViIKu9vtE3wxst5xyoTmhigWi3Qgg5ktgUftzgOGecn.NuPypIvaxtkxBvm0sONJTCQYNM7SZNIF48Jxoc1YKJ5wtssD3XYPOeO",
+            "path": null,
+            "fullname": "Microsoft.Windows.Computer:LlhmpKkOvfnZ2tR7VF1yIcgo02c1S7q9FPLsa9h7hl5kEHVHViIKu9vtE3wxst5xyoTmhigWi3Qgg5ktgUftzgOGecn.NuPypIvaxtkxBvm0sONJTCQYNM7SZNIF48Jxoc1YKJ5wtssD3XYPOeO",
+            "id": "aeee35a8-c9bc-916d-a86a-ab4fd0e4f8e8"
+          },
+          {
+            "displayname": "SCOMNFMPDEV0015.smx.net",
+            "path": null,
+            "fullname": "Microsoft.Windows.Computer:SCOMNFMPDEV0015.smx.net",
+            "id": "9f2ef630-9784-9e27-bbd0-af9900d8264f"
+          }
+        ]
+      }
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to retrieve SCOM objects data by class Name
+errorCodes: []

@@ -1,0 +1,95 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.monitoring.addfolder
+name: Add Folder
+service: Operations Manager
+groupName: Monitoring
+apiVersion: v1
+summary: Request to Save the folder in Monitoring View
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/monitoring/folder
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully added the folder
+  types:
+  - uid: object
+requestBody:
+- name: default
+  parameters:
+  - name: path
+    in: body
+    isRequired: true
+    description: Folder Path
+    types:
+    - uid: string
+  - name: mpId
+    in: body
+    description: MP ID
+    types:
+    - uid: string
+  - name: componentId
+    in: body
+    description: Component ID
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: FolderRequest
+  kind: object
+  properties:
+  - name: path
+    description: Folder Path
+    types:
+    - uid: string
+  - name: mpId
+    description: MP ID
+    types:
+    - uid: string
+  - name: componentId
+    description: Component ID
+    types:
+    - uid: string
+examples:
+- name: Monitoring_AddFolder
+  request:
+    uri: POST http://<Servername>/OperationsManager/monitoring/folder
+    body: >-
+      {
+        "path": "Health Folder",
+        "mpId": "b48a4f5a-504a-cc3e-0c1a-d55496197e0f",
+        "componentId": null
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/monitoring/folder
+
+      {
+        "path": "Health Folder",
+        "mpId": "b48a4f5a-504a-cc3e-0c1a-d55496197e0f",
+        "componentId": null
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "OK"
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to Save the folder in Monitoring View
+errorCodes: []

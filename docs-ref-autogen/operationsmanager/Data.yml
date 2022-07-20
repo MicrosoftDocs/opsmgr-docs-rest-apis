@@ -4,69 +4,117 @@ name: Data
 apiVersion: v1
 service: Operations Manager
 metadata:
-  description: Learn more about [Operations Manager Data Operations]. How to [Retrieve Alert Count For Entity,Retrieve Alert data,Retrieve Alert Properties,Retrieve Class Info
+  description: Learn more about [Operations Manager Data Operations]. How to [DRetrieve SCOM Objects,Get Unsealed Management Packs,Reset Monitor For Alert,Retrieve Alert Conte
 operations:
-- uid: <servername>.operationsmanager.operationsmanager.data.retrievealertcountforentity
-  summary: Retrieves the number of alerts associated with the specified entity ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.retrievealertdata
-  summary: Retrieves the alert data for the specified scope/parameters.
+- uid: <servername>.operationsmanager.operationsmanager.data.dretrievescomobjects
+  summary: Request to retrieve Scom Objects data.
+- uid: <servername>.operationsmanager.operationsmanager.data.getunsealedmanagementpacks
+  summary: Retrieve the list of unsealead management packs
+- uid: <servername>.operationsmanager.operationsmanager.data.resetmonitorforalert
+  summary: Request to reset monitor information
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievealertcontext
+  summary: Retrieve alert context for given Alert ID
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievealertcountbyid
+  summary: Retrieve alerts count by entityId.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievealertdescription
+  summary: Retrieve alert description.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievealertdetails
+  summary: Request to retrieve Alert Details.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievealerthistory
+  summary: Retrieve alert history for Alert ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievealertproperties
-  summary: Retrieves the alert properties for the specified alert.
+  summary: Retrieve alert Properties by Alert ID.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievealerttypeproperties
+  summary: Request to retrieve Alert Type properties.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveclasses
-  summary: Retrieves the list of classes and thier properties.
+  summary: Request to retrieve SCOM Classes
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveclassesforobject
+  summary: Retrieves classes for object.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveclassinformation
-  summary: Retrieves the class properties for the specified class ID.
+  summary: Retrieve class information by class ID.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievedatawarehousedetails
+  summary: Retrieve Datawarehouse Details
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievedrilldowntypedetails
+  summary: Retrieve title data for drilldown page.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveentityname
-  summary: Retrieves entity name for the specified entity ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.retrievegroupdata
-  summary: Retrieves groups based on the specified criteria.
+  summary: Retrieve Scom Entity Name
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievehealthstatebyentityid
+  summary: Retrieve Health State of an entityId.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveitemsinfavoritefolderstreeview
-  summary: Retrieves the list of views/dashboards available in the Favorite views folder.
+  summary: Retrieve Items In Favorite Folders Tree View
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveitemsinmonitoringtreeview
-  summary: Retrieves the list of views/dashboards/folders available in the Monitoring tree view.
+  summary: Retrieve Items In Monitoring Tree View
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveitemsinmyworkspacetreeview
-  summary: Retrieves the list of views/dashboards/folder available in the My Workspace tree view.
-- uid: <servername>.operationsmanager.operationsmanager.data.retrieveknowledgearticle
-  summary: Retrieves the knowledge article for the specified element type and element ID.
+  summary: Retrieve Items In My Workspace Tree View
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievemanagementgroup
+  summary: Retrieve management group
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitorinformation
-  summary: Retrieves the monitor properties for the specified monitor ID.
-- uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringdataforentity
-  summary: Retrieves the monitoring data of the specified entity ID.
+  summary: Retrieve monitor information for Monitor ID
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringdata
+  summary: Retrieve health state of entity's monitors and alert count
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringknowledgearticle
+  summary: Retrieve monitoring knowledge article by Element ID
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringobjectinformation
-  summary: Retrieves the objects details (like object properties, related objects and classs information) for the specificed object.
+  summary: Retrieves object information for Object ID.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringobjectproperties
-  summary: Retrieves the monitoring object properties.
-- uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitorsforclass
-  summary: Retrieve the list of monitors and thier properties associated with a specific class.
+  summary: Retrieve object properties for objectID.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitorsforclasses
+  summary: Request to retrieve monitors for a class.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitorsforobjects
-  summary: Retrieve the list of monitors and thier properties associated with a specific object.
+  summary: Request to retrieve monitors for an object.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveobjectdata
-  summary: Retrieves objects based on the specified criteria.
+  summary: Retrieve Scom Objects data.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveperformancecounters
-  summary: Retrieves the list of performance counters associated with the specified enitity ID.
+  summary: Request to retrieve performance Counters.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveperformancedata
-  summary: Retrieves the performance data for the specified scope/parameters.
+  summary: Request to retrieve performance data.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievepowershelloutput
-  summary: Retrieves data after executing the specified PowerShell script.
+  summary: Retrieves data after executing the specified PowerShell script
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveruleconfiguration
+  summary: Retrieve rule configuration for Rule ID
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieveruleinformation
-  summary: Retrieves the rule properties for the specified rule ID.
+  summary: Retrieve rule information of Rule ID.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveruleinformationforalert
+  summary: 'Retrieves Rule Information for Alert '
 - uid: <servername>.operationsmanager.operationsmanager.data.retrieverules
-  summary: Retrieve the list of rules and thier properties based on the specified criteria.
+  summary: Request to retrieve rules.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievesalertdata
+  summary: Retrieves the Alert Data
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievescomgroupdata
+  summary: Request to retrieve Scom Groups data.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievescomobjectdatabyclass
+  summary: Retrieve Scom Objects data by Class.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievesdashboardactions
+  summary: Retrieves the dashboard Actions.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievesitemsinmonitoringtreeforrootfolders
+  summary: Retrieves Items in Monitoring Tree For Root Folders
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievesladata
+  summary: Request to retrieve SLA
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveslas
+  summary: Request to retrieve SLAs
+- uid: <servername>.operationsmanager.operationsmanager.data.retrieveslodata
+  summary: Request to retrieve SLO Data
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievestatedata
-  summary: Retrieves the health state data for the specified scope/parameters.
-- uid: <servername>.operationsmanager.operationsmanager.data.retrievestateforentity
-  summary: Retrieves the health state of the specified entity ID.
+  summary: Retrieve state data.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievestatewidgetcolumns
-  summary: Retrieves the state columns applicable for the specified entity ID.
+  summary: Request to retrieve State Widget Columns.
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievetaskresult
-  summary: Retrieves the result of an executed task.
+  summary: Retrieves the result of an executed task
 - uid: <servername>.operationsmanager.operationsmanager.data.retrievetasks
-  summary: Retrieves the list of tasks and thier properties.
-- uid: <servername>.operationsmanager.operationsmanager.data.retrieveunsealedmanagementpacks
-  summary: Retrieve the list of unsealead management packs.
+  summary: Retrieves the list of tasks.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievetopologydata
+  summary: Retrieve Topology Data.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievetopologyimagebyimageid
+  summary: Request to retrieve Topology Image by imageID.
+- uid: <servername>.operationsmanager.operationsmanager.data.retrievetopologyimages
+  summary: Request to retrieve Topology Images.
 - uid: <servername>.operationsmanager.operationsmanager.data.saveknowledgearticle
-  summary: Saves the knowledge article of the specified entity.
+  summary: Request to save the knowledge article
 - uid: <servername>.operationsmanager.operationsmanager.data.setalertresolutionstates
-  summary: Sets the alert resolution state for the specified alert(s).
-- uid: <servername>.operationsmanager.operationsmanager.data.submittask
-  summary: Submits a task for execution.
+  summary: Sets resolution states for the specified Alert(s).
+- uid: <servername>.operationsmanager.operationsmanager.data.submittaskforexecution
+  summary: Submits a task for execution
+- uid: <servername>.operationsmanager.operationsmanager.data.updatealertdetails
+  summary: Request to update Alert Details
+- uid: <servername>.operationsmanager.operationsmanager.data.uploadtopologyimage
+  summary: Upload single Topology Image.

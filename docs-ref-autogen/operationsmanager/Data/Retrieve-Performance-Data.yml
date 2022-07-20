@@ -4,7 +4,7 @@ name: Retrieve Performance Data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the performance data for the specified scope/parameters.
+summary: "Request to retrieve performance data.  \nRetrieves the performance data for the specified scope/parameters."
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved performance data.
+  description: OK.Successfully retrieved performance data.
   types:
   - uid: PerformanceResponse
 requestBody:
@@ -29,18 +29,18 @@ requestBody:
   parameters:
   - name: id
     in: body
-    description: ID.
+    description: performanceRequest ID
     types:
     - uid: string
   - name: performanceCounters
     in: body
-    description: ''
+    description: performance Counters
     types:
     - uid: object
       isArray: true
   - name: duration
     in: body
-    description: Duration for which data needs to be retrieved.
+    description: Duration
     types:
     - uid: integer
 requestHeader: []
@@ -61,16 +61,16 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: ID.
+    description: performanceRequest ID
     types:
     - uid: string
   - name: performanceCounters
-    description: ''
+    description: performance Counters
     types:
     - uid: object
       isArray: true
   - name: duration
-    description: Duration for which data needs to be retrieved.
+    description: Duration
     types:
     - uid: integer
 - name: GraphData
@@ -85,19 +85,19 @@ definitions:
       - uid: string
       - uid: number
   - name: id
-    description: ID.
+    description: ''
     types:
     - uid: string
 - name: TableDataResponse
   kind: object
   properties:
   - name: tableColumns
-    description: ''
+    description: Table columns of data
     types:
     - uid: TableColumn
       isArray: true
   - name: rows
-    description: ''
+    description: Table Rows of data
     types:
     - uid: object
       isArray: true
@@ -105,23 +105,115 @@ definitions:
   kind: object
   properties:
   - name: field
-    description: Name of the column.
+    description: Name of the Column
     types:
     - uid: string
   - name: header
-    description: Header of the column.
+    description: Header of the column
     types:
     - uid: string
   - name: type
-    description: Type of the column.
+    description: Type of the Column
     types:
     - uid: string
   - name: hidden
-    description: Is the column hidden.
+    description: Is column hidden
     types:
     - uid: boolean
-examples: []
+examples:
+- name: RetrievePerformanceData
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/performance
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/performance
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "datasets": [
+          {
+            "data": {},
+            "id": "10a8e3ed-27d7-e860-d22f-c6ea7820883824"
+          }
+        ],
+        "legends": {
+          "tableColumns": [
+            {
+              "field": "performanceobject",
+              "header": "Performance object",
+              "type": null,
+              "hidden": false
+            },
+            {
+              "field": "performancecounter",
+              "header": "Performance counter",
+              "type": null,
+              "hidden": false
+            },
+            {
+              "field": "performanceinstance",
+              "header": "Performance instance",
+              "type": null,
+              "hidden": false
+            },
+            {
+              "field": "averagevalue",
+              "header": "Average value",
+              "type": null,
+              "hidden": false
+            },
+            {
+              "field": "maximumvalue",
+              "header": "Maximum value",
+              "type": null,
+              "hidden": false
+            },
+            {
+              "field": "minimumvalue",
+              "header": "Minimum value",
+              "type": null,
+              "hidden": false
+            },
+            {
+              "field": "lastvalue",
+              "header": "Last value",
+              "type": null,
+              "hidden": false
+            },
+            {
+              "field": "path",
+              "header": "Path",
+              "type": null,
+              "hidden": false
+            },
+            {
+              "field": "target",
+              "header": "Target",
+              "type": null,
+              "hidden": false
+            }
+          ],
+          "rows": [
+            {
+              "performanceobject": "ManagementGroupAlerts",
+              "performancecounter": "AlertsCount",
+              "performanceinstance": "Total",
+              "averagevalue": 0,
+              "maximumvalue": -1.7976931,
+              "minimumvalue": 1.79769313,
+              "lastvalue": 0,
+              "path": "",
+              "target": "All Management Servers Resource Pool",
+              "id": "10a8e3ed-27d7-e860-d22f-c6ea7820883824"
+            }
+          ]
+        }
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the performance data for the specified scope/parameters.
+  description: "Request to retrieve performance data.  \nRetrieves the performance data for the specified scope/parameters."
 errorCodes: []

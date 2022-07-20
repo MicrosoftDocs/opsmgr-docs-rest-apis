@@ -1,0 +1,73 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrieveslas
+name: Retrieve SLAs
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Request to retrieve SLAs configured
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/slas
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK.Successfully retrieved SLAs
+  types:
+  - uid: SLA
+    isArray: true
+requestHeader: []
+definitions:
+- name: SLA
+  kind: object
+  properties:
+  - name: name
+    description: SLA Name
+    types:
+    - uid: string
+  - name: id
+    description: SLA Id
+    types:
+    - uid: string
+  - name: managementGroupId
+    description: Management group Id
+    types:
+    - uid: string
+  - name: managementPackName
+    description: /Management Pack Name
+    types:
+    - uid: string
+  - name: target
+    description: target
+    types:
+    - uid: string
+examples:
+- name: getSLAs
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/slas
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/slas
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "name": "Application Health SLA",
+          "id": "adf4713d-0d4c-3d34-a9d0-65dc19fa9693",
+          "managementGroupId": "ca6fef6a-1215-ede2-9f21-b2894c6d1ac4",
+          "managementPackName": "Microsoft System Center Application Monitoring 360 SLA",
+          "target": null
+        }
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to retrieve SLAs configured
+errorCodes: []

@@ -1,0 +1,112 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.myworkspace.updatewidgetinmyworkspace
+name: Update Widget in MyWorkspace
+service: Operations Manager
+groupName: My Workspace
+apiVersion: v1
+summary: Request to update widget in myworkspace Dashboard
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: PUT http://<Servername>/OperationsManager/myWorkspace/widget/{widgetId}
+uriParameters:
+- name: widgetId
+  in: path
+  isRequired: true
+  description: widget Id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK.Successfully Updated Widget in MyWorkspace
+  types:
+  - uid: boolean
+requestBody:
+- name: default
+  parameters:
+  - name: name
+    in: body
+    isRequired: true
+    description: Name of Component
+    types:
+    - uid: string
+  - name: description
+    in: body
+    description: Description of Component
+    types:
+    - uid: string
+  - name: config
+    in: body
+    description: Component Config
+    types:
+    - uid: string
+  - name: componentType
+    in: body
+    description: Component Type
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: ComponentRequest
+  kind: object
+  properties:
+  - name: name
+    description: Name of Component
+    types:
+    - uid: string
+  - name: description
+    description: Description of Component
+    types:
+    - uid: string
+  - name: config
+    description: Component Config
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+examples:
+- name: MyWorkspace_updateWidget
+  request:
+    uri: PUT http://<Servername>/OperationsManager/myWorkspace/widget/6d91d7cd-729f-4cc3-938b-6cdb75842a49
+    body: >-
+      {
+        "name": "testwidget",
+        "description": "test",
+        "config": "{\"widgetDisplay\":{\"col\":1,\"row\":3,\"sizex\":6,\"sizey\":4,\"columns\":[\"severity\",\"monitoringobjectdisplayname\",\"name\",\"age\",\"repeatcount\",\"lastmodified\"],\"groupByColumn\":\"nogrouping\",\"expandGroupByColumn\":false,\"sortByColumn\":\"nosorting\",\"sortOrder\":1},\"widgetParameters\":{\"scope\":{\"scopeSelection\":[]},\"criteria\":{\"severities\":[\"0\",\"1\",\"2\"],\"priorities\":[\"2\",\"1\",\"0\"],\"resolutionStates\":[\"0\",\"247\",\"248\",\"249\",\"250\",\"254\",\"255\"],\"age\":7,\"ageTimeUnit\":\"days\"}},\"widgetRefreshInterval\":5}",
+        "componentType": "HtmlAlertWidget"
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      PUT http://<Servername>/OperationsManager/myWorkspace/widget/6d91d7cd-729f-4cc3-938b-6cdb75842a49
+
+      {
+        "name": "testwidget",
+        "description": "test",
+        "config": "{\"widgetDisplay\":{\"col\":1,\"row\":3,\"sizex\":6,\"sizey\":4,\"columns\":[\"severity\",\"monitoringobjectdisplayname\",\"name\",\"age\",\"repeatcount\",\"lastmodified\"],\"groupByColumn\":\"nogrouping\",\"expandGroupByColumn\":false,\"sortByColumn\":\"nosorting\",\"sortOrder\":1},\"widgetParameters\":{\"scope\":{\"scopeSelection\":[]},\"criteria\":{\"severities\":[\"0\",\"1\",\"2\"],\"priorities\":[\"2\",\"1\",\"0\"],\"resolutionStates\":[\"0\",\"247\",\"248\",\"249\",\"250\",\"254\",\"255\"],\"age\":7,\"ageTimeUnit\":\"days\"}},\"widgetRefreshInterval\":5}",
+        "componentType": "HtmlAlertWidget"
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "true"
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to update widget in myworkspace Dashboard
+errorCodes: []

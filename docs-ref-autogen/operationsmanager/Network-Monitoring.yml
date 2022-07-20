@@ -4,7 +4,7 @@ name: Network Monitoring
 apiVersion: v1
 service: Operations Manager
 metadata:
-  description: Learn more about [Operations Manager Network Monitoring Operations]. How to [Retrieve Network Monitoring Data].
+  description: Learn more about [Operations Manager Network Monitoring Operations]. How to [GetNetwork Monitoring ResponseData].
 operations:
-- uid: <servername>.operationsmanager.operationsmanager.networkmonitoring.retrievenetworkmonitoringdata
-  summary: Retrieves data for network devices and interfaces.
+- uid: <servername>.operationsmanager.operationsmanager.networkmonitoring.getnetworkmonitoringresponsedata
+  summary: Retrieves data for network devices and interfaces

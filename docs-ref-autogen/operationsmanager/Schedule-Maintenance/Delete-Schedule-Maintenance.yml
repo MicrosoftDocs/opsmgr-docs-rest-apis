@@ -1,0 +1,50 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.deleteschedulemaintenance
+name: Delete Schedule Maintenance
+service: Operations Manager
+groupName: Schedule Maintenance
+apiVersion: v1
+summary: Deletes Schedule maintenance details by schedule Id
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: DELETE http://<Servername>/OperationsManager/ScheduleMaintenance/{scheduleId}
+uriParameters:
+- name: scheduleId
+  in: path
+  isRequired: true
+  description: Schedule ID to delete
+  types:
+  - uid: string
+  format: uuid
+responses:
+- name: 200 OK
+  description: Ok
+  types:
+  - uid: object
+requestHeader: []
+definitions: []
+examples:
+- name: ScheduleMaintenance_DeleteWidget
+  request:
+    uri: DELETE http://<Servername>/OperationsManager/ScheduleMaintenance/678b09a7-7cf0-ec11-acf9-02155eb7914c
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      DELETE http://<Servername>/OperationsManager/ScheduleMaintenance/678b09a7-7cf0-ec11-acf9-02155eb7914c
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "true"
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Deletes Schedule maintenance details by schedule Id
+errorCodes: []

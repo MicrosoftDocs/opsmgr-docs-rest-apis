@@ -1,0 +1,10 @@
+### YamlMime:RESTOperationGroup
+uid: <servername>.operationsmanager.operationsmanager.networkinterface
+name: Network Interface
+apiVersion: v1
+service: Operations Manager
+metadata:
+  description: Learn more about [Operations Manager Network Interface Operations]. How to [GetInterfaces For GivenNode].
+operations:
+- uid: <servername>.operationsmanager.operationsmanager.networkinterface.getinterfacesforgivennode
+  summary: Retrieves data for network interfaces

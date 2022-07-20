@@ -1,0 +1,142 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievealerttypeproperties
+name: Retrieve Alert Type Properties
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: "Request to retrieve Alert Type properties.  \nRequest to retrieve rule or monitor information for alert."
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/alertTypeProperties/{alertId}
+uriParameters:
+- name: alertId
+  in: path
+  isRequired: true
+  description: AlertId for which the type information is to be fetched.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK. Successfully Retrieved Alert Type Properties
+  types:
+  - uid: AlertTypePropertyResponse
+requestHeader: []
+definitions:
+- name: AlertTypePropertyResponse
+  kind: object
+  properties:
+  - name: title
+    description: Alert Title
+    types:
+    - uid: string
+  - name: data
+    description: Alert Data
+    types:
+    - uid: TableDataResponse
+- name: TableDataResponse
+  kind: object
+  properties:
+  - name: tableColumns
+    description: Table columns of data
+    types:
+    - uid: TableColumn
+      isArray: true
+  - name: rows
+    description: Table Rows of data
+    types:
+    - uid: object
+      isArray: true
+- name: TableColumn
+  kind: object
+  properties:
+  - name: field
+    description: Name of the Column
+    types:
+    - uid: string
+  - name: header
+    description: Header of the column
+    types:
+    - uid: string
+  - name: type
+    description: Type of the Column
+    types:
+    - uid: string
+  - name: hidden
+    description: Is column hidden
+    types:
+    - uid: boolean
+examples:
+- name: RetrieveAlertTypeProperties
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/alertTypeProperties/667736a8-d59a-407b-b142-80fd74ba4041
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/alertTypeProperties/667736a8-d59a-407b-b142-80fd74ba4041
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "title": "Rule Properties",
+        "data": {
+          "tableColumns": [
+            {
+              "field": "name",
+              "header": "Name",
+              "type": null,
+              "hidden": false
+            },
+            {
+              "field": "value",
+              "header": "Value",
+              "type": null,
+              "hidden": false
+            }
+          ],
+          "rows": [
+            {
+              "name": "Display name",
+              "value": "{\"text\":\"All Management Servers Resource Pool Unavailable\",\"drilldowntype\":\"rule\",\"id\":\"86006a18-5f04-2002-a8a3-9cd37ab016e9\"}"
+            },
+            {
+              "name": "Description",
+              "value": "This rule generates alerts when the All Management Servers Resource Pool is not available."
+            },
+            {
+              "name": "Comment",
+              "value": null
+            },
+            {
+              "name": "Enabled",
+              "value": "true"
+            },
+            {
+              "name": "Identifier",
+              "value": "1|Microsoft.SystemCenter.2007/9396306c2be7fcc4|1.0.0.0|Microsoft.SystemCenter.SDKService.PrincipleManagementServerDown.Alert||"
+            },
+            {
+              "name": "Category",
+              "value": "Alert"
+            },
+            {
+              "name": "Xml Tag",
+              "value": "Rule"
+            },
+            {
+              "name": "Target name",
+              "value": "{\"text\":\"Management Server\",\"drilldowntype\":\"class\",\"id\":\"83c21025-550e-695b-c1e0-d3e247b74205\"}"
+            }
+          ]
+        }
+      }
+security: []
+metadata:
+  description: "Request to retrieve Alert Type properties.  \nRequest to retrieve rule or monitor information for alert."
+errorCodes: []

@@ -1,0 +1,65 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.resetmonitorforalert
+name: Reset Monitor For Alert
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Request to reset monitor information for specified Alert ID
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/resetMonitorByAlertId
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK.Successfully monitor for Alert is reset
+  types:
+  - uid: object
+requestBody:
+- name: default
+  parameters:
+  - name: alertID
+    in: body
+    description: Specify Alert ID
+    types:
+    - uid: string
+requestHeader: []
+definitions: []
+examples:
+- name: ResetMonitorForAlert
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/resetMonitorByAlertId
+    body: >-
+      [
+        "FBB313A9-588C-49C6-867B-0802338717D1"
+      ]
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/resetMonitorByAlertId
+
+      [
+        "FBB313A9-588C-49C6-867B-0802338717D1"
+      ]
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "true"
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to reset monitor information for specified Alert ID
+errorCodes: []

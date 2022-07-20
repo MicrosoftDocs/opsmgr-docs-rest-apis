@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertseverity
-name: Retrieve Alert Severity
+name: Retrieve AlertSeverity
 service: Operations Manager
 groupName: Resource
 apiVersion: v1
-summary: Retrieves alert severity.
+summary: Request to retrieve Alert Widget Severity.
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved alert severity.
+  description: OK.Successfully retrieved Alert Serverity
   types:
   - uid: Resource
     isArray: true
@@ -26,19 +26,48 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: Name.
+    description: Name
     types:
     - uid: string
   - name: value
-    description: Value.
+    description: Value
     types:
     - uid: string
   - name: selected
-    description: Is selected.
+    description: is Selected
     types:
     - uid: boolean
-examples: []
+examples:
+- name: RetrieveAlertSeverity
+  request:
+    uri: GET http://<Servername>/OperationsManager/resources/alertSeverity
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/resources/alertSeverity
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "name": "Information",
+          "value": "0",
+          "selected": false
+        },
+        {
+          "name": "Warning",
+          "value": "1",
+          "selected": false
+        },
+        {
+          "name": "Critical",
+          "value": "2",
+          "selected": false
+        }
+      ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves alert severity.
+  description: Learn more about Operations Manager service - Request to retrieve Alert Widget Severity.
 errorCodes: []

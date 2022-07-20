@@ -1,0 +1,153 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievesladata
+name: Retrieve SLA Data
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Request to retrieve SLA data for given SLA request
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/sla
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK.Successfully Retrieved SLA data
+  types:
+  - uid: SLAResponse
+requestBody:
+- name: default
+  parameters:
+  - name: value
+    in: body
+    isRequired: true
+    description: value
+    types:
+    - uid: integer
+  - name: duration
+    in: body
+    isRequired: true
+    description: duration
+    types:
+    - uid: string
+  - name: id
+    in: body
+    isRequired: true
+    description: id
+    types:
+    - uid: string
+  - name: managementGroupId
+    in: body
+    isRequired: true
+    description: Management group Id
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: SLAResponse
+  kind: object
+  properties:
+  - name: name
+    description: SLA Name
+    types:
+    - uid: string
+  - name: id
+    description: SLA Id
+    types:
+    - uid: string
+  - name: slaManagedEntityRowId
+    description: SLA Managed Entity Row ID
+    types:
+    - uid: integer
+  - name: slos
+    description: SLO data
+    types:
+    - uid: SLOResponse
+      isArray: true
+- name: SLARequest
+  kind: object
+  properties:
+  - name: value
+    description: value
+    types:
+    - uid: integer
+  - name: duration
+    description: duration
+    types:
+    - uid: string
+  - name: id
+    description: id
+    types:
+    - uid: string
+  - name: managementGroupId
+    description: Management group Id
+    types:
+    - uid: string
+- name: SLOResponse
+  kind: object
+  properties:
+  - name: id
+    description: SLO ID
+    types:
+    - uid: string
+  - name: name
+    description: SLO Name
+    types:
+    - uid: string
+  - name: targetClassName
+    description: SLO Target Class Name
+    types:
+    - uid: string
+examples:
+- name: RetrieveSLAData
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/sla
+    body: >-
+      {
+        "value": 0,
+        "duration": "10",
+        "id": "e9163d5b-cb1f-7b06-ea4b-a984d0420f8d",
+        "managementGroupId": "47bc8393-fecb-9791-4b3d-fdca7cc8bc79"
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/sla
+
+      {
+        "value": 0,
+        "duration": "10",
+        "id": "e9163d5b-cb1f-7b06-ea4b-a984d0420f8d",
+        "managementGroupId": "47bc8393-fecb-9791-4b3d-fdca7cc8bc79"
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "name": "Application Service SLA",
+        "id": "e9163d5b-cb1f-7b06-ea4b-a984d0420f8d",
+        "slaManagedEntityRowId": 141,
+        "slos": [
+          {
+            "id": "c67b6541-9a21-3745-bef3-b6542dd380a7",
+            "name": "Application Service SLO1",
+            "targetClassName": "Service"
+          }
+        ]
+      }
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to retrieve SLA data for given SLA request
+errorCodes: []

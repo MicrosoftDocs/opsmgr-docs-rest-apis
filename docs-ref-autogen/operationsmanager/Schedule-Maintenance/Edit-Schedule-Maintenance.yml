@@ -1,0 +1,301 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.editschedulemaintenance
+name: Edit Schedule Maintenance
+service: Operations Manager
+groupName: Schedule Maintenance
+apiVersion: v1
+summary: Request to update the scheduled Maintenance
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: PUT http://<Servername>/OperationsManager/ScheduleMaintenance/{scheduleId}
+uriParameters:
+- name: scheduleId
+  in: path
+  isRequired: true
+  description: Schedule ID to update
+  types:
+  - uid: string
+  format: uuid
+responses:
+- name: 200 OK
+  description: Ok.Successfully edited Maintenance schedule
+  types:
+  - uid: ScheduleMaintenanceRequest
+requestBody:
+- name: default
+  parameters:
+  - name: scheduleName
+    in: body
+    isRequired: true
+    description: Schedule Name
+    types:
+    - uid: string
+  - name: monitoringObjectsId
+    in: body
+    isRequired: true
+    description: Monitoring objects Id
+    types:
+    - uid: string
+      isArray: true
+  - name: startTime
+    in: body
+    isRequired: true
+    description: Start time of schedule
+    types:
+    - uid: string
+  - name: duration
+    in: body
+    isRequired: true
+    description: Duration of schedule
+    types:
+    - uid: integer
+  - name: freqType
+    in: body
+    isRequired: true
+    description: Frequency of the schedule ['1', '4', '8', '16', '32']
+    types:
+    - uid: "1"
+    - uid: "4"
+    - uid: "8"
+    - uid: "16"
+    - uid: "32"
+    typesTitle: enum
+  - name: category
+    in: body
+    isRequired: true
+    description: Maintenance Mode Reason code
+    types:
+    - uid: "0"
+    - uid: "1"
+    - uid: "2"
+    - uid: "3"
+    - uid: "4"
+    - uid: "5"
+    - uid: "6"
+    - uid: "7"
+    - uid: "8"
+    - uid: "9"
+    - uid: "10"
+    - uid: "11"
+    - uid: "12"
+    - uid: "13"
+    - uid: "14"
+    typesTitle: enum
+  - name: scheduleEffectiveFrom
+    in: body
+    description: schedule effective time
+    types:
+    - uid: string
+  - name: recursive
+    in: body
+    description: is recursive
+    types:
+    - uid: boolean
+  - name: endDate
+    in: body
+    description: End date
+    types:
+    - uid: string
+  - name: enabled
+    in: body
+    description: is enabled
+    types:
+    - uid: boolean
+  - name: comment
+    in: body
+    description: comment for schedule
+    types:
+    - uid: string
+  - name: freqInterval
+    in: body
+    description: frequency interval
+    types:
+    - uid: integer
+  - name: freqRecurrenceFactor
+    in: body
+    description: frequency recurrence factor
+    types:
+    - uid: integer
+  - name: freqRelativeInterval
+    in: body
+    description: Frequency Relative interval
+    types:
+    - uid: integer
+  - name: isEndTimeSpecified
+    in: body
+    description: is End time specified
+    types:
+    - uid: boolean
+requestHeader: []
+definitions:
+- name: ScheduleMaintenanceRequest
+  kind: object
+  properties:
+  - name: scheduleName
+    description: Schedule Name
+    types:
+    - uid: string
+  - name: monitoringObjectsId
+    description: Monitoring objects Id
+    types:
+    - uid: string
+      isArray: true
+  - name: startTime
+    description: Start time of schedule
+    types:
+    - uid: string
+  - name: duration
+    description: Duration of schedule
+    types:
+    - uid: integer
+  - name: freqType
+    description: Frequency of the schedule ['1', '4', '8', '16', '32']
+    types:
+    - uid: "1"
+    - uid: "4"
+    - uid: "8"
+    - uid: "16"
+    - uid: "32"
+    typesTitle: enum
+  - name: category
+    description: Maintenance Mode Reason code
+    types:
+    - uid: "0"
+    - uid: "1"
+    - uid: "2"
+    - uid: "3"
+    - uid: "4"
+    - uid: "5"
+    - uid: "6"
+    - uid: "7"
+    - uid: "8"
+    - uid: "9"
+    - uid: "10"
+    - uid: "11"
+    - uid: "12"
+    - uid: "13"
+    - uid: "14"
+    typesTitle: enum
+  - name: scheduleEffectiveFrom
+    description: schedule effective time
+    types:
+    - uid: string
+  - name: recursive
+    description: is recursive
+    types:
+    - uid: boolean
+  - name: endDate
+    description: End date
+    types:
+    - uid: string
+  - name: enabled
+    description: is enabled
+    types:
+    - uid: boolean
+  - name: comment
+    description: comment for schedule
+    types:
+    - uid: string
+  - name: freqInterval
+    description: frequency interval
+    types:
+    - uid: integer
+  - name: freqRecurrenceFactor
+    description: frequency recurrence factor
+    types:
+    - uid: integer
+  - name: freqRelativeInterval
+    description: Frequency Relative interval
+    types:
+    - uid: integer
+  - name: isEndTimeSpecified
+    description: is End time specified
+    types:
+    - uid: boolean
+examples:
+- name: EditScheduleMaintenance
+  request:
+    uri: PUT http://<Servername>/OperationsManager/ScheduleMaintenance/a08f168b-3dee-ec11-acf9-02155eb7914c
+    body: >-
+      {
+        "scheduleName": "Test",
+        "monitoringObjectsId": [
+          "3c8ac4f3-475e-44dd-4163-8a97af363705"
+        ],
+        "startTime": "2022-06-16T20:44:53.177Z",
+        "duration": 30,
+        "freqType": 16,
+        "category": 0,
+        "scheduleEffectiveFrom": "2022-06-16T20:44:53.177Z",
+        "recursive": true,
+        "endDate": "2022-06-16T20:44:53.177Z",
+        "enabled": true,
+        "comment": "test schedule",
+        "freqInterval": 1,
+        "freqRecurrenceFactor": 1,
+        "freqRelativeInterval": 0,
+        "isEndTimeSpecified": true
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      PUT http://<Servername>/OperationsManager/ScheduleMaintenance/a08f168b-3dee-ec11-acf9-02155eb7914c
+
+      {
+        "scheduleName": "Test",
+        "monitoringObjectsId": [
+          "3c8ac4f3-475e-44dd-4163-8a97af363705"
+        ],
+        "startTime": "2022-06-16T20:44:53.177Z",
+        "duration": 30,
+        "freqType": 16,
+        "category": 0,
+        "scheduleEffectiveFrom": "2022-06-16T20:44:53.177Z",
+        "recursive": true,
+        "endDate": "2022-06-16T20:44:53.177Z",
+        "enabled": true,
+        "comment": "test schedule",
+        "freqInterval": 1,
+        "freqRecurrenceFactor": 1,
+        "freqRelativeInterval": 0,
+        "isEndTimeSpecified": true
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "scheduleName": "Test",
+        "monitoringObjectsId": [
+          "3c8ac4f3-475e-44dd-4163-8a97af363705"
+        ],
+        "startTime": "2022-06-16T20:44:53.177Z",
+        "duration": 30,
+        "freqType": 16,
+        "category": 0,
+        "scheduleEffectiveFrom": "2022-06-16T20:44:53.177Z",
+        "recursive": true,
+        "endDate": "2022-06-16T20:44:53.177Z",
+        "enabled": true,
+        "comment": "test schedule",
+        "freqInterval": 1,
+        "freqRecurrenceFactor": 1,
+        "freqRelativeInterval": 0,
+        "isEndTimeSpecified": true
+      }
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to update the scheduled Maintenance
+errorCodes: []

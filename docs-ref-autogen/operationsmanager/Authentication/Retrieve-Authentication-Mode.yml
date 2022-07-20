@@ -4,7 +4,7 @@ name: Retrieve Authentication Mode
 service: Operations Manager
 groupName: Authentication
 apiVersion: v1
-summary: Retrieves the authentication mode of the web server.
+summary: "Retrieves Authentication Mode  \nRetrieves the authentication mode of the web server."
 consumes: []
 produces:
 - application/json
@@ -16,13 +16,28 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved authentication mode.
+  description: OK.Successfully retrieved authentication mode.
   types:
-  - uid: object
+  - uid: string
 requestHeader: []
 definitions: []
-examples: []
+examples:
+- name: RetrieveAuthenticationMode
+  request:
+    uri: GET http://<Servername>/OperationsManager/authenticationMode
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/authenticationMode
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "Windows"
+      ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the authentication mode of the web server.
+  description: "Learn more about Operations Manager service - Retrieves Authentication Mode  \nRetrieves the authentication mode of the web server."
 errorCodes: []

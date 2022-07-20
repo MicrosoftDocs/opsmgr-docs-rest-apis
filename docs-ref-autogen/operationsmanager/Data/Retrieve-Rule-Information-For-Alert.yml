@@ -1,0 +1,128 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrieveruleinformationforalert
+name: Retrieve RuleInformation For Alert
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: "Retrieves Rule Information for Alert   \nRequest to retrieve rule information for given alert."
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/ruleInformationForAlert/{alertId}
+uriParameters:
+- name: alertId
+  in: path
+  isRequired: true
+  description: The Alert ID of the rule to be fetched.
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK.Successfully Retrieved Rule Information for the Alert
+  types:
+  - uid: TableDataResponse
+requestHeader: []
+definitions:
+- name: TableDataResponse
+  kind: object
+  properties:
+  - name: tableColumns
+    description: Table columns of data
+    types:
+    - uid: TableColumn
+      isArray: true
+  - name: rows
+    description: Table Rows of data
+    types:
+    - uid: object
+      isArray: true
+- name: TableColumn
+  kind: object
+  properties:
+  - name: field
+    description: Name of the Column
+    types:
+    - uid: string
+  - name: header
+    description: Header of the column
+    types:
+    - uid: string
+  - name: type
+    description: Type of the Column
+    types:
+    - uid: string
+  - name: hidden
+    description: Is column hidden
+    types:
+    - uid: boolean
+examples:
+- name: RetrieveRuleInformationForAlert
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/ruleInformationForAlert/aaa0361a-985d-4e74-840c-975dae3f5bba
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/ruleInformationForAlert/aaa0361a-985d-4e74-840c-975dae3f5bba
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "name",
+            "header": "Name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "value",
+            "header": "Value",
+            "type": null,
+            "hidden": false
+          }
+        ],
+        "rows": [
+          {
+            "name": "Display name",
+            "value": "{\"text\":\"All Management Servers Resource Pool Unavailable\",\"drilldowntype\":\"rule\",\"id\":\"86006a18-5f04-2002-a8a3-9cd37ab016e9\"}"
+          },
+          {
+            "name": "Description",
+            "value": "This rule generates alerts when the All Management Servers Resource Pool is not available."
+          },
+          {
+            "name": "Comment",
+            "value": null
+          },
+          {
+            "name": "Enabled",
+            "value": "true"
+          },
+          {
+            "name": "Identifier",
+            "value": "1|Microsoft.SystemCenter.2007/9396306c2be7fcc4|1.0.0.0|Microsoft.SystemCenter.SDKService.PrincipleManagementServerDown.Alert||"
+          },
+          {
+            "name": "Category",
+            "value": "Alert"
+          },
+          {
+            "name": "Xml Tag",
+            "value": "Rule"
+          },
+          {
+            "name": "Target name",
+            "value": "{\"text\":\"Management Server\",\"drilldowntype\":\"class\",\"id\":\"83c21025-550e-695b-c1e0-d3e247b74205\"}"
+          }
+        ]
+      }
+security: []
+metadata:
+  description: "Learn more about Operations Manager service - Retrieves Rule Information for Alert   \nRequest to retrieve rule information for given alert."
+errorCodes: []

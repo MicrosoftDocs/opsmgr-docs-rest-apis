@@ -4,7 +4,7 @@ name: Retrieve State Data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the health state data for the specified scope/parameters.
+summary: Request to retrieve state data for the specified scope/parameters
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved health state data.
+  description: OK.Successfully retrieved health state data.
   types:
   - uid: TableDataResponse
 requestBody:
@@ -29,12 +29,17 @@ requestBody:
   parameters:
   - name: classId
     in: body
-    description: Specify the class ID.
+    description: Specify the ClassID
+    types:
+    - uid: string
+  - name: groupId
+    in: body
+    description: Specify the Group ID
     types:
     - uid: string
   - name: objectIds
     in: body
-    description: Specify an array of object IDs.
+    description: Specify an array of Object IDs
     types:
     - uid: object
       isDictionary: true
@@ -43,12 +48,12 @@ requestBody:
       - uid: integer
   - name: criteria
     in: body
-    description: Specify the criteria (such as severity, priority, resolution state, etc.).
+    description: Specify the Criteria (such as severity, priority, resolution state, etc.)
     types:
     - uid: string
   - name: displayColumns
     in: body
-    description: Specify the columns which needs to be displayed.
+    description: Specify the Columns to be displayed
     types:
     - uid: string
       isArray: true
@@ -58,12 +63,12 @@ definitions:
   kind: object
   properties:
   - name: tableColumns
-    description: ''
+    description: Table columns of data
     types:
     - uid: TableColumn
       isArray: true
   - name: rows
-    description: ''
+    description: Table Rows of data
     types:
     - uid: object
       isArray: true
@@ -71,11 +76,15 @@ definitions:
   kind: object
   properties:
   - name: classId
-    description: Specify the class ID.
+    description: Specify the ClassID
+    types:
+    - uid: string
+  - name: groupId
+    description: Specify the Group ID
     types:
     - uid: string
   - name: objectIds
-    description: Specify an array of object IDs.
+    description: Specify an array of Object IDs
     types:
     - uid: object
       isDictionary: true
@@ -83,11 +92,11 @@ definitions:
       - uid: string
       - uid: integer
   - name: criteria
-    description: Specify the criteria (such as severity, priority, resolution state, etc.).
+    description: Specify the Criteria (such as severity, priority, resolution state, etc.)
     types:
     - uid: string
   - name: displayColumns
-    description: Specify the columns which needs to be displayed.
+    description: Specify the Columns to be displayed
     types:
     - uid: string
       isArray: true
@@ -95,23 +104,105 @@ definitions:
   kind: object
   properties:
   - name: field
-    description: Name of the column.
+    description: Name of the Column
     types:
     - uid: string
   - name: header
-    description: Header of the column.
+    description: Header of the column
     types:
     - uid: string
   - name: type
-    description: Type of the column.
+    description: Type of the Column
     types:
     - uid: string
   - name: hidden
-    description: Is the column hidden.
+    description: Is column hidden
     types:
     - uid: boolean
-examples: []
+examples:
+- name: Data_RetrieveStateData
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/state
+    body: >-
+      {
+        "classId": "6f7e3306-beeb-2996-3795-7c1eafb925b8",
+        "groupId": null,
+        "objectIds": {},
+        "criteria": "((HealthState = '2') OR (HealthState = '0') OR HealthState is null OR (HealthState = '1') OR (HealthState = '3'))",
+        "displayColumns": [
+          "healthstate",
+          "displayname",
+          "path",
+          "maintenancemode"
+        ]
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/state
+
+      {
+        "classId": "6f7e3306-beeb-2996-3795-7c1eafb925b8",
+        "groupId": null,
+        "objectIds": {},
+        "criteria": "((HealthState = '2') OR (HealthState = '0') OR HealthState is null OR (HealthState = '1') OR (HealthState = '3'))",
+        "displayColumns": [
+          "healthstate",
+          "displayname",
+          "path",
+          "maintenancemode"
+        ]
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "healthstate",
+            "header": "Health",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "displayname",
+            "header": "Display name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "path",
+            "header": "Path",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "maintenancemode",
+            "header": "Maintenance mode",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "id",
+            "header": "Id",
+            "type": null,
+            "hidden": true
+          }
+        ],
+        "rows": [
+          {
+            "id": "6f7e3306-beeb-2996-3795-7c1eafb925b8",
+            "healthstate": "notmonitored",
+            "displayname": "All Windows Computers",
+            "path": "",
+            "maintenancemode": "false"
+          }
+        ]
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the health state data for the specified scope/parameters.
+  description: Learn more about Operations Manager service - Request to retrieve state data for the specified scope/parameters
 errorCodes: []

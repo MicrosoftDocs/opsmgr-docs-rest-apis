@@ -1,0 +1,50 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.enablemaintenanceschedule
+name: Enable Maintenance Schedule
+service: Operations Manager
+groupName: Schedule Maintenance
+apiVersion: v1
+summary: Enable the schedule maintenance by schedule ID
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/EnableScheduleMaintenance/{scheduleId}
+uriParameters:
+- name: scheduleId
+  in: path
+  isRequired: true
+  description: Schedule ID to enable
+  types:
+  - uid: string
+  format: uuid
+responses:
+- name: 200 OK
+  description: Ok.Successfully Enabled Maintenance Schedule
+  types:
+  - uid: object
+requestHeader: []
+definitions: []
+examples:
+- name: EnableMaintenanceSchedule
+  request:
+    uri: GET http://<Servername>/OperationsManager/EnableScheduleMaintenance/a08f168b-3dee-ec11-acf9-02155eb7914c
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/EnableScheduleMaintenance/a08f168b-3dee-ec11-acf9-02155eb7914c
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "Ok"
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Enable the schedule maintenance by schedule ID
+errorCodes: []

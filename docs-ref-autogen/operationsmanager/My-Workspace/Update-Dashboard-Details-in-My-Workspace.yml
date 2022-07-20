@@ -1,0 +1,159 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.myworkspace.updatedashboarddetailsinmyworkspace
+name: Update Dashboard Details in MyWorkspace
+service: Operations Manager
+groupName: My Workspace
+apiVersion: v1
+summary: Request to update dashboard in myworkspace
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: PUT http://<Servername>/OperationsManager/myWorkspace/dashboard/{dashboardId}/widgets
+uriParameters:
+- name: dashboardId
+  in: path
+  isRequired: true
+  description: Specify the Dashboard Id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK. Successfully updated dashboard details in Myworkspace
+  types:
+  - uid: boolean
+requestBody:
+- name: default
+  parameters:
+  - name: dashboard
+    in: body
+    description: ''
+    types:
+    - uid: ComponentRequest
+  - name: widgets
+    in: body
+    description: ''
+    types:
+    - uid: WidgetRequest
+      isArray: true
+requestHeader: []
+definitions:
+- name: ComponentRequest
+  kind: object
+  properties:
+  - name: name
+    description: Name of Component
+    types:
+    - uid: string
+  - name: description
+    description: Description of Component
+    types:
+    - uid: string
+  - name: config
+    description: Component Config
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+- name: WidgetRequest
+  kind: object
+  properties:
+  - name: id
+    description: Widget ID
+    types:
+    - uid: string
+  - name: name
+    description: Name of Component
+    types:
+    - uid: string
+  - name: description
+    description: Description of Component
+    types:
+    - uid: string
+  - name: config
+    description: Component Config
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+- name: UpdateDashboard
+  kind: object
+  properties:
+  - name: dashboard
+    description: ''
+    types:
+    - uid: ComponentRequest
+  - name: widgets
+    description: ''
+    types:
+    - uid: WidgetRequest
+      isArray: true
+examples:
+- name: MyWorkspace_UpdateDashboardDetails
+  request:
+    uri: PUT http://<Servername>/OperationsManager/myWorkspace/dashboard/09f98d55-b337-47c9-8a27-1825199dee27/widgets
+    body: >-
+      {
+        "dashboard": {
+          "name": "Windows Dashbaord",
+          "description": "test",
+          "config": "",
+          "componentType": ""
+        },
+        "widgets": [
+          {
+            "id": "0ed3b194-7f62-4bd3-bbc4-99f763c46a19",
+            "name": "windows state",
+            "description": "test",
+            "config": "{\"widgetDisplay\":{\"col\":1,\"row\":1,\"sizex\":6,\"sizey\":4,\"columns\":[\"maintenancemode\",\"healthstate\",\"path\",\"displayname\"],\"payload\":\"0ed3b194-7f62-4bd3-bbc4-99f763c46a19\",\"dragHandle\":\".draggable\",\"resizeHandle\":\".resizable\"},\"widgetParameters\":{\"scope\":{\"scopeSelection\":[],\"classSelection\":[{\"id\":\"3c8ac4f3-475e-44dd-4163-8a97af363705\",\"displayName\":\"All Windows Computers\",\"className\":\"Microsoft.SystemCenter.Library!Microsoft.SystemCenter.AllComputersGroup\",\"path\":null,\"fullName\":null,\"objectType\":-2}]},\"criteria\":{\"healthStates\":[\"3\",\"0\",\"2\",\"1\"],\"inMaintenanceMode\":\"All\"}},\"widgetRefreshInterval\":5}",
+            "componentType": "HtmlStateWidget"
+          }
+        ]
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      PUT http://<Servername>/OperationsManager/myWorkspace/dashboard/09f98d55-b337-47c9-8a27-1825199dee27/widgets
+
+      {
+        "dashboard": {
+          "name": "Windows Dashbaord",
+          "description": "test",
+          "config": "",
+          "componentType": ""
+        },
+        "widgets": [
+          {
+            "id": "0ed3b194-7f62-4bd3-bbc4-99f763c46a19",
+            "name": "windows state",
+            "description": "test",
+            "config": "{\"widgetDisplay\":{\"col\":1,\"row\":1,\"sizex\":6,\"sizey\":4,\"columns\":[\"maintenancemode\",\"healthstate\",\"path\",\"displayname\"],\"payload\":\"0ed3b194-7f62-4bd3-bbc4-99f763c46a19\",\"dragHandle\":\".draggable\",\"resizeHandle\":\".resizable\"},\"widgetParameters\":{\"scope\":{\"scopeSelection\":[],\"classSelection\":[{\"id\":\"3c8ac4f3-475e-44dd-4163-8a97af363705\",\"displayName\":\"All Windows Computers\",\"className\":\"Microsoft.SystemCenter.Library!Microsoft.SystemCenter.AllComputersGroup\",\"path\":null,\"fullName\":null,\"objectType\":-2}]},\"criteria\":{\"healthStates\":[\"3\",\"0\",\"2\",\"1\"],\"inMaintenanceMode\":\"All\"}},\"widgetRefreshInterval\":5}",
+            "componentType": "HtmlStateWidget"
+          }
+        ]
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "true"
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to update dashboard in myworkspace
+errorCodes: []

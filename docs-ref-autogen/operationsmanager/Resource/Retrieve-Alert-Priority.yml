@@ -4,7 +4,7 @@ name: Retrieve Alert Priority
 service: Operations Manager
 groupName: Resource
 apiVersion: v1
-summary: Retrieves alert priority.
+summary: Request to retrieve Alert Widget Priority.
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved alert priority.
+  description: OK.Successfully retrieved Alert Priority
   types:
   - uid: Resource
     isArray: true
@@ -26,19 +26,48 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: Name.
+    description: Name
     types:
     - uid: string
   - name: value
-    description: Value.
+    description: Value
     types:
     - uid: string
   - name: selected
-    description: Is selected.
+    description: is Selected
     types:
     - uid: boolean
-examples: []
+examples:
+- name: RetrieveAlertPriority
+  request:
+    uri: GET http://<Servername>/OperationsManager/resources/alertPriority
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/resources/alertPriority
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "name": "High",
+          "value": "2",
+          "selected": false
+        },
+        {
+          "name": "Medium",
+          "value": "1",
+          "selected": false
+        },
+        {
+          "name": "Low",
+          "value": "0",
+          "selected": false
+        }
+      ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves alert priority.
+  description: Learn more about Operations Manager service - Request to retrieve Alert Widget Priority.
 errorCodes: []

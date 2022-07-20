@@ -1,0 +1,156 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringknowledgearticle
+name: Retrieve Monitoring KnowledgeArticle
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: "Retrieve monitoring knowledge article by Element ID  \nRequest to retrieve monitoring knowledge article for Element ID provided"
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/knowledgeArticle/{elementType}/{elementId}
+uriParameters:
+- name: elementType
+  in: path
+  isRequired: true
+  description: Element type whose knowledge article is fetched
+  types:
+  - uid: string
+- name: elementId
+  in: path
+  isRequired: true
+  description: Element whose knowledge article is fetched
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK.Successfully Retrieved Monitoring KnowledgeArticle
+  types:
+  - uid: KnowledgeArticleResponse
+requestHeader: []
+definitions:
+- name: KnowledgeArticleResponse
+  kind: object
+  properties:
+  - name: workflowMpId
+    description: Workflow MP id
+    types:
+    - uid: string
+  - name: isWorkflowMpSealed
+    description: Is workflow MP Sealed
+    types:
+    - uid: boolean
+  - name: knowledgeArticleElements
+    description: Knowledge Article Elements
+    types:
+    - uid: KnowledgeArticleElement
+      isArray: true
+- name: KnowledgeArticleElement
+  kind: object
+  properties:
+  - name: id
+    description: Knowledge article ID
+    types:
+    - uid: string
+  - name: knowledgeSections
+    description: Knowledge Sections
+    types:
+    - uid: KnowledgeSectionHtml
+      isArray: true
+  - name: htmlContent
+    description: HTML Content of knowledge article
+    types:
+    - uid: string
+  - name: lastModified
+    description: Last modified
+    types:
+    - uid: string
+  - name: mpId
+    description: Management pack ID
+    types:
+    - uid: string
+  - name: mpName
+    description: Management Pack Name
+    types:
+    - uid: string
+  - name: isProductKnowledge
+    description: is Product knowledge
+    types:
+    - uid: boolean
+  - name: languageCode
+    description: Language code
+    types:
+    - uid: string
+- name: KnowledgeSectionHtml
+  kind: object
+  properties:
+  - name: title
+    description: Title
+    types:
+    - uid: string
+  - name: html
+    description: HTML Content of the Knowledge Article
+    types:
+    - uid: string
+examples:
+- name: RetrieveMonitoringKnowledgeArticle
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/knowledgeArticle/alert/aaa0361a-985d-4e74-840c-975dae3f5bba
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/knowledgeArticle/alert/aaa0361a-985d-4e74-840c-975dae3f5bba
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "workflowMpId": "ae9716a9-5baa-9fd5-6727-f5599620b284",
+        "isWorkflowMpSealed": true,
+        "knowledgeArticleElements": [
+          {
+            "id": "bbf3c2b6-a6ce-eb7b-7c2f-b9bce0654969",
+            "knowledgeSections": [
+              {
+                "title": "Summary",
+                "html": "<p>The All Management Servers Resource Pool has failed to report as available for some time.</p><p class=\"lastInCell\" />"
+              },
+              {
+                "title": "Configuration",
+                "html": ""
+              },
+              {
+                "title": "Causes",
+                "html": "<p>This can be caused by:</p><table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr><td class=\"listBullet\" valign=\"top\">•</td><td class=\"listItem\"><p class=\"lastInCell\">Majority of Collection Management Servers are not running.</p></td></tr><tr><td class=\"listBullet\" valign=\"top\">•</td><td class=\"listItem\"><p class=\"lastInCell\">Majority of Collection Management Servers have lost network connection</p></td></tr><tr><td class=\"listBullet\" valign=\"top\">•</td><td class=\"listItem\"><p class=\"lastInCell\">Majority of Collection Management Servers are placed into Maintenance Mode</p></td></tr><tr><td class=\"listBullet\" valign=\"top\">•</td><td class=\"listItem\"><p class=\"lastInCell\">The System Center Management Health Services on majority of the Collection Management Servers have been stopped.</p></td></tr></table><p class=\"lastInCell\" />"
+              },
+              {
+                "title": "Resolutions",
+                "html": "<p>To further investigate the issue, consider the following:</p><table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr><td class=\"listBullet\" valign=\"top\">•</td><td class=\"listItem\"><p class=\"lastInCell\">Review the Operations Manager event log on each of the Management Servers for events with the source HealthService that indicate problems with the System Center Management Service.</p></td></tr><tr><td class=\"listBullet\" valign=\"top\">•</td><td class=\"listItem\"><p class=\"lastInCell\">Restart the System Center Management Service on any Management Servers showing an error.</p></td></tr><tr><td class=\"listBullet\" valign=\"top\">•</td><td class=\"listItem\"><p class=\"lastInCell\">Confirm that all Management Servers have a connection to the database.</p></td></tr><tr><td class=\"listBullet\" valign=\"top\">•</td><td class=\"listItem\"><p class=\"lastInCell\">Confirm that all Management Servers have a connection to each of the other Management Servers</p></td></tr></table>"
+              },
+              {
+                "title": "Additional",
+                "html": ""
+              },
+              {
+                "title": "External",
+                "html": ""
+              }
+            ],
+            "htmlContent": null,
+            "lastModified": "5/16/2022 7:00:43 PM",
+            "mpId": "ae9716a9-5baa-9fd5-6727-f5599620b284",
+            "mpName": "System Center Core Monitoring",
+            "isProductKnowledge": true,
+            "languageCode": "ENU"
+          }
+        ]
+      }
+security: []
+metadata:
+  description: "Retrieve monitoring knowledge article by Element ID  \nRequest to retrieve monitoring knowledge article for Element ID provided"
+errorCodes: []

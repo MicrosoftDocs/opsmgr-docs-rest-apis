@@ -1,0 +1,44 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievemanagementgroup
+name: Retrieve Management Group
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Request to retrieve management group
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/data/ManagementGroup
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK.Successfully Retrieve Management Group
+  types:
+  - uid: object
+requestHeader: []
+definitions: []
+examples:
+- name: GetManagementGroup
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/ManagementGroup
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/ManagementGroup
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "name": "SCOMServer-MG",
+        "id": "ca6fef6a-1215-ede2-9f21-b2894c6d1ac4"
+      }
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to retrieve management group
+errorCodes: []

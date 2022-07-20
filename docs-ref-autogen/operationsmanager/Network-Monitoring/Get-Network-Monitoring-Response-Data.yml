@@ -1,0 +1,74 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.networkmonitoring.getnetworkmonitoringresponsedata
+name: GetNetwork Monitoring ResponseData
+service: Operations Manager
+groupName: Network Monitoring
+apiVersion: v1
+summary: Retrieves data for network devices and interfaces
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/NetworkMonitoring/{requestType}
+uriParameters:
+- name: requestType
+  in: path
+  isRequired: true
+  description: type of request as string.NodesWithHigestCpuUsage, NodesWithSlowestResponse, NodesWithSlowestResponse, InterfacesWithMostSentErrors, InterfacesWithMostReceivedErrors, NodesWithMostAlerts, InterfacesWithMostAlerts)
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK
+  types:
+  - uid: object
+requestHeader: []
+definitions: []
+examples:
+- name: GetNetworkMonitoringResponseData for NodesWithSlowestResponse
+  request:
+    uri: GET http://<Servername>/OperationsManager/NetworkMonitoring/NodesWithSlowestResponse
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/NetworkMonitoring/NodesWithSlowestResponse
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "averageResponseTime": 3,
+          "nodeId": "66294d70-467c-d7f7-d30e-c01246367e81",
+          "nodeState": "unavailable-warning",
+          "nodeName": "SCOM-Cisconet.contoso.com"
+        }
+      ]
+- name: GetNetworkMonitoringResponseData for NodesWithMostAlerts
+  request:
+    uri: GET http://<Servername>/OperationsManager/NetworkMonitoring/NodesWithMostAlerts
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/NetworkMonitoring/NodesWithMostAlerts
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "alertCount": 1,
+          "nodeId": "66294d70-467c-d7f7-d30e-c01246367e81",
+          "nodeState": "unavailable-warning",
+          "nodeName": "SCOM-Cisconet.contoso.com"
+        }
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Retrieves data for network devices and interfaces
+errorCodes: []

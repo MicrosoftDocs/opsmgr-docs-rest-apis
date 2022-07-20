@@ -1,0 +1,154 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.retrievetopologydata
+name: Retrieve Topology Data
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: Request to retrieve Topology Data for provided criteria
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/topology
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK.Successfully Retrieved topology data
+  types:
+  - uid: TopologyResponse
+    isArray: true
+requestBody:
+- name: default
+  parameters:
+  - name: classId
+    in: body
+    description: Specify the ClassID
+    types:
+    - uid: string
+  - name: groupId
+    in: body
+    description: Specify the Group ID
+    types:
+    - uid: string
+  - name: objectIds
+    in: body
+    description: Specify an array of Object IDs
+    types:
+    - uid: object
+      isDictionary: true
+      additionalTypes:
+      - uid: string
+      - uid: integer
+  - name: criteria
+    in: body
+    description: Specify the Criteria (such as severity, priority, resolution state, etc.)
+    types:
+    - uid: string
+  - name: displayColumns
+    in: body
+    description: Specify the Columns to be displayed
+    types:
+    - uid: string
+      isArray: true
+requestHeader: []
+definitions:
+- name: TopologyResponse
+  kind: object
+  properties:
+  - name: name
+    description: Name of Topology
+    types:
+    - uid: string
+  - name: id
+    description: Id of Topology
+    types:
+    - uid: string
+  - name: icon
+    description: Icon of Topology in Base 64
+    types:
+    - uid: string
+- name: DataRequest
+  kind: object
+  properties:
+  - name: classId
+    description: Specify the ClassID
+    types:
+    - uid: string
+  - name: groupId
+    description: Specify the Group ID
+    types:
+    - uid: string
+  - name: objectIds
+    description: Specify an array of Object IDs
+    types:
+    - uid: object
+      isDictionary: true
+      additionalTypes:
+      - uid: string
+      - uid: integer
+  - name: criteria
+    description: Specify the Criteria (such as severity, priority, resolution state, etc.)
+    types:
+    - uid: string
+  - name: displayColumns
+    description: Specify the Columns to be displayed
+    types:
+    - uid: string
+      isArray: true
+examples:
+- name: RetrieveTopologyData
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/topology
+    body: >-
+      {
+        "classId": "44ab701b-5da9-ca21-a94b-8b82828a69d8",
+        "groupId": null,
+        "objectIds": {
+          "6f7e3306-beeb-2996-3795-7c1eafb925b8": -1
+        },
+        "criteria": "",
+        "displayColumns": [
+          ""
+        ]
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/topology
+
+      {
+        "classId": "44ab701b-5da9-ca21-a94b-8b82828a69d8",
+        "groupId": null,
+        "objectIds": {
+          "6f7e3306-beeb-2996-3795-7c1eafb925b8": -1
+        },
+        "criteria": "",
+        "displayColumns": [
+          ""
+        ]
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "name": "scomserver.constoso.net",
+          "id": "29662607-3255-3642-8634-81bcdd696ae0",
+          "icon": "/OperationsManager/images/instance/state/StatusWarning.png"
+        }
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to retrieve Topology Data for provided criteria
+errorCodes: []

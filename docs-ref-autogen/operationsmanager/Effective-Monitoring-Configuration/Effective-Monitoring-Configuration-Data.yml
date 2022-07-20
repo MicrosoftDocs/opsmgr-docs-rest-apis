@@ -1,0 +1,2574 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.effectivemonitoringconfiguration.effectivemonitoringconfigurationdata
+name: Effective Monitoring Configuration Data
+service: Operations Manager
+groupName: Effective Monitoring Configuration
+apiVersion: v1
+summary: Request to retrieve EffectiveMonitoringConfiguration data.
+consumes: []
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: GET http://<Servername>/OperationsManager/effectiveMonitoringConfiguration/{monitoringObjectId}?isRecursive={isRecursive}
+uriParameters:
+- name: monitoringObjectId
+  in: path
+  isRequired: true
+  description: Monitoring Object ID
+  types:
+  - uid: string
+  format: uuid
+- name: isRecursive
+  in: query
+  isRequired: true
+  description: is Recursive
+  types:
+  - uid: boolean
+responses:
+- name: 200 OK
+  description: OK.Successfully retrieved EffectiveMonitoringConfiguration data.
+  types:
+  - uid: TableDataResponse
+requestHeader: []
+definitions:
+- name: TableDataResponse
+  kind: object
+  properties:
+  - name: tableColumns
+    description: Table columns of data
+    types:
+    - uid: TableColumn
+      isArray: true
+  - name: rows
+    description: Table Rows of data
+    types:
+    - uid: object
+      isArray: true
+- name: TableColumn
+  kind: object
+  properties:
+  - name: field
+    description: Name of the Column
+    types:
+    - uid: string
+  - name: header
+    description: Header of the column
+    types:
+    - uid: string
+  - name: type
+    description: Type of the Column
+    types:
+    - uid: string
+  - name: hidden
+    description: Is column hidden
+    types:
+    - uid: boolean
+examples:
+- name: EffectiveMonitoringConfiguration
+  request:
+    uri: GET http://<Servername>/OperationsManager/effectiveMonitoringConfiguration/aa?isRecursive=True
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/effectiveMonitoringConfiguration/aa?isRecursive=True
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "emcp_Id",
+            "header": "Id",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "emcp_Name",
+            "header": "Rule/Monitor name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "emcp_ClassName",
+            "header": "Class",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "emcp_InstanceName",
+            "header": "Instance name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "emcp_Type",
+            "header": "Type",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "emcp_IsEnabled",
+            "header": "Rule/Monitor enabled",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "emcp_GeneratesAlert",
+            "header": "Generates alert",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "emcp_Severity",
+            "header": "Alert severity",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "emcp_Priority",
+            "header": "Alert priority",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "emcp_Description",
+            "header": "Description",
+            "type": null,
+            "hidden": true
+          },
+          {
+            "field": "emcp_IsOverridden",
+            "header": "Overridden",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "emcp_OverridableParameter",
+            "header": "Parameters",
+            "type": null,
+            "hidden": true
+          }
+        ],
+        "rows": [
+          {
+            "emcp_Id": "d08269f6-cb82-f2de-cf53-161993a3f841",
+            "emcp_ClassName": "Microsoft.SystemCenter.ComputerGroup",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "Microsoft.SystemCenter.ComputerGroup.AvailabilityRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the availability health of all computers contained in this computer group",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "d728d9a3-5d4b-917e-4433-6506adee75d1",
+            "emcp_ClassName": "Microsoft.SystemCenter.ComputerGroup",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "Microsoft.SystemCenter.ComputerGroup.ConfigurationRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the configuration health of all computers contained in this computer group",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "21ded902-3b32-eeb0-57e9-5357179f9f0b",
+            "emcp_ClassName": "Microsoft.SystemCenter.ComputerGroup",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "Microsoft.SystemCenter.ComputerGroup.PerformanceRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the performance health of all computers contained in this computer group",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "87b931f7-3160-d47a-b617-4d6d3e1e80c2",
+            "emcp_ClassName": "Microsoft.SystemCenter.ComputerGroup",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "Microsoft.SystemCenter.ComputerGroup.SecurityRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the security health of all computers contained in this computer group",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "6907fe76-a125-83dc-ecb1-3dfb7193f83d",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "MomSdkTest_v3.System.Health.AvailabilityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "05a3b555-c6b4-660c-0f49-1b1d4ed2cb5c",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "MomSdkTest_v3.System.Health.ConfigurationState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "1bff8a45-f0bf-8abc-8b9c-c228660141c7",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "MomSdkTest_v3.System.Health.PerformanceState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "48b3349f-80c2-5558-37d9-e15b42e9e557",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "MomSdkTest_v3.System.Health.SecurityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "040e606c-6330-7245-f49d-a2e70a78177e",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "System.Health.AvailabilityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "Roll up monitor that aggregates entity availability health.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "571ca4cf-a882-a028-986c-08814e5ba46a",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "System.Health.ConfigurationState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "Roll up monitor that aggregates entity configuration health.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "ffee43e2-9221-1df8-3259-8835a93b42e8",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "System.Health.EntityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "Root roll up monitor.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "e2eedaf3-bb97-195e-1b93-94aea6897053",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "System.Health.PerformanceState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "Roll up monitor that aggregates entity performance health.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "93328865-eafd-abee-2002-9ac35dfe0bf6",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "System.Health.SecurityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "Roll up monitor that aggregates entity security health.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "40f560b3-6fb6-8c14-5fcb-75fadfdeb5b4",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "MomSdkTest_v3.CollectEntityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "This rule collects all state change events in the system",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "f6e92550-308e-5ab9-430d-2f75ebf039e7",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "All Windows Computers",
+            "emcp_Name": "MomSdkTest_v3.PublishEntityHelathStateChange",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "This rule collects entity state change information from all managed entities and publishes it for Data Warehouse collection on default channel",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "d7efe2c7-e779-8c2d-01cf-938b46128ed4",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.SystemCenter.Apm.ApmAgentAvailabilityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the availability health of APM Agent hosted by this computer.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "235ecc3a-7def-533b-9e1c-319cf190e0d5",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.SystemCenter.Apm.ApmAgentConfigurationState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the configuration health of APM Agent hosted by this computer.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "52c91b89-facf-8632-251f-dd5e60da04c3",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.SystemCenter.Apm.ApmAgentPerformanceState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the performance health of APM Agent hosted by this computer.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "775d9b57-66c8-8919-8144-f002570380fe",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.SystemCenter.Apm.ApmAgentSecurityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the security health of APM Agent hosted by this computer.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "933c04c7-09bb-79f0-5904-248263ae55f2",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.SystemCenter.Ping",
+            "emcp_IsEnabled": "false",
+            "emcp_GeneratesAlert": true,
+            "emcp_Severity": "Error",
+            "emcp_Priority": "Normal",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor pings a agentless computer using an ICMP ping. If the computer is agent-managed, it pings itself locally.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": [
+                {
+                  "emcop_Name": "Frequency",
+                  "emcop_DefaultValue": "300",
+                  "emcop_EffectiveValue": "300"
+                },
+                {
+                  "emcop_Name": "ResponseTimeThreshold",
+                  "emcop_DefaultValue": "5000",
+                  "emcop_EffectiveValue": "5000"
+                }
+              ]
+            }
+          },
+          {
+            "emcp_Id": "cd71a8c7-e351-fddf-4d44-50a73786bca8",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Computer.DependOnACS.Collector.AvailabilityRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up healths from Audit Collection Service contained in the Windows Computer.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "e711cf50-254a-5135-8da1-f75872daa8f8",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Computer.WindowsComputerRole.AvailabilityRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the availability health of all Windows Computer Role objects hosted by this computer",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "803e2200-7991-50d4-4e37-039d80542ad0",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Computer.WindowsComputerRole.ConfigurationRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the configuration health of all Windows Computer Role objects hosted by this computer",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "2e406dc0-2c1c-deca-2d68-1625c919ef03",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Computer.WindowsComputerRole.PerformanceRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the performance health of all Windows Computer Role objects hosted by this computer",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "f61dfc24-de91-4c83-03e0-1604bd07fedb",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Computer.WindowsComputerRole.SecurityRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the security health of all Windows Computer Role objects hosted by this computer",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "611b2abc-4241-4e42-8102-f5840129ae95",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Computer.WindowsLocalApplication.AvailabilityRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the availability health of all Windows Local Application objects hosted by this computer",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "e51e7297-3a65-416d-1c44-8a7ca036f214",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Computer.WindowsLocalApplication.ConfigurationRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the configuration health of all Windows Local Application objects hosted by this computer",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "a7381c6e-c91d-3694-cea2-1501ee7a8306",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Computer.WindowsLocalApplication.PerformanceRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the performance health of all Windows Local Application objects hosted by this computer",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "346d9363-dab9-443c-0930-496bfac0c60f",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Computer.WindowsLocalApplication.SecurityRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the security health of all Windows Local Application objects hosted by this computer",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "9c30cd01-7bb7-4e57-aaa6-cc81f98e4733",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "System.Mom.BackwardCompatibility.ComputerHealthRollupFromComputerRole",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up health state of all backward compatible MOM 2005 Computer Roles to the Computers that host them.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "c5f88857-da76-8da8-adfc-39245efa8297",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "TestMonitor",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "True",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": [
+                {
+                  "emcop_Name": "UM_ConfigTest",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "OverridenValue"
+                },
+                {
+                  "emcop_Name": "UM_ConfigTest2",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "OverridenValue"
+                },
+                {
+                  "emcop_Name": "UM_ConfigTest3",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "OverridenValue"
+                }
+              ]
+            }
+          },
+          {
+            "emcp_Id": "d78dafc9-2c44-79ed-ddd2-95637e36d41e",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "CollectUIConsole_PrivateBytesCounterValues",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": [
+                {
+                  "emcop_Name": "Frequency",
+                  "emcop_DefaultValue": "900",
+                  "emcop_EffectiveValue": "900"
+                },
+                {
+                  "emcop_Name": "TimeoutSeconds",
+                  "emcop_DefaultValue": "15",
+                  "emcop_EffectiveValue": "15"
+                }
+              ]
+            }
+          },
+          {
+            "emcp_Id": "b6817db4-c3de-2777-dbdf-aaae4cd6ed62",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.SystemCenter.SCOM.Certificate.Expiry",
+            "emcp_IsEnabled": "false",
+            "emcp_GeneratesAlert": true,
+            "emcp_Severity": "Error",
+            "emcp_Priority": "High",
+            "emcp_Type": "Rule",
+            "emcp_Description": "Rule to alert if OpsMgr certificate is about to Expire.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": [
+                {
+                  "emcop_Name": "AlertBeforeNumDays",
+                  "emcop_DefaultValue": "7",
+                  "emcop_EffectiveValue": "7"
+                },
+                {
+                  "emcop_Name": "IntervalSeconds",
+                  "emcop_DefaultValue": "86400",
+                  "emcop_EffectiveValue": "86400"
+                },
+                {
+                  "emcop_Name": "Priority",
+                  "emcop_DefaultValue": "2",
+                  "emcop_EffectiveValue": "2"
+                },
+                {
+                  "emcop_Name": "Severity",
+                  "emcop_DefaultValue": "2",
+                  "emcop_EffectiveValue": "2"
+                },
+                {
+                  "emcop_Name": "TimeoutSeconds",
+                  "emcop_DefaultValue": "600",
+                  "emcop_EffectiveValue": "600"
+                }
+              ]
+            }
+          },
+          {
+            "emcp_Id": "e75a1912-3f46-c7bb-0ff8-e37b2ea72e64",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "MomUIGeneratedRule63f53e79579a4a918ab3d68c7e57120b",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": [
+                {
+                  "emcop_Name": "Frequency",
+                  "emcop_DefaultValue": "300",
+                  "emcop_EffectiveValue": "300"
+                },
+                {
+                  "emcop_Name": "MaximumSampleSeparation",
+                  "emcop_DefaultValue": "1",
+                  "emcop_EffectiveValue": "1"
+                },
+                {
+                  "emcop_Name": "TimeoutSeconds",
+                  "emcop_DefaultValue": "15",
+                  "emcop_EffectiveValue": "15"
+                },
+                {
+                  "emcop_Name": "Tolerance",
+                  "emcop_DefaultValue": "0",
+                  "emcop_EffectiveValue": "0"
+                }
+              ]
+            }
+          },
+          {
+            "emcp_Id": "b4e8f903-755a-5f03-d606-dbd84347ff93",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "MomUIGeneratedRule77cc5a01484e4ab1aeb533d6a31954f4",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": [
+                {
+                  "emcop_Name": "Frequency",
+                  "emcop_DefaultValue": "300",
+                  "emcop_EffectiveValue": "300"
+                },
+                {
+                  "emcop_Name": "MaximumSampleSeparation",
+                  "emcop_DefaultValue": "1",
+                  "emcop_EffectiveValue": "1"
+                },
+                {
+                  "emcop_Name": "TimeoutSeconds",
+                  "emcop_DefaultValue": "15",
+                  "emcop_EffectiveValue": "15"
+                },
+                {
+                  "emcop_Name": "Tolerance",
+                  "emcop_DefaultValue": "0",
+                  "emcop_EffectiveValue": "0"
+                }
+              ]
+            }
+          },
+          {
+            "emcp_Id": "6b621fde-5bdc-df70-af01-b3527520b6d6",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "MomUIGeneratedRule9768bf2bb63048cb935df35c383e0ad4",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": [
+                {
+                  "emcop_Name": "Frequency",
+                  "emcop_DefaultValue": "300",
+                  "emcop_EffectiveValue": "300"
+                },
+                {
+                  "emcop_Name": "MaximumSampleSeparation",
+                  "emcop_DefaultValue": "1",
+                  "emcop_EffectiveValue": "1"
+                },
+                {
+                  "emcop_Name": "TimeoutSeconds",
+                  "emcop_DefaultValue": "15",
+                  "emcop_EffectiveValue": "15"
+                },
+                {
+                  "emcop_Name": "Tolerance",
+                  "emcop_DefaultValue": "0",
+                  "emcop_EffectiveValue": "0"
+                }
+              ]
+            }
+          },
+          {
+            "emcp_Id": "162aef3a-3727-cb23-5dfa-33a0f5ce0b2d",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "PolicyTest.ExampleRule",
+            "emcp_IsEnabled": "false",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "True",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": [
+                {
+                  "emcop_Name": "DS_BarTest",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "DefaultValue"
+                },
+                {
+                  "emcop_Name": "DS_FooTest",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "OverridenValue"
+                },
+                {
+                  "emcop_Name": "DS_FooTest100",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "DefaultValue"
+                },
+                {
+                  "emcop_Name": "DS_FooTest101",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "DefaultValue"
+                },
+                {
+                  "emcop_Name": "DS_FooTest102",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "DefaultValue"
+                },
+                {
+                  "emcop_Name": "DS_FooTest2",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "OverridenValue"
+                },
+                {
+                  "emcop_Name": "DS_FooTest3",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "OverridenValue"
+                },
+                {
+                  "emcop_Name": "DS_FooTest50",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "DefaultValue"
+                },
+                {
+                  "emcop_Name": "DS_FooTest51",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "DefaultValue"
+                },
+                {
+                  "emcop_Name": "DS_FooTest52",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "DefaultValue"
+                },
+                {
+                  "emcop_Name": "WA_FooTest",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "DefaultValue"
+                },
+                {
+                  "emcop_Name": "WA_FooTest2",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "DefaultValue"
+                },
+                {
+                  "emcop_Name": "WA_FooTest3",
+                  "emcop_DefaultValue": "DefaultValue",
+                  "emcop_EffectiveValue": "DefaultValue"
+                }
+              ]
+            }
+          },
+          {
+            "emcp_Id": "a036861b-448a-ea40-2f5e-fb1e2b42587c",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "R2SDKToOM10SDK.TestMP.AlertRule",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": true,
+            "emcp_Severity": "Error",
+            "emcp_Priority": "Normal",
+            "emcp_Type": "Rule",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": [
+                {
+                  "emcop_Name": "Priority",
+                  "emcop_DefaultValue": "1",
+                  "emcop_EffectiveValue": "1"
+                },
+                {
+                  "emcop_Name": "Severity",
+                  "emcop_DefaultValue": "2",
+                  "emcop_EffectiveValue": "2"
+                }
+              ]
+            }
+          },
+          {
+            "emcp_Id": "54af86ff-b91b-d3ee-dff0-9ef752896b32",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "R2SDKToOM10SDK.TestMP.EventCollectionRule",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "3b7c9803-c5e1-57ee-824e-dfb1ff226b1e",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "System.Mom.BackwardCompatibility.CollectNonStateAlerts",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "Collect alert data generated from backward compatibility scripts.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "fdfccce9-0a8e-6612-42ab-cb467d205803",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "System.Mom.BackwardCompatibility.CollectScriptGeneratedEvents",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "Collect event data generated from backward compatibility scripts.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "e8424cf1-d791-0271-806b-9d8474b63e3a",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "System.Mom.BackwardCompatibility.CollectScriptGeneratedPerfData",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "Collect performance data generated from backward compatibility scripts.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "c71fb219-4835-0317-a079-6b0a89c00ce6",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "System.Mom.BackwardCompatibility.CollectServiceStateEvents",
+            "emcp_IsEnabled": "false",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "Collect service state event data generated for backward compatibility service state monitoring.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "f8d7b21f-ea9b-2e80-674b-4a5276b68779",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "System.Mom.BackwardCompatibility.ServiceStateMonitoring",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "Generate service state event data (21207 events) to trigger backward compatibility service state monitoring rules.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": [
+                {
+                  "emcop_Name": "IntervalSeconds",
+                  "emcop_DefaultValue": "120",
+                  "emcop_EffectiveValue": "120"
+                },
+                {
+                  "emcop_Name": "SyncTime",
+                  "emcop_DefaultValue": "",
+                  "emcop_EffectiveValue": ""
+                }
+              ]
+            }
+          },
+          {
+            "emcp_Id": "6dba3f71-37a3-a94f-fd18-53e280ca36df",
+            "emcp_ClassName": "Microsoft.Windows.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Test.Collect.EventOne",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "6907fe76-a125-83dc-ecb1-3dfb7193f83d",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "MomSdkTest_v3.System.Health.AvailabilityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "05a3b555-c6b4-660c-0f49-1b1d4ed2cb5c",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "MomSdkTest_v3.System.Health.ConfigurationState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "1bff8a45-f0bf-8abc-8b9c-c228660141c7",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "MomSdkTest_v3.System.Health.PerformanceState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "48b3349f-80c2-5558-37d9-e15b42e9e557",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "MomSdkTest_v3.System.Health.SecurityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "040e606c-6330-7245-f49d-a2e70a78177e",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "System.Health.AvailabilityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "Roll up monitor that aggregates entity availability health.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "571ca4cf-a882-a028-986c-08814e5ba46a",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "System.Health.ConfigurationState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "Roll up monitor that aggregates entity configuration health.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "ffee43e2-9221-1df8-3259-8835a93b42e8",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "System.Health.EntityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "Root roll up monitor.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "e2eedaf3-bb97-195e-1b93-94aea6897053",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "System.Health.PerformanceState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "Roll up monitor that aggregates entity performance health.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "93328865-eafd-abee-2002-9ac35dfe0bf6",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "System.Health.SecurityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "Roll up monitor that aggregates entity security health.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "40f560b3-6fb6-8c14-5fcb-75fadfdeb5b4",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "MomSdkTest_v3.CollectEntityState",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "This rule collects all state change events in the system",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "f6e92550-308e-5ab9-430d-2f75ebf039e7",
+            "emcp_ClassName": "System.Entity",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "MomSdkTest_v3.PublishEntityHelathStateChange",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Rule",
+            "emcp_Description": "This rule collects entity state change information from all managed entities and publishes it for Data Warehouse collection on default channel",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "d98ddd79-10a1-b0c9-87eb-557e15fcbf46",
+            "emcp_ClassName": "Microsoft.Windows.Server.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Server.Computer.HardwareAvailabilityRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the availability health of all hardware hosted on the Windows computer.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "7fc695ca-5437-a0fe-e679-6285ca30f257",
+            "emcp_ClassName": "Microsoft.Windows.Server.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Server.Computer.HardwarePerformanceRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the performance health of all hardware hosted on the Windows computer.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "21b02e36-2a9a-02c1-9525-ab040b7c50d4",
+            "emcp_ClassName": "Microsoft.Windows.Server.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Server.Computer.OSAvailabilityRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the availability health of the Operating System to the Windows computer.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "d9e6d547-c40e-252a-d21d-86471f5828df",
+            "emcp_ClassName": "Microsoft.Windows.Server.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Server.Computer.OSConfigurationRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the configuration health of the Operating System to the Windows computer.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          },
+          {
+            "emcp_Id": "3a412864-c8ef-6005-d5ab-e790b3e37bc1",
+            "emcp_ClassName": "Microsoft.Windows.Server.Computer",
+            "emcp_InstanceName": "SCOMNFMPDEV0015.smx.net",
+            "emcp_Name": "Microsoft.Windows.Server.Computer.OSPerformanceRollup",
+            "emcp_IsEnabled": "true",
+            "emcp_GeneratesAlert": false,
+            "emcp_Severity": "N/A",
+            "emcp_Priority": "N/A",
+            "emcp_Type": "Monitor",
+            "emcp_Description": "This monitor rolls up the performance health of the Operating System to the Windows computer.",
+            "emcp_IsOverridden": "False",
+            "emcp_OverridableParameter": {
+              "tableColumns": [
+                {
+                  "field": "emcop_Name",
+                  "header": "Name",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_DefaultValue",
+                  "header": "Default value",
+                  "type": null,
+                  "hidden": false
+                },
+                {
+                  "field": "emcop_EffectiveValue",
+                  "header": "Effective value",
+                  "type": null,
+                  "hidden": false
+                }
+              ],
+              "rows": []
+            }
+          }
+        ]
+      }
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to retrieve EffectiveMonitoringConfiguration data.
+errorCodes: []

@@ -4,7 +4,7 @@ name: Login
 service: Operations Manager
 groupName: Authentication
 apiVersion: v1
-summary: Authenticates the user.
+summary: "Request to authenticate the user  \nAuthenticates the user Login and retrieves user details"
 consumes:
 - application/json
 - text/json
@@ -21,9 +21,13 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Sign on successfull.
+  description: Ok.Sign on successful.
   types:
-  - uid: object
+  - uid: UserIdentity
+- name: 403 Forbidden
+  description: The user does not have sufficient permission to perform the operation
+  types:
+  - uid: string
 requestBody:
 - name: default
   parameters:
@@ -33,9 +37,50 @@ requestBody:
     types:
     - uid: string
 requestHeader: []
-definitions: []
-examples: []
+definitions:
+- name: UserIdentity
+  kind: object
+  properties:
+  - name: name
+    description: UserName
+    types:
+    - uid: string
+  - name: expiryTime
+    description: Expiry Time of session
+    types:
+    - uid: string
+  - name: role
+    description: User Role
+    types:
+    - uid: string
+examples:
+- name: GetLogin
+  request:
+    uri: POST http://<Servername>/OperationsManager/authenticate
+    body: >-
+      [
+        "TmV0d29yazphYmNcYWRtaW51c2VyOlBXRDEyMw=="
+      ]
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/authenticate
+
+      [
+        "TmV0d29yazphYmNcYWRtaW51c2VyOlBXRDEyMw=="
+      ]
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "name": "contoso\\adminuser",
+        "expiryTime": "2022-06-21T01:59:01.3448758Z",
+        "role": "Administrator"
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Authenticates the user.
+  description: "Learn more about Operations Manager service - Request to authenticate the user  \nAuthenticates the user Login and retrieves user details"
 errorCodes: []

@@ -1,0 +1,159 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.monitoring.updatedashboarddetails
+name: Update Dashboard Details
+service: Operations Manager
+groupName: Monitoring
+apiVersion: v1
+summary: "Update Dashboard Details  \nUpdates the properties or configurations of a dashboard and the widgets available in a specific dashboard."
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: PUT http://<Servername>/OperationsManager/monitoring/dashboard/{dashboardId}/widgets
+uriParameters:
+- name: dashboardId
+  in: path
+  isRequired: true
+  description: specify the Dashboard Id
+  types:
+  - uid: string
+responses:
+- name: 200 OK
+  description: OK.Successfully updated the properties or configurations of a dashboard and the widgets available in a specific dashboard.
+  types:
+  - uid: boolean
+requestBody:
+- name: default
+  parameters:
+  - name: dashboard
+    in: body
+    description: ''
+    types:
+    - uid: ComponentRequest
+  - name: widgets
+    in: body
+    description: ''
+    types:
+    - uid: WidgetRequest
+      isArray: true
+requestHeader: []
+definitions:
+- name: ComponentRequest
+  kind: object
+  properties:
+  - name: name
+    description: Name of Component
+    types:
+    - uid: string
+  - name: description
+    description: Description of Component
+    types:
+    - uid: string
+  - name: config
+    description: Component Config
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+- name: WidgetRequest
+  kind: object
+  properties:
+  - name: id
+    description: Widget ID
+    types:
+    - uid: string
+  - name: name
+    description: Name of Component
+    types:
+    - uid: string
+  - name: description
+    description: Description of Component
+    types:
+    - uid: string
+  - name: config
+    description: Component Config
+    types:
+    - uid: string
+  - name: componentType
+    description: Component Type
+    types:
+    - uid: string
+- name: UpdateDashboard
+  kind: object
+  properties:
+  - name: dashboard
+    description: ''
+    types:
+    - uid: ComponentRequest
+  - name: widgets
+    description: ''
+    types:
+    - uid: WidgetRequest
+      isArray: true
+examples:
+- name: UpdateDashboardDetails
+  request:
+    uri: PUT http://<Servername>/OperationsManager/monitoring/dashboard/925b3d43-d716-d56d-84ba-55a2467a6e7d/widgets
+    body: >-
+      {
+        "dashboard": {
+          "name": "performance Dashboard",
+          "description": "test",
+          "config": "",
+          "componentType": ""
+        },
+        "widgets": [
+          {
+            "componentType": "HtmlAlertWidget",
+            "config": "{\"widgetDisplay\":{\"col\":1,\"row\":1,\"sizex\":6,\"sizey\":4,\"columns\":[\"severity\",\"monitoringobjectdisplayname\",\"name\",\"age\",\"repeatcount\",\"lastmodified\"],\"groupByColumn\":\"nogrouping\",\"expandGroupByColumn\":false,\"sortByColumn\":\"nosorting\",\"sortOrder\":1,\"payload\":\"36d07f06-f74b-f820-9697-fc6dda6bce4e\",\"dragHandle\":\".draggable\",\"resizeHandle\":\".resizable\"},\"widgetParameters\":{\"scope\":{\"scopeSelection\":[]},\"criteria\":{\"severities\":[\"0\",\"1\",\"2\"],\"priorities\":[\"0\",\"2\",\"1\"],\"resolutionStates\":[\"0\",\"247\",\"248\",\"249\",\"250\",\"254\",\"255\"],\"age\":7,\"ageTimeUnit\":\"days\"}},\"widgetRefreshInterval\":5}",
+            "name": "test",
+            "mpId": "dcfdedc4-68bd-42b4-1e9a-ba94b1577732",
+            "id": "36d07f06-f74b-f820-9697-fc6dda6bce4e"
+          }
+        ]
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      PUT http://<Servername>/OperationsManager/monitoring/dashboard/925b3d43-d716-d56d-84ba-55a2467a6e7d/widgets
+
+      {
+        "dashboard": {
+          "name": "performance Dashboard",
+          "description": "test",
+          "config": "",
+          "componentType": ""
+        },
+        "widgets": [
+          {
+            "componentType": "HtmlAlertWidget",
+            "config": "{\"widgetDisplay\":{\"col\":1,\"row\":1,\"sizex\":6,\"sizey\":4,\"columns\":[\"severity\",\"monitoringobjectdisplayname\",\"name\",\"age\",\"repeatcount\",\"lastmodified\"],\"groupByColumn\":\"nogrouping\",\"expandGroupByColumn\":false,\"sortByColumn\":\"nosorting\",\"sortOrder\":1,\"payload\":\"36d07f06-f74b-f820-9697-fc6dda6bce4e\",\"dragHandle\":\".draggable\",\"resizeHandle\":\".resizable\"},\"widgetParameters\":{\"scope\":{\"scopeSelection\":[]},\"criteria\":{\"severities\":[\"0\",\"1\",\"2\"],\"priorities\":[\"0\",\"2\",\"1\"],\"resolutionStates\":[\"0\",\"247\",\"248\",\"249\",\"250\",\"254\",\"255\"],\"age\":7,\"ageTimeUnit\":\"days\"}},\"widgetRefreshInterval\":5}",
+            "name": "test",
+            "mpId": "dcfdedc4-68bd-42b4-1e9a-ba94b1577732",
+            "id": "36d07f06-f74b-f820-9697-fc6dda6bce4e"
+          }
+        ]
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "Ok"
+      ]
+security: []
+metadata:
+  description: "Update Dashboard Details  \nUpdates the properties or configurations of a dashboard and the widgets available in a specific dashboard."
+errorCodes: []

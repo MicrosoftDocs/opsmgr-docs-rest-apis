@@ -16,12 +16,13 @@ paths:
 uriParameters:
 - name: batchId
   in: path
-  description: Specify the bacth ID.
+  isRequired: true
+  description: Specify the Batch Id
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the result of an executed task.
+  description: OK.Successfully retrieved the result of an executed task.
   types:
   - uid: TaskResultResponse
 requestHeader: []
@@ -30,34 +31,55 @@ definitions:
   kind: object
   properties:
   - name: batchId
-    description: Batch ID.
+    description: Batch ID
     types:
     - uid: string
   - name: taskName
-    description: Task name.
+    description: task Name
     types:
     - uid: string
   - name: taskStatus
-    description: Task status.
+    description: Task Status
     types:
     - uid: string
   - name: taskTarget
-    description: Task target.
+    description: Task target
     types:
     - uid: string
   - name: taskOutput
-    description: Task output.
+    description: Task Output
     types:
     - uid: string
   - name: errorCode
-    description: Error code.
+    description: Error code
     types:
     - uid: integer
   - name: errorMessage
-    description: Error message.
+    description: Error Message
     types:
     - uid: string
-examples: []
+examples:
+- name: GetTaskResult
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/getTaskResult/789be4ae-d365-4dca-8cdc-0c8c3b239689
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/getTaskResult/789be4ae-d365-4dca-8cdc-0c8c3b239689
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "batchId": "789be4ae-d365-4dca-8cdc-0c8c3b239689",
+        "taskName": "Show Running Rules and Monitors for this Object",
+        "taskStatus": "Started",
+        "taskTarget": "scomserver1.,contoso.net",
+        "taskOutput": null,
+        "errorCode": null,
+        "errorMessage": null
+      }
 security: []
 metadata:
   description: Learn more about Operations Manager service - Retrieves the result of an executed task.

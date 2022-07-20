@@ -4,7 +4,7 @@ name: Retrieve Monitor Information
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the monitor properties for the specified monitor ID.
+summary: Request to retrieve monitor information for Monitor ID Provided
 consumes: []
 produces:
 - application/json
@@ -16,80 +16,117 @@ paths:
 uriParameters:
 - name: monitorId
   in: path
-  description: Specify the monitor ID.
+  isRequired: true
+  description: The id of the monitor to be fetched.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved monitor properties.
+  description: OK.Successfully Retrieved Monitor Information
   types:
-  - uid: RuleDataResponse
+  - uid: TableDataResponse
 requestHeader: []
 definitions:
-- name: RuleDataResponse
+- name: TableDataResponse
   kind: object
   properties:
-  - name: id
-    description: Rule ID.
+  - name: tableColumns
+    description: Table columns of data
     types:
-    - uid: string
-  - name: description
-    description: Rule description.
+    - uid: TableColumn
+      isArray: true
+  - name: rows
+    description: Table Rows of data
     types:
-    - uid: string
-  - name: name
-    description: Rule name.
-    types:
-    - uid: string
-  - name: displayName
-    description: Rule display name.
-    types:
-    - uid: string
-  - name: comment
-    description: Rule comments.
-    types:
-    - uid: string
-  - name: target
-    description: ''
-    types:
-    - uid: RuleTarget
-  - name: xmlTag
-    description: Rule XML tag.
-    types:
-    - uid: string
-  - name: conditionDetectionConfiguration
-    description: Rule condition configuration.
-    types:
-    - uid: string
-  - name: dataSourceConfiguration
-    description: Rule data source configuration.
-    types:
-    - uid: string
-  - name: category
-    description: Rule category.
-    types:
-    - uid: string
-  - name: identifier
-    description: Rule identifier.
-    types:
-    - uid: string
-  - name: enabled
-    description: Is rule enabled.
-    types:
-    - uid: string
-- name: RuleTarget
+    - uid: object
+      isArray: true
+- name: TableColumn
   kind: object
   properties:
-  - name: id
-    description: Rule ID.
+  - name: field
+    description: Name of the Column
     types:
     - uid: string
-  - name: displayName
-    description: Rule display name.
+  - name: header
+    description: Header of the column
     types:
     - uid: string
-examples: []
+  - name: type
+    description: Type of the Column
+    types:
+    - uid: string
+  - name: hidden
+    description: Is column hidden
+    types:
+    - uid: boolean
+examples:
+- name: RetrieveMonitorInformation
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/monitorInformation/93328865-eafd-abee-2002-9ac35dfe0bf6
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/monitorInformation/93328865-eafd-abee-2002-9ac35dfe0bf6
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "name",
+            "header": "Name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "value",
+            "header": "Value",
+            "type": null,
+            "hidden": false
+          }
+        ],
+        "rows": [
+          {
+            "name": "Display Name",
+            "value": "{\"text\":\"Security\",\"drilldowntype\":\"monitor\",\"id\":\"93328865-eafd-abee-2002-9ac35dfe0bf6\"}"
+          },
+          {
+            "name": "Description",
+            "value": "Roll up monitor that aggregates entity security health."
+          },
+          {
+            "name": "Comment",
+            "value": null
+          },
+          {
+            "name": "Enabled",
+            "value": "true"
+          },
+          {
+            "name": "Identifier",
+            "value": "1|System.Health.Library/9396306c2be7fcc4|1.0.0.0|System.Health.SecurityState||"
+          },
+          {
+            "name": "Target",
+            "value": "{\"text\":\"Object\",\"drilldowntype\":\"class\",\"id\":\"ac5cddfc-a96a-ee99-745d-ec74845f53f6\"}"
+          },
+          {
+            "name": "Type",
+            "value": "AggregateMonitor"
+          },
+          {
+            "name": "Priority",
+            "value": "Normal"
+          },
+          {
+            "name": "State",
+            "value": "Unchanged"
+          }
+        ]
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the monitor properties for the specified monitor ID.
+  description: Learn more about Operations Manager service - Request to retrieve monitor information for Monitor ID Provided
 errorCodes: []

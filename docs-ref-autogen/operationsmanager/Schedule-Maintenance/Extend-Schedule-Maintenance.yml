@@ -1,0 +1,85 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.extendschedulemaintenance
+name: Extend Schedule Maintenance
+service: Operations Manager
+groupName: Schedule Maintenance
+apiVersion: v1
+summary: Request to extend scheduled Maintenance
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: PUT http://<Servername>/OperationsManager/ExtendScheduleMaintenance
+uriParameters: []
+responses:
+- name: 200 OK
+  description: Ok.Successfully Extended Schedule Maintenance
+  types:
+  - uid: object
+requestBody:
+- name: default
+  parameters:
+  - name: scheduleId
+    in: body
+    isRequired: true
+    description: ID of the Schedule to extend
+    types:
+    - uid: string
+  - name: scheduledEndTime
+    in: body
+    isRequired: true
+    description: End Time of the schedule
+    types:
+    - uid: string
+requestHeader: []
+definitions:
+- name: ScheduleMaintenanceExtendRequest
+  kind: object
+  properties:
+  - name: scheduleId
+    description: ID of the Schedule to extend
+    types:
+    - uid: string
+  - name: scheduledEndTime
+    description: End Time of the schedule
+    types:
+    - uid: string
+examples:
+- name: ExtendScheduleMaintenance
+  request:
+    uri: PUT http://<Servername>/OperationsManager/ExtendScheduleMaintenance
+    body: >-
+      {
+        "scheduleId": "a08f168b-3dee-ec11-acf9-02155eb7914c",
+        "scheduledEndTime": "2022-06-16T20:44:54.613Z"
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      PUT http://<Servername>/OperationsManager/ExtendScheduleMaintenance
+
+      {
+        "scheduleId": "a08f168b-3dee-ec11-acf9-02155eb7914c",
+        "scheduledEndTime": "2022-06-16T20:44:54.613Z"
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "OK"
+      ]
+security: []
+metadata:
+  description: Learn more about Operations Manager service - Request to extend scheduled Maintenance
+errorCodes: []

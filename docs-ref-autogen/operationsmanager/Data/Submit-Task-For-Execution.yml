@@ -1,0 +1,142 @@
+### YamlMime:RESTOperation
+uid: <servername>.operationsmanager.operationsmanager.data.submittaskforexecution
+name: Submit Task For Execution
+service: Operations Manager
+groupName: Data
+apiVersion: v1
+summary: "Submits a task for execution  \nRequest to submit the execution task"
+consumes:
+- application/json
+- text/json
+- application/xml
+- text/xml
+- application/x-www-form-urlencoded
+produces:
+- application/json
+- text/json
+- application/xml
+- text/xml
+paths:
+- content: POST http://<Servername>/OperationsManager/data/submitTask
+uriParameters: []
+responses:
+- name: 200 OK
+  description: OK. Successfully submitted a task to be executed.
+  types:
+  - uid: string
+requestBody:
+- name: default
+  parameters:
+  - name: taskId
+    in: body
+    description: Task ID
+    types:
+    - uid: string
+  - name: monitoringObjectIds
+    in: body
+    description: Monitoring Object Ids
+    types:
+    - uid: string
+      isArray: true
+  - name: parametersWithValues
+    in: body
+    description: Parameters with Values
+    types:
+    - uid: object
+      isDictionary: true
+      additionalTypes:
+      - uid: string
+      - uid: string
+  - name: credentials
+    in: body
+    description: Credentials for task execution
+    types:
+    - uid: TaskExecutionCredentials
+requestHeader: []
+definitions:
+- name: TaskExecutionCredentials
+  kind: object
+  properties:
+  - name: domain
+    description: Domain
+    types:
+    - uid: string
+  - name: username
+    description: Username
+    types:
+    - uid: string
+  - name: password
+    description: Password
+    types:
+    - uid: string
+- name: TaskExecutionRequest
+  kind: object
+  properties:
+  - name: taskId
+    description: Task ID
+    types:
+    - uid: string
+  - name: monitoringObjectIds
+    description: Monitoring Object Ids
+    types:
+    - uid: string
+      isArray: true
+  - name: parametersWithValues
+    description: Parameters with Values
+    types:
+    - uid: object
+      isDictionary: true
+      additionalTypes:
+      - uid: string
+      - uid: string
+  - name: credentials
+    description: Credentials for task execution
+    types:
+    - uid: TaskExecutionCredentials
+examples:
+- name: SubmitTaskForExecution
+  request:
+    uri: POST http://<Servername>/OperationsManager/data/submitTask
+    body: >-
+      {
+        "taskId": "5d649d3c-7c4c-8dec-a1fd-2f5711ac7f3d",
+        "monitoringObjectIds": [
+          "b4abc994-7f94-ef4b-9a4b-69611635f6a0"
+        ],
+        "parametersWithValues": {},
+        "credentials": {
+          "domain": "contoso",
+          "username": "scomuser",
+          "password": "passwords"
+        }
+      }
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      POST http://<Servername>/OperationsManager/data/submitTask
+
+      {
+        "taskId": "5d649d3c-7c4c-8dec-a1fd-2f5711ac7f3d",
+        "monitoringObjectIds": [
+          "b4abc994-7f94-ef4b-9a4b-69611635f6a0"
+        ],
+        "parametersWithValues": {},
+        "credentials": {
+          "domain": "contoso",
+          "username": "scomuser",
+          "password": "passwords"
+        }
+      }
+
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        "789be4ae-d365-4dca-8cdc-0c8c3b239689"
+      ]
+security: []
+metadata:
+  description: "Learn more about Operations Manager service - Submits a task for execution  \nRequest to submit the execution task"
+errorCodes: []

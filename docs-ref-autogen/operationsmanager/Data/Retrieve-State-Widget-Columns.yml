@@ -4,7 +4,7 @@ name: Retrieve State Widget Columns
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the state columns applicable for the specified entity ID.
+summary: "Request to retrieve State Widget Columns.  \nRetrieves the state columns applicable for the specified entity ID"
 consumes: []
 produces:
 - application/json
@@ -12,16 +12,17 @@ produces:
 - application/xml
 - text/xml
 paths:
-- content: GET http://<Servername>/OperationsManager/data/stateColumns/{entityId}
+- content: GET http://<Servername>/OperationsManager/data/stateColumns?entityId={entityId}
 uriParameters:
 - name: entityId
-  in: path
-  description: Specify the entity ID.
+  in: query
+  isRequired: true
+  description: Entity Id
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved state columns.
+  description: OK.Successfully retrieved state columns.
   types:
   - uid: HeaderColumns
     isArray: true
@@ -31,27 +32,69 @@ definitions:
   kind: object
   properties:
   - name: name
-    description: Name.
+    description: Column Name
     types:
     - uid: string
   - name: id
-    description: ID.
+    description: Column ID
     types:
     - uid: string
   - name: typename
-    description: Type name.
+    description: Column Type Name
     types:
     - uid: string
   - name: isSortable
-    description: Is sortable.
+    description: is Column Sortable
     types:
     - uid: boolean
   - name: isGroupable
-    description: Is groupable.
+    description: is Column Groupable
     types:
     - uid: boolean
-examples: []
+examples:
+- name: RetrieveStateWidgetColumns
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/stateColumns?entityId=6f7e3306-beeb-2996-3795-7c1eafb925b8
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/stateColumns?entityId=6f7e3306-beeb-2996-3795-7c1eafb925b8
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      [
+        {
+          "name": "Health",
+          "id": "healthstate",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Display name",
+          "id": "displayname",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Path",
+          "id": "path",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        },
+        {
+          "name": "Maintenance mode",
+          "id": "maintenancemode",
+          "typename": "text",
+          "isSortable": true,
+          "isGroupable": true
+        }
+      ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the state columns applicable for the specified entity ID.
+  description: "Request to retrieve State Widget Columns.  \nRetrieves the state columns applicable for the specified entity ID"
 errorCodes: []

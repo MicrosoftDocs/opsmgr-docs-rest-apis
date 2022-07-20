@@ -4,7 +4,7 @@ name: Retrieve Rule Information
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the rule properties for the specified rule ID.
+summary: Request to retrieve rule information of Rule ID provided
 consumes: []
 produces:
 - application/json
@@ -16,80 +16,113 @@ paths:
 uriParameters:
 - name: ruleId
   in: path
-  description: Specify the rule ID.
+  isRequired: true
+  description: The id of the rule to be fetched.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved rule properties.
+  description: OK.Successfully Retrieve Rule Information
   types:
-  - uid: RuleDataResponse
+  - uid: TableDataResponse
 requestHeader: []
 definitions:
-- name: RuleDataResponse
+- name: TableDataResponse
   kind: object
   properties:
-  - name: id
-    description: Rule ID.
+  - name: tableColumns
+    description: Table columns of data
     types:
-    - uid: string
-  - name: description
-    description: Rule description.
+    - uid: TableColumn
+      isArray: true
+  - name: rows
+    description: Table Rows of data
     types:
-    - uid: string
-  - name: name
-    description: Rule name.
-    types:
-    - uid: string
-  - name: displayName
-    description: Rule display name.
-    types:
-    - uid: string
-  - name: comment
-    description: Rule comments.
-    types:
-    - uid: string
-  - name: target
-    description: ''
-    types:
-    - uid: RuleTarget
-  - name: xmlTag
-    description: Rule XML tag.
-    types:
-    - uid: string
-  - name: conditionDetectionConfiguration
-    description: Rule condition configuration.
-    types:
-    - uid: string
-  - name: dataSourceConfiguration
-    description: Rule data source configuration.
-    types:
-    - uid: string
-  - name: category
-    description: Rule category.
-    types:
-    - uid: string
-  - name: identifier
-    description: Rule identifier.
-    types:
-    - uid: string
-  - name: enabled
-    description: Is rule enabled.
-    types:
-    - uid: string
-- name: RuleTarget
+    - uid: object
+      isArray: true
+- name: TableColumn
   kind: object
   properties:
-  - name: id
-    description: Rule ID.
+  - name: field
+    description: Name of the Column
     types:
     - uid: string
-  - name: displayName
-    description: Rule display name.
+  - name: header
+    description: Header of the column
     types:
     - uid: string
-examples: []
+  - name: type
+    description: Type of the Column
+    types:
+    - uid: string
+  - name: hidden
+    description: Is column hidden
+    types:
+    - uid: boolean
+examples:
+- name: RetrieveRuleInformation
+  request:
+    uri: GET http://<Servername>/OperationsManager/data/ruleInformation/E86293C0-D842-58CF-20AA-315267B0934C
+    codeTab: |+
+      # [HTTP](#tab/HTTP)
+      ``` http
+      GET http://<Servername>/OperationsManager/data/ruleInformation/E86293C0-D842-58CF-20AA-315267B0934C
+      ```
+
+  responses:
+  - statusCode: "200"
+    body: >-
+      {
+        "tableColumns": [
+          {
+            "field": "name",
+            "header": "Name",
+            "type": null,
+            "hidden": false
+          },
+          {
+            "field": "value",
+            "header": "Value",
+            "type": null,
+            "hidden": false
+          }
+        ],
+        "rows": [
+          {
+            "name": "Display name",
+            "value": "{\"text\":\"Generate Alert for Transaction Application Failure APM Event\",\"drilldowntype\":\"rule\",\"id\":\"e86293c0-d842-58cf-20aa-315267b0934c\"}"
+          },
+          {
+            "name": "Description",
+            "value": "Generate Alert for Transaction Application Failure APM Event"
+          },
+          {
+            "name": "Comment",
+            "value": null
+          },
+          {
+            "name": "Enabled",
+            "value": "false"
+          },
+          {
+            "name": "Identifier",
+            "value": "1|Microsoft.SystemCenter.Apm.Library/31bf3856ad364e35|1.0.0.0|Microsoft.SystemCenter.Apm.WcfTransaction.AlertAppFailureAspectRule||"
+          },
+          {
+            "name": "Category",
+            "value": "Alert"
+          },
+          {
+            "name": "Xml Tag",
+            "value": "Rule"
+          },
+          {
+            "name": "Target name",
+            "value": "{\"text\":\"Server WCF Transaction\",\"drilldowntype\":\"class\",\"id\":\"94f0a362-884a-7034-2822-8e6b69f59938\"}"
+          }
+        ]
+      }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the rule properties for the specified rule ID.
+  description: Learn more about Operations Manager service - Request to retrieve rule information of Rule ID provided
 errorCodes: []
