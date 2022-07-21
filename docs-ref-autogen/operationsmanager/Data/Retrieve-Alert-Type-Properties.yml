@@ -4,7 +4,7 @@ name: Retrieve Alert Type Properties
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Request to retrieve Alert Type properties.  \nRequest to retrieve rule or monitor information for alert."
+summary: Retrieves alert type properties like rule or monitor information of the alert.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: alertId
   in: path
   isRequired: true
-  description: AlertId for which the type information is to be fetched.
+  description: Alert ID for which the type information is to be fetched.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully Retrieved Alert Type Properties
+  description: OK. Successfully retrieved alert type properties.
   types:
   - uid: AlertTypePropertyResponse
 requestHeader: []
@@ -138,5 +138,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Request to retrieve Alert Type properties.  \nRequest to retrieve rule or monitor information for alert."
+  description: Learn more about Operations Manager service - Retrieves alert type properties like rule or monitor information of the alert.
 errorCodes: []

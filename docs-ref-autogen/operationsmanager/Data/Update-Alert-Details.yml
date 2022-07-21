@@ -4,7 +4,7 @@ name: Update Alert Details
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Request to update Alert Details  \nRequest to update details of given Alert."
+summary: Updates the alert Details for the specified alert.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully updated Alert Details
+  description: OK.Successfully updated alert details.
   types:
   - uid: AlertDetailsResponse
 requestBody:
@@ -39,7 +39,7 @@ requestBody:
     - uid: string
   - name: sourceId
     in: body
-    description: Source Id of the Alert
+    description: Source ID of the Alert
     types:
     - uid: string
   - name: priority
@@ -133,7 +133,7 @@ definitions:
     types:
     - uid: string
   - name: sourceId
-    description: Source Id of the Alert
+    description: Source ID of the Alert
     types:
     - uid: string
   - name: priority
@@ -294,5 +294,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Request to update Alert Details  \nRequest to update details of given Alert."
+  description: Learn more about Operations Manager service - Updates the alert Details for the specified alert.
 errorCodes: []

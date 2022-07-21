@@ -4,7 +4,7 @@ name: Disable Maintenance Schedule
 service: Operations Manager
 groupName: Schedule Maintenance
 apiVersion: v1
-summary: Disables Schedule maintenance details by schedule Id
+summary: Disables the schedule maintenance details for the specified schedule ID.
 consumes: []
 produces:
 - application/json
@@ -23,7 +23,7 @@ uriParameters:
   format: uuid
 responses:
 - name: 200 OK
-  description: Ok.Successfully Disabled Maintenance Schedule
+  description: Ok.Successfully disabled maintenance schedule.
   types:
   - uid: object
 requestHeader: []
@@ -46,5 +46,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Disables Schedule maintenance details by schedule Id
+  description: Learn more about Operations Manager service - Disables the schedule maintenance details for the specified schedule ID.
 errorCodes: []

@@ -4,7 +4,7 @@ name: Effective Monitoring Configuration Data
 service: Operations Manager
 groupName: Effective Monitoring Configuration
 apiVersion: v1
-summary: Request to retrieve EffectiveMonitoringConfiguration data.
+summary: Retrieves effective monitoring configuration data.
 consumes: []
 produces:
 - application/json
@@ -17,7 +17,7 @@ uriParameters:
 - name: monitoringObjectId
   in: path
   isRequired: true
-  description: Monitoring Object ID
+  description: Monitoring object ID
   types:
   - uid: string
   format: uuid
@@ -29,7 +29,7 @@ uriParameters:
   - uid: boolean
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved EffectiveMonitoringConfiguration data.
+  description: OK.Successfully retrieved effective monitoring configuration data.
   types:
   - uid: TableDataResponse
 requestHeader: []
@@ -2570,5 +2570,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve EffectiveMonitoringConfiguration data.
+  description: Learn more about Operations Manager service - Retrieves effective monitoring configuration data.
 errorCodes: []

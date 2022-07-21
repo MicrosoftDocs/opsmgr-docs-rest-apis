@@ -4,7 +4,7 @@ name: Retrieve Alert Resolution States
 service: Operations Manager
 groupName: Resource
 apiVersion: v1
-summary: Request to retrieve Alert Widget Resolution States.
+summary: Retrieves alert resolution States.
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved Alert Resolution States
+  description: OK.Successfully retrieved alert resolution States.
   types:
   - uid: Resource
     isArray: true
@@ -89,5 +89,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve Alert Widget Resolution States.
+  description: Learn more about Operations Manager service - Retrieves alert resolution States.
 errorCodes: []

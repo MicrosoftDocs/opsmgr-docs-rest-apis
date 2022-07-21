@@ -4,7 +4,7 @@ name: Retrieve Monitor Information
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve monitor information for Monitor ID Provided
+summary: Retrieves monitor information for the monitor ID provided.
 consumes: []
 produces:
 - application/json
@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Monitor Information
+  description: OK.Successfully retrieved Monitor Information.
   types:
   - uid: TableDataResponse
 requestHeader: []
@@ -128,5 +128,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve monitor information for Monitor ID Provided
+  description: Learn more about Operations Manager service - Retrieves monitor information for the monitor ID provided.
 errorCodes: []

@@ -4,7 +4,7 @@ name: Retrieve Widget in MyWorkspace
 service: Operations Manager
 groupName: My Workspace
 apiVersion: v1
-summary: "Retrieves the widget details in MyWorkspaceDashboard.  \nRequest to Retrieve the widget details in MyWorkspaceDashboard."
+summary: Retrieves the widget details in my workspace dashboard.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: widgetId
   in: path
   isRequired: true
-  description: Widget ID
+  description: Specify the widget ID
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved widget details
+  description: OK.Successfully retrieved widget details.
   types:
   - uid: ComponentResponse
 requestHeader: []
@@ -77,5 +77,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Retrieves the widget details in MyWorkspaceDashboard.  \nRequest to Retrieve the widget details in MyWorkspaceDashboard."
+  description: Learn more about Operations Manager service - Retrieves the widget details in my workspace dashboard.
 errorCodes: []

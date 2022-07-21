@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrievedrilldowntypedetails
-name: Retrieve DrilldownType Details
+name: Retrieve drill down type details
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve title data for drilldown page
+summary: Retrieves title data for drill down page.
 consumes: []
 produces:
 - application/json
@@ -17,18 +17,18 @@ uriParameters:
 - name: id
   in: path
   isRequired: true
-  description: Guid ID
+  description: Specify the Guid ID
   types:
   - uid: string
 - name: type
   in: path
   isRequired: true
-  description: Type
+  description: Specify the Drill Down Type
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved DrilldownType Details
+  description: OK.Successfully retrieved drill down type details
   types:
   - uid: DrilldownTitleResponse
 requestHeader: []
@@ -45,7 +45,7 @@ definitions:
     types:
     - uid: string
 examples:
-- name: DRetrieveDrilldownTypeDetails
+- name: RetrieveDrilldownTypeDetails
   request:
     uri: GET http://<Servername>/OperationsManager/data/drilldownTypeDetails/667736a8-d59a-407b-b142-80fd74ba4041/alert
     codeTab: |+
@@ -63,5 +63,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve title data for drilldown page
+  description: Learn more about Operations Manager service - Retrieves title data for drill down page.
 errorCodes: []

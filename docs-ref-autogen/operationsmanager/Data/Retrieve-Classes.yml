@@ -4,7 +4,7 @@ name: Retrieve Classes
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Request to retrieve SCOM Classes  \nRetrieves the list of classes and their properties"
+summary: Retrieves the list of classes and their properties.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved the list of classes and their properties
+  description: OK.Successfully retrieved the list of classes and their properties.
   types:
   - uid: ScopeDataResponse
 requestBody:
@@ -29,7 +29,7 @@ requestBody:
   parameters:
   - name: criteria
     in: body
-    description: Criteria to search
+    description: Specify the criteria to search
     types:
     - uid: string
 requestHeader: []
@@ -46,7 +46,7 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: Id
+    description: ID
     types:
     - uid: string
   - name: displayName
@@ -100,5 +100,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Request to retrieve SCOM Classes  \nRetrieves the list of classes and their properties"
+  description: Learn more about Operations Manager service - Retrieves the list of classes and their properties.
 errorCodes: []

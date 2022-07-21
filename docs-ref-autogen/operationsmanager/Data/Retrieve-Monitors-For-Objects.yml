@@ -4,7 +4,7 @@ name: Retrieve Monitors For Objects
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Request to retrieve monitors for an object.  \nRetrieve the list of monitors and their properties associated with a specific object"
+summary: Retrieves the list of monitors and their properties associated with a specific object.
 consumes:
 - application/json
 - text/json
@@ -192,5 +192,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Request to retrieve monitors for an object.  \nRetrieve the list of monitors and their properties associated with a specific object"
+  description: Learn more about Operations Manager service - Retrieves the list of monitors and their properties associated with a specific object.
 errorCodes: []

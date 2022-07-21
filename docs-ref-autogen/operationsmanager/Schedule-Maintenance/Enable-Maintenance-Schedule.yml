@@ -4,7 +4,7 @@ name: Enable Maintenance Schedule
 service: Operations Manager
 groupName: Schedule Maintenance
 apiVersion: v1
-summary: Enable the schedule maintenance by schedule ID
+summary: Enables the schedule maintenance for the specified schedule ID.
 consumes: []
 produces:
 - application/json
@@ -23,7 +23,7 @@ uriParameters:
   format: uuid
 responses:
 - name: 200 OK
-  description: Ok.Successfully Enabled Maintenance Schedule
+  description: Ok.Successfully enabled maintenance schedule.
   types:
   - uid: object
 requestHeader: []
@@ -46,5 +46,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Enable the schedule maintenance by schedule ID
+  description: Learn more about Operations Manager service - Enables the schedule maintenance for the specified schedule ID.
 errorCodes: []

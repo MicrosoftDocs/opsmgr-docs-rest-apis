@@ -4,7 +4,7 @@ name: Reset Monitor For Alert
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to reset monitor information for specified Alert ID
+summary: Resets the monitor information for specified alert ID.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully monitor for Alert is reset
+  description: OK.Successfully monitor for the alert is reset.
   types:
   - uid: object
 requestBody:
@@ -29,7 +29,7 @@ requestBody:
   parameters:
   - name: alertID
     in: body
-    description: Specify Alert ID
+    description: Specify the alert ID
     types:
     - uid: string
 requestHeader: []
@@ -61,5 +61,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to reset monitor information for specified Alert ID
+  description: Learn more about Operations Manager service - Resets the monitor information for specified alert ID.
 errorCodes: []

@@ -4,7 +4,7 @@ name: Retrieve Items In Monitoring Tree View
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieve Items In Monitoring Tree View  \nRetrieves the list of views/dashboards/folders available in the Monitoring tree view."
+summary: Retrieves the list of views/dashboards/folders available in the Monitoring tree view.
 consumes: []
 produces:
 - application/json
@@ -38,7 +38,7 @@ definitions:
     - uid: TreeNode
       isArray: true
   - name: id
-    description: Id
+    description: ID
     types:
     - uid: string
   - name: mpId
@@ -3865,5 +3865,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Retrieve Items In Monitoring Tree View  \nRetrieves the list of views/dashboards/folders available in the Monitoring tree view."
+  description: Learn more about Operations Manager service - Retrieves the list of views/dashboards/folders available in the Monitoring tree view.
 errorCodes: []

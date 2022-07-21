@@ -4,7 +4,7 @@ name: Delete Dashboard in MyWorkspace
 service: Operations Manager
 groupName: My Workspace
 apiVersion: v1
-summary: "Deletes the Dashboard in MyWorkspace Pane.  \nRequest to Delete the Dashboard in MyWorkspace Pane"
+summary: Deletes the dashboard in myworkspace Pane.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: dashboardId
   in: path
   isRequired: true
-  description: dashboard Id to delete
+  description: dashboard ID to delete
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: 'OK.Successfully Deleted the Dashboard '
+  description: OK.Successfully deleted the Dashboard.
   types:
   - uid: boolean
 requestHeader: []
@@ -45,5 +45,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Deletes the Dashboard in MyWorkspace Pane.  \nRequest to Delete the Dashboard in MyWorkspace Pane"
+  description: Learn more about Operations Manager service - Deletes the dashboard in myworkspace Pane.
 errorCodes: []

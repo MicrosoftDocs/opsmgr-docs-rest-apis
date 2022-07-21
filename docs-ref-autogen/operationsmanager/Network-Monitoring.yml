@@ -7,4 +7,4 @@ metadata:
   description: Learn more about [Operations Manager Network Monitoring Operations]. How to [GetNetwork Monitoring ResponseData].
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.networkmonitoring.getnetworkmonitoringresponsedata
-  summary: Retrieves data for network devices and interfaces
+  summary: Retrieves data for network devices and interfaces.

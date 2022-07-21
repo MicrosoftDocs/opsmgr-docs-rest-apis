@@ -4,7 +4,7 @@ name: Retrieve Rule Configuration
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieve rule configuration for Rule ID  \nRequest to retrieve rule configuration- for Rule ID Provided."
+summary: Retrieves rule configuration for Rule ID provided.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: id
   in: path
   isRequired: true
-  description: Rule ID
+  description: Specify the Rule ID
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Rule Configuration
+  description: OK.Successfully retrieved Rule Configuration
   types:
   - uid: string
 requestHeader: []
@@ -45,5 +45,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Retrieve rule configuration for Rule ID  \nRequest to retrieve rule configuration- for Rule ID Provided."
+  description: Learn more about Operations Manager service - Retrieves rule configuration for Rule ID provided.
 errorCodes: []

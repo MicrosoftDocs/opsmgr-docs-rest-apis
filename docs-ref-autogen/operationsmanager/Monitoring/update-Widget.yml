@@ -4,7 +4,7 @@ name: update Widget
 service: Operations Manager
 groupName: Monitoring
 apiVersion: v1
-summary: "Update widget configuration  \nUpdates the widget properties or configuration"
+summary: Updates the widget properties or configuration
 consumes:
 - application/json
 - text/json
@@ -22,7 +22,7 @@ uriParameters:
 - name: widgetId
   in: path
   isRequired: true
-  description: Widget Id
+  description: Specify the Widget ID
   types:
   - uid: string
 responses:
@@ -157,5 +157,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Update widget configuration  \nUpdates the widget properties or configuration"
+  description: Learn more about Operations Manager service - Updates the widget properties or configuration
 errorCodes: []

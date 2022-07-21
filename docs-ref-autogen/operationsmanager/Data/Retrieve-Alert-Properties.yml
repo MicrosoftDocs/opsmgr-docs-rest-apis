@@ -4,7 +4,7 @@ name: Retrieve Alert Properties
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieve alert Properties by Alert ID.  \nRequest to retrieve alert Properties from Alert ID."
+summary: Retrieves alert properties for the specified alert.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: alertId
   in: path
   isRequired: true
-  description: AlertId for which context is to be fetched.
+  description: Alert ID for which context is to be fetched.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retried Alert Information
+  description: OK.Successfully retried alert information.
   types:
   - uid: AlertDataResponse
 requestHeader: []
@@ -109,5 +109,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Retrieve alert Properties by Alert ID.  \nRequest to retrieve alert Properties from Alert ID."
+  description: Learn more about Operations Manager service - Retrieves alert properties for the specified alert.
 errorCodes: []

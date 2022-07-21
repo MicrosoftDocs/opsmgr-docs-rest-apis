@@ -4,7 +4,7 @@ name: Get Schedule Maintenance List
 service: Operations Manager
 groupName: Schedule Maintenance
 apiVersion: v1
-summary: Retrieves the schedule maintenance List
+summary: Retrieves the schedule maintenance List.
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved schedule Maintenance List
+  description: OK.Successfully retrieved schedule maintenance list.
   types:
   - uid: TableDataResponse
 requestHeader: []
@@ -132,5 +132,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the schedule maintenance List
+  description: Learn more about Operations Manager service - Retrieves the schedule maintenance List.
 errorCodes: []

@@ -7,20 +7,20 @@ metadata:
   description: Learn more about [Operations Manager Schedule Maintenance Operations]. How to [Create Schedule Maintenance,Delete Schedule Maintenance,Disable Maintenance Sched
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.createschedulemaintenance
-  summary: Request to save the schedule maintenance
+  summary: Adds the schedule maintenance for provided schedule request.
 - uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.deleteschedulemaintenance
-  summary: Deletes Schedule maintenance details by schedule Id
+  summary: Deletes the schedule maintenance details for the specified schedule ID
 - uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.disablemaintenanceschedule
-  summary: Disables Schedule maintenance details by schedule Id
+  summary: Disables the schedule maintenance details for the specified schedule ID.
 - uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.editschedulemaintenance
-  summary: Request to update the scheduled Maintenance
+  summary: Updates the scheduled Maintenance for the provided schedule request.
 - uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.enablemaintenanceschedule
-  summary: Enable the schedule maintenance by schedule ID
+  summary: Enables the schedule maintenance for the specified schedule ID.
 - uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.extendschedulemaintenance
-  summary: Request to extend scheduled Maintenance
+  summary: Extends the scheduled maintenance for the provided schedule request.
 - uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.getschedulemaintenance
-  summary: Retrieves Schedule maintenance details by schedule Id
+  summary: Retrieves the schedule maintenance details for the specified schedule ID.
 - uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.getschedulemaintenancelist
-  summary: Retrieves the schedule maintenance List
+  summary: Retrieves the schedule maintenance List.
 - uid: <servername>.operationsmanager.operationsmanager.schedulemaintenance.stopmaintenanceschedule
-  summary: Stops Schedule maintenance details by schedule Id
+  summary: Stops the scheduled maintenance details for specified schedule ID.

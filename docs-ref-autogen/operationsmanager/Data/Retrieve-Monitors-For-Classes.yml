@@ -4,7 +4,7 @@ name: Retrieve Monitors For Classes
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Request to retrieve monitors for a class.  \nRetrieve the list of monitors and their properties associated with a specific class."
+summary: Retrieves the list of monitors and their properties associated with a specific class.
 consumes:
 - application/json
 - text/json
@@ -29,7 +29,7 @@ requestBody:
   parameters:
   - name: criteria
     in: body
-    description: Criteria to search
+    description: specify the criteria to search.
     types:
     - uid: string
 requestHeader: []
@@ -156,5 +156,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Request to retrieve monitors for a class.  \nRetrieve the list of monitors and their properties associated with a specific class."
+  description: Learn more about Operations Manager service - Retrieves the list of monitors and their properties associated with a specific class.
 errorCodes: []

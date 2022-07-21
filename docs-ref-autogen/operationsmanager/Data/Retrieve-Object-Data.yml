@@ -4,7 +4,7 @@ name: Retrieve Object Data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve Scom Objects data.
+summary: Retrieves objects based on the specified criteria.
 consumes:
 - application/json
 - text/json
@@ -17,71 +17,69 @@ produces:
 - application/xml
 - text/xml
 paths:
-- content: POST http://<Servername>/OperationsManager/data/scomObjectsDetails
+- content: POST http://<Servername>/OperationsManager/data/scomObjects
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved SCOM Object Details
+  description: OK.Successfully retrieved objects based on the specified criteria.
   types:
-  - uid: TableDataResponse
+  - uid: ScopeDataResponse
 requestBody:
 - name: default
   parameters:
-  - name: id
+  - name: criteria
     in: body
-    description: Object Id
+    description: Specify the criteria to search.
     types:
     - uid: string
-      isArray: true
 requestHeader: []
 definitions:
-- name: TableDataResponse
+- name: ScopeDataResponse
   kind: object
   properties:
-  - name: tableColumns
-    description: Table columns of data
+  - name: scopeDatas
+    description: Scope Data
     types:
-    - uid: TableColumn
+    - uid: ScopeData
       isArray: true
-  - name: rows
-    description: Table Rows of data
-    types:
-    - uid: object
-      isArray: true
-- name: TableColumn
+- name: ScopeData
   kind: object
   properties:
-  - name: field
-    description: Name of the Column
+  - name: id
+    description: ID
     types:
     - uid: string
-  - name: header
-    description: Header of the column
+  - name: displayName
+    description: Display Name
     types:
     - uid: string
-  - name: type
-    description: Type of the Column
+  - name: className
+    description: Class Name
     types:
     - uid: string
-  - name: hidden
-    description: Is column hidden
+  - name: path
+    description: Path
     types:
-    - uid: boolean
+    - uid: string
+  - name: fullName
+    description: Full Name
+    types:
+    - uid: string
 examples:
-- name: RetrieveObjectData
+- name: RetrieveSCOMObjects
   request:
-    uri: POST http://<Servername>/OperationsManager/data/scomObjectsDetails
+    uri: POST http://<Servername>/OperationsManager/data/scomObjects
     body: >-
       [
-        "3c8ac4f3-475e-44dd-4163-8a97af363705"
+        "DisplayName LIKE '%unix%'"
       ]
     codeTab: |+
       # [HTTP](#tab/HTTP)
       ``` http
-      POST http://<Servername>/OperationsManager/data/scomObjectsDetails
+      POST http://<Servername>/OperationsManager/data/scomObjects
 
       [
-        "3c8ac4f3-475e-44dd-4163-8a97af363705"
+        "DisplayName LIKE '%unix%'"
       ]
 
       ```
@@ -90,42 +88,17 @@ examples:
   - statusCode: "200"
     body: >-
       {
-        "tableColumns": [
+        "scopeDatas": [
           {
-            "field": "displayname",
-            "header": "Display name",
-            "type": null,
-            "hidden": false
-          },
-          {
-            "field": "path",
-            "header": "Path",
-            "type": null,
-            "hidden": false
-          },
-          {
-            "field": "id",
-            "header": "ID",
-            "type": null,
-            "hidden": true
-          },
-          {
-            "field": "fullname",
-            "header": "Full name",
-            "type": null,
-            "hidden": false
-          }
-        ],
-        "rows": [
-          {
-            "id": "3c8ac4f3-475e-44dd-4163-8a97af363705",
-            "displayname": "All Windows Computers",
+            "id": "dfc9175d-c0bc-4166-7e0a-0f40c4d4fc6e",
+            "displayName": "UNIX/Linux Computer Group",
+            "className": "UNIX/Linux Computer Group",
             "path": null,
-            "fullname": "Microsoft.SystemCenter.AllComputersGroup"
+            "fullName": "Microsoft.Unix.ComputerGroup"
           }
         ]
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve Scom Objects data.
+  description: Learn more about Operations Manager service - Retrieves objects based on the specified criteria.
 errorCodes: []

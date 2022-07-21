@@ -7,32 +7,32 @@ metadata:
   description: Learn more about [Operations Manager Monitoring Operations]. How to [Add Dashboard,Add Folder,Add ViewShortcut To MyWorkspace,Add Widget to Dashboard,Delete Das
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.adddashboard
-  summary: Request to save the dashboard.
+  summary: Request to save the dashboard in monitoring view.
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.addfolder
-  summary: Request to Save the folder.
+  summary: Request to save the folder in monitoring view.
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.addviewshortcuttomyworkspace
-  summary: Adds a shortcut to Monitoring view in My Workspace
+  summary: Adds a shortcut to monitoring view in my workspace
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.addwidgettodashboard
-  summary: Request to Add Widget to dashboard
+  summary: Adds a widget to an existing Dashboard
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.deletedashboard
-  summary: Deletes the Dashboard.
+  summary: Deletes the dashboard by dashboard ID
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.deleteviewshortcutfrommyworkspace
-  summary: Deletes a view shortcut from My Workspace
+  summary: Deletes a view shortcut from my workspace
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.deletewidget
   summary: Deletes a widget from dashboard.
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.getdashboardtype
-  summary: Retrieves dashboard type
+  summary: Retrieves dashboard type by dashboard ID.
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievedashboard
-  summary: Retrieves the dashboard Details
+  summary: Retrieves the dashboard properties and configuration.
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievedashboardsforobject
-  summary: Retrieves the dashboards for Object.
+  summary: Retrieves dashboards for object based on host.
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievewidget
-  summary: Retrieves the widget details.
+  summary: Retrieves the widget properties and configuration.
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievewidgetsbydashboardid
-  summary: Retrieves the widgets in the dashboard.
+  summary: Retrieves the properties and configuration of all the widgets defined in a specific dashboard
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievewidgetsforentity
-  summary: Retrieves the widgets in the dashboard for entity.
+  summary: 'Retrieves the widgets for the dashboard and entity. NOTE: This only supports retrieving widgets for a performance dashboard.'
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.updatedashboarddetails
-  summary: Update Dashboard Details
+  summary: Updates the properties or configurations of a dashboard and the widgets available in a specific dashboard.
 - uid: <servername>.operationsmanager.operationsmanager.monitoring.updatewidget
-  summary: Update widget configuration
+  summary: Updates the widget properties or configuration

@@ -4,7 +4,7 @@ name: Retrieve SLO Data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve SLO Data for the given SLO Request
+summary: Retrieves SLO data for the provided SLO Request
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved SLO Data
+  description: OK.Successfully retrieved SLO Data.
   types:
   - uid: SLODataResponse
 requestBody:
@@ -139,5 +139,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve SLO Data for the given SLO Request
+  description: Learn more about Operations Manager service - Retrieves SLO data for the provided SLO Request
 errorCodes: []

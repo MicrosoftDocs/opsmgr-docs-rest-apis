@@ -4,7 +4,7 @@ name: Retrieve Rule Information
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve rule information of Rule ID provided
+summary: Retrieves rule information of rule ID.
 consumes: []
 produces:
 - application/json
@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieve Rule Information
+  description: OK.Successfully Retrieve Rule Information.
   types:
   - uid: TableDataResponse
 requestHeader: []
@@ -124,5 +124,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve rule information of Rule ID provided
+  description: Learn more about Operations Manager service - Retrieves rule information of rule ID.
 errorCodes: []

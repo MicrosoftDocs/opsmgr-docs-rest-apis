@@ -7,24 +7,24 @@ metadata:
   description: Learn more about [Operations Manager My Workspace Operations]. How to [Add Dashboard in MyWorkspace,Add Widget in MyWorkspace,AddFolder To MyWorkspace,Delete Da
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.myworkspace.adddashboardinmyworkspace
-  summary: Saves the dashboard in MyWorkspace.
+  summary: Saves the dashboard in myworkspace.
 - uid: <servername>.operationsmanager.operationsmanager.myworkspace.addfoldertomyworkspace
-  summary: Adds a folder to My Workspace
+  summary: Adds a folder to my workspace
 - uid: <servername>.operationsmanager.operationsmanager.myworkspace.addwidgetinmyworkspace
-  summary: Save widget in MyWorkspace Dashboard
+  summary: Adds the widget in myworkspace dashboard
 - uid: <servername>.operationsmanager.operationsmanager.myworkspace.deletedashboardinmyworkspace
-  summary: Deletes the Dashboard in MyWorkspace Pane.
+  summary: Deletes the dashboard in myworkspace Pane.
 - uid: <servername>.operationsmanager.operationsmanager.myworkspace.deletefolderfrommyworkspace
-  summary: Request to delete folder in Myworkspace
+  summary: Deletes the folder in my workspace.
 - uid: <servername>.operationsmanager.operationsmanager.myworkspace.deletewidgetinmyworkspace
-  summary: Deletes the Widget in MyWorkspace Dashboard.
+  summary: Deletes the widget in my workspace dashboard.
 - uid: <servername>.operationsmanager.operationsmanager.myworkspace.retrievedashboardinmyworkspace
-  summary: Retrieves the MyWorkspace dashboard details.
+  summary: Retrieves the myworkspace dashboard details.
 - uid: <servername>.operationsmanager.operationsmanager.myworkspace.retrievewidgetinmyworkspace
-  summary: Retrieves the widget details in MyWorkspaceDashboard.
+  summary: Retrieves the widget details in my workspace dashboard.
 - uid: <servername>.operationsmanager.operationsmanager.myworkspace.retrievewidgetsinmyworkspace
   summary: Retrieves the dashboard and widget in the dashboard.
 - uid: <servername>.operationsmanager.operationsmanager.myworkspace.updatedashboarddetailsinmyworkspace
-  summary: Update dashboard in MyWorkspace
+  summary: Update dashboard in my workspace.
 - uid: <servername>.operationsmanager.operationsmanager.myworkspace.updatewidgetinmyworkspace
-  summary: Update widget in MyWorkspace Dashboard
+  summary: Updates the widget in myworkspace dashboard

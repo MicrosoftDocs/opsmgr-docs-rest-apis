@@ -4,7 +4,7 @@ name: Retrieves dashboard Actions
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the dashboard Actions by dashboard ID and Type
+summary: Retrieves the dashboard Actions by dashboard ID and type.
 consumes: []
 produces:
 - application/json
@@ -17,18 +17,18 @@ uriParameters:
 - name: dashboardId
   in: path
   isRequired: true
-  description: Dashboard ID
+  description: Specify the dashboard ID
   types:
   - uid: string
 - name: dashboardType
   in: path
   isRequired: true
-  description: Dashboard Type
+  description: Specify the dashboard Type
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully Retrieved dashboard Actions
+  description: OK. Successfully retrieved dashboard actions.
   types:
   - uid: DashboardActionsResponse
 requestHeader: []
@@ -182,5 +182,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the dashboard Actions by dashboard ID and Type
+  description: Learn more about Operations Manager service - Retrieves the dashboard Actions by dashboard ID and type.
 errorCodes: []

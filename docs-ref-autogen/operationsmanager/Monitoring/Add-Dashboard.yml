@@ -4,7 +4,7 @@ name: Add Dashboard
 service: Operations Manager
 groupName: Monitoring
 apiVersion: v1
-summary: Request to save the dashboard in Monitoring View
+summary: Request to save the dashboard in monitoring view.
 consumes:
 - application/json
 - text/json
@@ -185,5 +185,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to save the dashboard in Monitoring View
+  description: Learn more about Operations Manager service - Request to save the dashboard in monitoring view.
 errorCodes: []

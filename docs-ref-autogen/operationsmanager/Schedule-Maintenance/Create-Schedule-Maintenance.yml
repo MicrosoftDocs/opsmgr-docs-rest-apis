@@ -4,7 +4,7 @@ name: Create Schedule Maintenance
 service: Operations Manager
 groupName: Schedule Maintenance
 apiVersion: v1
-summary: Request to save the schedule maintenance
+summary: Adds the schedule maintenance for provided schedule request.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully added the maintenance schedule
+  description: OK.Successfully added the maintenance schedule.
   types:
   - uid: string
 requestBody:
@@ -36,7 +36,7 @@ requestBody:
   - name: monitoringObjectsId
     in: body
     isRequired: true
-    description: Monitoring objects Id
+    description: Monitoring objects ID
     types:
     - uid: string
       isArray: true
@@ -139,7 +139,7 @@ definitions:
     types:
     - uid: string
   - name: monitoringObjectsId
-    description: Monitoring objects Id
+    description: Monitoring objects ID
     types:
     - uid: string
       isArray: true
@@ -274,5 +274,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to save the schedule maintenance
+  description: Learn more about Operations Manager service - Adds the schedule maintenance for provided schedule request.
 errorCodes: []

@@ -4,7 +4,7 @@ name: Retrieve Tasks
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieves the list of tasks and their properties.
+summary: Retrieves the list of tasks and their properties.
 consumes:
 - application/json
 - text/json
@@ -73,7 +73,7 @@ definitions:
   kind: object
   properties:
   - name: id
-    description: Task Id
+    description: Task ID
     types:
     - uid: string
   - name: displayName
@@ -226,5 +226,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieves the list of tasks and their properties.
+  description: Learn more about Operations Manager service - Retrieves the list of tasks and their properties.
 errorCodes: []

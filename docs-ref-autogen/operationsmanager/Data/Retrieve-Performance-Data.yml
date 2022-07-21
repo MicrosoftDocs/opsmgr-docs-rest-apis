@@ -4,7 +4,7 @@ name: Retrieve Performance Data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Request to retrieve performance data.  \nRetrieves the performance data for the specified scope/parameters."
+summary: Retrieves performance data for the specified scope/parameters.
 consumes:
 - application/json
 - text/json
@@ -215,5 +215,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Request to retrieve performance data.  \nRetrieves the performance data for the specified scope/parameters."
+  description: Learn more about Operations Manager service - Retrieves performance data for the specified scope/parameters.
 errorCodes: []

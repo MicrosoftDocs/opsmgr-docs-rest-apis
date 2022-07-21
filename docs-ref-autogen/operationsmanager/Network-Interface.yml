@@ -7,4 +7,4 @@ metadata:
   description: Learn more about [Operations Manager Network Interface Operations]. How to [GetInterfaces For GivenNode].
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.networkinterface.getinterfacesforgivennode
-  summary: Retrieves data for network interfaces
+  summary: Retrieves data for network interfaces by interface ID and request type.

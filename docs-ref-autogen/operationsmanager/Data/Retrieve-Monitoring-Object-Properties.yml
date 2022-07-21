@@ -4,7 +4,7 @@ name: Retrieve MonitoringObject Properties
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieve object properties for objectID.  \nRequest to retrieve object properties for Object ID provided"
+summary: Retrieves object properties for the specified object ID.
 consumes: []
 produces:
 - application/json
@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Monitoring Object Properties.
+  description: OK.Successfully retrieved monitoring object properties.
   types:
   - uid: MonitoringObjectProperty
     isArray: true
@@ -72,5 +72,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Retrieve object properties for objectID.  \nRequest to retrieve object properties for Object ID provided"
+  description: Learn more about Operations Manager service - Retrieves object properties for the specified object ID.
 errorCodes: []

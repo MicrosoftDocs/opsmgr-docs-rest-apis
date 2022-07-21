@@ -4,7 +4,7 @@ name: Retrieve Alert Details
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Request to retrieve Alert Details.  \nRequest to retrieve basic details of an alert."
+summary: Retrieves details of the alert.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: alertId
   in: path
   isRequired: true
-  description: AlertId for which the details are to be fetched.
+  description: Alert ID for which the details are to be fetched.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Alert Details
+  description: OK.Successfully retrieved alert details.
   types:
   - uid: AlertDetailsResponse
 requestHeader: []
@@ -39,7 +39,7 @@ definitions:
     types:
     - uid: string
   - name: sourceId
-    description: Source Id of the Alert
+    description: Source ID of the Alert
     types:
     - uid: string
   - name: priority
@@ -144,5 +144,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Request to retrieve Alert Details.  \nRequest to retrieve basic details of an alert."
+  description: Learn more about Operations Manager service - Retrieves details of the alert.
 errorCodes: []

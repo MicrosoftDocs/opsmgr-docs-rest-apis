@@ -4,7 +4,7 @@ name: Retrieve Items In Favorite Folders Tree View
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieve Items In Favorite Folders Tree View  \nRetrieves the list of views/dashboards available in the Favorite views folder."
+summary: Retrieves the list of views/dashboards available in the favorite views folder.
 consumes: []
 produces:
 - application/json
@@ -38,7 +38,7 @@ definitions:
     - uid: TreeNode
       isArray: true
   - name: id
-    description: Id
+    description: ID
     types:
     - uid: string
   - name: mpId
@@ -129,5 +129,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Retrieve Items In Favorite Folders Tree View  \nRetrieves the list of views/dashboards available in the Favorite views folder."
+  description: Learn more about Operations Manager service - Retrieves the list of views/dashboards available in the favorite views folder.
 errorCodes: []

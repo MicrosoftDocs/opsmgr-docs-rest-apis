@@ -4,7 +4,7 @@ name: Submit Task For Execution
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Submits a task for execution  \nRequest to submit the execution task"
+summary: Submits a task for execution.
 consumes:
 - application/json
 - text/json
@@ -138,5 +138,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Submits a task for execution  \nRequest to submit the execution task"
+  description: Learn more about Operations Manager service - Submits a task for execution.
 errorCodes: []

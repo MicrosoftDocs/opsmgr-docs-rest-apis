@@ -4,7 +4,7 @@ name: Retrieve Alert Context
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieve alert context for given Alert ID  \nRequest to retrieve alert context for alert ID provided"
+summary: Retrieves alert context for the specified alert ID.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: id
   in: path
   isRequired: true
-  description: ID of Alert
+  description: Specify the alert ID
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved Alert Context
+  description: OK.Successfully retrieved alert context.
   types:
   - uid: string
 requestHeader: []
@@ -45,5 +45,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Retrieve alert context for given Alert ID  \nRequest to retrieve alert context for alert ID provided"
+  description: Learn more about Operations Manager service - Retrieves alert context for the specified alert ID.
 errorCodes: []

@@ -4,7 +4,7 @@ name: Retrieve Widgets For Entity
 service: Operations Manager
 groupName: Monitoring
 apiVersion: v1
-summary: "Retrieves the widgets in the dashboard for entity.  \nRetrieves the widgets for the dashboard and entity. NOTE: This only supports retrieving widgets for a Performance dashboard."
+summary: 'Retrieves the widgets for the dashboard and entity. NOTE: This only supports retrieving widgets for a performance dashboard.'
 consumes: []
 produces:
 - application/json
@@ -17,13 +17,13 @@ uriParameters:
 - name: dashboardId
   in: path
   isRequired: true
-  description: Specify the Dashboard Id
+  description: Specify the dashboard ID
   types:
   - uid: string
 - name: entityId
   in: path
   isRequired: true
-  description: Specify the Entity Id
+  description: Specify the entity ID
   types:
   - uid: string
 responses:
@@ -86,5 +86,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Retrieves the widgets in the dashboard for entity.  \nRetrieves the widgets for the dashboard and entity. NOTE: This only supports retrieving widgets for a Perfo"
+  description: 'Retrieves the widgets for the dashboard and entity. NOTE: This only supports retrieving widgets for a performance dashboard.'
 errorCodes: []

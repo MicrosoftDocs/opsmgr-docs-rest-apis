@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringobjectinformation
-name: Retrieve Monitoring ObjectInformation
+name: Retrieve Monitoring Object Information
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieves object information for Object ID.  \nRequest to retrieve object information for provided object ID ."
+summary: Retrieves object information (like object properties, related objects and class information) for the specified object ID.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: objectId
   in: path
   isRequired: true
-  description: ObjectId for which information is to be fetched.
+  description: Object ID for which information is to be fetched.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Object information
+  description: OK.Successfully retrieved object information.
   types:
   - uid: MonitoringObjectResponse
 requestHeader: []
@@ -213,5 +213,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Retrieves object information for Object ID.  \nRequest to retrieve object information for provided object ID ."
+  description: Retrieves object information (like object properties, related objects and class information) for the specified object ID.
 errorCodes: []

@@ -4,7 +4,7 @@ name: Retrieve Class Information
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieve class information by class ID.  \nRequest to retrieve class information for Class ID provided."
+summary: Retrieves the class properties for the specified class ID.
 consumes: []
 produces:
 - application/json
@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Class Information
+  description: OK.Successfully retrieved Class Information
   types:
   - uid: TableDataResponse
 requestHeader: []
@@ -120,5 +120,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Retrieve class information by class ID.  \nRequest to retrieve class information for Class ID provided."
+  description: Learn more about Operations Manager service - Retrieves the class properties for the specified class ID.
 errorCodes: []

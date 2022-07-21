@@ -4,7 +4,7 @@ name: Retrieves Items in Monitoring Tree For Root Folders
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieves Items in Monitoring Tree For Root Folders  \nRetrieves list of items in monitoring tree for root folders"
+summary: Retrieves list of items in monitoring tree for root folders
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully retrieved the Items in the Monitoring tree view For Root Folders.
+  description: OK. Successfully retrieved the Items in the nonitoring tree view For root folders.
   types:
   - uid: TreeViewResponse
 requestHeader: []
@@ -38,7 +38,7 @@ definitions:
     - uid: TreeNode
       isArray: true
   - name: id
-    description: Id
+    description: ID
     types:
     - uid: string
   - name: mpId
@@ -215,5 +215,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Retrieves Items in Monitoring Tree For Root Folders  \nRetrieves list of items in monitoring tree for root folders"
+  description: Learn more about Operations Manager service - Retrieves list of items in monitoring tree for root folders
 errorCodes: []

@@ -4,7 +4,7 @@ name: Get Interfaces For GivenNode
 service: Operations Manager
 groupName: Network Node
 apiVersion: v1
-summary: Retrieves data for network node by node Id and request type.
+summary: Retrieves data for network node by node ID and request type.
 consumes: []
 produces:
 - application/json
@@ -17,7 +17,7 @@ uriParameters:
 - name: nodeId
   in: path
   isRequired: true
-  description: Node ID
+  description: Specify the node ID.
   types:
   - uid: string
 - name: requestType
@@ -87,5 +87,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves data for network node by node Id and request type.
+  description: Learn more about Operations Manager service - Retrieves data for network node by node ID and request type.
 errorCodes: []

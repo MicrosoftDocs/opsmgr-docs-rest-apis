@@ -4,7 +4,7 @@ name: Update Widget in MyWorkspace
 service: Operations Manager
 groupName: My Workspace
 apiVersion: v1
-summary: Request to update widget in myworkspace Dashboard
+summary: Updates the widget in myworkspace dashboard
 consumes:
 - application/json
 - text/json
@@ -22,12 +22,12 @@ uriParameters:
 - name: widgetId
   in: path
   isRequired: true
-  description: widget Id
+  description: Specify the widget ID
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Updated Widget in MyWorkspace
+  description: OK.Successfully Updated Widget in MyWorkspace.
   types:
   - uid: boolean
 requestBody:
@@ -108,5 +108,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to update widget in myworkspace Dashboard
+  description: Learn more about Operations Manager service - Updates the widget in myworkspace dashboard
 errorCodes: []

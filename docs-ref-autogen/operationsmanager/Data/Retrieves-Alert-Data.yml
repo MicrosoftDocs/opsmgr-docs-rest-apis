@@ -4,7 +4,7 @@ name: Retrieves Alert Data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the Alert Data for the specified scope/parameters
+summary: Retrieves the alert data for the specified scope/parameters
 consumes:
 - application/json
 - text/json
@@ -48,7 +48,7 @@ requestBody:
       - uid: integer
   - name: criteria
     in: body
-    description: Specify the Criteria (such as severity, priority, resolution state, etc.)
+    description: Specify the criteria (such as severity, priority, resolution state, etc.)
     types:
     - uid: string
   - name: displayColumns
@@ -92,7 +92,7 @@ definitions:
       - uid: string
       - uid: integer
   - name: criteria
-    description: Specify the Criteria (such as severity, priority, resolution state, etc.)
+    description: Specify the criteria (such as severity, priority, resolution state, etc.)
     types:
     - uid: string
   - name: displayColumns
@@ -259,5 +259,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the Alert Data for the specified scope/parameters
+  description: Learn more about Operations Manager service - Retrieves the alert data for the specified scope/parameters
 errorCodes: []
