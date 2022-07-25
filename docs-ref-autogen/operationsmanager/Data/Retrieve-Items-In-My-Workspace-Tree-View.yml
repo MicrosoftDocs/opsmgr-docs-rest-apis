@@ -4,7 +4,7 @@ name: Retrieve Items In My Workspace Tree View
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieve Items In My Workspace Tree View  \nRetrieves the list of views/dashboards/folder available in the My Workspace tree view."
+summary: Retrieves the list of views/dashboards/folder available in the my workspace tree view.
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved the list of views/dashboards/folder available in the My Workspace tree view
+  description: OK.Successfully retrieved the list of views/dashboards/folder available in the My Workspace tree view.
   types:
   - uid: TreeViewResponse
 requestHeader: []
@@ -38,7 +38,7 @@ definitions:
     - uid: TreeNode
       isArray: true
   - name: id
-    description: Id
+    description: ID
     types:
     - uid: string
   - name: mpId
@@ -181,5 +181,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Retrieve Items In My Workspace Tree View  \nRetrieves the list of views/dashboards/folder available in the My Workspace tree view."
+  description: Learn more about Operations Manager service - Retrieves the list of views/dashboards/folder available in the my workspace tree view.
 errorCodes: []

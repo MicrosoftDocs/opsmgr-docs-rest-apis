@@ -4,7 +4,7 @@ name: Delete Folder From MyWorkspace
 service: Operations Manager
 groupName: My Workspace
 apiVersion: v1
-summary: Request to delete folder in MyWorkspace
+summary: Deletes the folder in my workspace.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully delete folder from myworkspace
+  description: OK.Successfully delete folder from myworkspace.
   types:
   - uid: object
 requestBody:
@@ -91,5 +91,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to delete folder in MyWorkspace
+  description: Learn more about Operations Manager service - Deletes the folder in my workspace.
 errorCodes: []

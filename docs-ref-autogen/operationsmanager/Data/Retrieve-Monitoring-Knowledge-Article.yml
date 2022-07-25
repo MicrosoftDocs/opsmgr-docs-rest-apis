@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrievemonitoringknowledgearticle
-name: Retrieve Monitoring KnowledgeArticle
+name: Retrieve Monitoring Knowledge Article
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieve monitoring knowledge article by Element ID  \nRequest to retrieve monitoring knowledge article for Element ID provided"
+summary: Retrieves monitoring knowledge article for the specified element ID.
 consumes: []
 produces:
 - application/json
@@ -28,7 +28,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Monitoring KnowledgeArticle
+  description: OK.Successfully retrieved Monitoring KnowledgeArticle.
   types:
   - uid: KnowledgeArticleResponse
 requestHeader: []
@@ -152,5 +152,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Retrieve monitoring knowledge article by Element ID  \nRequest to retrieve monitoring knowledge article for Element ID provided"
+  description: Learn more about Operations Manager service - Retrieves monitoring knowledge article for the specified element ID.
 errorCodes: []

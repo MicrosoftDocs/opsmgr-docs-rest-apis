@@ -4,7 +4,7 @@ name: Add Folder
 service: Operations Manager
 groupName: Monitoring
 apiVersion: v1
-summary: Request to Save the folder in Monitoring View
+summary: Request to save the folder in monitoring view.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK. Successfully added the folder
+  description: OK. Successfully added the folder.
   types:
   - uid: object
 requestBody:
@@ -91,5 +91,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to Save the folder in Monitoring View
+  description: Learn more about Operations Manager service - Request to save the folder in monitoring view.
 errorCodes: []

@@ -4,7 +4,7 @@ name: GetNetwork Monitoring ResponseData
 service: Operations Manager
 groupName: Network Monitoring
 apiVersion: v1
-summary: Retrieves data for network devices and interfaces
+summary: Retrieves data for network devices and interfaces.
 consumes: []
 produces:
 - application/json
@@ -70,5 +70,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves data for network devices and interfaces
+  description: Learn more about Operations Manager service - Retrieves data for network devices and interfaces.
 errorCodes: []

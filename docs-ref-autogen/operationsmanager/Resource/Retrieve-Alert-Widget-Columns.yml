@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertwidgetcolumns
-name: Retrieve Alert Widget Columns
+name: Retrieve Alert Widget columns
 service: Operations Manager
 groupName: Resource
 apiVersion: v1
-summary: Request to retrieve Alert Widget Columns.
+summary: Retrieves alert widget columns.
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved Alert Widget Columns
+  description: OK.Successfully retrieved alert widget columns.
   types:
   - uid: HeaderColumns
     isArray: true
@@ -405,5 +405,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve Alert Widget Columns.
+  description: Learn more about Operations Manager service - Retrieves alert widget columns.
 errorCodes: []

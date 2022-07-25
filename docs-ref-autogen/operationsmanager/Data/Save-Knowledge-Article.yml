@@ -4,7 +4,7 @@ name: Save Knowledge Article
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to save the knowledge article of the specified entity
+summary: Saves the knowledge article of the specified entity
 consumes:
 - application/json
 - text/json
@@ -134,5 +134,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to save the knowledge article of the specified entity
+  description: Learn more about Operations Manager service - Saves the knowledge article of the specified entity
 errorCodes: []

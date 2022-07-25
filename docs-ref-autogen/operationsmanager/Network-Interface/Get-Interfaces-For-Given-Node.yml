@@ -4,7 +4,7 @@ name: GetInterfaces For GivenNode
 service: Operations Manager
 groupName: Network Interface
 apiVersion: v1
-summary: Retrieves data for network interfaces by interface Id and request type
+summary: Retrieves data for network interfaces by interface ID and request type.
 consumes: []
 produces:
 - application/json
@@ -23,7 +23,7 @@ uriParameters:
 - name: requestType
   in: path
   isRequired: true
-  description: Interface ID
+  description: Specify the interface ID.
   types:
   - uid: string
 responses:
@@ -56,5 +56,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves data for network interfaces by interface Id and request type
+  description: Learn more about Operations Manager service - Retrieves data for network interfaces by interface ID and request type.
 errorCodes: []

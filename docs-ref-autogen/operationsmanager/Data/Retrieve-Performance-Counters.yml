@@ -4,7 +4,7 @@ name: Retrieve Performance Counters
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Request to retrieve performance Counters.  \nRetrieves the list of performance counters associated with the specified entity ID."
+summary: Retrieves the list of performance counters associated with the specified entity ID.
 consumes: []
 produces:
 - application/json
@@ -17,7 +17,7 @@ uriParameters:
 - name: entityId
   in: path
   isRequired: true
-  description: Entity Id
+  description: Specify the Entity ID
   types:
   - uid: string
 responses:
@@ -59,7 +59,7 @@ definitions:
     types:
     - uid: string
   - name: parentObjectId
-    description: parent Object Id
+    description: parent Object ID
     types:
     - uid: string
 examples:
@@ -111,5 +111,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Request to retrieve performance Counters.  \nRetrieves the list of performance counters associated with the specified entity ID."
+  description: Learn more about Operations Manager service - Retrieves the list of performance counters associated with the specified entity ID.
 errorCodes: []

@@ -4,7 +4,7 @@ name: Retrieve State Widget Columns
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Request to retrieve State Widget Columns.  \nRetrieves the state columns applicable for the specified entity ID"
+summary: Retrieves the state columns applicable for the specified entity ID
 consumes: []
 produces:
 - application/json
@@ -17,7 +17,7 @@ uriParameters:
 - name: entityId
   in: query
   isRequired: true
-  description: Entity Id
+  description: Specify the Entity ID
   types:
   - uid: string
 responses:
@@ -96,5 +96,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Request to retrieve State Widget Columns.  \nRetrieves the state columns applicable for the specified entity ID"
+  description: Learn more about Operations Manager service - Retrieves the state columns applicable for the specified entity ID
 errorCodes: []

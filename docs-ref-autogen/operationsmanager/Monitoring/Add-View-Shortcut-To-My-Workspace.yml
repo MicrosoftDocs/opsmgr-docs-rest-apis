@@ -4,7 +4,7 @@ name: Add ViewShortcut To MyWorkspace
 service: Operations Manager
 groupName: Monitoring
 apiVersion: v1
-summary: Adds a shortcut to Monitoring view in My Workspace
+summary: Adds a shortcut to monitoring view in my workspace
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully Added ViewShortcut To MyWorkspace
+  description: OK.Successfully added viewshortcut to myworkspace.
   types:
   - uid: object
 requestBody:
@@ -79,5 +79,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Adds a shortcut to Monitoring view in My Workspace
+  description: Learn more about Operations Manager service - Adds a shortcut to monitoring view in my workspace
 errorCodes: []

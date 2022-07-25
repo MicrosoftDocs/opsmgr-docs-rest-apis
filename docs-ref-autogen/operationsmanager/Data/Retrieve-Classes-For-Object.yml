@@ -4,7 +4,7 @@ name: Retrieve Classes For Object
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieves classes for object.  \nRequest to retrieve classes for object."
+summary: Retrieves classes for object.
 consumes: []
 produces:
 - application/json
@@ -96,5 +96,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Retrieves classes for object.  \nRequest to retrieve classes for object."
+  description: Learn more about Operations Manager service - Retrieves classes for object.
 errorCodes: []

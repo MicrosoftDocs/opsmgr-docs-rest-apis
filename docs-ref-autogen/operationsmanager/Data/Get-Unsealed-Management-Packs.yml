@@ -4,7 +4,7 @@ name: Get Unsealed Management Packs
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieve the list of unsealead management packs  \nRequest to fetch the list of Unsealed ManagementPacks"
+summary: Retrieves the list of unsealed management packs.
 consumes: []
 produces:
 - application/json
@@ -70,5 +70,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Retrieve the list of unsealead management packs  \nRequest to fetch the list of Unsealed ManagementPacks"
+  description: Learn more about Operations Manager service - Retrieves the list of unsealed management packs.
 errorCodes: []

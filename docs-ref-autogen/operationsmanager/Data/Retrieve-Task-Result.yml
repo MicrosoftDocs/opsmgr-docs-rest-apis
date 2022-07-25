@@ -4,7 +4,7 @@ name: Retrieve Task Result
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Retrieves the result of an executed task.
+summary: Retrieves the result of an executed task
 consumes: []
 produces:
 - application/json
@@ -17,7 +17,7 @@ uriParameters:
 - name: batchId
   in: path
   isRequired: true
-  description: Specify the Batch Id
+  description: Specify the batch ID
   types:
   - uid: string
 responses:
@@ -82,5 +82,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the result of an executed task.
+  description: Learn more about Operations Manager service - Retrieves the result of an executed task
 errorCodes: []

@@ -4,7 +4,7 @@ name: Retrieve SLAs
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve SLAs configured
+summary: Retrieves SLAs configured
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved SLAs
+  description: OK.Successfully retrieved SLAs.
   types:
   - uid: SLA
     isArray: true
@@ -30,11 +30,11 @@ definitions:
     types:
     - uid: string
   - name: id
-    description: SLA Id
+    description: SLA ID
     types:
     - uid: string
   - name: managementGroupId
-    description: Management group Id
+    description: Management group ID
     types:
     - uid: string
   - name: managementPackName
@@ -69,5 +69,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve SLAs configured
+  description: Learn more about Operations Manager service - Retrieves SLAs configured
 errorCodes: []

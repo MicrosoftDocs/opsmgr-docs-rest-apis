@@ -4,7 +4,7 @@ name: Delete ViewShortcut From MyWorkspace
 service: Operations Manager
 groupName: Monitoring
 apiVersion: v1
-summary: Deletes a view shortcut from My Workspace
+summary: Deletes a view shortcut from my workspace
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully deleted a view shortcut from My Workspace
+  description: OK.Successfully deleted a view shortcut from my Workspace.
   types:
   - uid: object
 requestBody:
@@ -79,5 +79,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Deletes a view shortcut from My Workspace
+  description: Learn more about Operations Manager service - Deletes a view shortcut from my workspace
 errorCodes: []

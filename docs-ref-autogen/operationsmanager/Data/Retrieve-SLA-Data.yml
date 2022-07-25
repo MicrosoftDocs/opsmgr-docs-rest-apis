@@ -4,7 +4,7 @@ name: Retrieve SLA Data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve SLA data for given SLA request
+summary: Retrieves SLA data for the provided SLA request
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved SLA data
+  description: OK.Successfully retrieved SLA data.
   types:
   - uid: SLAResponse
 requestBody:
@@ -48,7 +48,7 @@ requestBody:
   - name: managementGroupId
     in: body
     isRequired: true
-    description: Management group Id
+    description: Management group ID
     types:
     - uid: string
 requestHeader: []
@@ -61,7 +61,7 @@ definitions:
     types:
     - uid: string
   - name: id
-    description: SLA Id
+    description: SLA ID
     types:
     - uid: string
   - name: slaManagedEntityRowId
@@ -89,7 +89,7 @@ definitions:
     types:
     - uid: string
   - name: managementGroupId
-    description: Management group Id
+    description: Management group ID
     types:
     - uid: string
 - name: SLOResponse
@@ -149,5 +149,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve SLA data for given SLA request
+  description: Learn more about Operations Manager service - Retrieves SLA data for the provided SLA request
 errorCodes: []

@@ -4,7 +4,7 @@ name: Stop Maintenance Schedule
 service: Operations Manager
 groupName: Schedule Maintenance
 apiVersion: v1
-summary: Stops Schedule maintenance details by schedule Id
+summary: Stops the scheduled maintenance details for specified schedule ID.
 consumes: []
 produces:
 - application/json
@@ -17,13 +17,13 @@ uriParameters:
 - name: scheduleId
   in: path
   isRequired: true
-  description: Schedule Id to Stop
+  description: Schedule ID to stop
   types:
   - uid: string
   format: uuid
 responses:
 - name: 200 OK
-  description: Ok.Successfully Stopped Maintenance Schedule
+  description: Ok.Successfully stopped maintenance schedule.
   types:
   - uid: object
 requestHeader: []
@@ -46,5 +46,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Stops Schedule maintenance details by schedule Id
+  description: Learn more about Operations Manager service - Stops the scheduled maintenance details for specified schedule ID.
 errorCodes: []

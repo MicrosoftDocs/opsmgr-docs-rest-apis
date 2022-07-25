@@ -4,7 +4,7 @@ name: Extend Schedule Maintenance
 service: Operations Manager
 groupName: Schedule Maintenance
 apiVersion: v1
-summary: Request to extend scheduled Maintenance
+summary: Extends the scheduled maintenance for the provided schedule request.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: Ok.Successfully Extended Schedule Maintenance
+  description: Ok.Successfully extended schedule maintenance.
   types:
   - uid: object
 requestBody:
@@ -81,5 +81,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to extend scheduled Maintenance
+  description: Learn more about Operations Manager service - Extends the scheduled maintenance for the provided schedule request.
 errorCodes: []

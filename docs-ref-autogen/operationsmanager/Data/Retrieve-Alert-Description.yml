@@ -4,7 +4,7 @@ name: Retrieve Alert Description
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve alert description for provided Alert
+summary: Retrieves the alert description for provided alert.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: id
   in: path
   isRequired: true
-  description: Id of the alert
+  description: ID of the alert
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Alert Description
+  description: OK.Successfully retrieved alert description.
   types:
   - uid: string
 requestHeader: []
@@ -45,5 +45,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve alert description for provided Alert
+  description: Learn more about Operations Manager service - Retrieves the alert description for provided alert.
 errorCodes: []

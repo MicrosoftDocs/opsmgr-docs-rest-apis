@@ -4,7 +4,7 @@ name: Add Dashboard in MyWorkspace
 service: Operations Manager
 groupName: My Workspace
 apiVersion: v1
-summary: "Saves the dashboard in MyWorkspace.  \nRequest to Save the dashboard in MyWorkspace"
+summary: Saves the dashboard in myworkspace.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully saved dashboard in MyWorkspace
+  description: OK.Successfully saved dashboard in MyWorkspace.
   types:
   - uid: ComponentResponse
 requestBody:
@@ -146,5 +146,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Saves the dashboard in MyWorkspace.  \nRequest to Save the dashboard in MyWorkspace"
+  description: Learn more about Operations Manager service - Saves the dashboard in myworkspace.
 errorCodes: []

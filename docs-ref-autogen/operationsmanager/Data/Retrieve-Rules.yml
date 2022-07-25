@@ -4,7 +4,7 @@ name: Retrieve Rules
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Request to retrieve rules.  \nRetrieve the list of rules and thier properties based on the specified criteria."
+summary: Retrieves the list of rules and their properties based on the specified criteria.
 consumes:
 - application/json
 - text/json
@@ -29,7 +29,7 @@ requestBody:
   parameters:
   - name: criteria
     in: body
-    description: Criteria to search
+    description: specify the criteria to search.
     types:
     - uid: string
 requestHeader: []
@@ -140,5 +140,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Request to retrieve rules.  \nRetrieve the list of rules and thier properties based on the specified criteria."
+  description: Learn more about Operations Manager service - Retrieves the list of rules and their properties based on the specified criteria.
 errorCodes: []

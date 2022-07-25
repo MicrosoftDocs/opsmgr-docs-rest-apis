@@ -4,7 +4,7 @@ name: Retrieve Dashboards For Object
 service: Operations Manager
 groupName: Monitoring
 apiVersion: v1
-summary: "Retrieves the dashboards for Object.  \nRetrieves dashboards for object based on host"
+summary: Retrieves dashboards for object based on host.
 consumes: []
 produces:
 - application/json
@@ -23,12 +23,12 @@ uriParameters:
 - name: scomObjectId
   in: query
   isRequired: true
-  description: Scom Object ID
+  description: Specify the Object ID
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved the dashbaords for an object.
+  description: OK.Successfully retrieved the dashboards for an object.
   types:
   - uid: ComponentResponse
     isArray: true
@@ -86,5 +86,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Retrieves the dashboards for Object.  \nRetrieves dashboards for object based on host"
+  description: Learn more about Operations Manager service - Retrieves dashboards for object based on host.
 errorCodes: []

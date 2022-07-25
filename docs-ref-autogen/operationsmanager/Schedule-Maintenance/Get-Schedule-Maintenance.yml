@@ -4,7 +4,7 @@ name: Get Schedule Maintenance
 service: Operations Manager
 groupName: Schedule Maintenance
 apiVersion: v1
-summary: Retrieves Schedule maintenance details by schedule Id
+summary: Retrieves the schedule maintenance details for the specified schedule ID.
 consumes: []
 produces:
 - application/json
@@ -17,13 +17,13 @@ uriParameters:
 - name: scheduleId
   in: path
   isRequired: true
-  description: Specify the Schedule ID
+  description: Specify the schedule ID.
   types:
   - uid: string
   format: uuid
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved schedule Maintenance details by scheduleID
+  description: OK.Successfully retrieved schedule Maintenance details by schedule ID.
   types:
   - uid: ScheduleMaintenanceResponse
 requestHeader: []
@@ -47,7 +47,7 @@ definitions:
     types:
     - uid: string
   - name: monitoringObjectsId
-    description: Monitoring objects Id
+    description: Monitoring objects ID
     types:
     - uid: string
       isArray: true
@@ -159,5 +159,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves Schedule maintenance details by schedule Id
+  description: Learn more about Operations Manager service - Retrieves the schedule maintenance details for the specified schedule ID.
 errorCodes: []

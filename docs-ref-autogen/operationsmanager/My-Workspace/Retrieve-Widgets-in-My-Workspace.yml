@@ -4,7 +4,7 @@ name: RetrieveWidgets in MyWorkspace
 service: Operations Manager
 groupName: My Workspace
 apiVersion: v1
-summary: Retrieves the dashboard and widget in the dashboard
+summary: Retrieves the dashboard and widget in the dashboard.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: dashboardId
   in: path
   isRequired: true
-  description: Dashboard Id
+  description: Specify the dashboard ID
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved widgets in dashboard
+  description: OK.Successfully retrieved widgets in dashboard.
   types:
   - uid: ComponentResponse
     isArray: true
@@ -88,5 +88,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the dashboard and widget in the dashboard
+  description: Learn more about Operations Manager service - Retrieves the dashboard and widget in the dashboard.
 errorCodes: []

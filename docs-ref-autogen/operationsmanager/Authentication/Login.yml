@@ -4,7 +4,7 @@ name: Login
 service: Operations Manager
 groupName: Authentication
 apiVersion: v1
-summary: "Request to authenticate the user  \nAuthenticates the user Login and retrieves user details"
+summary: Authenticate the user login and retrieves user details.
 consumes:
 - application/json
 - text/json
@@ -25,7 +25,7 @@ responses:
   types:
   - uid: UserIdentity
 - name: 403 Forbidden
-  description: The user does not have sufficient permission to perform the operation
+  description: The user does not have sufficient permission to perform the operation.
   types:
   - uid: string
 requestBody:
@@ -82,5 +82,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Request to authenticate the user  \nAuthenticates the user Login and retrieves user details"
+  description: Learn more about Operations Manager service - Authenticate the user login and retrieves user details.
 errorCodes: []

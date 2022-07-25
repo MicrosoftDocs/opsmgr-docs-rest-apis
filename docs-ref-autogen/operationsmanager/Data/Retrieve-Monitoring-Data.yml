@@ -4,7 +4,7 @@ name: Retrieve Monitoring Data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve health state of entity's monitors and alert count
+summary: Retrieves health state of entity's monitors and alert count
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: entityId
   in: path
   isRequired: true
-  description: Entity ID
+  description: Specify the Entity ID
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Monitoring Data
+  description: OK.Successfully retrieved Monitoring Data.
   types:
   - uid: MonitoringDataResponse
 requestHeader: []
@@ -160,5 +160,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve health state of entity's monitors and alert count
+  description: Learn more about Operations Manager service - Retrieves health state of entity's monitors and alert count
 errorCodes: []

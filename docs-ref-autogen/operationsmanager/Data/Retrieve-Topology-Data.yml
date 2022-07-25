@@ -4,7 +4,7 @@ name: Retrieve Topology Data
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve Topology Data for provided criteria
+summary: Retrieves topology data for provided criteria.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved topology data
+  description: OK.Successfully retrieved topology data.
   types:
   - uid: TopologyResponse
     isArray: true
@@ -49,7 +49,7 @@ requestBody:
       - uid: integer
   - name: criteria
     in: body
-    description: Specify the Criteria (such as severity, priority, resolution state, etc.)
+    description: Specify the criteria (such as severity, priority, resolution state, etc.)
     types:
     - uid: string
   - name: displayColumns
@@ -68,7 +68,7 @@ definitions:
     types:
     - uid: string
   - name: id
-    description: Id of Topology
+    description: ID of Topology
     types:
     - uid: string
   - name: icon
@@ -95,7 +95,7 @@ definitions:
       - uid: string
       - uid: integer
   - name: criteria
-    description: Specify the Criteria (such as severity, priority, resolution state, etc.)
+    description: Specify the criteria (such as severity, priority, resolution state, etc.)
     types:
     - uid: string
   - name: displayColumns
@@ -150,5 +150,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve Topology Data for provided criteria
+  description: Learn more about Operations Manager service - Retrieves topology data for provided criteria.
 errorCodes: []

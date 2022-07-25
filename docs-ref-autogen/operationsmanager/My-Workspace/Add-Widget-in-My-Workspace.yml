@@ -4,7 +4,7 @@ name: Add Widget in MyWorkspace
 service: Operations Manager
 groupName: My Workspace
 apiVersion: v1
-summary: Request to save widget in myworkspace dashboard
+summary: Adds the widget in myworkspace dashboard
 consumes:
 - application/json
 - text/json
@@ -22,12 +22,12 @@ uriParameters:
 - name: dashboardId
   in: path
   isRequired: true
-  description: Dashboard ID
+  description: Specify the dashboard ID.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully added widget in myworkspace
+  description: OK.Successfully added widget in myworkspace.
   types:
   - uid: ComponentResponse
 requestBody:
@@ -140,5 +140,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to save widget in myworkspace dashboard
+  description: Learn more about Operations Manager service - Adds the widget in myworkspace dashboard
 errorCodes: []

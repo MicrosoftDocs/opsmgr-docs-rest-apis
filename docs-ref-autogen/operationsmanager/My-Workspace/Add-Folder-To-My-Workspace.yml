@@ -4,7 +4,7 @@ name: AddFolder To MyWorkspace
 service: Operations Manager
 groupName: My Workspace
 apiVersion: v1
-summary: "Adds a folder to My Workspace  \nRequest to add a folder to myworkspace"
+summary: Adds a folder to my workspace
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully added folder to my Workspace
+  description: OK.Successfully added folder to my workspace.
   types:
   - uid: object
 requestBody:
@@ -91,5 +91,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Adds a folder to My Workspace  \nRequest to add a folder to myworkspace"
+  description: Learn more about Operations Manager service - Adds a folder to my workspace
 errorCodes: []

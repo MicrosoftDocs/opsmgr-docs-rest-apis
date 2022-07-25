@@ -4,13 +4,13 @@ name: Resource
 apiVersion: v1
 service: Operations Manager
 metadata:
-  description: Learn more about [Operations Manager Resource Operations]. How to [Retrieve Alert Priority,Retrieve Alert Resolution States,Retrieve Alert Widget Columns,Retrie
+  description: Learn more about [Operations Manager Resource Operations]. How to [Retrieve Alert Priority,Retrieve Alert Resolution States,Retrieve Alert Widget columns,Retrie
 operations:
 - uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertpriority
-  summary: Request to retrieve Alert Widget Priority.
+  summary: Retrieves alert Widget Priority.
 - uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertresolutionstates
-  summary: Request to retrieve Alert Widget Resolution States.
+  summary: Retrieves alert resolution States.
 - uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertseverity
-  summary: Request to retrieve Alert Widget Severity.
+  summary: Retrieves alert widget severity.
 - uid: <servername>.operationsmanager.operationsmanager.resource.retrievealertwidgetcolumns
-  summary: Request to retrieve Alert Widget Columns.
+  summary: Retrieves alert widget columns.

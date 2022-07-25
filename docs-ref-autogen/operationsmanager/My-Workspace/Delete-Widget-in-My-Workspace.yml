@@ -4,7 +4,7 @@ name: Delete Widget in MyWorkspace
 service: Operations Manager
 groupName: My Workspace
 apiVersion: v1
-summary: "Deletes the Widget in MyWorkspace Dashboard.  \nRequest to delete the Widget in MyWorkspace Dashboard."
+summary: Deletes the widget in my workspace dashboard.
 consumes: []
 produces:
 - application/json
@@ -17,18 +17,18 @@ uriParameters:
 - name: dashboardId
   in: path
   isRequired: true
-  description: Dashboard ID to delete
+  description: Dashboard ID to delete.
   types:
   - uid: string
 - name: widgetId
   in: path
   isRequired: true
-  description: widget id to delete
+  description: widget id to delete.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK
+  description: OK.Successfully deleted the dashboard in myworkspace.
   types:
   - uid: boolean
 requestHeader: []
@@ -51,5 +51,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Deletes the Widget in MyWorkspace Dashboard.  \nRequest to delete the Widget in MyWorkspace Dashboard."
+  description: Learn more about Operations Manager service - Deletes the widget in my workspace dashboard.
 errorCodes: []

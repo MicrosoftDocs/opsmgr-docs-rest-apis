@@ -4,7 +4,7 @@ name: Add Widget to Dashboard
 service: Operations Manager
 groupName: Monitoring
 apiVersion: v1
-summary: "Request to Add Widget to dashboard  \nAdds a widget to an existing Dashboard"
+summary: Adds a widget to an existing Dashboard
 consumes:
 - application/json
 - text/json
@@ -22,12 +22,12 @@ uriParameters:
 - name: dashboardId
   in: path
   isRequired: true
-  description: Dashbord Id
+  description: Specify the dashboard ID.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully added widget to dashboard
+  description: OK.Successfully added widget to dashboard.
   types:
   - uid: ComponentResponse
 requestBody:
@@ -189,5 +189,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Request to Add Widget to dashboard  \nAdds a widget to an existing Dashboard"
+  description: Learn more about Operations Manager service - Adds a widget to an existing Dashboard
 errorCodes: []

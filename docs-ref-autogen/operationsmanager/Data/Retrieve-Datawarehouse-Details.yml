@@ -4,7 +4,7 @@ name: Retrieve Datawarehouse Details
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieve Datawarehouse Details  \nRetrieves data warehouse details based on stored procedure name"
+summary: Retrieves data warehouse details based on stored procedure name.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved DatawareHouse Details
+  description: OK.Successfully retrieved DatawareHouse details.
   types:
   - uid: object
 requestBody:
@@ -243,5 +243,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Retrieve Datawarehouse Details  \nRetrieves data warehouse details based on stored procedure name"
+  description: Learn more about Operations Manager service - Retrieves data warehouse details based on stored procedure name.
 errorCodes: []

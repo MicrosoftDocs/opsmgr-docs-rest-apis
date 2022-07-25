@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
-uid: <servername>.operationsmanager.operationsmanager.data.retrievescomobjectdatabyclass
-name: Retrieve SCOM ObjectData By Class
+uid: <servername>.operationsmanager.operationsmanager.data.retrieveobjectdetails
+name: Retrieve Object Details
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve SCOM objects data by class Name
+summary: Retrieves Objects data for the specified object ID.
 consumes:
 - application/json
 - text/json
@@ -17,21 +17,22 @@ produces:
 - application/xml
 - text/xml
 paths:
-- content: POST http://<Servername>/OperationsManager/data/scomObjectsByClass
+- content: POST http://<Servername>/OperationsManager/data/scomObjectsDetails
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved SCOM object Data by Class
+  description: OK.Successfully retrieved the object details for the object ID.
   types:
   - uid: TableDataResponse
 requestBody:
 - name: default
   parameters:
-  - name: fullClassName
+  - name: id
     in: body
-    description: Full Class Name
+    description: Specify the Object ID.
     types:
     - uid: string
+      isArray: true
 requestHeader: []
 definitions:
 - name: TableDataResponse
@@ -67,20 +68,20 @@ definitions:
     types:
     - uid: boolean
 examples:
-- name: RetrieveObjectDataByClass
+- name: RetrieveObjectData
   request:
-    uri: POST http://<Servername>/OperationsManager/data/scomObjectsByClass
+    uri: POST http://<Servername>/OperationsManager/data/scomObjectsDetails
     body: >-
       [
-        "System.Library!System.Computer"
+        "3c8ac4f3-475e-44dd-4163-8a97af363705"
       ]
     codeTab: |+
       # [HTTP](#tab/HTTP)
       ``` http
-      POST http://<Servername>/OperationsManager/data/scomObjectsByClass
+      POST http://<Servername>/OperationsManager/data/scomObjectsDetails
 
       [
-        "System.Library!System.Computer"
+        "3c8ac4f3-475e-44dd-4163-8a97af363705"
       ]
 
       ```
@@ -117,20 +118,14 @@ examples:
         ],
         "rows": [
           {
-            "displayname": "LlhmpKkOvfnZ2tR7VF1yIcgo02c1S7q9FPLsa9h7hl5kEHVHViIKu9vtE3wxst5xyoTmhigWi3Qgg5ktgUftzgOGecn.NuPypIvaxtkxBvm0sONJTCQYNM7SZNIF48Jxoc1YKJ5wtssD3XYPOeO",
+            "id": "3c8ac4f3-475e-44dd-4163-8a97af363705",
+            "displayname": "All Windows Computers",
             "path": null,
-            "fullname": "Microsoft.Windows.Computer:LlhmpKkOvfnZ2tR7VF1yIcgo02c1S7q9FPLsa9h7hl5kEHVHViIKu9vtE3wxst5xyoTmhigWi3Qgg5ktgUftzgOGecn.NuPypIvaxtkxBvm0sONJTCQYNM7SZNIF48Jxoc1YKJ5wtssD3XYPOeO",
-            "id": "aeee35a8-c9bc-916d-a86a-ab4fd0e4f8e8"
-          },
-          {
-            "displayname": "SCOMNFMPDEV0015.smx.net",
-            "path": null,
-            "fullname": "Microsoft.Windows.Computer:SCOMNFMPDEV0015.smx.net",
-            "id": "9f2ef630-9784-9e27-bbd0-af9900d8264f"
+            "fullname": "Microsoft.SystemCenter.AllComputersGroup"
           }
         ]
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve SCOM objects data by class Name
+  description: Learn more about Operations Manager service - Retrieves Objects data for the specified object ID.
 errorCodes: []

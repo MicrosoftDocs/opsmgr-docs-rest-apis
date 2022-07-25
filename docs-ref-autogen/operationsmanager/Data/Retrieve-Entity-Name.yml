@@ -4,7 +4,7 @@ name: Retrieve Entity Name
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieve Scom Entity Name  \nRequest to Retrieve entity name for the specified entity ID."
+summary: Retrieves entity name for the specified entity ID.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: entityId
   in: path
   isRequired: true
-  description: Entity ID
+  description: Specify the entity ID.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Entity Name by EntityID
+  description: OK.Successfully retrieved entity name for the specified entity ID.
   types:
   - uid: string
 requestHeader: []
@@ -45,5 +45,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Retrieve Scom Entity Name  \nRequest to Retrieve entity name for the specified entity ID."
+  description: Learn more about Operations Manager service - Retrieves entity name for the specified entity ID.
 errorCodes: []

@@ -4,7 +4,7 @@ name: Edit Schedule Maintenance
 service: Operations Manager
 groupName: Schedule Maintenance
 apiVersion: v1
-summary: Request to update the scheduled Maintenance
+summary: Updates the scheduled Maintenance for the provided schedule request.
 consumes:
 - application/json
 - text/json
@@ -28,7 +28,7 @@ uriParameters:
   format: uuid
 responses:
 - name: 200 OK
-  description: Ok.Successfully edited Maintenance schedule
+  description: Ok.Successfully edited Maintenance schedule.
   types:
   - uid: ScheduleMaintenanceRequest
 requestBody:
@@ -43,7 +43,7 @@ requestBody:
   - name: monitoringObjectsId
     in: body
     isRequired: true
-    description: Monitoring objects Id
+    description: Monitoring objects ID
     types:
     - uid: string
       isArray: true
@@ -146,7 +146,7 @@ definitions:
     types:
     - uid: string
   - name: monitoringObjectsId
-    description: Monitoring objects Id
+    description: Monitoring objects ID
     types:
     - uid: string
       isArray: true
@@ -297,5 +297,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to update the scheduled Maintenance
+  description: Learn more about Operations Manager service - Updates the scheduled Maintenance for the provided schedule request.
 errorCodes: []

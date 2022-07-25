@@ -4,7 +4,7 @@ name: Update Dashboard Details in MyWorkspace
 service: Operations Manager
 groupName: My Workspace
 apiVersion: v1
-summary: Request to update dashboard in myworkspace
+summary: Update dashboard in my workspace.
 consumes:
 - application/json
 - text/json
@@ -22,12 +22,12 @@ uriParameters:
 - name: dashboardId
   in: path
   isRequired: true
-  description: Specify the Dashboard Id
+  description: Specify the dashboard ID.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK. Successfully updated dashboard details in Myworkspace
+  description: OK. Successfully updated dashboard details in myworkspace.
   types:
   - uid: boolean
 requestBody:
@@ -155,5 +155,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to update dashboard in myworkspace
+  description: Learn more about Operations Manager service - Update dashboard in my workspace.
 errorCodes: []

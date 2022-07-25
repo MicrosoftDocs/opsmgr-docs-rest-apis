@@ -4,7 +4,7 @@ name: Update Dashboard Details
 service: Operations Manager
 groupName: Monitoring
 apiVersion: v1
-summary: "Update Dashboard Details  \nUpdates the properties or configurations of a dashboard and the widgets available in a specific dashboard."
+summary: Updates the properties or configurations of a dashboard and the widgets available in a specific dashboard.
 consumes:
 - application/json
 - text/json
@@ -22,7 +22,7 @@ uriParameters:
 - name: dashboardId
   in: path
   isRequired: true
-  description: specify the Dashboard Id
+  description: specify the dashboard ID.
   types:
   - uid: string
 responses:
@@ -155,5 +155,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Update Dashboard Details  \nUpdates the properties or configurations of a dashboard and the widgets available in a specific dashboard."
+  description: Updates the properties or configurations of a dashboard and the widgets available in a specific dashboard.
 errorCodes: []

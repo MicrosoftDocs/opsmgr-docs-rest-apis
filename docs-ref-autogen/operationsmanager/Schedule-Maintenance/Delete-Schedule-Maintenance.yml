@@ -4,7 +4,7 @@ name: Delete Schedule Maintenance
 service: Operations Manager
 groupName: Schedule Maintenance
 apiVersion: v1
-summary: Deletes Schedule maintenance details by schedule Id
+summary: Deletes the schedule maintenance details for the specified schedule ID
 consumes: []
 produces:
 - application/json
@@ -17,13 +17,13 @@ uriParameters:
 - name: scheduleId
   in: path
   isRequired: true
-  description: Schedule ID to delete
+  description: Schedule ID to delete.
   types:
   - uid: string
   format: uuid
 responses:
 - name: 200 OK
-  description: Ok
+  description: Ok.Successfully deleted the maintenance schedule.
   types:
   - uid: object
 requestHeader: []
@@ -46,5 +46,5 @@ examples:
       ]
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Deletes Schedule maintenance details by schedule Id
+  description: Learn more about Operations Manager service - Deletes the schedule maintenance details for the specified schedule ID
 errorCodes: []

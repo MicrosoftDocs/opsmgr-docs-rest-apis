@@ -4,7 +4,7 @@ name: Retrieve PowerShell Output
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieves data after executing the specified PowerShell script  \nRequest to retrieve Powershell script output for widgetID and Dashboard Type"
+summary: Retrieves data after executing the specified PowerShell script for widgetID and dashboard type
 consumes: []
 produces:
 - application/json
@@ -17,18 +17,18 @@ uriParameters:
 - name: widgetId
   in: query
   isRequired: true
-  description: Widget Id
+  description: Specify the widget ID
   types:
   - uid: string
 - name: dashboardType
   in: query
   isRequired: true
-  description: Dashboard Type
+  description: Specify the dashboard type
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully retrieved data after executing the specified PowerShell script
+  description: OK.Successfully retrieved data after executing the specified powerShell script.
   types:
   - uid: TableDataResponse
 requestHeader: []
@@ -130,5 +130,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Retrieves data after executing the specified PowerShell script  \nRequest to retrieve Powershell script output for widgetID and Dashboard Type"
+  description: Learn more about Operations Manager service - Retrieves data after executing the specified PowerShell script for widgetID and dashboard type
 errorCodes: []

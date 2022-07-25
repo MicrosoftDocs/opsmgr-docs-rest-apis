@@ -4,7 +4,7 @@ name: Retrieve Alert History
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve alert history for Alert ID provided
+summary: Retrieves alert history for alert ID provided.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: id
   in: path
   isRequired: true
-  description: Alert Id
+  description: Specify the Alert ID
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Alert History
+  description: OK.Successfully retrieved Alert History.
   types:
   - uid: TableDataResponse
 requestHeader: []
@@ -116,5 +116,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve alert history for Alert ID provided
+  description: Learn more about Operations Manager service - Retrieves alert history for alert ID provided.
 errorCodes: []

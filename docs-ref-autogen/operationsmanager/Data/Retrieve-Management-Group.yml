@@ -4,7 +4,7 @@ name: Retrieve Management Group
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to retrieve management group
+summary: Retrieves the management group
 consumes: []
 produces:
 - application/json
@@ -16,7 +16,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieve Management Group
+  description: OK.Successfully Retrieve Management Group.
   types:
   - uid: object
 requestHeader: []
@@ -40,5 +40,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to retrieve management group
+  description: Learn more about Operations Manager service - Retrieves the management group
 errorCodes: []

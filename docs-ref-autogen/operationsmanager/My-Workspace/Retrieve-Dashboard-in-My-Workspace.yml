@@ -4,7 +4,7 @@ name: Retrieve Dashboard in MyWorkspace
 service: Operations Manager
 groupName: My Workspace
 apiVersion: v1
-summary: Retrieves the MyWorkspace dashboard details.
+summary: Retrieves the myworkspace dashboard details.
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: dashboardId
   in: path
   isRequired: true
-  description: Dashboard Id
+  description: Specify the dashboard ID.
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Dashboard in MyWorkspace
+  description: OK.Successfully retrieved Dashboard in MyWorkspace.
   types:
   - uid: ComponentResponse
 requestHeader: []
@@ -77,5 +77,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Retrieves the MyWorkspace dashboard details.
+  description: Learn more about Operations Manager service - Retrieves the myworkspace dashboard details.
 errorCodes: []

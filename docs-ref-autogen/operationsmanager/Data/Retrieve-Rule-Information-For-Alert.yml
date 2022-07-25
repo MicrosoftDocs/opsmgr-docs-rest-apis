@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.data.retrieveruleinformationforalert
-name: Retrieve RuleInformation For Alert
+name: Retrieve Rule Information for Alert
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: "Retrieves Rule Information for Alert   \nRequest to retrieve rule information for given alert."
+summary: Retrieves rule information for alert ID provided.
 consumes: []
 produces:
 - application/json
@@ -22,7 +22,7 @@ uriParameters:
   - uid: string
 responses:
 - name: 200 OK
-  description: OK.Successfully Retrieved Rule Information for the Alert
+  description: OK.Successfully retrieved Rule Information for the Alert
   types:
   - uid: TableDataResponse
 requestHeader: []
@@ -124,5 +124,5 @@ examples:
       }
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Retrieves Rule Information for Alert   \nRequest to retrieve rule information for given alert."
+  description: Learn more about Operations Manager service - Retrieves rule information for alert ID provided.
 errorCodes: []

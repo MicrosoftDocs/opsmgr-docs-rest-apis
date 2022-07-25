@@ -4,7 +4,7 @@ name: Retrieve Authentication Mode
 service: Operations Manager
 groupName: Authentication
 apiVersion: v1
-summary: "Retrieves Authentication Mode  \nRetrieves the authentication mode of the web server."
+summary: Retrieves the authentication mode in the current session.
 consumes: []
 produces:
 - application/json
@@ -39,5 +39,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Learn more about Operations Manager service - Retrieves Authentication Mode  \nRetrieves the authentication mode of the web server."
+  description: Learn more about Operations Manager service - Retrieves the authentication mode in the current session.
 errorCodes: []

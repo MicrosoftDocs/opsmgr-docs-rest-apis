@@ -1,10 +1,10 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.monitoring.retrievewidgetsbydashboardid
-name: Retrieve Widgets by DashboardID
+name: Retrieve Widgets by Dashboard ID
 service: Operations Manager
 groupName: Monitoring
 apiVersion: v1
-summary: "Retrieves the widgets in the dashboard.  \nRetrieves the properties and configuration of all the widgets defined in a specific dashboard"
+summary: Retrieves the properties and configuration of all the widgets defined in a specific dashboard
 consumes: []
 produces:
 - application/json
@@ -17,12 +17,12 @@ uriParameters:
 - name: dashboardId
   in: path
   isRequired: true
-  description: Dashboard Id
+  description: Specify the dashboard ID
   types:
   - uid: string
 responses:
 - name: 200 OK
-  description: 'OK.Successfully retrieved the properties and configuration of all the widgets present in a specific dashboard '
+  description: OK.Successfully retrieved the properties and configuration of all the widgets present in a specific dashboard.
   types:
   - uid: ComponentResponse
     isArray: true
@@ -80,5 +80,5 @@ examples:
       ]
 security: []
 metadata:
-  description: "Retrieves the widgets in the dashboard.  \nRetrieves the properties and configuration of all the widgets defined in a specific dashboard"
+  description: Learn more about Operations Manager service - Retrieves the properties and configuration of all the widgets defined in a specific dashboard
 errorCodes: []

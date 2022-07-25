@@ -4,7 +4,7 @@ name: Upload Topology Image
 service: Operations Manager
 groupName: Data
 apiVersion: v1
-summary: Request to upload single Topology Image
+summary: Uploads single topology image.
 consumes:
 - application/json
 - text/json
@@ -21,7 +21,7 @@ paths:
 uriParameters: []
 responses:
 - name: 200 OK
-  description: OK.Successfully uploaded image
+  description: OK.Successfully uploaded image.
   types:
   - uid: TopologyResponse
 requestBody:
@@ -47,7 +47,7 @@ definitions:
     types:
     - uid: string
   - name: id
-    description: Id of Topology
+    description: ID of Topology
     types:
     - uid: string
   - name: icon
@@ -96,5 +96,5 @@ examples:
       }
 security: []
 metadata:
-  description: Learn more about Operations Manager service - Request to upload single Topology Image
+  description: Learn more about Operations Manager service - Uploads single topology image.
 errorCodes: []
