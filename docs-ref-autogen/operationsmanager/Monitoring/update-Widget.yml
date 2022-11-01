@@ -1,6 +1,6 @@
 ### YamlMime:RESTOperation
 uid: <servername>.operationsmanager.operationsmanager.monitoring.updatewidget
-name: update Widget
+name: Update Widget
 service: Operations Manager
 groupName: Monitoring
 apiVersion: v1
