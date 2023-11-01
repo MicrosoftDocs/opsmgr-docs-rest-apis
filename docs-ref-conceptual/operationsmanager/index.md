@@ -50,6 +50,13 @@ Required action, applicable for Operations Manager 2019 UR1.
 ![Initialize the CSRF token example](./Media/index/116854.png)
 
 ## Operations Manager REST API PowerShell example
+The System Center Operations Manager (SCOM) API provides a powerful interface for automating and extending the capabilities of SCOM. This PowerShell script is designed to facilitate various operations by interacting with the SCOM API, simplifying the process of retrieving and managing data within your SCOM environment.
+
+The script includes a set of primary functions that lay the groundwork for interacting with the API, such as initializing the base URL and setting up necessary authentication headers. It also includes a suite of optional functions for performing specific tasks, such as fetching the effective monitoring configuration for a particular object or querying for unsealed management packs.
+
+Each function is crafted with parameters that allow for customization based on the user’s needs and will enable the script to be adapted to various SCOM environments.
+
+The execution of the script is straightforward, with examples provided for authenticating using specific credentials or the current user's credentials. It also includes template code for outputting data in a structured JSON format for easy reading and integration with other systems or reporting tools.
 
 ### Functions
 #### Primary Functions and Variable
