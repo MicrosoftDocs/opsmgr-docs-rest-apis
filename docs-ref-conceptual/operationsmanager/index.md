@@ -144,7 +144,18 @@ Prior to executing the script you will need to uncomment which line you will use
 # Uncomment the line below if you want to authenticate using the current user's credentials
 # Authenticate-SCOM
 
-Write-Output "--------------------------------"
+#Write-Output "-----------------------------------------"
+
+# Replace 'your-guid-here' with the actual GUID of the monitoring object
+#$MonitoringObjectGUID = 'your-guid-here'
+
+# Fetch the effective monitoring configuration for the given GUID
+#$EffectiveConfig = Get-EffectiveMonitoringConfiguration -guid $MonitoringObjectGUID
+
+# Output the effective monitoring configuration in JSON format
+#Write-Output "Effective Monitoring Configuration:`n$($EffectiveConfig | ConvertTo-Json)"
+
+Write-Output "-----------------------------------------"
 
 # Fetch all Windows Agents
 $WindowsServers = Get-WindowsServers
@@ -156,11 +167,11 @@ Write-Output "-----------------------------------------"
 $unsealedMPs = Get-UnsealedManagementPacks
 Write-Output "Unsealed MPs:`n$($unsealedMPs | ConvertTo-Json)"
 
-Write-Output "--------------------------------"
+Write-Output "-----------------------------------------"
 
 # Get Management Group Health Status
 $state = Get-ManagementGroupState
 Write-Output "Monitored Computer State:`n$($state | ConvertTo-Json)"
 
-Write-Output "--------------------------------"
+Write-Output "-----------------------------------------"
 ```
