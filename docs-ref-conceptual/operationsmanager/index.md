@@ -61,81 +61,99 @@ The execution of the script is straightforward, with examples provided for authe
 ### Functions
 #### Primary Functions and Variable
 ```powershell
-# Initialize SCOM API Base URL
-$URIBase = 'http://<SCOMWebConsoleURL>/OperationsManager'
+# You can modify the below to use HTTP or HTTPS. Replace <WebConsoleAddress> with the address for your Web Console.
+$MainURL = 'http://MS02-2016.contoso-2016.com/OperationsManager'
 
-# Function to initialize HTTP headers and CSRF token for SCOM API
-function Initialize-SCOMHeaders {
-    $SCOMHeaders = @{
-        'Content-Type' = 'application/json; charset=utf-8'
-    }
-
-    $CSRFtoken = $WebSession.Cookies.GetCookies($URIBase) | Where-Object { $_.Name -eq 'SCOM-CSRF-TOKEN' }
-    $SCOMHeaders['SCOM-CSRF-TOKEN'] = [System.Web.HttpUtility]::UrlDecode($CSRFtoken.Value)
-    return $SCOMHeaders
-}
-
-# Function to authenticate with the SCOM API
-function Authenticate-SCOM {
-    param (
-        [PSCredential]$Credential = $null
-    )
-
-    $bodyRaw = "Windows"
-    $encodedText = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($bodyRaw))
-    $JSONBody = $encodedText | ConvertTo-Json
-
-    $SCOMHeaders = Initialize-SCOMHeaders
-
-    if ($Credential -ne $null) {
-        Invoke-RestMethod -Method Post -Uri "$URIBase/authenticate" -Headers $SCOMHeaders -Body $JSONBody -Credential $Credential -SessionVariable WebSession
-    } else {
-        Invoke-RestMethod -Method Post -Uri "$URIBase/authenticate" -Headers $SCOMHeaders -Body $JSONBody -UseDefaultCredentials -SessionVariable WebSession
-    }
+function Authenticate-SCOMAPI
+{
+	param (
+		[PSCredential]$Credential = $null
+	)
+	# Set SCOM Header and the Body
+	$SCOMHeaders = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
+	$SCOMHeaders.Add('Content-Type', 'application/json; charset=utf-8')
+	$BodyRaw = "Windows"
+	$Bytes = [System.Text.Encoding]::UTF8.GetBytes($BodyRaw)
+	$EncodedText = [Convert]::ToBase64String($Bytes)
+	$JSONBody = $EncodedText | ConvertTo-Json
+	
+	# Initiate the Cross-Site Request Forgery (CSRF) token, this is to prevent CSRF attacks
+	$CSRFtoken = $WebSession.Cookies.GetCookies($MainURL) | ? { $_.Name -eq 'SCOM-CSRF-TOKEN' }
+	$SCOMHeaders.Add('SCOM-CSRF-TOKEN', [System.Web.HttpUtility]::UrlDecode($CSRFtoken.Value))
+	
+	# Authentication
+	if ($Credential -ne $null)
+	{
+		Invoke-RestMethod -Method Post -Uri "$MainURL/authenticate" -Headers $SCOMHeaders -Body $JSONBody -Credential $Credential -SessionVariable WebSession
+	}
+	else
+	{
+		Invoke-RestMethod -Method Post -Uri "$MainURL/authenticate" -Headers $SCOMHeaders -Body $JSONBody -UseDefaultCredentials -SessionVariable WebSession
+	}
+	$script:WebSession = $WebSession
 }
 ```
 
 #### Optional Functions
 ```powershell
-# Function to fetch Effective Monitoring Configuration by GUID
-function Get-EffectiveMonitoringConfiguration {
-    param (
-        [string]$guid
-    )
-
-    $uri = "$URIBase/effectiveMonitoringConfiguration/$guid`?isRecursive=True"
-    $response = Invoke-WebRequest -Uri $uri -Method GET -WebSession $WebSession
-    return $response.Content | ConvertFrom-Json
-}
-
-# Function to fetch Unsealed Management Packs
-function Get-UnsealedManagementPacks {
-    $uri = "$URIBase/data/UnsealedManagementPacks"
-    $response = Invoke-WebRequest -Uri $uri -Method GET -WebSession $WebSession
-    return $response.Content | ConvertFrom-Json
-}
-
-# Function to fetch the state of the Management Group
-function Get-ManagementGroupState {
-    $query = @(@{
-        "classId"         = ""
-        "criteria"        = "DisplayName = 'Operations Manager Management Group'"
-        "displayColumns"  = "displayname", "healthstate", "name", "path"
-    })
-
-    $JSONQuery = $query | ConvertTo-Json
-    $response = Invoke-RestMethod -Uri "$URIBase/data/state" -Method Post -Body $JSONQuery -ContentType "application/json" -WebSession $WebSession
-    return $response.Rows
+# Function to fetch all installed SCOM Consoles
+function Get-SCOMConsoles
+{
+	# Criteria: Enter the displayname of the SCOM object
+	$Criteria = "DisplayName LIKE '%System Center Operations Manager Console%'"
+	
+	# Convert our criteria to JSON format
+	$JSONBody = $Criteria | ConvertTo-Json
+	
+	$Response = Invoke-WebRequest -Uri "$MainURL/OperationsManager/data/scomObjects" -Method Post -Body $JSONBody -WebSession $script:WebSession
+	
+	# Convert our response from JSON format to a custom object or hash table
+	$Object = ConvertFrom-Json -InputObject $Response.Content
+	
+	# Print out the object results
+	$Object.scopeDatas
 }
 
 # Function to fetch all Windows Servers
-function Get-WindowsServers {
-    $criteria = "DisplayName LIKE 'Microsoft Windows Server%'"
-    $JSONBody = $criteria | ConvertTo-Json
+function Get-WindowsServers
+{
+	$criteria = "DisplayName LIKE 'Microsoft Windows Server%'"
+	$JSONBody = $criteria | ConvertTo-Json
+	
+	$response = Invoke-WebRequest -Uri "$MainURL/data/scomObjects" -Method Post -Body $JSONBody -WebSession $script:WebSession
+	return ($response.Content | ConvertFrom-Json).scopeDatas
+}
 
-    $uri = "$URIBase/data/scomObjects"
-    $response = Invoke-WebRequest -Uri $uri -Method Post -Body $JSONBody -WebSession $WebSession
-    return ($response.Content | ConvertFrom-Json).scopeDatas
+# Function to fetch the state of the Management Group
+function Get-ManagementGroupState
+{
+	$query = @(@{
+			"classId"	     = ""
+			"criteria"	     = "DisplayName = 'Operations Manager Management Group'"
+			"displayColumns" = "displayname", "healthstate", "name", "path"
+		})
+	
+	$JSONQuery = $query | ConvertTo-Json
+	$response = Invoke-RestMethod -Uri "$MainURL/data/state" -Method Post -Body $JSONQuery -ContentType "application/json" -WebSession $script:WebSession
+	return $response.Rows
+}
+
+# Function to fetch Unsealed Management Packs
+function Get-UnsealedManagementPacks
+{
+	$response = Invoke-WebRequest -Uri "$MainURL/data/UnsealedManagementPacks" -Method GET -WebSession $script:WebSession
+	return $response.Content | ConvertFrom-Json
+}
+
+# Function to fetch Effective Monitoring Configuration by GUID
+function Get-EffectiveMonitoringConfiguration
+{
+	param (
+		[string]$guid
+	)
+	$uri = "$MainURL/effectiveMonitoringConfiguration/$guid`?isRecursive=True"
+	$response = Invoke-WebRequest -Uri $uri -Method GET -WebSession $script:WebSession
+	return $response.Content | ConvertFrom-Json
 }
 ```
 
@@ -144,12 +162,18 @@ Prior to executing the script you will need to uncomment which line you will use
 ```powershell
 # Main Execution
 
-# Uncomment the 2 lines below if you want to authenticate using specific credentials
-# $cred = Get-Credential
-# Authenticate-SCOM -Credential $cred
+# ------------------------------------------------------------------------------------------
+#region Authentication
 
-# Uncomment the line below if you want to authenticate using the current user's credentials
-# Authenticate-SCOM
+# Uncomment the below lines if you want to authenticate using specific credentials
+# $cred = Get-Credential
+# Authenticate-SCOMAPI -Credential $cred
+
+# Uncomment the below line if you want to authenticate using the current user's credentials
+# Authenticate-SCOMAPI
+
+#endregion
+# ------------------------------------------------------------------------------------------
 
 #Write-Output "-----------------------------------------"
 
@@ -164,21 +188,21 @@ Prior to executing the script you will need to uncomment which line you will use
 
 Write-Output "-----------------------------------------"
 
-# Fetch all Windows Agents
-$WindowsServers = Get-WindowsServers
-Write-Output "Windows Servers:`n$($WindowsServers | ConvertTo-Json)"
+# Fetch all Windows Servers
+Write-Output "Windows Servers:`n"
+Get-WindowsServers | ConvertTo-Json
 
 Write-Output "-----------------------------------------"
 
 # Get Unsealed Management Packs
-$unsealedMPs = Get-UnsealedManagementPacks
-Write-Output "Unsealed MPs:`n$($unsealedMPs | ConvertTo-Json)"
+Write-Output "Unsealed MPs:`n"
+Get-UnsealedManagementPacks | ConvertTo-Json
 
 Write-Output "-----------------------------------------"
 
 # Get Management Group Health Status
-$state = Get-ManagementGroupState
-Write-Output "Monitored Computer State:`n$($state | ConvertTo-Json)"
+Write-Output "Management Group State:`n"
+Get-ManagementGroupState | ConvertTo-Json
 
 Write-Output "-----------------------------------------"
 ```
