@@ -6,8 +6,8 @@ ms.author: magoedte
 manager: rayoflores
 ms.date: 07/22/2020
 ms.custom: na
-ms.prod: system-center
-ms.technology: operations-manager
+ms.service: system-center
+ms.subservice: operations-manager
 ms.topic: reference
 ms.assetid: b76911fa-1f5f-4a6f-864c-d0ba4adf2061
 ---
