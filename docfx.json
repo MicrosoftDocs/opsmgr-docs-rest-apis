@@ -76,12 +76,10 @@
         ]
       },
       "author": {
-        "docs-ref-autogen/**.yml": "jyothirmaisuri"
+        "docs-ref-autogen/**.yml": "jyothisuri"
       },
       "ms.author": {
-        "docs-ref-autogen/**.yml": "v-jysur"
-      },
-      "ms.prod": {
+        "docs-ref-autogen/**.yml": "jsuri"
       }
     },
     "template": [],
