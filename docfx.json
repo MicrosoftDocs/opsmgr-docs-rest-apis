@@ -66,6 +66,9 @@
       "extendBreadcrumb": true
     },
     "fileMetadata": {
+      "ms.service": {
+        "docs-ref-autogen/**.yml": "system-center"
+      },
       "searchScope": {
         "docs-ref-autogen/**.yml": [
           "Operations Manager",
@@ -79,7 +82,6 @@
         "docs-ref-autogen/**.yml": "v-jysur"
       },
       "ms.prod": {
-        "docs-ref-autogen/**.yml": "system-center"
       }
     },
     "template": [],
