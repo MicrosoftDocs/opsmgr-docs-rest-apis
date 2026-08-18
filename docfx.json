@@ -8,14 +8,14 @@
           "**.md"
         ],
         "exclude": [
-          "toc.md"
+          "toc.md","toc.yml"
         ],
         "dest": "api"
       },
       {
         "src": "docs-ref-autogen",
         "files": [
-          "toc.md"
+          "toc.md","toc.yml"
         ],
         "exclude": [],
         "dest": "api/operationsmanager"
